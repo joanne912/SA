@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +8,24 @@
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script type="text/javascript">
-        function toggle2(){
-            $("#menu-wrap").animate({'width': 'toggle'});
+        function toggle2() {
+            $("#menu-wrap").animate({
+                'width': 'toggle'
+            });
         }
     </script>
     <style>
-*{
+        * {
             padding: 0px;
             margin: 0px;
             list-style: none;
         }
-        html{
+        
+        html {
             height: 100%;
         }
-        header{
+        
+        header {
             width: 100%;
             height: 12vh;
             background-color: #f7f7fa;
@@ -32,16 +37,19 @@
             /* position: fixed; */
             justify-content: space-between;
         }
-        header img{
+        
+        header img {
             width: 20px;
             height: 20px;
             margin: 0 5px;
         }
-        .all{
+        
+        .all {
             width: 100%;
             height: 100%;
         }
-        .title{
+        
+        .title {
             display: flex;
             align-items: center;
             letter-spacing: 7px;
@@ -50,10 +58,12 @@
             padding: 0 10px;
             font-size: 1em;
         }
-        .title img{
+        
+        .title img {
             display: none;
         }
-        #menu-wrap{
+        
+        #menu-wrap {
             width: 60%;
             height: 88vh;
             background-color: #f7f7fa;
@@ -63,25 +73,30 @@
             justify-content: center;
             align-items: center;
         }
-        .main{
+        
+        .main {
             height: 88vh;
             overflow-y: auto;
         }
-        .option-wrap{
+        
+        .option-wrap {
             width: 100%;
             text-align: center;
         }
-        .icon img{
+        
+        .icon img {
             width: 100px;
             height: 100px;
             /* border-radius: 50%;
             background-color: #ffa; */
         }
-        .icon{
+        
+        .icon {
             text-align: center;
             /* background-color: #c31; */
         }
-        .icon_circle{
+        
+        .icon_circle {
             width: 150px;
             height: 150px;
             border-radius: 50%;
@@ -89,7 +104,8 @@
             display: grid;
             place-items: center;
         }
-        .icon span{
+        
+        .icon span {
             /* margin: 20px 0 0; */
             display: block;
             font-size: 1.5em;
@@ -100,7 +116,8 @@
             text-align: center;
             margin: 30px 0 0;
         }
-        .option-wrap a{
+        
+        .option-wrap a {
             text-decoration: none;
             color: #808080;
             letter-spacing: 3px;
@@ -109,13 +126,15 @@
             display: block;
             font-size: .8em;
         }
-        .sub-wrap{
+        
+        .sub-wrap {
             width: 80%;
             height: 80%;
             display: grid;
             place-items: center;
         }
-        .func_wrap{
+        
+        .func_wrap {
             height: 60%;
             width: 25%;
             /* background-color: #ffa; */
@@ -123,73 +142,78 @@
             align-items: flex-end;
             justify-content: flex-end;
         }
-        .func_wrap img{
+        
+        .func_wrap img {
             /* margin: 0 10px; */
             width: 30%;
             height: 30%;
         }
-        @media screen and (min-width: 769px) and (max-width: 1440px){
-            .all{
+        
+        @media screen and (min-width: 769px) and (max-width: 1440px) {
+            .all {
                 display: flex;
             }
-            header{
+            header {
                 order: 1;
                 height: 20vh;
             }
-            #menu-wrap{
+            #menu-wrap {
                 height: 100vh;
                 width: 30em;
                 position: relative;
                 order: 0;
                 display: flex;
             }
-            .title span{
+            .title span {
                 padding: 0 10px;
                 font-weight: 300;
             }
-            .menu img{
+            .menu img {
                 display: none;
             }
-            .title img{
+            .title img {
                 display: block;
                 width: 6%;
                 height: 6%;
             }
         }
-        @media screen and (min-width: 768px){
-            header{
+        
+        @media screen and (min-width: 768px) {
+            header {
                 font-size: 2.2rem;
                 padding: 0 40px;
             }
-            .menu img{
+            .menu img {
                 width: 33px;
                 height: 33px;
             }
-            .title span{
+            .title span {
                 letter-spacing: 15px;
                 text-indent: 15px;
             }
-            .title{
+            .title {
                 padding: 0 30px;
             }
-            #menu-wrap{
+            #menu-wrap {
                 width: 27em;
             }
-            .option-wrap a{
+            .option-wrap a {
                 font-size: 1.05em;
                 margin-top: 50px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="all">
         <header>
             <div class="menu" onclick="toggle2()">
-                <img src="https://www.flaticon.com/svg/vstatic/svg/812/812847.svg?token=exp=1619595075~hmac=1b18a356d226fad662e15a4d6be4be75" alt="">
+                <img src="img/menu.svg" alt="">
             </div>
             <div class="title">
-                <img src="https://www.flaticon.com/svg/vstatic/svg/2521/2521782.svg?token=exp=1619594602~hmac=480a9f03c4a3909df284637da77335bc" alt="">
+                <img src="img/logout.svg" alt="">
+                <!--要改圖片位置-->
                 <span>個人資料</span>
             </div>
             <div class="func_wrap">
@@ -202,7 +226,7 @@
             <div class="sub-wrap">
                 <div class="icon">
                     <div class="icon_circle">
-                        <img src="https://www.flaticon.com/svg/vstatic/svg/145/145867.svg?token=exp=1619620484~hmac=6ee1c36037c18da58dc6bb24f9fc960d" alt="">
+                        <img src="img/icon_boy.svg" alt="">
                     </div>
                     <span>title</span>
                 </div>
@@ -210,13 +234,14 @@
                     <a href="#">個人資訊</a>
                     <a href="#">我的包裹</a>
                     <a href="#">公設預約</a>
-                    <a href="#">社區公告</a>
+                    <!-- <a href="#">社區公告</a> -->
                 </div>
             </div>
         </div>
         <div class="main">
-            
+
         </div>
     </div>
 </body>
+
 </html>
