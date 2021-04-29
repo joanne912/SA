@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
     <style>
-        *{
+        * {
             padding: 0;
             margin: 0px;
             list-style: none;
             text-transform: uppercase;
         }
-        .homepage{
+        
+        .homepage {
             width: 100%;
             height: 60vh;
             padding: 20px 30px 0px;
@@ -24,16 +26,18 @@
             display: flex;
             flex-wrap: wrap;
         }
-        header{
+        
+        header {
             width: 100%;
             display: flex;
             justify-content: space-between;
-
         }
-        a{
+        
+        a {
             text-decoration: none;
         }
-        header a{
+        
+        header a {
             margin: 0 12px;
             font-size: 13px;
             letter-spacing: 3px;
@@ -43,11 +47,13 @@
             padding: 3px 7px;
             transition: ease-in-out all .4s;
         }
-        header a:hover{
+        
+        header a:hover {
             background-color: #494949;
             color: white;
         }
-        header h3{
+        
+        header h3 {
             padding: 2px 5px;
             background: #fc6471;
             letter-spacing: 3px;
@@ -55,19 +61,22 @@
             color: #f7f7fa;
             box-sizing: border-box;
         }
-        .center_text{
+        
+        .center_text {
             width: 100%;
             /* background-color: #eee; */
             text-align: center;
         }
-        .center_text span{
+        
+        .center_text span {
             letter-spacing: 30px;
             text-indent: 30px;
             font-size: 40px;
-            color:rgb(73, 71, 71);
+            color: rgb(73, 71, 71);
         }
-        .center_text a{
-            color:rgb(73, 71, 71);
+        
+        .center_text a {
+            color: rgb(73, 71, 71);
             letter-spacing: 4px;
             text-indent: 4px;
             display: inline-block;
@@ -76,102 +85,113 @@
             font-weight: 500;
             padding: 4px 7px;
         }
-        .center_text a:hover{
+        
+        .center_text a:hover {
             background-color: #494949;
             color: white;
             transition: ease-in-out all .4s;
         }
-        .wrap{
+        
+        .wrap {
             width: 100%;
             padding: 50px 150px;
             box-sizing: border-box;
             display: flex;
             align-items: center;
         }
-        .wrap:nth-child(odd){
+        
+        .wrap:nth-child(odd) {
             background-color: #f7f7fa;
         }
-        .text{
+        
+        .text {
             font-size: 12px;
             letter-spacing: 1px;
             text-indent: 1px;
             color: lightgray;
             text-transform: lowercase;
         }
-        .text:nth-child(even){
+        
+        .text:nth-child(even) {
             margin-left: 80px;
         }
-        .text:nth-child(odd){
+        
+        .text:nth-child(odd) {
             margin-right: 80px;
         }
-        footer{
+        
+        footer {
             padding: 60px 30px;
             display: flex;
             align-items: center;
             justify-content: center;
             box-sizing: border-box;
         }
-        footer span{
+        
+        footer span {
             font-size: 40px;
             letter-spacing: 30px;
             text-indent: 30px;
-            color:lightgray;
+            color: lightgray;
         }
-        @media screen and (max-width: 768px){
-            header a{
+        
+        @media screen and (max-width: 768px) {
+            header a {
                 font-size: .3px;
                 margin: 0 6px;
             }
-            .center_text span{
+            .center_text span {
                 font-size: 30px;
             }
-            .wrap{
+            .wrap {
                 padding: 30px 45px;
             }
         }
-        @media screen and (max-width: 600px){
-            header a{
+        
+        @media screen and (max-width: 600px) {
+            header a {
                 display: none;
             }
-            .center_text span{
+            .center_text span {
                 font-size: 20px;
                 letter-spacing: 5px;
                 text-indent: 5px;
             }
-            .center_text a{
+            .center_text a {
                 font-size: 5px;
                 margin: 30px 10px;
             }
-            .wrap{
+            .wrap {
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;
             }
-            .text:nth-child(even){
+            .text:nth-child(even) {
                 margin-left: 0px;
                 margin-top: 40px;
                 margin-bottom: 20px;
             }
-            .text:nth-child(odd){
+            .text:nth-child(odd) {
                 margin-right: 0px;
                 order: -1;
                 margin-top: 40px;
                 margin-bottom: 20px;
             }
-            .text:nth-child(odd){
+            .text:nth-child(odd) {
                 margin-right: 0px;
                 order: 1;
             }
-            .item{
+            .item {
                 margin-top: 10px;
             }
-            footer span{
+            footer span {
                 font-size: 20px;
                 letter-spacing: 10px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="homepage">
         <header>
@@ -189,8 +209,13 @@
         <div class="center_text">
             <span>貼近你的社區生活</span>
             <div class="option">
+
+                <!-- register按鈕也要改大 -->
                 <a href="#">/register/</a>
+
+                <!-- login按鈕要改大 -->
                 <a href="login.html">/login/</a>
+
             </div>
         </div>
     </div>
@@ -200,12 +225,12 @@
             <img src="https://fakeimg.pl/250x150/f7f7fa/d3d3d3">
         </div>
         <div class="text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo eaque esse ratione sed inventore iste aut ab architecto, unde dolore temporibus ea doloribus laboriosam et deleniti, eius vero quidem incidunt.            
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo eaque esse ratione sed inventore iste aut ab architecto, unde dolore temporibus ea doloribus laboriosam et deleniti, eius vero quidem incidunt.
         </div>
     </div>
     <div class="wrap">
         <div class="text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo eaque esse ratione sed inventore iste aut ab architecto, unde dolore temporibus ea doloribus laboriosam et deleniti, eius vero quidem incidunt.            
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo eaque esse ratione sed inventore iste aut ab architecto, unde dolore temporibus ea doloribus laboriosam et deleniti, eius vero quidem incidunt.
         </div>
         <div class="item">
             <img src="https://fakeimg.pl/250x150/ffffff/d3d3d3">
@@ -232,4 +257,5 @@
         <span>footer</span>
     </footer>
 </body>
+
 </html>
