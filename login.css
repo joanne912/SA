@@ -1,0 +1,162 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+header {
+    width: 100%;
+    margin: auto;
+    padding: 20px 30px 0;
+    box-sizing: border-box;
+    /* background-color: #ffa; */
+}
+
+.logo h3 {
+    width: auto;
+    padding: 2px 5px;
+    background: #fc6471;
+    letter-spacing: 3px;
+    text-indent: 3px;
+    /* color: #f7f7fa; */
+    color: white;
+    font-weight: bolder;
+    display: inline;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.option img {
+    width: 33px;
+    height: 33px;
+}
+
+.wrap {
+    width: 40%;
+    /* background: cornsilk; */
+    margin: auto;
+    margin-top: 8vh;
+}
+
+.title {
+    font-size: 35px;
+    letter-spacing: 40px;
+    text-indent: 40px;
+    text-align: center;
+    padding: 15px 40px;
+    color: #d3d3d3;
+}
+
+.enter {
+    width: 70%;
+    margin: auto;
+    /* display: flex;
+            flex-wrap: wrap;
+            justify-content: center; */
+}
+
+input {
+    margin: 40px 0 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+    text-transform: lowercase;
+}
+
+.enter input:nth-child(1) {
+    letter-spacing: 2px;
+    text-indent: 2px;
+}
+
+.enter input:nth-child(2) {
+    letter-spacing: 2px;
+    text-indent: 2px;
+}
+
+.enter input {
+    background: #f7f7fa;
+    border: 0;
+    width: 100%;
+    height: 40px;
+}
+
+.enter input:nth-child(3) {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #CACADE;
+    border-radius: 50px;
+    color: white;
+    letter-spacing: 20px;
+    text-indent: 20px;
+    font-size: 18px;
+}
+
+p {
+    margin-top: 40px;
+    text-align: center;
+    letter-spacing: 10px;
+    text-indent: 10px;
+    font-size: 15px;
+    color: #d3d3d3;
+}
+
+.regis_option {
+    width: 30%;
+    /* background: cornsilk; */
+    margin: auto;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.option {
+    width: 60px;
+    height: 60px;
+    background: #f7f7fa;
+    border-radius: 50px;
+    display: grid;
+    place-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .wrap {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .title {
+        font-size: 30px;
+    }
+    input {
+        margin: 35px 0 0;
+    }
+    .enter input {
+        height: 30px;
+    }
+    .wrap {
+        width: 100%;
+    }
+    .enter input:nth-child(3) {
+        font-size: 13px;
+    }
+    p {
+        font-size: 10px;
+    }
+    .regis_option {
+        width: 40%;
+    }
+    .option {
+        width: 50px;
+        height: 50px;
+    }
+    .option img {
+        width: 30px;
+        height: 30px;
+    }
+}
