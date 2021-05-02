@@ -73,7 +73,7 @@ header img {
     width: 5.5em;
     height: 5em;
     /* border-radius: 50%;
-background-color: #ffa; */
+    background-color: #ffa; */
 }
 
 .icon {
@@ -118,56 +118,54 @@ background-color: #ffa; */
     display: grid;
     place-items: center;
 }
-
 .func_wrap {
     /* background-color: #ffa; */
     display: flex;
 }
-
-.sub {
+.sub{
     width: 50%;
     display: flex;
 }
-
-.else img {
-    width: 1em;
-    height: 1em;
+.else{
+    display: flex;
+    justify-content: center;
+}
+.else img{
+    width: 1.5em;
+    height: 1.5em;
     margin: 0 1em;
-    margin-top: .5em;
+    /* margin-top: .5em; */
 }
-
-.func_wrap {
+.func_wrap{
     display: none;
 }
-
-
 /* @media screen and (min-width: 769px) and (max-width: 1440px) {
-.all {
-    display: flex;
-}
-header {
-    order: 1;
-    height: 20vh;
-}
-#menu-wrap {
-    height: 100vh;
-    width: 30em;
-    position: relative;
-    order: 0;
-    display: flex;
-}
-.title span {
-    padding: 0 10px;
-    font-weight: 300;
-}
-.menu img {
-    display: none;
-}
-.title img {
-    display: block;
-    width: 6%;
-    height: 6%;
-}
+    .all {
+        display: flex;
+    }
+    header {
+        order: 1;
+        height: 20vh;
+    }
+    #menu-wrap {
+        height: 100vh;
+        width: 30em;
+        position: relative;
+        order: 0;
+        display: flex;
+    }
+    .title span {
+        padding: 0 10px;
+        font-weight: 300;
+    }
+    .menu img {
+        display: none;
+    }
+    .title img {
+        display: block;
+        width: 6%;
+        height: 6%;
+    }
 } */
 
 @media screen and (min-width: 768px) {
@@ -193,13 +191,13 @@ header {
         font-size: 1.05em;
         margin-top: 50px;
     }
-    .else {
+    .else{
         display: none;
     }
-    .func_wrap {
+    .func_wrap{
         display: flex;
     }
-    .func_wrap a {
+    .func_wrap a{
         display: inline-block;
         text-decoration: none;
         font-size: .1em;
@@ -209,24 +207,24 @@ header {
         margin: 0 5em;
         color: black;
     }
-    .func_wrap a:hover {
+    .func_wrap a:hover{
         background: rgb(73, 71, 71);
         color: white;
         transition: ease-in-out all .4s;
     }
-    .func_wrap img {
+    .func_wrap img{
         width: 0.5em;
         height: 0.5em;
         margin: 0 .4em;
     }
-    .menu img {
+    .menu img{
         width: .8em;
         height: .8em;
     }
-    .title span {
+    .title span{
         font-size: .7em;
     }
-    .main {
+    .main{
         padding: 2em 3em;
         box-sizing: border-box;
     }

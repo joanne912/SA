@@ -6,15 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>index</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
 <body>
     <div class="homepage">
+        <!-- 畫面上方導覽列 -->
         <header>
             <div class="logo">
                 <h3>TITLE</h3>
             </div>
+            <!-- 導覽列選單 -->
             <nav>
                 <a href="#">home</a>
                 <a href="#">about</a>
@@ -26,17 +31,117 @@
         <div class="center_text">
             <span>貼近你的社區生活</span>
             <div class="option">
-                <!-- register按鈕也要改大 -->
-                <a href="#">/register/</a>
-                <!-- login按鈕要改大 -->
-                <a href="login.html">/login/</a>
+
+                <!-- 註冊彈跳視窗 -->
+                <button type="button" data-toggle="modal" data-target="#exampleModalCenter2">
+                    /register/
+                </button>
+                
+                <!-- 註冊內容模型 -->
+                <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <!-- <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div> -->
+                        <div class="modal-body">
+                                <header>
+                                    <div class="M_logo">
+                                        <h3>TITLE</h3>
+                                    </div>
+                                </header>
+                                <div class="M_wrap">
+                                    <div class="M_title">
+                                        <p>登入</p>
+                                    </div>
+                                    <!-- 帳號密碼輸入框 -->
+                                    <div class="M_enter">
+                                        <input type="text">
+                                        <input type="password">
+                                        <input type="button" value="一般註冊">
+                                    </div>
+                                    <p>其他註冊方式</p>
+                                    <!-- 選擇其他註冊方式的按鈕 -->
+                                    <div class="M_regis_option">
+                                        <div class="M_option">
+                                            <img src="img/google.svg" alt="">
+                                        </div>
+                                        <div class="M_option">
+                                            <img src="img/facebook.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary">確認</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- 登入彈跳視窗 -->
+                <button type="button" data-toggle="modal" data-target="#exampleModalCenter">
+                    /login/
+                </button>
+                
+                <!-- 登入內容模型 -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <!-- <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div> -->
+                        <div class="modal-body">
+                                <header>
+                                    <div class="M_logo">
+                                        <h3>TITLE</h3>
+                                    </div>
+                                </header>
+                                <div class="M_wrap">
+                                    <div class="M_title">
+                                        <p>登入</p>
+                                    </div>
+                                    <!-- 帳號密碼輸入框 -->
+                                    <div class="M_enter">
+                                        <input type="text">
+                                        <input type="password">
+                                        <input type="button" value="一般註冊">
+                                    </div>
+                                    <p>其他註冊方式</p>
+                                    <!-- 選擇其他註冊方式的按鈕 -->
+                                    <div class="M_regis_option">
+                                        <div class="M_option">
+                                            <img src="img/google.svg" alt="">
+                                        </div>
+                                        <div class="M_option">
+                                            <img src="img/facebook.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary">確認</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+  
+
             </div>
         </div>
     </div>
-
+    <!-- 功能介紹的文字加圖片 -->
     <div class="wrap">
         <div class="item">
-            <img src="https://fakeimg.pl/250x150/f7f7fa/d3d3d3" />
+            <img src="https://fakeimg.pl/250x150/f7f7fa/d3d3d3">
         </div>
         <div class="text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo eaque esse ratione sed inventore iste aut ab architecto, unde dolore temporibus ea doloribus laboriosam et deleniti, eius vero quidem incidunt.
@@ -47,12 +152,12 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo eaque esse ratione sed inventore iste aut ab architecto, unde dolore temporibus ea doloribus laboriosam et deleniti, eius vero quidem incidunt.
         </div>
         <div class="item">
-            <img src="https://fakeimg.pl/250x150/ffffff/d3d3d3" />
+            <img src="https://fakeimg.pl/250x150/ffffff/d3d3d3">
         </div>
     </div>
     <div class="wrap">
         <div class="item">
-            <img src="https://fakeimg.pl/250x150/f7f7fa/d3d3d3" />
+            <img src="https://fakeimg.pl/250x150/f7f7fa/d3d3d3">
         </div>
         <div class="text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo eaque esse ratione sed inventore iste aut ab architecto, unde dolore temporibus ea doloribus laboriosam et deleniti, eius vero quidem incidunt.
@@ -63,10 +168,10 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo eaque esse ratione sed inventore iste aut ab architecto, unde dolore temporibus ea doloribus laboriosam et deleniti, eius vero quidem incidunt.
         </div>
         <div class="item">
-            <img src="https://fakeimg.pl/250x150/ffffff/d3d3d3" />
+            <img src="https://fakeimg.pl/250x150/ffffff/d3d3d3">
         </div>
     </div>
-
+    <!-- footer -->
     <footer>
         <span>footer</span>
     </footer>
