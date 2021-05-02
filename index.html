@@ -36,50 +36,52 @@
                 <button type="button" data-toggle="modal" data-target="#exampleModalCenter2">
                     /register/
                 </button>
-                
+
                 <!-- 註冊內容模型 -->
                 <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <!-- <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        </div> -->
-                        <div class="modal-body">
-                                <header>
-                                    <div class="M_logo">
-                                        <h3>TITLE</h3>
-                                    </div>
-                                </header>
-                                <div class="M_wrap">
-                                    <div class="M_title">
-                                        <p>登入</p>
-                                    </div>
-                                    <!-- 帳號密碼輸入框 -->
-                                    <div class="M_enter">
-                                        <input type="text">
-                                        <input type="password">
-                                        <input type="button" value="一般註冊">
-                                    </div>
-                                    <p>其他註冊方式</p>
-                                    <!-- 選擇其他註冊方式的按鈕 -->
-                                    <div class="M_regis_option">
-                                        <div class="M_option">
-                                            <img src="img/google.svg" alt="">
+                        <div class="modal-content">
+                            <form method="POST" action="signup.php">
+                                <!-- <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div> -->
+                                <div class="modal-body">
+                                    <header>
+                                        <div class="M_logo">
+                                            <h3>TITLE</h3>
                                         </div>
-                                        <div class="M_option">
-                                            <img src="img/facebook.svg" alt="">
+                                    </header>
+                                    <div class="M_wrap">
+                                        <div class="M_title">
+                                            <p>註冊</p>
+                                        </div>
+                                        <!-- 帳號密碼輸入框 -->
+                                        <div class="M_enter">
+                                            <input type="text">
+                                            <input type="password">
+                                            <input type="button" value="一般註冊">
+                                        </div>
+                                        <p>其他註冊方式</p>
+                                        <!-- 選擇其他註冊方式的按鈕 -->
+                                        <div class="M_regis_option">
+                                            <div class="M_option">
+                                                <img src="img/google.svg" alt="">
+                                            </div>
+                                            <div class="M_option">
+                                                <img src="img/facebook.svg" alt="">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                                    <button type="button" class="btn btn-primary">確認註冊</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-primary">確認</button>
-                        </div>
-                    </div>
                     </div>
                 </div>
 
@@ -87,53 +89,55 @@
                 <button type="button" data-toggle="modal" data-target="#exampleModalCenter">
                     /login/
                 </button>
-                
+
                 <!-- 登入內容模型 -->
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <!-- <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        </div> -->
-                        <div class="modal-body">
-                                <header>
-                                    <div class="M_logo">
-                                        <h3>TITLE</h3>
-                                    </div>
-                                </header>
-                                <div class="M_wrap">
-                                    <div class="M_title">
-                                        <p>登入</p>
-                                    </div>
-                                    <!-- 帳號密碼輸入框 -->
-                                    <div class="M_enter">
-                                        <input type="text">
-                                        <input type="password">
-                                        <input type="button" value="一般註冊">
-                                    </div>
-                                    <p>其他註冊方式</p>
-                                    <!-- 選擇其他註冊方式的按鈕 -->
-                                    <div class="M_regis_option">
-                                        <div class="M_option">
-                                            <img src="img/google.svg" alt="">
+                        <div class="modal-content">
+                            <form method="POST" action="login_check.php">
+                                <!-- <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div> -->
+                                <div class="modal-body">
+                                    <header>
+                                        <div class="M_logo">
+                                            <h3>TITLE</h3>
                                         </div>
-                                        <div class="M_option">
-                                            <img src="img/facebook.svg" alt="">
+                                    </header>
+                                    <div class="M_wrap">
+                                        <div class="M_title">
+                                            <p>登入</p>
+                                        </div>
+                                        <!-- 帳號密碼輸入框 -->
+                                        <div class="M_enter">
+                                            <input type="text" name="mail">
+                                            <input type="password" name="password">
+                                            <input type="submit" name="login_btn" value="一般登入">
+                                        </div>
+                                        <p>其他註冊方式</p>
+                                        <!-- 選擇其他登入方式的按鈕 -->
+                                        <div class="M_regis_option">
+                                            <div class="M_option">
+                                                <img src="img/google.svg" alt="">
+                                            </div>
+                                            <div class="M_option">
+                                                <img src="img/facebook.svg" alt="">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                                    <button type="button" class="btn btn-primary">確認登入</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-primary">確認</button>
-                        </div>
-                    </div>
                     </div>
                 </div>
-  
+
 
             </div>
         </div>
