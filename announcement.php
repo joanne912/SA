@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
     <style>
         *{
             padding: 0px;
@@ -73,6 +79,39 @@
             /* display: -webkit-box;
             -webkit-line-clamp: 4;
             -webkit-box-orient: vertical; */
+    }
+
+    .item_img {
+        width: 90%;
+        /* background-color: #f7f7fa; */
+        margin-top: 2em;
+        margin: auto;
+    }
+
+    .logo img {
+        width: 3em;
+        height: 3em;
+        border-radius: 50%;
+    }
+
+    .d-block {
+        width: 80%;
+        height: 20em;
+        margin: auto;
+    }
+
+    .carousel-control-prev-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='black' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z'/%3e%3c/svg%3e")
+    }
+
+    .carousel-control-next-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='black' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e")
+    }
+
+    @media screen and (min-width: 768px; ) {
+        .item_profile {
+            width: 100vw;
+            margin: 0;
         }
         .item_img{
             width: 100%;
@@ -129,18 +168,25 @@
             text-indent: 5px;
             font-size: 1em;
         }
-        @media screen and (min-width: 768px;){
-            .item_profile{
-                width: 100vw;
-                margin: 0;
-            }
+    }
+    @media screen and (min-width: 768px;){
+        .item_profile{
+            width: 100vw;
+            margin: 0;
         }
+    }
     </style>
 </head>
-<body>
-    <header>
 
-    </header>
+<body>
+
+    <!-- 下面這個區域是上方的header -->
+    <!--  require("header.php"); ?> -->
+
+    <!-- 下面開始是左側彈出視窗的區域 -->
+    <!--  require("nav.php"); ?> -->
+
+
     <div class="item_nav">
         <input type="checkbox" name="" id="">
         <p>項目：活動</p>
@@ -160,12 +206,19 @@
                 </div>
             </div>
         </div>
-        <div class="item_profile">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi voluptatibus eveniet nobis sit numquam praesentium architecto nihil ipsum molestias. Distinctio facilis quos culpa perferendis architecto vero cumque, officia odit tempore?
-            Ratione nisi necessitatibus officia consequuntur labore animi aspernatur in neque quidem amet error nulla dolorum aliquid eos sunt assumenda quisquam, quia maxime asperiores voluptate dolor ullam eveniet debitis. Unde, ipsum.
-            Natus, magni! Beatae numquam praesentium dolorem quia doloribus eum obcaecati, repellat culpa iure, rerum, sit saepe mollitia distinctio similique corrupti esse commodi aperiam nisi consequatur earum officia. Accusantium, minus nihil.</p>
-        </div>
-        <div class="item_img">
+    </div>
+    <div class="item_profile">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi voluptatibus eveniet nobis sit numquam
+            praesentium architecto nihil ipsum molestias. Distinctio facilis quos culpa perferendis architecto vero
+            cumque, officia odit tempore?
+            Ratione nisi necessitatibus officia consequuntur labore animi aspernatur in neque quidem amet error nulla
+            dolorum aliquid eos sunt assumenda quisquam, quia maxime asperiores voluptate dolor ullam eveniet debitis.
+            Unde, ipsum.
+            Natus, magni! Beatae numquam praesentium dolorem quia doloribus eum obcaecati, repellat culpa iure, rerum,
+            sit saepe mollitia distinctio similique corrupti esse commodi aperiam nisi consequatur earum officia.
+            Accusantium, minus nihil.</p>
+    </div>
+    <div class="item_img">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -174,13 +227,13 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img class="d-block w-100" src="img/001.jpeg" alt="First slide">
+                    <img class="d-block w-100" src="img/001.jpeg" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                <img class="d-block w-100" src="img/001.jpeg" alt="Second slide">
+                    <img class="d-block w-100" src="img/001.jpeg" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                <img class="d-block w-100" src="img/001.jpeg" alt="Third slide">
+                    <img class="d-block w-100" src="img/001.jpeg" alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -207,6 +260,28 @@
             <p>xxx和其他人都說讚</p>
         </div>
         
+<!-- =======
+                    <img class="d-block w-100" src="img/001.jpeg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="img/001.jpeg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="img/001.jpeg" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+>>>>>>> 62b02bf5a29384210b062b78a20b757b612dba81 -->
     </div>
 </body>
+
 </html>
