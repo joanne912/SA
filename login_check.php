@@ -9,6 +9,8 @@
             $_SESSION['name'] = 'Amy';
             $_SESSION['mail'] = $U_MAIL;
             header("refresh:0;url=home.php");
+        }else{
+            header("refresh:0;url=index.html");
         }
     }
 ?>

@@ -78,6 +78,7 @@ button {
     padding: 4px 7px;
     border: 0;
     text-transform: uppercase;
+    outline: none;
 }
 
 button:hover {
