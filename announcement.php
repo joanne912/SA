@@ -128,10 +128,10 @@
 <body>
 
     <!-- 下面這個區域是上方的header -->
-    <!-- <?php require("header.php"); ?> -->
+    <!--  require("header.php"); ?> -->
 
     <!-- 下面開始是左側彈出視窗的區域 -->
-    <!-- <?php require("nav.php"); ?> -->
+    <!--  require("nav.php"); ?> -->
 
 
     <div class="item_nav">
