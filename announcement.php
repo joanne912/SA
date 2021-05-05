@@ -8,9 +8,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
+    </script> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
@@ -58,7 +58,6 @@
         }
         .info{
             margin-left: 2.5em;
-            height: 3em;
         }
         .info img{
             width: 1.25em;
@@ -79,64 +78,39 @@
             /* display: -webkit-box;
             -webkit-line-clamp: 4;
             -webkit-box-orient: vertical; */
-    }
-
-    .item_img {
-        width: 90%;
-        /* background-color: #f7f7fa; */
-        margin-top: 2em;
-        margin: auto;
-    }
-
-    .logo img {
-        width: 3em;
-        height: 3em;
-        border-radius: 50%;
-    }
-
-    .d-block {
-        width: 80%;
-        height: 20em;
-        margin: auto;
-    }
-
-    .carousel-control-prev-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='black' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z'/%3e%3c/svg%3e")
-    }
-
-    .carousel-control-next-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='black' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e")
-    }
-
-    @media screen and (min-width: 768px; ) {
-        .item_profile {
-            width: 100vw;
-            margin: 0;
         }
-        .item_img{
-            width: 100%;
+
+        .item_img {
+            /* width: 90%; */
             /* background-color: #f7f7fa; */
             margin-top: 2em;
             margin: auto;
         }
-        .logo img{
+
+        .logo img {
             width: 3em;
             height: 3em;
             border-radius: 50%;
         }
-        .d-block{
+
+        .d-block {
             width: 80%;
             height: 20em;
             margin: auto;
         }
-        .carousel-control-prev-icon{
+
+        .carousel-control-prev-icon {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='black' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z'/%3e%3c/svg%3e")
         }
-        .carousel-control-next-icon{
+
+        .carousel-control-next-icon {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='black' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e")
         }
+        .container{
+            width: 100%;
+        }
         .mes_icon{
-            width: 20%;
+            width: 15%;
             /* background-color: #ffa; */
             display: flex;
             justify-content: space-between;
@@ -150,10 +124,6 @@
             width: 1.75em;
             height: 1.75em;
         }
-        .container{
-            width: 90%;
-            margin: auto;
-        }
         .icon_wrap{
             /* width: 95%; */
             display: flex;
@@ -161,20 +131,119 @@
             align-items: center;
             margin: auto;
             margin-top: 1.1em;
-        }
+            }
         .message_wrap p{
             margin-top: 1em;
             letter-spacing: 5px;
             text-indent: 5px;
             font-size: 1em;
         }
-    }
-    @media screen and (min-width: 768px;){
-        .item_profile{
-            width: 100vw;
-            margin: 0;
+        .a_icon_circle{
+            width: 2.5em;
+            height: 2.5em;
+            background-color: #f7f7fa;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            margin: 0 .75em;
         }
-    }
+        .act_icon img{
+            width: 1.5em;
+            height: 1.5em;
+        }
+        .act_icon{
+            display: flex;
+        }
+        .act_wrap{
+            width: 95%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .act_icon:nth-child(2) .a_icon_circle{
+            width: 6em;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        hr{
+            width: 100%;
+            border: 2px solid #f7f7fa;
+            background: #f7f7fa;
+            margin-top: 2em;
+        }
+        /* @media screen and (min-width: 768px; ) {
+            .item_profile {
+                width: 100vw;
+                margin: 0;
+            } */
+            /* .item_img{
+                width: 100%; */
+                /* background-color: #f7f7fa; */
+                /* margin-top: 2em;
+                margin: auto;
+            } */
+            /* .mes_icon{
+                width: 20%; */
+                /* background-color: #ffa; */
+                /* display: flex;
+                justify-content: space-between;
+                align-items: center;
+            } 
+        }*/
+        @media screen and (max-width: 768px){
+            .item_profile{
+                width: 100%;
+            }
+            .d-block{
+                height: 10em;
+            }
+            .mes_icon img{
+                width: 1.25em;
+                height: 1.25em;
+                margin: 0 .8em 0 0;
+            }
+            .mes_private img{
+                width: 1.25em;
+                height: 1.25em;
+            }
+            .message_wrap p{
+                font-size: .8em;
+            }
+            .a_icon_circle{
+                width: 1.75em;
+                height: 1.75em;
+                margin: 0 .25em;
+            }
+            .act_icon img{
+                width: .75em;
+                height: .75em;
+            }
+            .act_icon:nth-child(2) .a_icon_circle{
+                width: 3.7em;
+                border-radius: 20px;
+                display: flex;
+                justify-content: space-evenly;
+            }
+            .act_icon:nth-child(2) span{
+                font-size: .5em;
+            }
+            hr{
+                margin-top: 1.5em;
+            }
+            .info{
+                font-size: .75em;
+                margin-left: 1em;
+            }
+            .logo{
+                width: 3.5em;
+                height: 3.5em;
+            }
+            .logo img{
+                width: 2.5em;
+                height: 2.5em;
+            }
+        }
     </style>
 </head>
 
@@ -186,7 +255,28 @@
     <!-- 下面開始是左側彈出視窗的區域 -->
     <!--  require("nav.php"); ?> -->
 
-
+    <div class="act_wrap">
+        <div class="act_icon">
+            <div class="a_icon_circle">
+                <img src="img/add.svg" alt="">
+            </div>
+            <div class="a_icon_circle">
+                <img src="img/search.svg" alt="">
+            </div>
+            <div class="a_icon_circle">
+                <img src="img/filter.svg" alt="">
+            </div>
+        </div>
+        <div class="act_icon">
+            <div class="a_icon_circle">
+                <img src="img/clock.svg" alt=""><span>最新</span>
+            </div>
+            <div class="a_icon_circle">
+                <img src="img/hot.svg" alt=""><span>熱門</span>
+            </div>   
+        </div>
+    </div>
+    <hr>
     <div class="item_nav">
         <input type="checkbox" name="" id="">
         <p>項目：活動</p>
@@ -206,45 +296,45 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="item_profile">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi voluptatibus eveniet nobis sit numquam
-            praesentium architecto nihil ipsum molestias. Distinctio facilis quos culpa perferendis architecto vero
-            cumque, officia odit tempore?
-            Ratione nisi necessitatibus officia consequuntur labore animi aspernatur in neque quidem amet error nulla
-            dolorum aliquid eos sunt assumenda quisquam, quia maxime asperiores voluptate dolor ullam eveniet debitis.
-            Unde, ipsum.
-            Natus, magni! Beatae numquam praesentium dolorem quia doloribus eum obcaecati, repellat culpa iure, rerum,
-            sit saepe mollitia distinctio similique corrupti esse commodi aperiam nisi consequatur earum officia.
-            Accusantium, minus nihil.</p>
-    </div>
-    <div class="item_img">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="img/001.jpeg" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="img/001.jpeg" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="img/001.jpeg" alt="Third slide">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+    
+        <div class="item_profile">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi voluptatibus eveniet nobis sit numquam
+                praesentium architecto nihil ipsum molestias. Distinctio facilis quos culpa perferendis architecto vero
+                cumque, officia odit tempore?
+                Ratione nisi necessitatibus officia consequuntur labore animi aspernatur in neque quidem amet error nulla
+                dolorum aliquid eos sunt assumenda quisquam, quia maxime asperiores voluptate dolor ullam eveniet debitis.
+                Unde, ipsum.
+                Natus, magni! Beatae numquam praesentium dolorem quia doloribus eum obcaecati, repellat culpa iure, rerum,
+                sit saepe mollitia distinctio similique corrupti esse commodi aperiam nisi consequatur earum officia.
+                Accusantium, minus nihil.</p>
         </div>
+        <div class="item_img">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="img/001.jpeg" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="img/001.jpeg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="img/001.jpeg" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
         <div class="message_wrap">
             <div class="icon_wrap">

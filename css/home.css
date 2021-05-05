@@ -12,7 +12,7 @@ header {
     width: 100%;
     height: 12vh;
     background-color: #f7f7fa;
-    display: flex;
+    display: flex !important;
     align-items: center;
     padding: 0 20px;
     /* justify-content: space-between; */
@@ -51,10 +51,12 @@ header img {
     height: 88vh;
     background-color: #f7f7fa;
     position: absolute;
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    /* test */
+    display: none;
 }
 
 .main {
@@ -62,6 +64,7 @@ header img {
     overflow-y: auto;
     padding: 1.5em 2em;
     box-sizing: border-box;
+    /* background-color: #c31; */
 }
 
 .option-wrap {
@@ -134,7 +137,7 @@ header img {
     width: 1.5em;
     height: 1.5em;
     margin: 0 1em;
-    /* margin-top: .5em; */
+    margin-top: .5em;
 }
 .func_wrap{
     display: none;
