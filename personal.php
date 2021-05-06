@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/personal.css" type="text/css"/>
 </head>
 <body>     
-    <div class="wp">
+    <div class="att">
     <!--  
         require_once("home.php");
     ?> -->
