@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        *{
+    <>
+        <style>
+        * {
             color: #808080;
             text-decoration: none;
         }
-        .act_wrap{
+
+        .act_wrap {
             width: 100%;
             display: flex;
             justify-content: space-evenly;
             flex-wrap: wrap;
         }
-        .act_wrap img{
+
+        .act_wrap img {
             width: 3em;
             height: 3em;
         }
-        .a_icon_circle{
+
+        .a_icon_circle {
             width: 6em;
             height: 6em;
             border-radius: 50%;
@@ -28,13 +33,15 @@
             display: grid;
             place-items: center;
         }
-        .item_text{
+
+        .item_text {
             width: 100%;
             display: flex;
             justify-content: space-evenly;
             margin-top: 1em;
         }
-        .item_text a{
+
+        .item_text a {
             display: inline-block;
             /* background-color: #ffa; */
             width: 6em;
@@ -42,16 +49,19 @@
             letter-spacing: 6px;
             text-indent: 6px;
         }
-        hr{
+
+        hr {
             width: 100%;
             border: 2px solid #f7f7fa;
             background-color: #f7f7fa;
             margin-top: 2em;
         }
-        .text{
+
+        .text {
             width: 40%;
         }
-        .info_wrap{
+
+        .info_wrap {
             width: 90%;
             padding: 2% 3%;
             border: 6px solid #f7f7fa;
@@ -64,11 +74,13 @@
             align-items: center;
             box-sizing: border-box;
         }
-        .icon_group img{
+
+        .icon_group img {
             width: 1.5em;
             height: 1.5em;
         }
-        .icon_group{
+
+        .icon_group {
             height: 10em;
             /* background-color: #c31; */
             display: flex;
@@ -76,74 +88,91 @@
             justify-content: flex-end;
             margin-left: 9em;
         }
-        .upper a:nth-child(2){
+
+        .upper a:nth-child(2) {
             margin-left: 1.75em;
         }
-        .upper{
+
+        .upper {
             width: 100%;
             display: flex;
             justify-content: flex-end;
         }
-        .text p:nth-child(1){
+
+        .text p:nth-child(1) {
             color: #c31;
         }
-        @media screen and (min-width: 768px) and (max-width: 1200px){
-            .icon_group{
+
+        @media screen and (min-width: 768px) and (max-width: 1200px) {
+            .icon_group {
                 margin-left: 0;
             }
-            .text{
+
+            .text {
                 width: 34%;
             }
-            .graphic img{
+
+            .graphic img {
                 width: 200px;
                 height: 130px;
 
             }
-            .text p{
+
+            .text p {
                 font-size: .5em;
             }
-            .info_wrap{
+
+            .info_wrap {
                 width: 100%;
             }
         }
-        @media screen and (max-width: 400px){
-            .a_icon_circle{
+
+        @media screen and (max-width: 400px) {
+            .a_icon_circle {
                 width: 3em;
                 height: 3em;
             }
-            .a_icon_circle img{
+
+            .a_icon_circle img {
                 width: 1.5em;
                 height: 1.5em;
             }
-            .item_text a{
+
+            .item_text a {
                 font-size: .5em;
                 letter-spacing: 0px;
                 text-indent: 0px;
             }
-            .info_wrap{
+
+            .info_wrap {
                 flex-wrap: wrap;
                 padding: 1em;
             }
-            .graphic img{
+
+            .graphic img {
                 height: 135px;
             }
-            .text{
+
+            .text {
                 width: 85%;
                 margin-top: 2em;
             }
-            .icon_group{
+
+            .icon_group {
                 justify-content: space-between;
                 margin: 0;
                 width: 90%;
                 margin-top: 2em;
                 height: 2em;
             }
-            .upper{
+
+            .upper {
                 width: 5em;
             }
         }
-    </style>
+        </style>
 </head>
+
 <body>
     <div class="act_wrap">
         <a href="#">
@@ -166,7 +195,7 @@
                 <img src="img/fix.svg" alt="">
             </div>
         </a>
-        
+
         <div class="item_text">
             <a href="#">公設清單</a>
             <a href="#">新增公設</a>
@@ -193,4 +222,5 @@
         </div>
     </div>
 </body>
+
 </html>
