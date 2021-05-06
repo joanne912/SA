@@ -16,8 +16,8 @@
         
         <div class="sub_wp">  
         <!-- <label for="fname" class="label">預約時段</label> -->
-            <input class="input1"type="text" placeholder="請輸入姓名..." name="" id="name">
-            <input class="input1"type="email" placeholder="請輸入電子郵件..."name="" id="">
+            <input class="input1"type="text" placeholder="請輸入姓名..." >
+            <input class="input1"type="email" placeholder="請輸入電子郵件...">
         </div>
         <div class="sub_wp">
             <input class="input1"type="date" name="" id="">
@@ -29,12 +29,12 @@
             </select>
         </div>
         <div class="sub_wp">
-            <input class="input1"type="text" placeholder="請輸入住址..."name="" id="">
-            <input class="input1"type="text" placeholder="請輸入手機..." name="" id="">
+            <input class="input1"type="text" placeholder="請輸入住址...">
+            <input class="input1"type="text" placeholder="請輸入手機...">
         </div>
         <div class="sub_wp">
-            <input class="input1"type="text" placeholder="請輸入家電..."name="" id="">
-            <input class="input1"type="text" placeholder="同戶開通"name="" id="">
+            <input class="input1"type="text" placeholder="請輸入家電...">
+            <input class="input1"type="text" placeholder="同戶開通">
         </div>
         <div class="f">
            <button class="button" type="submit" onclick="location.href='#'" >修改資料</button>
