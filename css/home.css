@@ -64,6 +64,9 @@ header img {
     overflow-y: auto;
     padding: 1.5em 2em;
     box-sizing: border-box;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
     /* background-color: #c31; */
 }
 

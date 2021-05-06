@@ -31,7 +31,13 @@
         <?php require("nav.php"); ?>
 
         <div class="main">
+<<<<<<< Updated upstream
             <?php include("PublicManage.php") ?>
+=======
+            <?php
+            include("personal.php")
+            ?>
+>>>>>>> Stashed changes
         </div>
     </div>
 </body>

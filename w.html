@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+    <style>
+        .form{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 220vh;
+        }
+        .outline{
+            width: 50%;
+            border: 8px solid #D5D5E9;
+            border-radius:20px ;
+            padding: 1.5em;
+            
+            
+        }
+        .legend{
+            font-family: 微軟正黑體;
+            color: #808080;
+        }
+        .headfont{
+            color: #808080;
+            text-align: center;
+            font-weight: bold;
+            /* margin-left: 40%; */
+           /* display: flex;
+           justify-content: center; */
+            
+        }
+        .header{
+            width: 57%;
+            display: flex;
+           justify-content: space-between;
+        }
+        .cross{
+            width: 15px;
+            height: 15px;
+            background-color: #D5D5E9;
+            border-radius: 50%;
+            border: solid 1px #D5D5E9;
+            /* display: flex;
+           justify-content:flex-start; */
+        }
+        .hr{
+            background-color: #D5D5E9;
+            border: 3px solid #D5D5E9;
+        }
+        .hr2{
+            width: 200px;
+            background-color: #D5D5E9;
+            border: 2px solid #D5D5E9;
+            margin-left: 100px;
+            display: flex;
+        }
+        .label{
+            background-color: #F7F7FA;
+            width: 40vh;
+            height: 6vh;
+            color: #808080;
+            padding: 3px;
+            border-radius: 5px;
+            font-size: 3px;
+            border: solid 1px #D5D5E9;
+            font-weight: bold;
+        }
+        .text{
+            border: solid 3px #D5D5E9;
+            border-radius: 5px;
+            color: #808080;
+            height: 6vh;
+            width: 35vh;
+            margin-left: 10px;
+            opacity: 85%;
+        }
+        .aa{
+            display: flex;
+            justify-content: center;
+        }
+        .header2{
+            width: 57%;
+            display: flex;
+            justify-content:flex-start;
+        }
+        .headfont2{
+            color: #808080;
+            margin-left: 7px;
+            font-weight: bold; 
+            font-size: 12px;
+        }
+        .text2{
+            color: #808080;
+            font-size: 14px;
+            opacity: 85%;
+        }
+        .text3{
+            border: solid 3px #D5D5E9;
+            border-radius: 5px;
+            color: #808080;
+            height: 5vh;
+            width: 34vh;
+            margin-left: 10px;
+            opacity: 85%;
+        }
+        .bu{
+            color: white;
+            background-color:#D5D5E9 ;
+            border: solid 3px #D5D5E9;
+            border-radius: 6px;
+            margin-left: 8px;
+
+        }
+        p{
+            margin-top: 30px;
+            margin-left: 15px;
+        }
+        .go {
+        width: 90px;
+        height: 30px;
+        display: inline-block;
+        padding: 5px 8px;
+        font-size: 10px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #D5D5E9;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 3px #999;
+        margin-top:2%;
+        margin-right: 1%;
+        margin-bottom: 2%;
+        }
+
+        .go:hover {background-color: #D5D5E9}
+
+        .go:active {
+        background-color: #D5D5E9;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+        }
+        .result{
+            color: #808080;
+            word-wrap:break-word;
+            /* display: inline-block;
+            align-items: flex-start; */
+            display: flex;
+            width: 200px;
+            height: 150px;
+            border: 2px solid #D5D5E9;
+            margin-left: 4%;
+            margin-top: 4%;
+            padding: 3px;
+            border-radius: 5px;
+        }
+        .lastline{
+            margin-left: 100%;
+            /* margin-right: 10%; */
+            margin-top: 4%;
+        }
+    </style>
+</head>
+<body>
+    <form class="form" >
+        <fieldset class="outline">
+            <!-- <legend class="legend">公設預約清單</legend> -->
+            <header class="header">
+                <a href=""><img class="cross" onclick="" src="https://www.flaticon.com/svg/vstatic/svg/57/57165.svg?token=exp=1620204372~hmac=613997e9587164c21177b3fdfd9da6b4" ></a>
+                <span class="headfont">公設預約</span>
+           </header>
+           <hr class="hr">
+           <header class="header2">
+            <img class="cross"  >
+            <span class="headfont2">設施名稱</span>
+       </header>
+        <!-- <label for="fname" class="label">預約時段</label><br> -->
+        <p class="text2">預約時段 :
+            <select id="" name="" class="text">
+                <optgroup  label="請選擇時段..." >
+                    <option value="" >請選擇時段...</option>
+                </optgroup>
+            </select>
+        </p>
+        <p class="text2">預約日期 :
+            <input class="text" type="date" name="" id="">
+        </p>
+        <p class="text2">預約人數 :
+            <select id="" name="" class="text">
+                <optgroup  label="請選擇人數..." >
+                    <option value="" >1位</option>
+                    <option value="" >2位</option>
+                    <option value="" >3位</option>
+                </optgroup>
+            </select>
+        </p>
+
+        <p class="text2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;電話 :
+        <input class="text"type="text" placeholder="請輸入手機..." name="" id="">
+        </p>
+
+        <p class="text2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email :
+            <input class="text"type="email" placeholder="請輸入email..." name="" id="">
+        </p>
+
+        <p class="text2">您的點數 :
+            <input class="text"type="text"  name="" id="">
+            <input class="bu" type="button" value="我要扣點">
+        </p>
+
+        <p class="text2">* 是否要使用設備 ? 
+           
+        </p>
+        <!-- <div class="container">
+            <ul class="nav nav-tabs" id="myTab">
+                 <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#tab1">是</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" data-toggle="tab" href="#tab2">否</a>
+                  </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="tab1"><p>11</p></div>
+                <div class="tab-pane fade" id="tab2"><p>99</p></div>
+            </div>
+        </div> -->
+
+        <!--tablist start-->
+        <div class="row">
+            <div class="col-3">
+              <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home" class="list1"style="text-align:center ;margin-left:15px;">是</a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile" style="text-align:center;margin-left:15px;">否</a>
+              </div>
+            </div>
+            <div class="col-5">
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                    <!--checkbox start-->
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault" style="color: #808080;">
+                          a. 桌球拍A
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked" style="color: #808080;">
+                          b. 桌球拍B
+                        </label>
+                    </div>
+                </div>
+                <!--checkbox end-->
+                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list" style="color:#808080">此欄位非必填!</div>
+              </div>
+            </div>
+        </div>
+        <!--tablist end-->
+        <hr class="hr">
+        <br>
+        
+        <label for="lname" class="text2">點數餘額 :</label>
+        <hr class="hr2">
+        <label for="lname" class="text2">預約資訊 : 
+        <div class="result">cascascsa csacascascsadedfsdv fdfwedfe</div>
+        <!-- <span style="color: #808080;">sfvsdvdsvsdvdsvdsvdsvdsvdsvdssvddsvsd<br>vdsvsdvdsvsdvsdvsvsdvdvv</span> -->
+        <!-- <input type="text" id="lname" name="lname" value="Doe"><br><br> -->
+        <div>
+        </label>
+        <div class="lastline">
+            <input type="submit" value="確認送出" class="go">
+        </div>
+        </fieldset>
+        </form>    
+</body>
+</html>
+
+   
