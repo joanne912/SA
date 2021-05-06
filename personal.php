@@ -40,6 +40,6 @@
            <button class="button" type="submit" onclick="location.href='#'" >修改資料</button>
         </div>
     </div>
-    update
+    
 </body>
 </html>

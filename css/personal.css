@@ -18,10 +18,10 @@
         } */
         .wp{
             width: 80%;
-            /* height: 75%; */
+            height: 100%;
             border: 10px solid #F7F7FA;
             border-radius:20px ;
-            padding: .5em .5em ;
+            padding: 2em 2em ;
             box-sizing: border-box;
             display: flex;
             justify-content: center;
