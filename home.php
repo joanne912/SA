@@ -31,7 +31,7 @@
         <?php require("nav.php"); ?>
 
         <div class="main">
-            
+            <?php include("PublicManage.php") ?>
         </div>
     </div>
 </body>

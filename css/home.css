@@ -51,12 +51,12 @@ header img {
     height: 88vh;
     background-color: #f7f7fa;
     position: absolute;
-    /* display: flex; */
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     /* test */
-    display: none;
+    /* display: none; */
 }
 
 .main {

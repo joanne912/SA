@@ -48,6 +48,9 @@
             background-color: #f7f7fa;
             margin-top: 2em;
         }
+        .text{
+            width: 40%;
+        }
         .info_wrap{
             width: 90%;
             padding: 2% 3%;
@@ -80,6 +83,64 @@
             width: 100%;
             display: flex;
             justify-content: flex-end;
+        }
+        .text p:nth-child(1){
+            color: #c31;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1200px){
+            .icon_group{
+                margin-left: 0;
+            }
+            .text{
+                width: 34%;
+            }
+            .graphic img{
+                width: 200px;
+                height: 130px;
+
+            }
+            .text p{
+                font-size: .5em;
+            }
+            .info_wrap{
+                width: 100%;
+            }
+        }
+        @media screen and (max-width: 400px){
+            .a_icon_circle{
+                width: 3em;
+                height: 3em;
+            }
+            .a_icon_circle img{
+                width: 1.5em;
+                height: 1.5em;
+            }
+            .item_text a{
+                font-size: .5em;
+                letter-spacing: 0px;
+                text-indent: 0px;
+            }
+            .info_wrap{
+                flex-wrap: wrap;
+                padding: 1em;
+            }
+            .graphic img{
+                height: 135px;
+            }
+            .text{
+                width: 85%;
+                margin-top: 2em;
+            }
+            .icon_group{
+                justify-content: space-between;
+                margin: 0;
+                width: 90%;
+                margin-top: 2em;
+                height: 2em;
+            }
+            .upper{
+                width: 5em;
+            }
         }
     </style>
 </head>
