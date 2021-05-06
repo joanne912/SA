@@ -20,11 +20,6 @@
     }
     </script>
     <link rel="stylesheet" href="css/home.css" type="text/css" />
-    <style>
-        #menu-wrap {
-            display: flex;
-        }
-    </style>
 </head>
 
 <body>
