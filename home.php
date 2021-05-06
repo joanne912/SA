@@ -20,9 +20,17 @@
     }
     </script>
     <link rel="stylesheet" href="css/home.css" type="text/css" />
+    <style>
+        #menu-wrap {
+            display: flex;
+        }
+    </style>
 </head>
 
 <body>
+    <?php
+        @$page = $_GET["page"];
+    ?>
     <div class="all">
         <!-- 下面這個區域是上方的header -->
         <?php require("header.php"); ?>
@@ -31,13 +39,20 @@
         <?php require("nav.php"); ?>
 
         <div class="main">
-<<<<<<< Updated upstream
-            <?php include("PublicManage.php") ?>
-=======
-            <?php
-            include("personal.php")
+            <?php 
+                if ($page == "personal"){
+                    include("personal.php");
+                }
+                else if ($page == "package"){
+                    include("");
+                }
+                else if ($page == "order"){
+                    include("PublicManage.php");
+                }
+                else{
+                    include("announcement.php");
+                }
             ?>
->>>>>>> Stashed changes
         </div>
     </div>
 </body>

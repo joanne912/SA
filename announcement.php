@@ -172,6 +172,9 @@
             background: #f7f7fa;
             margin-top: 2em;
         }
+        .carousel{
+            z-index: -1;
+        }
         /* @media screen and (min-width: 768px; ) {
             .item_profile {
                 width: 100vw;
