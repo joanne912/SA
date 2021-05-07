@@ -47,15 +47,21 @@
         </div>
     </div>
     <hr>
+    <!-- 每一獨立公告區塊 -->
+    <!-- 公告選取框及公告類型 -->
     <div class="item_nav">
         <input type="checkbox" name="" id="">
         <p>項目：活動</p>
     </div>
+    <!-- 公告內容 -->
     <div class="container">
+        <!-- 公告發布帳號及發佈時間、地點 -->
         <div class="item_info">
+            <!-- 隨公告人不同，圖片也不同 -->
             <div class="logo">
                 <img src="img/icon_boy.svg" alt="">
             </div>
+            <!-- 公告時間及地點皆不相同，需連結資料庫 -->
             <div class="info">
                 <p>名字 or 社團名稱</p>
                 <div class="sub_info">
@@ -66,7 +72,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- 公告內容敘述，需連結資料庫 -->
         <div class="item_profile">
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi voluptatibus eveniet nobis sit
                 numquam
@@ -82,6 +88,7 @@
                 sit saepe mollitia distinctio similique corrupti esse commodi aperiam nisi consequatur earum officia.
                 Accusantium, minus nihil.</p>
         </div>
+        <!-- 公告圖片旋轉木馬，圖片須從資料庫引入 -->
         <div class="item_img">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -110,6 +117,7 @@
                 </a>
             </div>
         </div>
+        <!-- 訊息按鈕群組 -->
         <div class="message_wrap">
             <div class="icon_wrap">
                 <div class="mes_icon">
@@ -121,30 +129,9 @@
                     <a href="#"><img src="img/messenger.svg" alt=""></a>
                 </div>
             </div>
+            <!-- 點讚次數需連結資料庫 -->
             <p>xxx和其他人都說讚</p>
         </div>
-
-        <!-- =======
-                    <img class="d-block w-100" src="img/001.jpeg" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="img/001.jpeg" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="img/001.jpeg" alt="Third slide">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-
->>>>>>> 62b02bf5a29384210b062b78a20b757b612dba81 -->
     </div>
 </body>
 

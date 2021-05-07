@@ -6,49 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/pm.css" type="text/css" />
+    <link rel="stylesheet" href="css/m_facilities.css" type="text/css" />
 </head>
 
 <body>
-    <div class="act_wrap">
-        <a href="#">
-            <div class="a_icon_circle">
-                <img src="img/list.svg" alt="">
-            </div>
-        </a>
-        <a href="#">
-            <div class="a_icon_circle">
-                <img src="img/add.svg" alt="">
-            </div>
-        </a>
-        <a href="#">
-            <div class="a_icon_circle">
-                <img src="img/record.svg" alt="">
-            </div>
-        </a>
-        <a href="#">
-            <div class="a_icon_circle">
-                <img src="img/fix.svg" alt="">
-            </div>
-        </a>
-
-        <div class="item_text">
-            <a href="#">公設清單</a>
-            <a href="#">新增公設</a>
-            <a href="#">預約記錄</a>
-            <a href="#">維修紀錄</a>
-        </div>
-        <hr>
-    </div>
+    <!-- 公設頁面的表頭 -->
+    <?php include("facility_header.php"); ?>
+    <!-- 每個獨立的公設資訊 -->
     <div class="info_wrap">
+        <!-- 公設圖片，需連結資料庫 -->
         <div class="graphic">
             <img src="https://fakeimg.pl/250x150/f7f7fa/d3d3d3" alt="">
         </div>
+        <!-- 每一公設的名稱及簡介，需連結資料庫 -->
         <div class="text">
             <h2>編號游泳池</h2>
             <p>開放時間：早上9:00-12:00</p>
             <p>其他公設資訊其他公設資訊其他公設資訊其他公設資訊</p>
         </div>
+        <!-- 管理員的修改刪除按鈕群組 -->
         <div class="icon_group">
             <div class="upper">
                 <a href="#"><img src="img/edit.svg" alt=""></a>

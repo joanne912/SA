@@ -29,11 +29,9 @@
             text-decoration: none !important;
             color: #808080 !important;
         }
-        a{
-            color: #808080 !important;
-        }
         a:hover{
             text-decoration: none !important;
+            color: white;
         }
     </style>
 </head>
@@ -58,10 +56,13 @@
                     include("add_facilities.php");
                 }
                 else if ($page == "order"){
-                    include("PublicManage.php");
+                    include("m_facilities.php");
+                }
+                else if ($page == "announ"){
+                    include("announcement.php");
                 }
                 else{
-                    include("announcement.php");
+                    include("m_repair_fac.php");
                 }
             ?>
         </div>
