@@ -22,7 +22,12 @@
     <link rel="stylesheet" href="css/home.css" type="text/css" />
     <style>
         #menu-wrap {
-            display: flex;
+            display: none;
+            height: 88vh;
+        }
+        #menu-wrap a{
+            text-decoration: none !important;
+            color: #808080 !important;
         }
     </style>
 </head>
