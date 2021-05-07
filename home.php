@@ -24,6 +24,12 @@
         #menu-wrap {
             display: flex;
         }
+        a{
+            color: #808080 !important;
+        }
+        a:hover{
+            text-decoration: none !important;
+        }
     </style>
 </head>
 
@@ -44,7 +50,7 @@
                     include("personal.php");
                 }
                 else if ($page == "package"){
-                    include("");
+                    include("add_facilities.php");
                 }
                 else if ($page == "order"){
                     include("PublicManage.php");
