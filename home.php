@@ -33,12 +33,16 @@
             text-decoration: none !important;
             color: white;
         }
+        .title span{
+            color: black !important;
+        }
     </style>
 </head>
 
 <body>
     <?php
         @$page = $_GET["page"];
+        @$method = $_GET["method"];
     ?>
     <div class="all">
         <!-- 下面這個區域是上方的header -->
@@ -49,21 +53,44 @@
 
         <div class="main">
             <?php 
+                // 個人資訊相關跳轉
                 if ($page == "personal"){
                     include("personal.php");
                 }
+                // 包裹相關跳轉
                 else if ($page == "package"){
                     include("add_facilities.php");
                 }
+                // 公設相關跳轉
                 else if ($page == "order"){
-                    include("m_facilities.php");
+                    if ($method == "repair"){
+                        include("m_repair_fac.php");
+                    }
+                    else if ($method == "list"){
+                        include("m_facilities.php");
+                    }
+                    else if ($method == "look"){
+                        include("add_facilities.php");
+                    }
+                    else{
+                        include("m_facilities.php");
+                    }
                 }
+                // 公告相關跳轉
                 else if ($page == "announ"){
                     include("announcement.php");
                 }
-                else{
-                    include("m_repair_fac.php");
-                }
+                // else{
+                //     if ($method == "look"){
+                //         include("add_facilities.php");
+                //     }
+                //     else if($method == "list"){
+                //         include("m_facilities.php");
+                //     }
+                //     else{
+                //         include("m_repair_fac.php");
+                //     }
+                // }
             ?>
         </div>
     </div>

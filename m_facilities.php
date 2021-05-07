@@ -8,7 +8,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/m_facilities.css" type="text/css" />
 </head>
-
+<style>
+    .item_text a:hover{
+        color: #808080;
+    }
+</style>
 <body>
     <!-- 公設頁面的表頭 -->
     <?php include("facility_header.php"); ?>
@@ -30,7 +34,7 @@
                 <a href="#"><img src="img/edit.svg" alt=""></a>
                 <a href="#"><img src="img/delete.svg" alt=""></a>
             </div>
-            <img src="img/next.svg" alt="">
+            <a href="home.php?page=order&method=look"><img src="img/next.svg" alt=""></a>
         </div>
     </div>
 </body>

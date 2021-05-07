@@ -201,7 +201,9 @@
     </style>
 </head>
 <body>
-    <?php include("facility_header.php"); ?>
+    <?php 
+        include("facility_header.php"); 
+    ?>
     <div class="container">
         <div class="outside">
             <div class="name">
