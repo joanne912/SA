@@ -29,7 +29,7 @@
             text-decoration: none !important;
             color: #808080 !important;
         }
-        a:hover{
+        #menu-wrap a:hover{
             text-decoration: none !important;
             color: white;
         }
@@ -70,6 +70,9 @@
                         include("m_facilities.php");
                     }
                     else if ($method == "look"){
+                        include("facility_detail.php");
+                    }
+                    else if ($method == "add"){
                         include("add_facilities.php");
                     }
                     else{
@@ -80,17 +83,17 @@
                 else if ($page == "announ"){
                     include("announcement.php");
                 }
-                // else{
+                else{
                 //     if ($method == "look"){
                 //         include("add_facilities.php");
                 //     }
                 //     else if($method == "list"){
-                //         include("m_facilities.php");
+                        include("m_facilities.php");
                 //     }
                 //     else{
                 //         include("m_repair_fac.php");
                 //     }
-                // }
+                }
             ?>
         </div>
     </div>

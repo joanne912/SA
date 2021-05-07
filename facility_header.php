@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/m_facilities.css">
 <div class="act_wrap">
         <a href="home.php?page=order&method=list">
             <div class="a_icon_circle">
