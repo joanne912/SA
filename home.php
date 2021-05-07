@@ -55,7 +55,7 @@
                     include("personal.php");
                 }
                 else if ($page == "package"){
-                    include("add_facilities.php");
+                    include("facilities_information.php");
                 }
                 else if ($page == "order"){
                     include("PublicManage.php");
