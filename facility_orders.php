@@ -29,13 +29,11 @@
             <p>其他公設資訊其他公設資訊其他公設資訊其他公設資訊</p>
         </div>
         <!-- 管理員的修改刪除按鈕群組 -->
-        <div class="icon_group2">
+        <div class="icon_group">
             <div class="upper">
-                <a href="facility_detail.php"><img src="img/next.svg" alt=""></a>
             </div>
-            <a href="#"><input type="button"  value="前往預約" ></a>
+            <a href="home.php?page=order&method=look"><img src="img/next.svg" alt=""></a>
         </div>
-        
     </div>
 </body>
 

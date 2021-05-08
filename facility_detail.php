@@ -21,8 +21,13 @@
     ?>
     <div class="container">
         <div class="outside">
+            <div class="head">
             <div class="name">
                 <p >公設名稱 : 游泳池</p>
+            </div>
+            <div class="name2">
+                <input class="go" style="" type="submit" value="前往預約">
+            </div>
             </div>
             <hr>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

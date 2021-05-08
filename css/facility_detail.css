@@ -58,6 +58,14 @@ hr{
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
+    font-weight: bold;
+}
+.head{
+    width: 99%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0;
 }
 .container{
     width: 80%;
@@ -150,6 +158,16 @@ form p{
  .information p{
      margin: .8em 0;
  }
+ .go{
+    width:5em;
+    height: 2em;
+    color: white;
+    background-color: rgb(19, 156, 19);
+    border: 0px ;
+    border-radius: 5px;
+    font-size:1em;
+    
+}
  @media screen and (max-width: 768px){
      .container{
          width: 100%;
@@ -162,6 +180,9 @@ form p{
      }
  }
  @media screen and (max-width: 400px){
+    .container{
+        width: 90%;
+    }
     .a_icon_circle{
         width: 3em;
         height: 3em;
@@ -180,5 +201,9 @@ form p{
     }
     .dot{
         font-size:1em;
+    }
+    .go{
+        font-size: .75em;
+
     }
 }
