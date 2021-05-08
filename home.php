@@ -59,7 +59,7 @@
                 }
                 // 包裹相關跳轉
                 else if ($page == "package"){
-                    include("facilities_information.php");
+                    include("");
                 }
                 // 公設相關跳轉
                 else if ($page == "order"){

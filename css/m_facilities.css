@@ -69,6 +69,7 @@ hr {
     height: 1.5em;
 }
 
+
 .icon_group {
     height: 10em;
     /* background-color: #c31; */
@@ -146,4 +147,29 @@ hr {
     .upper {
         width: 5em;
     }
+}
+
+.icon_group2 img {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+
+.icon_group2 {
+    height: 5.8em;
+    /* background-color: #c31; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-left: 9em;
+    
+}
+.icon_group2 input {
+    width:80px;
+    height: 30px;
+    color: white;
+    background-color: #fc6471;
+    border: 1px solid #fc6471 ;
+    border-radius: 5px;
+    margin-top: 3em;
 }
