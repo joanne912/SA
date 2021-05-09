@@ -57,6 +57,7 @@
                 </a>
             </div>
             <p class="dot"><img src="img/circle.svg"> &nbsp公設時段 : </img></p>
+            <!--資料庫匯出該公設預約時段-->
             <div class="information">
                 <p class="content">早上9:00~12:00</p>
                 <p class="content">下午2:00~6:00</p>
@@ -68,6 +69,7 @@
         </div>
         <div class="outside">
             <p class="dot"><img src="img/circle.svg"> &nbsp使用說明 : </img></p>
+            <!--資料庫匯出該公設說明和其他注意事項-->
             <div class="information">
                 <p class="content">人數上限： </p>
                 <p class="content">已預約人數 :</p>
