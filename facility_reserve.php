@@ -33,15 +33,20 @@
             <hr>
             
             <p class="dot"><img src="img/circle.svg">&nbsp公設名稱 : </img></p>
+            <!--新增住戶公設預約資訊到資料庫-->
             <div class="information">
-                
                 <p class="content">預約時段 : <input type="text"></p>
                 <p class="content">預約日期 : <input type="date"></p>
                 <p class="content">預約人數 : <input type="text"></p>
                 <p class="content">電&nbsp&nbsp&nbsp&nbsp    話 : <input type="text"></p>
                 <p class="content">&nbspEmail &nbsp&nbsp: <input type="text"></p>
-                <p class="content">您的點數 : <input type="text"><input type="button" value="我要扣點"class="coupon_btn"></p>
+                <!--資料庫匯入住戶的點數 若住戶點選我要扣點後須顯示剩餘點數-->
+                <p class="content">您的點數 : 點
+                    <input type="button" value="我要扣點"class="coupon_btn" style="background-color:rgb(5, 148, 41)">
+                    <input type="button" value="取消"class="coupon_btn">
+                </p>
             </div>
+             <!--住戶點選是才會顯示出可以借用的公設 否則不顯示任何可借公設資訊-->
             <div class="information">
                 <p class="content">* 是否要借用設備 ?
                     <div>
@@ -88,15 +93,17 @@
                     </p> 
                 </div>
             </div>
-               
+                 <!--可借用公設資訊End-->
             <hr>
         </div>
         <div class="outside">
             <p class="dot"><img src="img/circle.svg"> &nbsp確認預約資訊 : </img></p>
             <div class="information">
+                  <!--住戶點數扣除公設點數-->
                 <p class="content">剩餘點數 :  點</p>
                 <div class="content2">
                     <label class="content">預約資訊 :
+                         <!--display住戶預約資訊-->
                         <span class="result">
                             預約時段 : 7:00 ~ 10:00 <br>
                             預約日期 : 2021/5/7<br>
