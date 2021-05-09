@@ -92,6 +92,19 @@ hr{
     text-indent: 3px;
     
 }
+.option1{
+    width: 35%;
+    border: 4px solid #f7f7fa;
+    border-radius: 5px;
+    padding: .5em 1em;
+    margin: 0 0 1.5em 1em;
+    font-size: .8em;
+    color: black;
+    letter-spacing: 3px;
+    text-indent: 3px;
+    margin-left: 1.4em;
+    
+}
  .dot{
     /* width:20%; */
     font-size:1.2em;
@@ -233,17 +246,23 @@ hr{
     letter-spacing:.2em;
   }
  @media screen and (max-width: 768px){
+     .option1{
+         width:18em;
+     }
+     .result{
+         width:26em;
+     }
      .name{
          margin-left:45%;
      }
     p input{
         width: 15em;
-        height: 2.5em;
+        height: 3em;
         text-indent: 2px;
         padding: .5em 0em;
     }
      .container{
-         width: 100%;
+         width: 80%;
      }
      .name p{
          font-size: 1.3em;
@@ -274,9 +293,16 @@ hr{
      }
  }
  @media screen and (max-width: 400px){
-     
+    .p input{
+         height: 3em;
+     }
+    .option1{
+        width:54%;
+        height:8%;
+    }
     .content{
         font-size: 1em;
+       
     }
      .head{
          width:75%;
@@ -303,7 +329,7 @@ hr{
          height: 20em;
          display: block;
          margin-left: 0;
-         margin-top: 1em;
+         margin-top: 1.5em;
          font-size: .5em;
      }
      .name p{
@@ -313,6 +339,7 @@ hr{
      .information{
          margin:0 0 ;
          padding: .5em 0;
+         margin-left: 1em;
 
      }
      .send{
@@ -349,6 +376,9 @@ hr{
     }
     .left{
         font-size:1.5em;
+     }
+     .option1{
+         text-indent: 0px;
      }
 
 }

@@ -35,15 +35,36 @@
             <p class="dot"><img src="img/circle.svg">&nbsp公設名稱 : </img></p>
             <!--新增住戶公設預約資訊到資料庫-->
             <div class="information">
-                <p class="content">預約時段 : <input type="text"></p>
+                <form>
+                      <!--從資料庫載入可以預約的時段-->
+                    <label class="content">預約時段 : </label>
+                    <select class="option1" name="SelectTime">
+                        <optgroup label="早上時段">
+                            <option value="am1">7:00 ~ 8:00
+                            <option value="am2">8:00 ~ 9:00
+                        <optgroup label="下午時段">
+                            <option value="pm1">13:00 ~ 14:00
+                            <option value="pm2">15:00 ~ 16:00
+                    </select>
+                </form>
                 <p class="content">預約日期 : <input type="date"></p>
-                <p class="content">預約人數 : <input type="text"></p>
+               <form>
+                    <label class="content">預約人數 : </label>
+                        <select class="option1" name="SelectPeople">
+                            <optgroup label="選擇人數">
+                                <option value="p1">1人
+                                <option value="p2">2人
+                                <option value="p3">3人
+                                <option value="p4">4人
+                                <option value="p5">5人
+                        </select>
+                </form>
                 <p class="content">電&nbsp&nbsp&nbsp&nbsp    話 : <input type="text"></p>
                 <p class="content">&nbspEmail &nbsp&nbsp: <input type="text"></p>
-                <!--資料庫匯入住戶的點數 若住戶點選我要扣點後須顯示剩餘點數-->
+                <!--資料庫匯出住戶的點數 若住戶點選我要扣點後須顯示剩餘點數-->
                 <p class="content">您的點數 : 點
                     <input type="button" value="我要扣點"class="coupon_btn" style="background-color:rgb(5, 148, 41)">
-                    <input type="button" value="取消"class="coupon_btn">
+                    <input type="button" value="取消"class="cancle_btn">
                 </p>
             </div>
              <!--住戶點選是才會顯示出可以借用的公設 否則不顯示任何可借公設資訊-->
