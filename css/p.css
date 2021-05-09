@@ -84,6 +84,7 @@ form p {
         letter-spacing: 1px;
         text-indent: 0.2px;
     }
-   
-    
+    input{
+        font-size: .5em;
+    }
 }

@@ -75,6 +75,9 @@
                     else if ($method == "add"){
                         include("add_facilities.php");
                     }
+                    else if ($method == "detail"){
+                        include("m_repair_fac_detail.php");
+                    }
                     else{
                         include("m_facilities.php");
                     }

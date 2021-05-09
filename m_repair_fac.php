@@ -24,7 +24,7 @@
         //     echo "<a href='#'><td>" . $rs[0] . "</td></a>";
         //     echo "<td>" . $rs[1] . "</td>";
         //     echo "<td>" . $rs[2] . "</td>";
-        //     echo "<td>" . $rs[3] . "</td>";
+            // echo "<td><a href='home.php?page=order&method=detail'>查看</a></td>";
             // if ($rs[4] == "已處理"){
             //     echo "<td><p class='resolve'>" . $rs[4] . "</p></td>";
             // }
