@@ -20,9 +20,30 @@
     }
     </script>
     <link rel="stylesheet" href="css/home.css" type="text/css" />
+    <style>
+        #menu-wrap {
+            display: none;
+            height: 88vh;
+        }
+        #menu-wrap a{
+            text-decoration: none !important;
+            color: #808080 !important;
+        }
+        #menu-wrap a:hover{
+            text-decoration: none !important;
+            color: white;
+        }
+        .title span{
+            color: black !important;
+        }
+    </style>
 </head>
 
 <body>
+    <?php
+        @$page = $_GET["page"];
+        @$method = $_GET["method"];
+    ?>
     <div class="all">
         <!-- 下面這個區域是上方的header -->
         <?php require("header.php"); ?>
@@ -31,7 +52,52 @@
         <?php require("nav.php"); ?>
 
         <div class="main">
-            
+            <?php 
+                // 個人資訊相關跳轉
+                if ($page == "personal"){
+                    include("personal.php");
+                }
+                // 包裹相關跳轉
+                else if ($page == "package"){
+                    include("");
+                }
+                // 公設相關跳轉
+                else if ($page == "order"){
+                    if ($method == "repair"){
+                        include("m_repair_fac.php");
+                    }
+                    else if ($method == "list"){
+                        include("m_facilities.php");
+                    }
+                    else if ($method == "look"){
+                        include("facility_detail.php");
+                    }
+                    else if ($method == "add"){
+                        include("add_facilities.php");
+                    }
+                    else if ($method == "detail"){
+                        include("m_repair_fac_detail.php");
+                    }
+                    else{
+                        include("m_facilities.php");
+                    }
+                }
+                // 公告相關跳轉
+                else if ($page == "announ"){
+                    include("announcement.php");
+                }
+                else{
+                //     if ($method == "look"){
+                //         include("add_facilities.php");
+                //     }
+                //     else if($method == "list"){
+                        include("m_facilities.php");
+                //     }
+                //     else{
+                //         include("m_repair_fac.php");
+                //     }
+                }
+            ?>
         </div>
     </div>
 </body>
