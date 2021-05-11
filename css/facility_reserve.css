@@ -152,7 +152,7 @@ hr{
 .coupon_btn{
     width:6.5em;
     height: 2.4em;
-    background-color:rgb(5, 148, 41);
+    background-color:#f7f7fa;
     border: 0;
     border-radius: 5px;
     font-size:1em;
@@ -181,7 +181,7 @@ hr{
     /* display: inline-block; */
      font-weight: bold;
     display: flex;
-    width: 30em;
+    width: 28em;
     height: 12em;
     border: 5px solid #D5D5E9;
     margin-left: 25%;
@@ -200,7 +200,7 @@ hr{
     color: white;
     font-size: 1em;
     padding: .5em .6em;
-    margin-left: 88%;
+    margin-left: 83%;
 }
 /* Style the tab */
 .tab {
@@ -289,7 +289,7 @@ hr{
          font-size: 1.2em;
      }
      .send{
-         margin-left: 78%;
+         margin-left: 76%;
      }
  }
  @media screen and (max-width: 400px){
@@ -345,7 +345,7 @@ hr{
      .send{
         width: 5em;
         font-size: .8em;
-        margin-left: 62%;
+        margin-left: 65%;
        
     }
     .container{
