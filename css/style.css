@@ -196,20 +196,10 @@ header:nth-child(2) {
 }
 
 input {
-    margin: 5 0 0 5;
+    margin: 5px 0 0 5px;
     padding: 0 20px;
     box-sizing: border-box;
     text-transform: lowercase;
-}
-
-.M_enter input:nth-child(1) {
-    letter-spacing: 2px;
-    text-indent: 2px;
-}
-
-.M_enter input:nth-child(2) {
-    letter-spacing: 2px;
-    text-indent: 2px;
 }
 
 .M_enter input {
