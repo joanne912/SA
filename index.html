@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>index</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -31,10 +31,9 @@
         <div class="center_text">
             <span>貼近你的社區生活</span>
             <div class="option">
-
                 <!-- 註冊彈跳視窗 -->
                 <button type="button" data-toggle="modal" data-target="#exampleModalCenter2">
-                    /register/
+                /register/
                 </button>
 
                 <!-- 註冊內容模型 -->
@@ -59,26 +58,84 @@
                                             <p>註冊</p>
                                         </div>
                                         <!-- 帳號密碼輸入框 -->
-                                        <div class="M_enter">
-                                            <input type="text">
-                                            <input type="password">
-                                            <input type="button" value="一般註冊">
+                                        <div class="M_enter container-fluid">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label>
+                                                        姓名:
+                                                        <input type="text" id="name" />
+                                                    </label>
+                                                </div>
+                                                <div class="col">
+                                                    <label>
+                                                        戶別:
+                                                        <input type="text" id="household" />
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label>
+                                                    性別:
+                                                    <input type="text" id="gender" />
+                                                </label>
+                                                </div>
+                                                <div class="col">
+                                                    <label>
+                                                    電子郵件:
+                                                    <input type="text" id="e-mail" />
+                                                </label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label>
+                                                    生日:
+                                                    <input type="text" id="birthday" />
+                                                </label>
+                                                </div>
+                                                <div class="col">
+                                                    <label>
+                                                    密碼:
+                                                    <input type="text" id="password" />
+                                                </label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label>
+                                                    手機號碼:
+                                                    <input type="text" id="phone" />
+                                                </label>
+                                                </div>
+                                                <div class="col">
+                                                    <label>
+                                                    戶籍代碼:
+                                                    <input type="text" id="household_id" />
+                                                </label>
+                                                </div>
+                                            </div>
+                                            <input type="button" value="提出註冊申請" />
                                         </div>
                                         <p>其他註冊方式</p>
                                         <!-- 選擇其他註冊方式的按鈕 -->
                                         <div class="M_regis_option">
                                             <div class="M_option">
-                                                <img src="img/google.svg" alt="">
+                                                <img src="img/google.svg" alt="" />
                                             </div>
                                             <div class="M_option">
-                                                <img src="img/facebook.svg" alt="">
+                                                <img src="img/facebook.svg" alt="" />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-                                    <button type="button" class="btn btn-primary">確認註冊</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                        取消
+                                    </button>
+                                    <button type="button" class="btn btn-primary">
+                                    確認註冊
+                                    </button>
                                 </div>
                             </form>
                         </div>
@@ -87,7 +144,7 @@
 
                 <!-- 登入彈跳視窗 -->
                 <button type="button" data-toggle="modal" data-target="#exampleModalCenter">
-                    /login/
+                /login/
                 </button>
 
                 <!-- 登入內容模型 -->
@@ -113,39 +170,41 @@
                                         </div>
                                         <!-- 帳號密碼輸入框 -->
                                         <div class="M_enter">
-                                            <input type="text" name="mail">
-                                            <input type="password" name="password">
-                                            <input type="submit" name="login_btn" value="一般登入">
+                                            <input type="text" name="mail" />
+                                            <input type="password" name="password" />
+                                            <input type="submit" name="login_btn" value="一般登入" />
                                         </div>
-                                        <p>其他註冊方式</p>
+                                        <p>其他登入方式</p>
                                         <!-- 選擇其他登入方式的按鈕 -->
                                         <div class="M_regis_option">
                                             <div class="M_option">
-                                                <img src="img/google.svg" alt="">
+                                                <img src="img/google.svg" alt="" />
                                             </div>
                                             <div class="M_option">
-                                                <img src="img/facebook.svg" alt="">
+                                                <img src="img/facebook.svg" alt="" />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-                                    <button type="button" class="btn btn-primary">確認登入</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                        取消
+                                    </button>
+                                    <button type="button" class="btn btn-primary">
+                                        確認登入
+                                    </button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
     <!-- 功能介紹的文字加圖片 -->
     <div class="wrap">
         <div class="item">
-            <img src="https://fakeimg.pl/250x150/f7f7fa/d3d3d3">
+            <img src="https://fakeimg.pl/250x150/f7f7fa/d3d3d3" />
         </div>
         <div class="text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo eaque esse ratione sed inventore iste aut ab architecto, unde dolore temporibus ea doloribus laboriosam et deleniti, eius vero quidem incidunt.
@@ -156,12 +215,12 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo eaque esse ratione sed inventore iste aut ab architecto, unde dolore temporibus ea doloribus laboriosam et deleniti, eius vero quidem incidunt.
         </div>
         <div class="item">
-            <img src="https://fakeimg.pl/250x150/ffffff/d3d3d3">
+            <img src="https://fakeimg.pl/250x150/ffffff/d3d3d3" />
         </div>
     </div>
     <div class="wrap">
         <div class="item">
-            <img src="https://fakeimg.pl/250x150/f7f7fa/d3d3d3">
+            <img src="https://fakeimg.pl/250x150/f7f7fa/d3d3d3" />
         </div>
         <div class="text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo eaque esse ratione sed inventore iste aut ab architecto, unde dolore temporibus ea doloribus laboriosam et deleniti, eius vero quidem incidunt.
@@ -172,7 +231,7 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo eaque esse ratione sed inventore iste aut ab architecto, unde dolore temporibus ea doloribus laboriosam et deleniti, eius vero quidem incidunt.
         </div>
         <div class="item">
-            <img src="https://fakeimg.pl/250x150/ffffff/d3d3d3">
+            <img src="https://fakeimg.pl/250x150/ffffff/d3d3d3" />
         </div>
     </div>
     <!-- footer -->

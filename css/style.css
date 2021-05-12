@@ -53,7 +53,6 @@ header h3 {
     box-sizing: border-box;
 }
 
-
 .center_text {
     width: 100%;
     /* background-color: #eee; */
@@ -130,15 +129,19 @@ footer span {
     text-indent: 30px;
     color: lightgray;
 }
- /* 註冊登入CSS */
- header:nth-child(2){
+
+
+/* 註冊登入CSS */
+
+header:nth-child(2) {
     width: 100%;
     margin: auto;
     padding: 20px 30px 0;
     box-sizing: border-box;
     /* background-color: #ffa; */
 }
-.M_logo h3{
+
+.M_logo h3 {
     width: auto;
     padding: 2px 5px;
     background: #fc6471;
@@ -149,23 +152,27 @@ footer span {
     font-weight: bolder;
     display: inline;
 }
-.M_container{
+
+.M_container {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.M_option img{
+
+.M_option img {
     width: 33px;
     height: 33px;
 }
-.M_wrap{
+
+.M_wrap {
     width: 100%;
     /* background: cornsilk; */
     margin: auto;
     /* margin-top: 8vh; */
     margin-bottom: 1em;
 }
-.M_title{
+
+.M_title {
     font-size: 35px;
     letter-spacing: 40px;
     text-indent: 40px;
@@ -173,41 +180,45 @@ footer span {
     padding: 15px 40px;
     color: #d3d3d3;
 }
-.M_title p{
+
+.M_title p {
     font-size: 1em;
     color: rgb(73, 71, 71);
     letter-spacing: 30px;
     text-indent: 30px;
 }
-.M_enter{
-    width: 70%;
+
+.M_enter {
     margin: auto;
     /* display: flex;
     flex-wrap: wrap;
     justify-content: center; */
 }
-input{
-    margin: 40px 0 0;
+
+input {
+    margin: 5 0 0 5;
     padding: 0 20px;
     box-sizing: border-box;
     text-transform: lowercase;
-    
 }
-.M_enter input:nth-child(1){
+
+.M_enter input:nth-child(1) {
     letter-spacing: 2px;
     text-indent: 2px;
 }
-.M_enter input:nth-child(2){
+
+.M_enter input:nth-child(2) {
     letter-spacing: 2px;
     text-indent: 2px;
 }
-.M_enter input{
+
+.M_enter input {
     background: #f7f7fa;
     border: 0;
-    width: 100%;
     height: 40px;
 }
-.M_enter input:nth-child(3){
+
+.M_enter input:nth-child(3) {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -218,7 +229,8 @@ input{
     text-indent: 20px;
     font-size: 18px;
 }
-p{
+
+p {
     margin-top: 40px;
     text-align: center;
     letter-spacing: 10px;
@@ -226,16 +238,17 @@ p{
     font-size: 15px;
     color: #d3d3d3;
 }
-.M_regis_option{
+
+.M_regis_option {
     width: 30%;
     /* background: cornsilk; */
     margin: auto;
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
-
 }
-.M_option{
+
+.M_option {
     width: 60px;
     height: 60px;
     background: #f7f7fa;
