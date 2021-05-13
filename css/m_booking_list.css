@@ -1,0 +1,508 @@
+.now_user{
+    width: 100%;
+    font-size:1.5em;
+    color: rgb(35, 35, 94);
+    font-weight: bold;
+ }
+ .d-block {
+    width: 80%;
+    height: 40vh !important;
+    margin: auto;
+    margin-top: 1em;
+}
+
+.act_wrap{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.act_wrap img{
+    width: 3em;
+    height: 3em;
+}
+
+.a_icon_circle{
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;
+    background-color: #f7f7fa;
+    display: grid;
+    place-items: center;
+}
+
+.item_text a{
+    display: inline-block;
+    /* background-color: #ffa; */
+    width: 6em;
+    text-align: center;
+    letter-spacing: 6px;
+    text-indent: 6px;
+    color: #808080;
+}
+.option1{
+    
+    height: 3.75em;
+    border: 4px solid #f7f7fa;
+    border-radius: 5px;
+    padding: .5em .1em !important;
+    margin: 0 0 1.5em 1em;
+    font-size: .8em;
+    color: black;
+    letter-spacing: 3px;
+    text-indent: 3px;
+    margin-left: 1.4em;
+    margin-right: 3.5em;
+    
+}
+.situation{
+    width:70%;
+    display:flex !important;
+    align-items:center;
+    justify-content:space-evenly;
+    margin: auto;
+}
+hr{
+    width: 100%;
+    border: 2px solid #f7f7fa;
+    background-color: #f7f7fa;
+    margin-top: 2em;
+}
+
+.outside{
+    width: 75%;
+    height:100% ;
+    margin: auto;
+    
+
+}
+.name{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: bold;
+    letter-spacing: 0.5em;
+    margin-left: 33%;
+}
+.head{
+    width: 85%;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    padding: 1em 0;
+}
+.container{
+    width: 80%;
+    margin: auto;
+    padding: 1.5em 0;
+    border: 8px solid #f7f7fa;
+    border-radius: 20px;
+    margin-top: 1em;
+    margin-bottom: 3em;
+    color: #808080;
+}
+
+ .name p{
+     font-size:1.5em;
+     margin-bottom: 0;
+     
+ }
+ p input{
+    width: 35%;
+    border: 4px solid #f7f7fa;
+    border-radius: 5px;
+    padding: .5em 1em;
+    margin: 0 0 1.5em 1em;
+    font-size: .8em;
+    color: black;
+    letter-spacing: 3px;
+    text-indent: 3px;
+    
+}
+.content2{
+    display:inline-block;
+    width: 30%;
+    border: 4px solid #f7f7fa;
+    border-radius: 5px;
+    padding: .5em 1em;
+    margin: 0 0 1.5em 1em;
+    font-size: .8em;
+    color: black;
+    letter-spacing: 3px;
+    text-indent: 3px;
+    margin-left: 1.4em;
+}
+.grayspace{
+    display: flex;
+    margin: 0 0;
+    width:100%;
+    border: 2px solid #D5D5E9 ;
+    background-color: #f7f7fa;
+    border-radius: 1em;
+}
+
+
+.form{
+    
+    width:85%;
+    margin: auto;
+    
+}
+ .dot{
+    /* width:20%; */
+    font-size:1.2em;
+    list-style:circle;
+    margin-top: 2em;
+    /* background-color:#f7f7fa; */
+    
+ }
+ .left{
+    font-size:1.8em;
+ }
+ .content{
+   
+    font-size:1.2em;
+    list-style:circle;
+    letter-spacing:4px;
+    font-size:1em;
+    /* text-indent:1.5em; */
+ }
+ .middlespace{
+    
+     margin: auto;
+     display:flex;
+     align-items: center;
+     justify-items: center;
+   
+ }
+ .middletext{
+    width:100%;
+    font-size:1.2em;
+    list-style:circle;
+    letter-spacing:4px;
+    font-size:1em;
+    font-weight: bold;
+    padding: 2.5em 11em;
+ }
+ .middletext2{
+    width:100%;
+    font-size:1.2em;
+    list-style:circle;
+    letter-spacing:1px ;
+    font-size:1em;
+    font-weight: bold;
+    padding: 2.5em 3em;
+ }
+ .data{
+     font-weight: normal;
+     margin-left:1.3em;
+ }
+ 
+ .num{
+    font-size:1em;
+    color: #fc6471;
+ }
+ .content2{
+    font-size:1.2em;
+    list-style:circle;
+    font-size: .8em;
+    color: black;
+    letter-spacing: 3px;
+    text-indent: 3px;
+    margin: 1.5em 0;
+    height: 3.75em;
+ }
+ .content3{
+    font-size:1em;
+    list-style:circle;
+    font-size: .8em;
+    color: #808080;
+    letter-spacing: 4px;
+    text-indent: 3px;
+    margin: 1.5em 0;
+    
+    /* height: 3.75em; */
+ }
+ .information{
+    width:100%;
+    margin:1.5em 0 ;
+ }
+ .information2{
+    width:100%;
+    margin:1.5em 0 ;
+ }
+ .middlespace{
+    width:100%;
+    /* margin:1.5em 0; */
+   
+ }
+ .outside img{
+     width:.75em;
+     height:.75em;
+ }
+ .information p{
+     margin: .8em 0;
+ }
+ .go{
+    width:5em;
+    height: 2em;
+    color: white;
+    background-color: rgb(19, 156, 19);
+    border: 0px ;
+    border-radius: 5px;
+    font-size:1em;
+    
+}
+.sending {
+    height:18px;
+    width:18px;
+}
+.coupon_btn{
+    letter-spacing: 1.2px;
+    font-weight: bold;
+    width:4em;
+    height: 2.2em;
+    background-color:#D5D5E9;
+    border: 0;
+    border-radius: 10px;
+    font-size:.8em;
+    /* display: inline-block; */
+    color: white;
+    font-size: 1em;
+    margin-left: 0;
+    margin-right: .5em;
+}
+.cancle_btn{
+    width:6.5em;
+    height: 2.4em;
+    background-color: #f7f7fa;
+    border: solid 3px #D5D5E9;
+    border-radius: 15px;
+    font-size:1em;
+    /* display: inline-block; */
+    color: #808080;
+    font-size: 1em;
+    letter-spacing: 1.2px;
+    margin-left: 5%;
+    text-align: center;
+}
+.result{
+    color: #808080;
+    word-wrap:break-word;
+    /* display: inline-block; */
+     font-weight: bold;
+    display: flex;
+    width: 30em;
+    height: 12em;
+    border: 5px solid #D5D5E9;
+    margin-left: 25%;
+    padding: 1.5em 1.5em ;
+    border-radius: 8px;
+    position:relative; 
+}
+.send{
+    width:6.5em;
+    height: 2.4em;
+    background-color: #fc6471;
+    border: 0;
+    border-radius: 5px;
+    font-size:1em;
+    /* display: inline-block; */
+    color: white;
+    font-size: 1em;
+    padding: .5em .6em;
+    margin-left: 88%;
+}
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #f7f7fa;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+  .check{
+      letter-spacing:.2em;
+      font-weight: bold;
+  }
+  .list_title{
+    letter-spacing:.2em;
+  }
+ @media screen and (max-width: 768px){
+     .head{
+         width: 100%;
+     }
+     .name{
+         margin-left:30%;
+     }
+     .outside{
+         width:95%;
+     }
+     .option1{
+         width:18em;
+     }
+     .result{
+         width:26em;
+     }
+     .name{
+         margin-left:45%;
+     }
+    p input{
+        width: 15em;
+        height: 3em;
+        text-indent: 2px;
+        padding: .5em 0em;
+    }
+     .container{
+         width: 80%;
+     }
+     .name p{
+         font-size: 1.3em;
+     }
+     .d-block{
+         height: 20vh !important;
+     }
+     .information{
+         font-size: .8em;
+     }
+     .dot{
+        font-size: 1.2em;
+     }
+     .tab{
+        width:50%;
+     }
+     .tab button{
+         font-size:1em;
+     }
+     .hr{
+         width:50%
+     }
+     .content{
+         font-size: 1.2em;
+     }
+     .send{
+         margin-left: 78%;
+     }
+ }
+ @media screen and (max-width: 400px){
+    .cancle_btn{
+        margin-left: 0%;
+     }
+    .p input{
+         height: 3em;
+     }
+    .option1{
+        width:54%;
+        height:8%;
+    }
+    .content{
+        font-size: 1em;
+       
+    }
+     .head{
+         width:75%;
+     }
+     .coupon_btn{
+        width: 7em;
+        height: 3em;
+        font-size: .8em;
+        margin-left: 62%;
+         
+     }
+     .cancle_btn{
+        width: 7em;
+        height: 3em;
+        font-size: .8em;
+        margin-left: 62%;
+         
+     }
+     .tab{
+        width:90%;
+     }
+     .result{
+         width:38em;
+         height: 20em;
+         display: block;
+         margin-left: 0;
+         margin-top: 1.5em;
+         font-size: .5em;
+     }
+     .name p{
+         font-size:.8em;
+         margin-left: 0%;
+         }
+     .information{
+         margin:0 0 ;
+         padding: .5em 0;
+         margin-left: 1em;
+
+     }
+     .send{
+        width: 5em;
+        font-size: .8em;
+        margin-left: 62%;
+       
+    }
+    .container{
+        width: 90%;
+    }
+    .a_icon_circle{
+        width: 3em;
+        height: 3em;
+    }
+    .a_icon_circle img{
+        width: 1.5em;
+        height: 1.5em;
+    }
+    .item_text a{
+        font-size: .5em;
+        letter-spacing: 0px;
+        text-indent: 0px;
+    }
+    .information{
+        width: 100%;
+    }
+    .dot{
+        font-size:1em;
+    }
+    .go{
+        font-size: .75em;
+
+    }
+    .left{
+        font-size:1.5em;
+     }
+     .option1{
+         text-indent: 0px;
+     }
+
+}
