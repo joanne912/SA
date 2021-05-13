@@ -46,6 +46,7 @@
         letter-spacing: 3px;
         text-indent: 3px;
         align: center;
+        margin-left: 18%;
     }
 
     .M_enter {
@@ -64,11 +65,40 @@
 
     .M_enter input {
         /* background: #f7f7fa; */
-        border: 2px solid #d5d5e9;
+        border: 2px solid #fc6471;
         height: 5em;
         width: 8em;
     }
-
+    .spacing{
+        letter-spacing:4px;
+    }
+    .m_cancel_btn{
+        letter-spacing:4px;
+        height:20%;
+        font-weight:bold;
+        width:50%;
+        text-align:center;
+        color:#fc6471;
+        border:2px solid #fc6471;
+        background-color:white;
+        border-radius:3px;
+    }
+    .m_submit_btn{
+        font-weight:bold;
+        width:50%;
+        text-align:center;
+        color:white;
+        border:1px solid  #fc6471;
+        background-color: #fc6471;
+        margin-left:30px;
+        border-radius:3px;
+    }
+    .message_btn{
+        width:50%;
+        margin:auto;
+        display:flex;
+        justify-content:space-evenly;
+    }
     @media screen and (max-width: 768px) {
         .container {
             height: auto;
@@ -85,9 +115,6 @@
 
         .container {
             width: 95%;
-            /* display:flex;
-            justify-content:center;
-            margin:auto; */
         }
 
         .name {
@@ -118,6 +145,9 @@
     }
 
     @media screen and (max-width: 400px) {
+        textarea {
+            margin:0px;
+        }
         .container {
             height: auto;
         }
@@ -159,7 +189,7 @@
         .option1 {
             margin-left: 2.5em;
             text-indent: 3px;
-            width: 19em !important;
+            width: 23em !important;
         }
 
         .content2 {
@@ -212,14 +242,13 @@
                     <a href="m_display_booking.php"><img src="img/left-arrow.svg"></a>
                 </div>
                 <div class="name">
-                    <p>住戶公設預約紀錄</p>
+                    <p>查看住戶預約紀錄</p>
                 </div>
             </div>
             <hr>
-            <!--新增住戶公設預約資訊到資料庫-->
+             <!--預設全選時段和預設當天日期 須從資料庫導入該天該時段的所有住戶預約紀錄-->
             <div class="information">
                 <form>
-                    <!--從資料庫載入可以預約的時段-->
                     <label class="content" style="margin-left:1em">選擇時段 : </label>
                     <select class="option1" style="padding:.5em .1em" name="SelectTime">
                         <optgroup label="時段全選">
@@ -236,8 +265,10 @@
                     <input class="content2" style="margin-left:1em" type="date">
                 </form>
             </div>
+            <!---->
+             <!--資料庫導入公設編號名稱 顯示當天日期 顯示該公設今日(當天)可容納人數 和最大容納人數-->
             <div class="information2">
-                <span class="grayspace"><span>
+                        <span class="grayspace"><span>
                         <div class="middletext">
                             編號<span>游泳池|</span><span>2021/5/13</span><br>
                             <span class="now_user" style="font-size:1.5em;color:rgb(35, 35, 94)">目前使用人數 :
@@ -247,60 +278,50 @@
                             </span>
                         </div>
             </div>
-
-            <!--住戶點選是才會顯示出可以借用的公設 否則不顯示任何可借公設資訊-->
+            <!---->
+            <!--點選全選時系統自動選取所有住戶 -->
             <div class="information2">
                 <button type="button" class="coupon_btn">全選</button>
-                <span class="content3">
-                    <a href="" data-toggle="modal" data-target="#exampleModalCenter">
+                <span class="content3"data-toggle="modal" data-target="#exampleModalCenter">
+                  
                         <img style="width:15px;height:15px" src="img/send.svg"> 選取後點此傳送通知
-                    </a>
                 </span>
-                <!-- 登入內容模型 -->
+                <!-- 管理員傳送通知給住戶點選連結後出現彈跳視窗 資料庫導入並顯示管理員勾選的住戶的戶別 
+                輸入訊息按確認送出後將訊息通知給住戶端 -->
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
-                            <form method="POST" action="login_check.php">
+                            <form method="" action="">
                                 <div class="modal-body">
                                     <header class="headmessage">
                                         <div class="M_logo">
-                                            <h5 class="conversation"><img src="img/conversation.svg"> 通知重要訊息</h5>
+                                            <h5 class="conversation"><img style="width:20px;height:20px" src="img/conversation.svg"> 通知重要訊息</h5>
                                         </div>
                                     </header><br>
                                     <div class="M_wrap">
                                         <div class="M_title">
-                                            <p>戶別 :</p>
+                                            <p class="spacing">戶別 :</p>
                                             <hr>
                                         </div>
                                         <!-- 帳號密碼輸入框 -->
                                         <div class="M_enter">
-                                            <label align="left">
-                                                輸入欲通知的訊息 :<br><br>
-                                                <textarea rows="10" cols="55" name="" id=""
+                                            <label align="center" class="spacing">
+                                                * 輸入欲通知的訊息 :<br><br>
+                                                <textarea rows="10" cols="40" name="" id=""
                                                     placeholder="輸入訊息:"></textarea>
                                             </label>
-                                            <br>
-                                            <label align="left">
-                                                密碼:<br>
-                                                <input type="password" id="password" />
-                                            </label>
-                                            <br>
-                                            <input type="submit" name="login_btn" value="一般登入" />
-                                        </div>
-                                        <button type="button" data-toggle="modal" data-dismiss="modal"
-                                            data-target="#exampleModalCenter2">
-                                            /register/
-                                        </button>
-                                        <p>其他登入方式</p>
-                                        <!-- 選擇其他登入方式的按鈕 -->
-                                        <div class="M_regis_option">
-                                            <div class="M_option">
-                                                <img src="img/google.svg" alt="" />
-                                            </div>
-                                            <div class="M_option">
-                                                <img src="img/facebook.svg" alt="" />
-                                            </div>
+                                            <br><br>
+                                            
+                                            <div class="message_btn">
+                                                <button type="cancel" class="m_cancel_btn" onclick="m_fac_booking.php">
+                                                    取消
+                                                </button>
+                                                <button type="submit" class="m_submit_btn">
+                                                確認送出
+                                                </button>
+                                            </div> 
+
                                         </div>
                                     </div>
                                 </div>
