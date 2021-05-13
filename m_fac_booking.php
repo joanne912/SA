@@ -15,6 +15,52 @@
     </script>
     <link rel="stylesheet" href="css/m_booking_list.css" type="text/css"/>
     <style>
+    .headmessage{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color:#d5d5e9;
+    }
+    .conversation{
+    font-size: 20px;
+    letter-spacing: 4px;
+    width:100%;
+    margin:auto;
+    text-align: center;
+    padding: 15px 40px;
+    color: #808080;
+    }
+    textarea{
+    border: 4px solid #d5d5e9;
+    border-radius: 5px;
+    padding: 1em;
+    box-sizing: border-box;
+    font-size: 1em;
+    color: black;
+    letter-spacing: 3px;
+    text-indent: 3px;
+    align:center;
+    }
+    .M_enter {
+        margin: auto;
+        /* display: flex;
+        flex-wrap: wrap;
+        justify-content: center; */
+    }
+
+    .message {
+        margin: 5px 0 0 5px;
+        padding: 0 0;
+        box-sizing: border-box;
+        text-transform: lowercase;
+    }
+
+    .M_enter input {
+        /* background: #f7f7fa; */
+        border: 2px solid #d5d5e9;
+        height: 5em;
+        width:8em;
+    }
      @media screen and (max-width: 768px){
         .container{
             height:auto;
@@ -174,7 +220,61 @@
              <!--住戶點選是才會顯示出可以借用的公設 否則不顯示任何可借公設資訊-->
             <div class="information2">
                 <button type="button" class="coupon_btn">全選</button>
-                <span class="content3"> <img class="sending" src="img/send.svg"> 選取傳送通知的對象</span>
+                <span class="content3"> 
+                    <a href="" data-toggle="modal" data-target="#exampleModalCenter">
+                        <img style="width:15px;height:15px" src="img/send.svg"> 選取後點此傳送通知
+                    </a>
+                </span>
+                <!-- 登入內容模型 -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <form method="POST" action="login_check.php">
+                                <div class="modal-body">
+                                    <header class="headmessage">
+                                        <div class="M_logo">
+                                            <h5 class="conversation"><img src="img/conversation.svg"> 通知重要訊息</h5>
+                                        </div>
+                                    </header><br>
+                                    <div class="M_wrap">
+                                        <div class="M_title">
+                                            <p>戶別 :</p>
+                                            <hr>
+                                        </div>
+                                        <!-- 帳號密碼輸入框 -->
+                                        <div class="M_enter">
+                                            <label align="left">
+                                                輸入欲通知的訊息 :<br><br>
+                                                <textarea rows="10" cols="40" name="" id="" placeholder="輸入訊息:"></textarea>
+                                            </label>
+                                            <br>
+                                            <label align="left">
+                                                密碼:<br>
+                                                <input type="password" id="password" />
+                                            </label>
+                                            <br>
+                                            <input type="submit" name="login_btn" value="一般登入" />
+                                        </div>
+                                        <button type="button" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter2">
+                                            /register/
+                                        </button>
+                                        <p>其他登入方式</p>
+                                        <!-- 選擇其他登入方式的按鈕 -->
+                                        <div class="M_regis_option">
+                                            <div class="M_option">
+                                                <img src="img/google.svg" alt="" />
+                                            </div>
+                                            <div class="M_option">
+                                                <img src="img/facebook.svg" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!---->
             </div><br>
             <div class="situation">
                 <input type="button" value="已預約" style="color:#fc6471;letter-spacing:1.2px"class="cancle_btn">
@@ -216,50 +316,4 @@
     </div>
     </body>
 </html>
-                <!-- <p class="content">* 是否要借用設備 ?
-                    <div>
-                        <input type="radio"  name="borrowtool" value="yes">
-                        <label for="male"> 是 &nbsp&nbsp&nbsp&nbsp</label> 
-                        <input type="radio"  name="borrowtool" value="no" checked >
-                        <label for="male"> 否 </label>
-                    </div>
-                </p> -->
-                <!--若使用者選擇否不會顯示設備借用選單 是則顯示-->
-                <!-- <div class="tab">
-                    <button class="tablinks" onclick="tools(event, 'Table')">桌球拍</button>
-                    <button class="tablinks" onclick="tools(event, 'Micro')">麥克風</button>
-                    <button class="tablinks" onclick="tools(event, 'Air')">冷氣遙控器</button>
-                </div>
-
-                <div id="Table" class="tabcontent">
-                    <p>選擇借用項目 :</p>
-                    <p>
-                        <div class="check">
-                            <input type="checkbox" name="borrownum" value="a.桌球拍" > a.桌球拍
-                            <input type="checkbox" name="borrownum" value="b.桌球拍" > b.桌球拍
-                        </div>
-                    </p>
-                </div>
-
-                <div id="Micro" class="tabcontent">
-                    <p>選擇借用項目 :</p>
-                    <p>
-                        <div class="check">
-                            <input type="checkbox" name="borrownum" value="a.麥克風" > a.麥克風
-                            <input type="checkbox" name="borrownum" value="b.麥克風" > b.麥克風
-                        </div>
-                    </p> 
-                </div>
-
-                <div id="Air" class="tabcontent">
-                    <p>選擇借用項目 :</p>
-                    <p>
-                        <div class="check">
-                            <input type="checkbox" name="borrownum" value="a.冷氣遙控器" > a.冷氣遙控器
-                            <input type="checkbox" name="borrownum" value="b.冷氣遙控器" > b.冷氣遙控器
-                        </div>
-                    </p> 
-                </div>
-            </div> -->
-                 <!--可借用公設資訊End-->
-   
+                
