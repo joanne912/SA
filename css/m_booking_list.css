@@ -84,6 +84,7 @@ hr{
     font-weight: bold;
     letter-spacing: 0.5em;
     margin-left: 33%;
+    color:#808080;
 }
 .head{
     width: 85%;
@@ -255,8 +256,8 @@ hr{
     
 }
 .sending {
-    height:18px;
-    width:18px;
+    height:20px;
+    width:20px;
 }
 .coupon_btn{
     letter-spacing: 1.2px;

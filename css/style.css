@@ -189,10 +189,12 @@ header:nth-child(2) {
 }
 
 .M_enter {
+    width:100%;
     margin: auto;
     /* display: flex;
     flex-wrap: wrap;
     justify-content: center; */
+    
 }
 
 input {
