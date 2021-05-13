@@ -1,5 +1,5 @@
 <?php
-    // require_once("auth.php");
+    require_once("auth.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +16,9 @@
     function toggle2() {
         $("#menu-wrap").animate({
             'width': 'toggle'
+        });
+        $("#menu-wrap").css({
+            'visibility': 'visible'
         });
     }
     </script>
@@ -35,52 +38,67 @@
         <?php require("nav.php"); ?>
 
         <div class="main">
-            <?php 
+            <?php
+            //管理員與警衛權限
+            if ($auth <= 4){
+                //權限管理
+                if ($page == "m_auth"){
+                    ///
+                }
+                //包裹管理
+                else if ($page == "m_package"){
+                    ///
+                }
+                //公設管理
+                else if ($page == "m_facility"){
+                    //維修
+                    if ($method == "repair"){
+                        include("m_fac_repair.php");
+                    }
+                    else if ($method == "detail"){
+                        include("m_fac_repair_detail.php");
+                    }
+                    //新增公設
+                    else if ($method == "add"){
+                        include("m_fac_add.php");
+                    }
+                    //顯示所有公設
+                    else{
+                        include("m_facilities.php");
+                    }
+                }
+                //公告管理
+                else if ($page == "m_annoucment"){
+                    ///
+                }
+            }
+            //一般使用者
+            else if ($auth <= 5){
                 // 個人資訊相關跳轉
                 if ($page == "personal"){
                     include("personal.php");
                 }
                 // 包裹相關跳轉
                 else if ($page == "package"){
-                    include("");
+                    //include("package.php");
                 }
                 // 公設相關跳轉
                 else if ($page == "order"){
-                    if ($method == "repair"){
-                        include("m_repair_fac.php");
-                    }
-                    else if ($method == "list"){
-                        include("m_facilities.php");
-                    }
-                    else if ($method == "look"){
+                    //查看特定公設
+                    if ($method == "look"){
                         include("facility_detail.php");
                     }
-                    else if ($method == "add"){
-                        include("add_facilities.php");
-                    }
-                    else if ($method == "detail"){
-                        include("m_repair_fac_detail.php");
-                    }
-                    else{
-                        include("m_facilities.php");
-                    }
+                    //查看公設預約
+                    
                 }
                 // 公告相關跳轉
                 else if ($page == "announ"){
                     include("announcement.php");
                 }
-                else{
-                //     if ($method == "look"){
-                //         include("add_facilities.php");
-                //     }
-                //     else if($method == "list"){
-                        include("m_facilities.php");
-                //     }
-                //     else{
-                //         include("m_repair_fac.php");
-                //     }
-                }
-            ?>
+            }
+            
+            
+        ?>
         </div>
     </div>
 </body>
