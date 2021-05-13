@@ -4,7 +4,7 @@
         $U_PASSWORD = $_POST['password'];
         if($U_MAIL && $U_PASSWORD){
             session_start();
-            $_SESSION['auth'] = 5;
+            $_SESSION['auth'] = 3;
             $_SESSION['id'] = 1;
             $_SESSION['name'] = 'Amy';
             $_SESSION['mail'] = $U_MAIL;

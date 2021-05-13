@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="css/add_facilities.css">
-<?php include("facility_header.php"); ?>
+<?php include("m_facility_header.php"); ?>
 
 <div class="wrap">
     <form action="home.php">

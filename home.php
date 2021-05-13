@@ -55,24 +55,32 @@
                 }
                 //公設管理
                 else if ($page == "m_facility"){
-                    //維修
+                    //公設維修
                     if ($method == "repair"){
                         include("m_fac_repair.php");
                     }
                     else if ($method == "detail"){
                         include("m_fac_repair_detail.php");
                     }
+                    //公設預約紀錄查看
+                    else if ($method == "display_booking"){
+                        include("m_display_booking.php");
+                    }
+                    
                     //新增公設
                     else if ($method == "add"){
                         include("m_fac_add.php");
+                    }
+                    else if ($method == "look"){
+                        include("facility_detail.php");
                     }
                     //顯示所有公設
                     else{
                         include("m_facilities.php");
                     }
                 }
-                //公告管理
-                else if ($page == "m_annoucment"){
+                //公告管理(default)
+                else{
                     ///
                 }
             }
@@ -92,11 +100,16 @@
                     if ($method == "look"){
                         include("facility_detail.php");
                     }
-                    //查看公設預約
+                    //查看公設預約紀錄
+                        
+                    //查看所有公設(default)
+                    else{
+                        include("facilities.php");
+                    }
                     
                 }
-                // 公告相關跳轉
-                else if ($page == "announ"){
+                // 公告相關跳轉(default)
+                else{
                     include("announcement.php");
                 }
             }

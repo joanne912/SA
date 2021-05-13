@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="css/m_facilities.css" type="text/css" />
 </head>
 <style>
-    .item_text a:hover{
-        color: #808080;
-    }
+.item_text a:hover {
+    color: #808080;
+}
 </style>
+
 <body>
     <!-- 公設頁面的表頭 -->
-    <?php include("facility_header.php"); ?>
+    <?php include("m_facility_header.php"); ?>
     <!-- 每個獨立的公設資訊 -->
     <div class="info_wrap">
         <!-- 公設圖片，需連結資料庫 -->
@@ -34,7 +35,7 @@
                 <a href="#"><img src="img/edit.svg" alt=""></a>
                 <a href="#"><img src="img/delete.svg" alt=""></a>
             </div>
-            <a href="home.php?page=order&method=look"><img src="img/next.svg" alt=""></a>
+            <a href="home.php?page=m_facility&method=look"><img src="img/next.svg" alt=""></a>
         </div>
     </div>
 </body>

@@ -3,10 +3,10 @@
 
 <?php 
     // $conn = require_once('conn.php');
-    include("facility_header.php"); 
+    include("m_facility_header.php"); 
     // $sql = "SELECT * FROM tablename";
     // $result = mysqli_query($conn, $sql);
-?> 
+?>
 <table>
     <thead>
         <th>編號</th>
