@@ -14,12 +14,16 @@
     </script>
     <script type="text/javascript">
     function toggle2() {
-        $("#menu-wrap").animate({
-            'width': 'toggle'
-        });
-        $("#menu-wrap").css({
-            'visibility': 'visible'
-        });
+
+        if ($("#menu-wrap").css('visibility') == 'visible') {
+            $("#menu-wrap").animate({
+                'width': 'toggle'
+            });
+        } else {
+            $("#menu-wrap").css({
+                'visibility': 'visible'
+            });
+        }
     }
     </script>
     <link rel="stylesheet" href="css/home.css" type="text/css" />
