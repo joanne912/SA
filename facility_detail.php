@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,15 +16,20 @@
     </script>
     <link rel="stylesheet" href="css/facility_detail.css">
 </head>
+
 <body>
-    <?php 
-        include("facility_header.php"); 
+    <?php
+        if ($auth <= 4){
+            include("m_facility_header.php");
+        } else {
+            include("facility_header.php");
+        }
     ?>
     <div class="container">
         <div class="outside">
             <div class="head">
                 <div class="name">
-                    <p >公設名稱 : 游泳池</p>
+                    <p>公設名稱 : 游泳池</p>
                 </div>
                 <div class="name2">
                     <a href="facility_reserve.php"><input class="go" style="" type="submit" value="前往預約"></a>
@@ -81,4 +87,5 @@
         </div>
     </div>
 </body>
+
 </html>
