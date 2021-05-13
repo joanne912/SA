@@ -51,9 +51,6 @@
 
     .M_enter {
         margin: auto;
-        /* display: flex;
-        flex-wrap: wrap;
-        justify-content: center; */
     }
 
     .message {
@@ -64,7 +61,6 @@
     }
 
     .M_enter input {
-        /* background: #f7f7fa; */
         border: 2px solid #fc6471;
         height: 5em;
         width: 8em;
@@ -283,7 +279,6 @@
             <div class="information2">
                 <button type="button" class="coupon_btn">全選</button>
                 <span class="content3"data-toggle="modal" data-target="#exampleModalCenter">
-                  
                         <img style="width:15px;height:15px" src="img/send.svg"> 選取後點此傳送通知
                 </span>
                 <!-- 管理員傳送通知給住戶點選連結後出現彈跳視窗 資料庫導入並顯示管理員勾選的住戶的戶別 
@@ -301,10 +296,11 @@
                                     </header><br>
                                     <div class="M_wrap">
                                         <div class="M_title">
+                                        <!-- 資料庫導入管理者勾選的戶別 -->
                                             <p class="spacing">戶別 :</p>
                                             <hr>
                                         </div>
-                                        <!-- 帳號密碼輸入框 -->
+                                        <!-- 訊息傳送給住戶的通知 -->
                                         <div class="M_enter">
                                             <label align="center" class="spacing">
                                                 * 輸入欲通知的訊息 :<br><br>
@@ -329,8 +325,8 @@
                         </div>
                     </div>
                 </div>
-                <!---->
             </div><br>
+            <!--切換住戶預約紀錄 類似tab的作法-->
             <div class="situation">
                 <input type="button" value="已預約" style="color:#fc6471;letter-spacing:1.2px" class="cancle_btn">
                 <input type="button" value="已取消" class="cancle_btn">
