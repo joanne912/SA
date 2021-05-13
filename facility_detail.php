@@ -31,9 +31,11 @@
                 <div class="name">
                     <p>公設名稱 : 游泳池</p>
                 </div>
-                <div class="name2">
-                    <a href="facility_reserve.php"><input class="go" style="" type="submit" value="前往預約"></a>
-                </div>
+                <?php
+                    if ($auth == 4){
+                        echo '<div class="name2"><a href="facility_reserve.php"><input class="go" style="" type="submit" value="前往預約"></a></div>';
+                    }
+                ?>
             </div>
             <hr>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
