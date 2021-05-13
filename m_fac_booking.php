@@ -141,6 +141,9 @@
     }
 
     @media screen and (max-width: 400px) {
+        .m_submit_btn{
+        width:60%;
+        }
         textarea {
             margin:0px;
         }
