@@ -212,7 +212,7 @@
                     <a href="m_display_booking.php"><img src="img/left-arrow.svg"></a>
                 </div>
                 <div class="name">
-                    <p>公設預約紀錄清單</p>
+                    <p>住戶公設預約紀錄</p>
                 </div>
             </div>
             <hr>
@@ -277,7 +277,7 @@
                                         <div class="M_enter">
                                             <label align="left">
                                                 輸入欲通知的訊息 :<br><br>
-                                                <textarea rows="10" cols="40" name="" id=""
+                                                <textarea rows="10" cols="55" name="" id=""
                                                     placeholder="輸入訊息:"></textarea>
                                             </label>
                                             <br>
