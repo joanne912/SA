@@ -4,6 +4,6 @@
     unset($_SESSION['id']);
     unset($_SESSION['name']);
     unset($_SESSION['mail']);
-    header("refresh:5;url=index.html");
+    header("refresh:1;url=index.html");
 ?>
 感謝使用!<br>5秒後登出

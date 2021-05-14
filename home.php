@@ -1,5 +1,6 @@
 <?php
     require_once("auth.php");
+    //require_once("conn.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,11 +67,11 @@
                     else if ($method == "display_booking"){
                         include("m_display_booking.php");
                     }
-                    
                     //新增公設
                     else if ($method == "add"){
                         include("m_fac_add.php");
                     }
+                    //查看特定公設
                     else if ($method == "look"){
                         include("facility_detail.php");
                     }
@@ -85,7 +86,7 @@
                 }
             }
             //一般使用者
-            else if ($auth <= 5){
+            else if ($auth == 5){
                 // 個人資訊相關跳轉
                 if ($page == "personal"){
                     include("personal.php");
