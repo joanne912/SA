@@ -15,16 +15,12 @@
     </script>
     <script type="text/javascript">
     function toggle2() {
-
-        if ($("#menu-wrap").css('visibility') == 'visible') {
-            $("#menu-wrap").animate({
-                'width': 'toggle'
-            });
-        } else {
-            $("#menu-wrap").css({
-                'visibility': 'visible'
-            });
-        }
+        $("#menu-wrap").animate({
+            'width': 'toggle'
+        });
+        $("#menu-wrap").css({
+            'display': 'flex'
+        })
     }
     </script>
     <link rel="stylesheet" href="css/home.css" type="text/css" />
@@ -62,6 +58,7 @@
                     if ($method == "repair"){
                         include("m_fac_repair.php");
                     }
+                    //公設維修詳細資訊
                     else if ($method == "detail"){
                         include("m_fac_repair_detail.php");
                     }

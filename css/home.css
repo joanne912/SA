@@ -51,12 +51,10 @@ header img {
     height: 88vh;
     background-color: #f7f7fa;
     position: absolute;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    /* test */
-    /* display: none; */
 }
 
 .main {
@@ -241,11 +239,6 @@ header img {
         padding: 2em 3em;
         box-sizing: border-box;
     }
-}
-
-#menu-wrap {
-    visibility: hidden;
-    height: 88vh;
 }
 
 #menu-wrap a {
