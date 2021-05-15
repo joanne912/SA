@@ -1,6 +1,6 @@
 <?php
-    require_once("auth.php");
-    //require_once("conn.php");
+    include("auth.php");
+    $conn = include("conn.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

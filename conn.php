@@ -9,7 +9,8 @@
         
         //將錯誤報告設定為拋出exceptions異常
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
+        // 設定UTF-8編碼
+        $conn->query('SET NAMES "utf8"');
         return $conn;
     }
     catch(PDOException $e){

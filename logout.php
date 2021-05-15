@@ -1,9 +1,10 @@
 <?php
+    $time = 1;
+    
     session_start();
     unset($_SESSION['auth']);
     unset($_SESSION['id']);
-    unset($_SESSION['name']);
-    unset($_SESSION['mail']);
-    header("refresh:1;url=index.html");
+
+    echo "感謝使用!<br>$time秒後登出";
+    header("refresh:$time;url=index.html");
 ?>
-感謝使用!<br>5秒後登出
