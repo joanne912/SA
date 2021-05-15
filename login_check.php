@@ -10,10 +10,25 @@
         
         if(count($statement) == 1){
             $row = $statement->fetch(PDO::FETCH_ASSOC);
-            
+
             session_start();
             $_SESSION['id'] = $row['USER_ID'];
             $_SESSION['auth'] = $row['USER_AUTHORITY'];
+
+            if($row['USER_AUTHORITY'] == 5){
+                $sql = 'SELECT `HOUSEHOLD_ID` FROM `resident_address` WHERE ( `USER_ID` = ? );';
+                $statement = $conn->prepare($sql);
+                $statement->execute(array($row['USER_ID']));
+                $row2 = $statement->fetch(PDO::FETCH_ASSOC);
+                echo  $row2['HOUSEHOLD_ID'],"<br>";
+                $_SESSION['household'] = $row2['HOUSEHOLD_ID'];
+            }else if($row['USER_AUTHORITY'] >= 3){
+                $sql = 'SELECT `COMMUNITY_ID` FROM `manager` WHERE ( `USER_ID` = ? );';
+                $statement = $conn->prepare($sql);
+                $statement->execute(array($row['USER_ID']));
+                $row2 = $statement->fetch(PDO::FETCH_ASSOC);
+                $_SESSION['community'] = $row2['COMMUNITY_ID'];
+            }
             header("refresh:0;url=home.php");
         }else{
             header("refresh:0;url=index.html");

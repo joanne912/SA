@@ -231,9 +231,6 @@
 </head>
 
 <body>
-    <?php 
-        include("m_facility_header.php"); 
-    ?>
     <div class="container" style="height:auto">
         <div class="outside">
             <div class="head">

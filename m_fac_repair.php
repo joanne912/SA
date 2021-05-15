@@ -3,7 +3,6 @@
 
 <?php 
     // $conn = require_once('conn.php');
-    include("m_facility_header.php"); 
     // $sql = "SELECT * FROM tablename";
     // $result = mysqli_query($conn, $sql);
 ?>

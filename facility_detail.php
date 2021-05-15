@@ -19,9 +19,7 @@
 
 <body>
     <?php
-        if ($auth <= 4){
-            include("m_facility_header.php");
-        } else {
+        if ($auth == 5){
             include("facility_header.php");
         }
     ?>
@@ -32,7 +30,7 @@
                     <p>公設名稱 : 游泳池</p>
                 </div>
                 <?php
-                    if ($auth == 4){
+                    if ($auth == 5){
                         echo '<div class="name2"><a href="facility_reserve.php"><input class="go" style="" type="submit" value="前往預約"></a></div>';
                     }
                 ?>
