@@ -16,14 +16,11 @@
     <link rel="stylesheet" href="css/facility_reserve.css">
 </head>
 <body>
-    <?php 
-        include("facility_header.php"); 
-    ?>
     <div class="container">
         <div class="outside">
             <div class="head">
                 <div class="left">
-                    <a href="facility_detail.php"><img src="img/left-arrow.svg"></a> 
+                    <a href="home.php?page=order&method=look"><img src="img/left-arrow.svg"></a> 
                 </div>
                 <div class="name">
                     <p >公設預約</p>
@@ -135,7 +132,7 @@
                 </div>
             </div>
             <div>
-                <input type="button" value="確認送出"class="send">
+                <a href="home.php?page=order"><input type="button" value="確認送出"class="send"></a>
             </div>
             <hr>
         </div>

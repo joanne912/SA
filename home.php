@@ -97,6 +97,10 @@
                     if ($method == "look"){
                         include("facility_detail.php");
                     }
+                    //預約公設 
+                    else if($method == "reserve"){
+                        include("facility_reserve.php");
+                    }
                     //查看公設預約紀錄
                     else if($method == "records"){
                         include("facility_records.php");
@@ -104,10 +108,6 @@
                     //查看特定預約紀錄
                     else if($method == "record"){
                         include("facility_record.php");
-                    }
-                    //預約公設
-                    else if($method == "record_add"){
-                        include("facility_record_add.php");
                     }
                     //查看點數紀錄
                     else if($method == "point"){
