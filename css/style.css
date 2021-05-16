@@ -223,7 +223,7 @@ input {
 }
 
 p {
-    margin-top: 40px;
+    /* margin-top: 40px; */
     text-align: center;
     letter-spacing: 10px;
     text-indent: 10px;
@@ -235,7 +235,7 @@ p {
     width: 30%;
     /* background: cornsilk; */
     margin: auto;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     display: flex;
     justify-content: space-between;
 }

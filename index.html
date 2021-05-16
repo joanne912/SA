@@ -10,6 +10,33 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <style>
+        input{
+            border-radius: 9px;
+        }
+        .col{
+            margin: .5em 0 0;
+        }
+        .btn{
+            margin-top:1.5em;
+            width: 100%;
+            background: #c0c0e2 !important;
+            color: white;
+            letter-spacing: 8px;
+            text-indent: 8px;
+        }
+        .btn2{
+            margin-top:1.5em;
+            width: 50%;
+            background: #c0c0e2 !important;
+            color: white;
+            letter-spacing: 8px;
+            text-indent: 8px;
+        }
+        .btn:hover{
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,60 +83,52 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <label>
-                                                        姓名:
-                                                        <input type="text" id="name" />
+                                                        <input type="text" id="name" placeholder="姓名"/>
                                                     </label>
                                                 </div>
                                                 <div class="col">
                                                     <label>
-                                                        戶別:
-                                                        <input type="text" id="household" />
+                                                        <input type="text" id="household" placeholder="戶別"/>
                                                     </label>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col">
                                                     <label>
-                                                    性別:
-                                                    <input type="text" id="gender" />
-                                                </label>
+                                                        <input type="text" id="gender" placeholder="性別"/>
+                                                    </label>
                                                 </div>
                                                 <div class="col">
                                                     <label>
-                                                    電子郵件:
-                                                    <input type="text" id="e-mail" />
-                                                </label>
+                                                        <input type="text" id="e-mail" placeholder="電子郵件"/>
+                                                    </label>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col">
                                                     <label>
-                                                    生日:
-                                                    <input type="text" id="birthday" />
-                                                </label>
+                                                        <input type="text" id="birthday" placeholder="生日"/>
+                                                    </label>
                                                 </div>
                                                 <div class="col">
                                                     <label>
-                                                    密碼:
-                                                    <input type="text" id="password" />
-                                                </label>
+                                                        <input type="text" id="password" placeholder="密碼"/>
+                                                    </label>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col">
                                                     <label>
-                                                    手機號碼:
-                                                    <input type="text" id="phone" />
-                                                </label>
+                                                        <input type="text" id="phone" placeholder="手機號碼" />
+                                                    </label>
                                                 </div>
                                                 <div class="col">
                                                     <label>
-                                                    戶籍代碼:
-                                                    <input type="text" id="household_id" />
-                                                </label>
+                                                        <input type="text" id="household_id" placeholder="戶籍代碼"/>
+                                                    </label>
                                                 </div>
                                             </div>
-                                            <input type="button" value="提出註冊申請" />
+                                            <input type="button" value="提出註冊申請" class="btn"/>
                                         </div>
                                         <button type="button" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter">
                                             /login/
@@ -153,17 +172,15 @@
                                         </div>
                                         <!-- 帳號密碼輸入框 -->
                                         <div class="M_enter">
-                                            <label align="left">
-                                                帳號(預設管理員):<br>
-                                                <input type="text" name="mail" value="abc123@gmail.com"/>
+                                            <label>
+                                                <input type="text" name="mail" value="abc123@gmail.com" placeholder="帳號"/>
                                             </label>
                                             <br>
-                                            <label align="left">
-                                                密碼:<br>
-                                                <input type="password" name="password" value="111111"/>
+                                            <label>
+                                                <input type="password" name="password" value="111111" placeholder="密碼"/>
                                             </label>
                                             <br>
-                                            <input type="submit" name="login_btn" value="一般登入" />
+                                            <input type="submit" name="login_btn" value="一般登入" class="btn2"/>
                                         </div>
                                         <button type="button" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter2">
                                             /register/

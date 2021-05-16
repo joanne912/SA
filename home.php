@@ -74,6 +74,10 @@
                     else if ($method == "look"){
                         include("facility_detail.php");
                     }
+                    //查看單一預約記錄
+                    else if($method == "booking"){
+                        include("m_fac_booking.php");
+                    }
                     //顯示所有公設
                     else{
                         include("m_facilities.php");

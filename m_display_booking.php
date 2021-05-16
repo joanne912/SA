@@ -39,7 +39,7 @@
         <!-- 管理員的查看住戶預約紀錄按鈕 -->
         <div class="icon_group">
             <div class="upper"></div>
-            <a href="m_fac_booking.php"><img src="img/next.svg" alt=""></a>
+            <a href="home.php?page=m_facility&method=booking"><img src="img/next.svg" alt=""></a>
         </div>
     </div>
 </body>
