@@ -16,9 +16,9 @@
     <link rel="stylesheet" href="css/facility_reserve.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" style="height:1500px">
         <div class="outside">
-            <div class="head">
+            <div class="head" >
                 <div class="left">
                     <a href="home.php?page=order&method=look"><img src="img/left-arrow.svg"></a> 
                 </div>
@@ -134,6 +134,7 @@
             <div>
                 <a href="home.php?page=order"><input type="button" value="確認送出"class="send"></a>
             </div>
+            <br><br>
             <hr>
         </div>
     </div>

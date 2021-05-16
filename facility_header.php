@@ -7,12 +7,12 @@
         </a>
         <a href="home.php?page=order&method=record">
             <div class="a_icon_circle">
-                <img src="img/add.svg" alt="">
+                <img src="img/record.svg" alt="">
             </div>
         </a>
         <a href="home.php?page=order&method=point">
             <div class="a_icon_circle">
-                <img src="img/record.svg" alt="">
+                <img src="img/dollar.svg" alt="">
             </div>
         </a>
         <a href="home.php?page=order&method=repair">

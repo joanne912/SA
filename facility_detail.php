@@ -26,7 +26,7 @@
                 </div>
                 <?php
                     if ($auth == 5){
-                        echo '<div class="name2"><a href="home.php?page=order&method=reserve"><input class="go" style="" type="submit" value="前往預約"></a></div>';
+                        echo '<div class="name2"><a href="facility_reserve.php"><input class="go" style="" type="submit" value="前往預約"></a></div>';
                     }
                 ?>
             </div>
