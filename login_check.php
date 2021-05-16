@@ -1,4 +1,5 @@
 <?php
+    $U_MAIL = $U_PASSWORD = "";
     $conn = include "conn.php";
     if(isset($_POST['login_btn'])){
         $U_MAIL = $_POST['mail'];
