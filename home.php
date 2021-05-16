@@ -57,6 +57,10 @@
                     else if ($method == "display_booking"){
                         include("m_display_booking.php");
                     }
+                    //查看單一預約記錄
+                    else if($method == "booking"){
+                        include("m_fac_booking.php");
+                    }
                     //新增公設
                     else if ($method == "add"){
                         include("m_fac_add.php");
@@ -64,10 +68,6 @@
                     //查看特定公設
                     else if ($method == "look"){
                         include("facility_detail.php");
-                    }
-                    //查看單一預約記錄
-                    else if($method == "booking"){
-                        include("m_fac_booking.php");
                     }
                     //顯示所有公設
                     else{
@@ -91,25 +91,50 @@
                 }
                 // 公設相關跳轉
                 else if ($page == "order"){
+                    //公設清單表頭
+                    include("facility_header.php"); 
                     //查看特定公設
                     if ($method == "look"){
                         include("facility_detail.php");
                     }
                     //查看公設預約紀錄
-                        
+                    else if($method == "records"){
+                        include("facility_records.php");
+                    }
+                    //查看特定預約紀錄
+                    else if($method == "record"){
+                        include("facility_record.php");
+                    }
+                    //預約公設
+                    else if($method == "record_add"){
+                        include("facility_record_add.php");
+                    }
+                    //查看點數紀錄
+                    else if($method == "point"){
+                        include("facility_point.php");
+                    }
+                    //公設報修的動作
+                    else if($method == "repair_add"){
+                        include("facility_repair_add.php");
+                    }
+                    //維修進度清單
+                    else if($method == "repairs"){
+                        include("facility_repairs.php");
+                    }
+                    //觀看維修進度
+                    else if($method == "repair"){
+                        include("facility_repair.php");
+                    }
                     //查看所有公設(default)
                     else{
-                        include("facilities.php");
+                        include("facility_orders.php");
                     }
-                    
                 }
                 // 公告相關跳轉(default)
                 else{
                     include("announcement.php");
                 }
             }
-            
-            
         ?>
         </div>
     </div>

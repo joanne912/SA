@@ -18,11 +18,6 @@
 </head>
 
 <body>
-    <?php
-        if ($auth == 5){
-            include("facility_header.php");
-        }
-    ?>
     <div class="container">
         <div class="outside">
             <div class="head">

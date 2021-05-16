@@ -14,8 +14,7 @@
     }
 </style>
 <body>
-    <!-- 公設頁面的表頭 -->
-    <?php include("facility_header.php"); ?>
+   
     <!-- 每個獨立的公設資訊 -->
     <div class="info_wrap">
         <!-- 公設圖片，需連結資料庫 -->
