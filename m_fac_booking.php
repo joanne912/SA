@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -146,6 +148,7 @@
         }
         textarea {
             margin:0px;
+            padding:0.5px;
         }
         .container {
             height: auto;
@@ -188,7 +191,7 @@
         .option1 {
             margin-left: 2.5em;
             text-indent: 3px;
-            width: 23em !important;
+            width: 19em !important;
         }
 
         .content2 {
@@ -310,12 +313,31 @@
                                             <br><br>
                                             
                                             <div class="message_btn">
-                                                <button type="cancel" class="m_cancel_btn" onclick="m_fac_booking.php">
-                                                    取消
+                                                <button type="cancel" class="m_cancel_btn">
+                                                    <a style="color:#fc6471"href="home.php?page=m_facility&method=booking">取消</a>
                                                 </button>
-                                                <button type="submit" class="m_submit_btn">
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="m_submit_btn" data-bs-toggle="modal" data-bs-target="#exampleModal" >
                                                 確認送出
                                                 </button>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 style="color:blue;font-weight:bold"class="modal-title" id="exampleModalLabel">已成功送出通知!</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        通知的訊息 : <br> 游泳池在早上不開放 造成住戶不便深感抱歉!!
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-info" data-bs-dismiss="modal">關閉</button>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                <!---->
                                             </div> 
 
                                         </div>
