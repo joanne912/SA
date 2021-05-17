@@ -12,7 +12,7 @@
         <div class="option-wrap">
             <a href="home.php?page=m_auth">權限管理</a>
             <a href="home.php?page=m_package">包裹管理</a>
-            <a href="home.php?page=m_facility">公設管理</a>
+            <a href="home.php?page=facility">公設管理</a>
             <a href="home.php">公告管理</a>
             <!-- 這個位置要加登出 -->
             <!-- 手機版時設定、登出、通知的按鈕位置，網頁版時會消失 -->
@@ -37,8 +37,8 @@
         <div class="option-wrap">
             <a href="home.php?page=personal">個人資訊</a>
             <a href="home.php?page=package">我的包裹</a>
-            <a href="home.php?page=order">公設預約</a>
-            <a href="home.php?page=announ">社區公告</a>
+            <a href="home.php?page=facility">公設預約</a>
+            <a href="home.php">社區公告</a>
             <!-- 這個位置要加登出 -->
             <!-- 手機版時設定、登出、通知的按鈕位置，網頁版時會消失 -->
             <div class="else">

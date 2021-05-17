@@ -9,7 +9,7 @@
         $point = $_POST['point'];
         $limit = $_POST['limit'];
         $sql = "INSERT INTO `facilities` (`FACILITIES_ID`, `COMMUNITY_ID`, `FACILITIES_NAME`, `FACILITIES_INTRODUCTION`, `FACILITIES_DESCRIPTION`, `FACILITIES_PLACE`, `FACILITIES_OPEN_TIME`, `FACILITIES_CLOSE_TIME`, `FACILITIES_IMG1`, `FACILITIES_IMG2`, `FACILITIES_IMG3`, `FACILITIES_POINT`, `FACILITIES_LIMIT`)
-                VALUES (3, :community, :name, :introduction, :description, '', :open, :close, '', '', '', :point, :limit)";
+                VALUES (4, :community, :name, :introduction, :description, '', :open, :close, '', '', '', :point, :limit)";
         $statement = $conn->prepare($sql);
         try{
             $result = $statement->execute(

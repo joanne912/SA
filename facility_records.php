@@ -65,7 +65,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">取消</button>
                 <!--住戶點選確認取消後該公設的預約紀錄應顯示在已取消中-->
-                <a href="home.php?page=order&method=records"><button type="button" class="btn btn-info" >確認</button></a>
+                <a href="home.php?page=facility&method=records"><button type="button" class="btn btn-info" >確認</button></a>
             </div>
             </div>
         </div>

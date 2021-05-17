@@ -29,7 +29,7 @@
                         }
                     ?>
                 </div>
-                <a href='home.php?page=m_facility&method=look&facility=<?=$row["FACILITIES_ID"]?>'><img src='img/next.svg' alt=''></a>
+                <a href='home.php?page=facility&method=look&facility=<?=$row["FACILITIES_ID"]?>'><img src='img/next.svg' alt=''></a>
             </div>
         </div>
         <?php

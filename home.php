@@ -42,7 +42,7 @@
                     ///
                 }
                 //公設管理
-                else if ($page == "m_facility"){
+                else if ($page == "facility"){
                     //公設頁面的表頭
                     include("m_facility_header.php");
                     //公設維修
@@ -90,7 +90,7 @@
                     //include("package.php");
                 }
                 // 公設相關跳轉
-                else if ($page == "order"){
+                else if ($page == "facility"){
                     //公設清單表頭
                     include("facility_header.php"); 
                     //查看特定公設

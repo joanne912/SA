@@ -20,7 +20,7 @@
         <div class="outside">
             <div class="head" >
                 <div class="left">
-                    <a href="home.php?page=order&method=look"><img src="img/left-arrow.svg"></a> 
+                    <a href="home.php?page=facility&method=look"><img src="img/left-arrow.svg"></a> 
                 </div>
                 <div class="name">
                     <p >公設預約</p>
@@ -132,7 +132,7 @@
                 </div>
             </div>
             <div>
-                <a href="home.php?page=order"><input type="button" value="確認送出"class="send"></a>
+                <a href="home.php?page=facility"><input type="button" value="確認送出"class="send"></a>
             </div>
             <br><br>
             <hr>

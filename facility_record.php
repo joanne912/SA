@@ -17,7 +17,7 @@
         <div class="outside">
             <div class="head" >
                 <div class="left">
-                    <a href="home.php?page=order&method=records"><img src="img/left-arrow.svg"></a> 
+                    <a href="home.php?page=facility&method=records"><img src="img/left-arrow.svg"></a> 
                 </div>
                 <div class="name">
                     <p >預約紀錄</p>
