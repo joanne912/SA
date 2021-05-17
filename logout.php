@@ -3,7 +3,8 @@
 
     session_start();
     $_SESSION = array(); 
-    session_destroy(); 
+    session_destroy();
+    header("refresh:$time;url=index.html");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -119,8 +120,7 @@
                     <p style=" text-align:center;">感謝使用! </p>
                     <p>
                         <?php
-                        echo "".$time."秒後登出";
-                        header("refresh:$time;url=index.html");
+                            echo "".$time."秒後登出";
                         ?>
                     </p>
             </div>
