@@ -22,8 +22,9 @@
     </script>
 </head>
 <style>
-    .item_text a:hover{
-        color: #808080;
+    a{
+        color: #808080 !important;
+        text-decoration: none !important;
     }
 </style>
 <body>
