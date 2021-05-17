@@ -320,7 +320,7 @@
                                                 <button type="button" class="m_submit_btn" data-bs-toggle="modal" data-bs-target="#exampleModal" >
                                                 確認送出
                                                 </button>
-                                                <!-- Modal -->
+                                                <!-- Modal 使管理員確認有成功送出信件 條件:住戶有收到信件通知-->
                                                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
@@ -328,6 +328,7 @@
                                                         <h5 style="color:blue;font-weight:bold"class="modal-title" id="exampleModalLabel">已成功送出通知!</h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
+                                                    <!-- Modal 顯示管理員輸入的訊息 -->
                                                     <div class="modal-body">
                                                         通知的訊息 : <br> 游泳池在早上不開放 造成住戶不便深感抱歉!!
                                                     </div>
