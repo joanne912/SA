@@ -71,7 +71,7 @@
                     }
                     //顯示所有公設
                     else{
-                        include("m_facilities.php");
+                        include("facilities.php");
                     }
                 }
                 //公告管理(default)
@@ -127,7 +127,7 @@
                     }
                     //查看所有公設(default)
                     else{
-                        include("facility_orders.php");
+                        include("facilities.php");
                     }
                 }
                 // 公告相關跳轉(default)
