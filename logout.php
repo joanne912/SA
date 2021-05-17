@@ -7,10 +7,6 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<!-- =======
-    $_SESSION = array(); 
-    session_destroy(); 
->>>>>>> 754491974e0119c2a86c9cc59a7f529177ac1b66 -->
 
 <head>
     <meta charset="UTF-8">
