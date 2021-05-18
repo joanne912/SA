@@ -8,12 +8,19 @@
         $close = $_POST['close_time'];
         $point = $_POST['point'];
         $limit = $_POST['limit'];
+
+        $sql = "SELECT MAX(`FACILITIES_ID`) FROM facilities WHERE (`COMMUNITY_ID` = $community);";
+        $statement = $conn->query($sql);
+        $row = $statement->fetch(PDO::FETCH_ASSOC);
+        $facility = $row['MAX(`FACILITIES_ID`)'] + 1;
+
         $sql = "INSERT INTO `facilities` (`FACILITIES_ID`, `COMMUNITY_ID`, `FACILITIES_NAME`, `FACILITIES_INTRODUCTION`, `FACILITIES_DESCRIPTION`, `FACILITIES_PLACE`, `FACILITIES_OPEN_TIME`, `FACILITIES_CLOSE_TIME`, `FACILITIES_IMG1`, `FACILITIES_IMG2`, `FACILITIES_IMG3`, `FACILITIES_POINT`, `FACILITIES_LIMIT`)
-                VALUES (4, :community, :name, :introduction, :description, '', :open, :close, '', '', '', :point, :limit)";
-        $statement = $conn->prepare($sql);
+                VALUES (:facility, :community, :name, :introduction, :description, '', :open, :close, '', '', '', :point, :limit)";
+        $statement2 = $conn->prepare($sql);
         try{
-            $result = $statement->execute(
+            $result = $statement2->execute(
                 array(
+                    ':facility' => $facility,
                     ':community' => $community,
                     ':name' => $name, 
                     ':introduction' => $introduction, 
@@ -44,7 +51,7 @@
             }
         ?>
     </h2>
-    <form method="POST" action="home.php?page=m_facility&method=add">
+    <form method="POST" action="home.php?page=facility&method=add">
         <span>公設名稱： <input type="text" name="name"></span>
         <hr>
         <span><img src="img/circle.svg" alt="">公設時段</span>
