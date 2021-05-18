@@ -30,4 +30,9 @@
                 $row2 = $statement->fetch(PDO::FETCH_ASSOC);
                 $_SESSION['community'] = $row2['COMMUNITY_ID'];
             }
+            header("refresh:0;url=home.php");
+        }else{
+            header("refresh:0;url=index.html");
+        }
+    }
 ?>
