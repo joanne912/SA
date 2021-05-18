@@ -20,7 +20,7 @@
         
             $sql = "INSERT INTO `user`(USER_NAME, USER_ACCOUNT, USER_PASSWORD, USER_AUTHORITY) VALUES(:name, :mail, :password, 5);
             INSERT INTO `resident`(RESIDENT_GENDER, RESIDENT_BDATE, RESIDENT_PHONE) VALUES(:gender, :bdate, :phone);
-            INSERT INTO `resident_address` VALUES(:household_id);"
+            INSERT INTO `resident_address` VALUES(:household_id);";
             $sth = $conn->prepared($sql);
             $sth->execute($input);
         }
