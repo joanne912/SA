@@ -43,8 +43,8 @@
         <!-- 每一住戶預約公設的編號 名稱 日期 時段 有早上下午之分，需連結資料庫 -->
         <div class="text">
             <h4>編號游泳池</h4> 
-            <p>預約日期：<span>4 / 23</span></p>
-            <p>預約時段：<span>早上 </span><span>8:00 ~ 9:00</span></p>
+            <h7>預約日期：<span>4 / 23</span></h7><br>
+            <h7>預約時段：<span>早上 </span><span>8:00 ~ 9:00</span></h7>
         </div>
         <div class="icon_group2">
         <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img  class="trash_img"src="img/delete.svg" alt=""></a> 
@@ -75,6 +75,21 @@
         <a href="facility_record.php"><img src="img/next.svg" alt=""></a>
     </div>
     </div>
+    <!-- <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+        <div class="toast" style="position: absolute; top: 0; right: 0;">
+            <div class="toast-header">
+                <img src="..." class="rounded mr-2" alt="...">
+                <strong class="mr-auto">你已成功取消預約游泳池 !</strong>
+                <small>1 分鐘</small>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                預約時段、日期、人數
+            </div>
+        </div>
+    </div> -->
 </body>
 
 </html>

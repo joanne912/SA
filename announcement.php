@@ -134,6 +134,21 @@
         </div>
     </div>
     
+    <!-- <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+        <div class="toast" data-autohide="false" style="position: absolute; top: 0; right: 0;">
+            <div class="toast-header">
+                <img src="..." class="rounded mr-2" alt="...">
+                <strong class="mr-auto">你已成功取消預約游泳池 !</strong>
+                <small>1 分鐘</small>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                預約時段、日期、人數
+            </div>
+        </div>
+    </div> -->
 </body>
 
 </html>

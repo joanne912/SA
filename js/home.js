@@ -5,4 +5,5 @@ function toggle2() {
     $("#menu-wrap").css({
         'display': 'flex'
     })
+    // $('.toast').toast('show');
 }
