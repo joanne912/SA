@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/m_facilities.css">
+<link rel="stylesheet" href="css/m_facilities.css" type="text/css" />
 <div class="act_wrap">
     <a href="home.php?page=facility">
         <div class="a_icon_circle">
