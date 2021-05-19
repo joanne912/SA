@@ -1,3 +1,16 @@
+.reserveinform{
+    background-color:#D5D5E9; 
+    padding:1.5em 1.5em ;
+    font-weight:bold;
+    margin-top:20px;
+    border-radius:.5em;
+}
+.tab{
+    width: 700px;
+}
+.tabcontent{
+    width: 700px;
+}
 .d-block {
     width: 80%;
     height: 40vh !important;
@@ -175,20 +188,7 @@ hr{
     padding: .5em .6em;
     margin-left: 5%;
 }
-.result{
-    color: #808080;
-    word-wrap:break-word;
-    /* display: inline-block; */
-     font-weight: bold;
-    display: flex;
-    width: 28em;
-    height: 12em;
-    border: 5px solid #D5D5E9;
-    margin-left: 25%;
-    padding: 1.5em 1.5em ;
-    border-radius: 8px;
-    position:relative; 
-}
+
 .send{
     width:6.5em;
     height: 2.4em;
@@ -246,6 +246,12 @@ hr{
     letter-spacing:.2em;
   }
  @media screen and (max-width: 768px){
+    .tab{
+        width: 500px;
+    }
+    .tabcontent{
+        width: 500px;
+    }
      .option1{
          width:18em;
      }
@@ -293,6 +299,12 @@ hr{
      }
  }
  @media screen and (max-width: 400px){
+    .tab{
+        width: 250px;
+    }
+    .tabcontent{
+        width: 250px;
+    }
     .p input{
          height: 3em;
      }

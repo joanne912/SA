@@ -6,4 +6,5 @@ function toggle2() {
         'display': 'flex'
     })
     // $('.toast').toast('show');
+    $('#myModal').modal('show')
 }

@@ -14,6 +14,33 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="css/facility_reserve.css">
+    <style>
+         .reserveinform{
+            background-color:#D5D5E9; 
+            padding:1.5em 1.5em ;
+            font-weight:bold;
+            margin-top:20px;
+            border-radius:.5em;
+        }
+        
+        @media screen and (max-width: 768px){
+            .tab{
+            width: 500px;
+            }
+            .tabcontent{
+                width: 500px;
+            }
+        }
+        @media screen and (max-width: 400px){
+            .tab{
+            width: 250px;
+            }
+            .tabcontent{
+                width: 250px;
+            }
+        }
+    
+    </style>
 </head>
 <body>
     <div class="container" style="height:1500px">
@@ -29,7 +56,7 @@
             </div>
             <hr>
             
-            <p class="dot"><img src="img/circle.svg">&nbsp公設名稱 : </img></p>
+            <p class="dot"style="font-weight:bold"><img src="img/circle.svg">&nbsp桌球室 : </img></p>
             <!--新增住戶公設預約資訊到資料庫-->
             <div class="information">
                 <form>
@@ -58,8 +85,8 @@
                 </form>
                 <p class="content">電&nbsp&nbsp&nbsp&nbsp    話 : <input type="text"></p>
                 <p class="content">&nbspEmail &nbsp&nbsp: <input type="text"></p>
-                <!--資料庫匯出住戶的點數 若住戶點選我要扣點後須顯示剩餘點數-->
-                <p class="content">您的點數 : 點
+                <!--資料庫匯出住戶的點數 若住戶點選我要扣點後須顯示在剩餘點數 -->
+                <p class="content">您的點數 : 500 點
                     <input type="button" value="我要扣點"class="coupon_btn" style="background-color:rgb(5, 148, 41)">
                     <input type="button" value="取消"class="cancle_btn">
                 </p>
@@ -77,36 +104,36 @@
                 <!--若使用者選擇否不會顯示設備借用選單 是則顯示-->
                 <div class="tab">
                     <button class="tablinks" onclick="tools(event, 'Table')">桌球拍</button>
-                    <button class="tablinks" onclick="tools(event, 'Micro')">麥克風</button>
-                    <button class="tablinks" onclick="tools(event, 'Air')">冷氣遙控器</button>
+                    <button class="tablinks" onclick="tools(event, 'Ball')">桌球</button>
+                    <button class="tablinks" onclick="tools(event, 'Wrap')">桌球墊</button>
                 </div>
 
                 <div id="Table" class="tabcontent">
-                    <p>選擇借用項目 :</p>
+                    <p>選擇借用個數 :</p>
                     <p>
                         <div class="check">
-                            <input type="checkbox" name="borrownum" value="a.桌球拍" > a.桌球拍
-                            <input type="checkbox" name="borrownum" value="b.桌球拍" > b.桌球拍
+                            <input type="radio" name="borrownum1" value="a.桌球拍" checked> 0 支
+                            <input type="radio" name="borrownum1" value="b.桌球拍" > 1 支
                         </div>
                     </p>
                 </div>
 
-                <div id="Micro" class="tabcontent">
-                    <p>選擇借用項目 :</p>
+                <div id="Ball" class="tabcontent">
+                    <p>選擇借用個數 :</p>
                     <p>
                         <div class="check">
-                            <input type="checkbox" name="borrownum" value="a.麥克風" > a.麥克風
-                            <input type="checkbox" name="borrownum" value="b.麥克風" > b.麥克風
+                            <input type="radio" name="borrownum2" value="a.桌球"checked > 0 顆
+                            <input type="radio" name="borrownum2" value="b.桌球" > 1 顆
                         </div>
                     </p> 
                 </div>
 
-                <div id="Air" class="tabcontent">
-                    <p>選擇借用項目 :</p>
+                <div id="Wrap" class="tabcontent">
+                    <p>選擇借用個數 :</p>
                     <p>
                         <div class="check">
-                            <input type="checkbox" name="borrownum" value="a.冷氣遙控器" > a.冷氣遙控器
-                            <input type="checkbox" name="borrownum" value="b.冷氣遙控器" > b.冷氣遙控器
+                            <input type="radio" name="borrownum3" value="a.桌球墊"checked > 0 組
+                            <input type="radio" name="borrownum3" value="b.桌球墊" > 1 組
                         </div>
                     </p> 
                 </div>
@@ -115,20 +142,23 @@
             <hr>
         </div>
         <div class="outside">
-            <p class="dot"><img src="img/circle.svg"> &nbsp確認預約資訊 : </img></p>
+            <p class="dot" style="font-weight:bold"><img src="img/circle.svg"> &nbsp確認預約資訊 : </img></p>
             <div class="information">
                   <!--住戶點數扣除公設點數-->
-                <p class="content">剩餘點數 :  點</p>
+                <p class="content">剩餘點數 : 500 - 20 = 480 點</p>
                 <div class="content2">
-                    <label class="content">預約資訊 :
-                         <!--display住戶預約資訊-->
-                        <span class="result">
-                            預約時段 : 7:00 ~ 10:00 <br>
-                            預約日期 : 2021/5/7<br>
-                            預約人數 : 2 人<br>
-                            電 &nbsp&nbsp&nbsp&nbsp話&nbsp: 0967543213<br>
-                             Email &nbsp&nbsp   : njjjijds@gmail.com<br>
-                        </sapn>
+                    <label class="content">預約資訊(請確認預約資料無誤) :
+                         <!--display住戶預約資訊 若無借用設備則顯示無-->
+                      
+                            <div class="reserveinform">
+                                <p>預約時段 : 7:00 ~ 10:00</p>
+                                <p>預約日期 : 2021/5/7</p>
+                                <p>預約人數 : 2 人</p>
+                                <p>電 &nbsp&nbsp&nbsp&nbsp話&nbsp: 0967543213</p>
+                                <p>Email : jijds@gmail.com</p>
+                                <p>借用設備 : 桌球1顆</p>
+                            </div>
+                        
                 </div>
             </div>
             <div>

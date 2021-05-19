@@ -16,14 +16,10 @@
     
 </head>
 <style>
-a{
+    a{
         color: #808080 !important;
         text-decoration: none !important;
     }
-    /* a{
-        color: #808080 !important;
-        text-decoration: none !important;
-    } */
 </style>
 <body>
       <!-- 顯示住戶已預約 已取消 已完成的預約紀錄 -->
