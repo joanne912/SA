@@ -16,7 +16,7 @@
             $_SESSION['id'] = $row['USER_ID'];
             $_SESSION['auth'] = $row['USER_AUTHORITY'];
 
-            if($row['USER_AUTHORITY'] == 5){
+            if($row['USER_AUTHORITY'] >= 4){
                 $sql = 'SELECT `HOUSEHOLD_ID`,`COMMUNITY_ID` FROM `resident_address` WHERE ( `USER_ID` = ? );';
                 $statement = $conn->prepare($sql);
                 $statement->execute(array($row['USER_ID']));

@@ -32,7 +32,7 @@
         <div class="main">
             <?php
             //管理員與警衛權限
-            if ($auth <= 4){
+            if ($auth <= 3){
                 //權限管理
                 if ($page == "m_auth"){
                     ///
@@ -79,10 +79,16 @@
                     ///
                 }
             }
-            //一般使用者
-            else if ($auth == 5){
+            // 社區管理者(管委會成員，同時也是住戶身分)
+            else if ($auth >= 4){
+                //社區管理者的查看住戶戶籍代碼
+                if($page == "householdid"){
+                    if($auth == 4) {
+                        include("test1.php");
+                    }
+                }
                 // 個人資訊相關跳轉
-                if ($page == "personal"){
+                else if ($page == "personal"){
                     include("personal.php");
                 }
                 // 包裹相關跳轉
