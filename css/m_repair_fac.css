@@ -1,26 +1,31 @@
-table{
+table {
     /* background-color: #f7f7fa; */
     width: 90%;
     margin: 1.5em auto 0;
     border-collapse: collapse;
 }
-th{
+
+th {
     letter-spacing: 4px;
     text-indent: 4px;
     padding: 1em 2em;
     background-color: #f7f7fa;
 }
-tr:nth-child(odd){
+
+tr:nth-child(odd) {
     background-color: #fff;
 }
-tr:nth-child(even){
+
+tr:nth-child(even) {
     background-color: #f7f7fa;
 }
-td{
+
+td {
     text-align: center;
     padding: .8em;
 }
-td p{
+
+td p {
     width: 50%;
     font-size: .8em;
     text-align: center;
@@ -32,40 +37,45 @@ td p{
     letter-spacing: 3px;
     text-indent: 3px;
 }
-.resolve{
+
+.resolve {
     background: red;
 }
-.wait{
+
+.waiting {
     background: rgb(252, 193, 0);
 }
-.solving{
+
+.solving {
     background: green;
 }
-@media screen and (max-width: 768px){
-    table{
+
+@media screen and (max-width: 768px) {
+    table {
         width: 100%;
         margin-top: 2em;
     }
-    th{
+    th {
         padding: 10px;
     }
 }
-@media screen and (max-width: 400px){
-    table{
+
+@media screen and (max-width: 400px) {
+    table {
         margin-top: 1.25em;
     }
-    th{
+    th {
         padding: 5em 0;
         font-size: .1rem;
         font-weight: 400;
         letter-spacing: 0;
         text-indent: 0;
     }
-    td{
+    td {
         padding: 7px 0;
         font-size: .1em;
     }
-    td p{
+    td p {
         width: 80%;
     }
 }

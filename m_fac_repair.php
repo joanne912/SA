@@ -1,11 +1,12 @@
+<?php 
+    $sql = "SELECT `FACILITIES_REPAIR_ID`,`facilities`.`FACILITIES_ID`, DATE(`FACILITIES_REPAIR_DATE`),
+            `FACILITIES_NAME`, `FACILITIES_REPAIR_CONTENT`, `FACILITIES_REPAIR_STATE` 
+            FROM `facilities_repair`,`facilities` 
+            WHERE ( `facilities_repair`.`FACILITIES_ID` = `facilities`.`FACILITIES_ID`
+            AND `facilities_repair`.`COMMUNITY_ID` = $community);";
+?>
 <link rel="stylesheet" href="css/m_facilities.css">
 <link rel="stylesheet" href="css/m_repair_fac.css">
-
-<?php 
-    // $conn = require_once('conn.php');
-    // $sql = "SELECT * FROM tablename";
-    // $result = mysqli_query($conn, $sql);
-?>
 <table>
     <thead>
         <th>編號</th>
@@ -14,23 +15,35 @@
         <th>問題描述</th>
         <th>處理進度</th>
     </thead>
+    <?php
+    foreach( $conn->query($sql) as $row ){
+        if( $row['FACILITIES_REPAIR_STATE'] == 'resolve' ){
+            $state = '已處理';
+        }else if( $row['FACILITIES_REPAIR_STATE'] == 'waiting' ){
+            $state = '待處理';
+        }else if( $row['FACILITIES_REPAIR_STATE'] == 'solving' ){
+            $state = '處理中';
+        }
+    ?>
     <tr>
-        <a href='#'>
-            <td>1</td>
-        </a>
-        <td>05/20</td>
-        <td>公設名稱</td>
+        
         <td>
-            <a href='home.php?page=order&method=detail'>公設問題</a>
+            <a href='home.php?page=facility&method=detail&repair=<?=$row['FACILITIES_REPAIR_ID']?>'><?=$row['FACILITIES_REPAIR_ID']?></a>
         </td>
         <td>
-            <p class='resolve'>已處理</p>
+            <?=$row['DATE(`FACILITIES_REPAIR_DATE`)']?>
         </td>
         <td>
-            <p class='wait'></p>
+            <a href='home.php?page=facility&method=look&facility=<?=$row['FACILITIES_ID']?>'><?=$row['FACILITIES_NAME']?></a>
         </td>
         <td>
-            <p class='solving'></p>
+            <a href='home.php?page=facility&method=detail&repair=<?=$row['FACILITIES_REPAIR_ID']?>'><?=$row['FACILITIES_REPAIR_CONTENT']?></a>
+        </td>
+        <td>
+            <p class='<?=$row['FACILITIES_REPAIR_STATE']?>'><?=$state?></p>
         </td>
     </tr>
+    <?php
+    }
+    ?>
 </table>
