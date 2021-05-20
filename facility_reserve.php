@@ -43,6 +43,7 @@
     </style>
 </head>
 <body>
+ <form>
     <div class="container" style="height:1500px;margin-top:5%;">
         <div class="outside">
             <div class="head" >
@@ -59,7 +60,7 @@
             <p class="dot"style="font-weight:bold"><img src="img/circle.svg">&nbsp桌球室 : </img></p>
             <!--新增住戶公設預約資訊到資料庫-->
             <div class="information">
-                <form>
+                
                       <!--從資料庫載入可以預約的時段-->
                     <label class="content">預約時段 : </label>
                     <select class="option1" name="SelectTime">
@@ -70,9 +71,9 @@
                             <option value="pm1">13:00 ~ 14:00
                             <option value="pm2">15:00 ~ 16:00
                     </select>
-                </form>
+                
                 <p class="content">預約日期 : <input type="date"></p>
-               <form>
+              
                     <label class="content">預約人數 : </label>
                         <select class="option1" name="SelectPeople">
                             <optgroup label="選擇人數">
@@ -82,7 +83,7 @@
                                 <option value="p4">4人
                                 <option value="p5">5人
                         </select>
-                </form>
+               
                 <p class="content">電&nbsp&nbsp&nbsp&nbsp    話 : <input type="text"></p>
                 <p class="content">&nbspEmail &nbsp&nbsp: <input type="text"></p>
                 <!--資料庫匯出住戶的點數 若住戶點選我要扣點後須顯示在剩餘點數 -->
@@ -162,7 +163,7 @@
                 </div>
             </div>
             <div>
-                <a href="home.php?page=facility"><input type="button" value="確認送出"class="send"></a>
+               <input type="submit" value="確認送出"class="send">
             </div>
             <br><br>
             <hr>
@@ -183,6 +184,7 @@
         evt.currentTarget.className += " active";
         }
     </script>
+     </form>
 </body>
 
 </html>
