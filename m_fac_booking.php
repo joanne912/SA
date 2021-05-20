@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -21,6 +20,20 @@
     </script>
     <link rel="stylesheet" href="css/m_booking_list.css" type="text/css" />
     <style>
+    .ti{
+        width:78%;
+        height:3%;
+        border:1px solid #d5d5e9;
+        margin:auto;
+        background-color:#d5d5e9;
+    }
+    .hr{
+        width: 100%;
+        border: 2px solid #D5D5E9 ;
+        background-color: #D5D5E9 ;
+        color:#D5D5E9 ;
+        margin-top: 2em;
+    }
     .headmessage {
         width: 100%;
         display: flex;
@@ -38,8 +51,10 @@
         color: #808080;
     }
 
-    textarea {
-        border: 4px solid #d5d5e9;
+    .tt{
+        width:100%;
+        height:250px;
+        border:3px solid #d5d5e9;
         border-radius: 5px;
         padding: 1em;
         box-sizing: border-box;
@@ -48,13 +63,7 @@
         letter-spacing: 3px;
         text-indent: 3px;
         align: center;
-        margin-left: 18%;
     }
-
-    .M_enter {
-        margin: auto;
-    }
-
     .message {
         margin: 5px 0 0 5px;
         padding: 0 0;
@@ -69,6 +78,7 @@
     }
     .spacing{
         letter-spacing:4px;
+        font-weight:bold;
     }
     .m_cancel_btn{
         letter-spacing:4px;
@@ -191,7 +201,7 @@
         .option1 {
             margin-left: 2.5em;
             text-indent: 3px;
-            width: 19em !important;
+            width: 23em !important;
         }
 
         .content2 {
@@ -234,7 +244,7 @@
 </head>
 
 <body>
-    <div class="container" style="height:auto">
+    <div class="container" style="height:auto;margin-top:5%;">
         <div class="outside">
             <div class="head">
                 <div class="left">
@@ -269,7 +279,7 @@
             <div class="information2">
                         <span class="grayspace"><span>
                         <div class="middletext">
-                            編號<span>游泳池|</span><span>2021/5/13</span><br>
+                            01<span>游泳池|</span><span>2021/5/13</span><br>
                             <span class="now_user" style="font-size:1.5em;color:rgb(35, 35, 94)">目前使用人數 :
                                 <span class="num" style="font-size:1.5em;color:#fc6471">5 </span>
                                 <span class="num" style="font-size:1em;color:#fc6471">/</span>
@@ -300,16 +310,20 @@
                                     <div class="M_wrap">
                                         <div class="M_title">
                                         <!-- 資料庫導入管理者勾選的戶別 -->
-                                            <p class="spacing">戶別 :</p>
-                                            <hr>
+                                            <p class="spacing">戶別 :&nbsp; 16, 22, 45
+                                                <div class="ti" name="" id=""></div>
+                                            </p>
+                                            <p class="spacing">
+                                                * 輸入欲通知的訊息 :</p>
+                                            <div style="width:80%;margin:auto;">
+                                            
+                                                <textarea class="tt" name="description" placeholder="輸入訊息 :"></textarea>
+                                            </div>
                                         </div>
                                         <!-- 訊息傳送給住戶的通知 -->
-                                        <div class="M_enter">
-                                            <label align="center" class="spacing">
-                                                * 輸入欲通知的訊息 :<br><br>
-                                                <textarea rows="10" cols="40" name="" id=""
-                                                    placeholder="輸入訊息:"></textarea>
-                                            </label>
+                                        <div class="M_title">
+                                            
+                                        
                                             <br><br>
                                             
                                             <div class="message_btn">
@@ -318,7 +332,7 @@
                                                 </button>
                                                 <!-- Button trigger modal -->
                                                 <button type="button" class="m_submit_btn" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-                                                確認送出
+                                                確認
                                                 </button>
                                                 <!-- Modal 使管理員確認有成功送出信件 條件:住戶有收到信件通知-->
                                                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -360,7 +374,7 @@
                 <span class="grayspace" style="border: 3px solid #808080"><span>
                         <div class="middletext2">
                             <input type="checkbox" name="" id="">
-                            編號<span>|游泳池</span>
+                            01<span>|游泳池</span>
                             <img style="weight:20px;height:20px" src="img/swimmer.svg"><br>
                             <div class="data" style="letter-spacing:1.2px">
                                 <span>戶別: 12
@@ -375,7 +389,7 @@
                 <span class="grayspace" style="border: 3px solid #808080"><span>
                         <div class="middletext2">
                             <input type="checkbox" name="" id="">
-                            編號<span>|游泳池</span>
+                            01<span>|游泳池</span>
                             <img style="weight:20px;height:20px" src="img/swimmer.svg"><br>
                             <div class="data" style="letter-spacing:1.2px">
                                 <span>戶別: 12

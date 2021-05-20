@@ -9,7 +9,7 @@
         <div class='info_wrap'>
             <!-- 公設圖片，需連結資料庫 -->
             <div class='graphic'>
-                <img style="width:200px;height:150px"src='<?=$row["FACILITIES_IMG1"]?>' alt=''>
+                <img style="border-radius:8px;width:250px;height:160px"src='<?=$row["FACILITIES_IMG1"]?>' alt=''>
             </div>
             <!-- 每一公設的名稱及簡介，需連結資料庫 -->
             <div class='text'>
