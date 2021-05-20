@@ -1,7 +1,7 @@
 <?php
     $time = '2';
 
-    session_start();
+    @session_start();
     $_SESSION = array(); 
     session_destroy();
     header("refresh:$time;url=index.html");

@@ -12,7 +12,7 @@
         if(count($statement) == 1){
             $row = $statement->fetch(PDO::FETCH_ASSOC);
 
-            session_start();
+            @session_start();
             $_SESSION['id'] = $row['USER_ID'];
             $_SESSION['auth'] = $row['USER_AUTHORITY'];
 
