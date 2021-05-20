@@ -2,6 +2,7 @@
     color: #808080;
     text-decoration: none;
 }
+
 .act_wrap {
     width: 100%;
     display: flex;
@@ -45,16 +46,19 @@ hr {
     background-color: #f7f7fa;
     margin-top: 2em;
 }
-.text{
-    font-size:  1.2em;
+
+.text {
+    font-size: 1.2em;
     width: 100%;
-    margin-right:35%;
+    margin-right: 35%;
     background-color: white;
 }
-.facility_img{
-    width:1em;
+
+.facility_img {
+    width: 1em;
     height: 1em;
 }
+
 .info_wrap {
     width: 90%;
     border: 6px solid #f7f7fa;
@@ -62,16 +66,10 @@ hr {
     /* margin: auto; */
     margin-top: 2em;
 }
-.name{
+
+.name {
     font-weight: bold;
 }
-
-
-
-
-
-
-
 
 @media screen and (min-width: 768px) and (max-width: 1200px) {
     .icon_group {
@@ -129,3 +127,27 @@ hr {
     }
 }
 
+.textcontent {
+    width: 100%;
+    background-color: white;
+    letter-spacing: 2px;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+}
+
+@media screen and (max-width: 768px) and (max-width:900px) {
+    .textcontent {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .textcontent {
+        font-size: 1em;
+        margin-top: 20%;
+        width: 63%;
+    }
+}
