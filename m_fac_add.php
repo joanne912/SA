@@ -39,8 +39,18 @@
 ?>
 <link rel="stylesheet" href="css/add_facilities.css">
 <div class="wrap">
-    <h2>
-        我還需要照片上傳區QQ<br>
+    <div>
+        <h2 style="margin: 1.5em 0;">
+        新增公設服務<br><hr>
+        </h2>
+        <form action="m_fac_add_pic.php" method="post" enctype="multipart/form-data">
+        <span><img src="img/circle.svg" alt="">公設照片</span>
+            請選擇欲上傳的公設照片:
+            <input type="file" name="my_file"><br>
+            <div class="btn">
+                <input type="submit" value="上傳照片" name="submit" >
+            </div>
+        </form>
         <?php
             if($result){
                 echo "新增成功";
@@ -50,9 +60,9 @@
                 }
             }
         ?>
-    </h2>
+    </div><hr>
     <form method="POST" action="home.php?page=facility&method=add">
-        <span>公設名稱： <input type="text" name="name"></span>
+        <span><img src="img/circle.svg" alt="">公設名稱： <input type="text" name="name"></span>
         <hr>
         <span><img src="img/circle.svg" alt="">公設時段</span>
         <p>開放時段：<input type="text" name="open_time"></p>
