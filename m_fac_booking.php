@@ -140,7 +140,7 @@
                     <div class="middletext2">
                         <input type="checkbox" name="" id="">
                         01<span>|游泳池</span>
-                        <img style="weight:20px;height:20px" src="img/swimmer.svg"><br>
+                        <!-- <img style="weight:20px;height:20px" src="img/swimmer.svg"><br> -->
                         <div class="data" style="letter-spacing:1.2px">
                             <span>戶別: 12
                                 |登記人: aaa
@@ -155,7 +155,7 @@
                     <div class="middletext2">
                         <input type="checkbox" name="" id="">
                         01<span>|游泳池</span>
-                        <img style="weight:20px;height:20px" src="img/swimmer.svg"><br>
+                        <!-- <img style="weight:20px;height:20px" src="img/swimmer.svg"><br> -->
                         <div class="data" style="letter-spacing:1.2px">
                             <span>戶別: 12
                                 |登記人: aaa
