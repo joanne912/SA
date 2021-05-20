@@ -54,6 +54,7 @@ p{
     background-color: #fc6471;
     color: white;
     border-radius: 5px;
+    margin: 1.6em 1.6em;
 }
 @media screen and (max-width: 768px) {
     .container{
