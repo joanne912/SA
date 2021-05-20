@@ -59,17 +59,36 @@ p{
     .container{
         margin: 15vh 0;
     }
+    .row{
+        display: inline-block; 
+    }
+    p{
+        width: 30% !important;
+        text-align: left;
+        /* display: inline-block; */
+        /* margin-right:0 !important;
+        margin:1em 0; */
+    }
+    input{
+        width: 60%;
+    }
+    select{
+        width: 60%;
+    }
+    .col-sm{
+        margin:1em 0.5em 0 0.5em;
+    }
     .btn {
         width: 15vw;
         height: 3vh;
-        margin-right: 1.6em;
+        margin:1.6em 1.6em 0 0;
         padding: 0 0 0.1em 0;
     }
 }
 @media screen and (max-width: 400px){
     /* .col-sm{
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        justify-items:center;
     } */
     p{
         width: 100% !important;
@@ -82,9 +101,6 @@ p{
         width: 100%;
     }
     select{
-        width: 100%;
-    }
-    .row{
         width: 100%;
     }
     .btn {
@@ -110,7 +126,7 @@ p{
         </div>
         <div class="row">
             <div class="col-sm">
-                <p style="margin-right: 2em;">E-MAIL</p>
+                <p style="margin-right: 2.2em;">E-MAIL</p>
                 <input type="text">
             </div>
             <div class="col-sm">
