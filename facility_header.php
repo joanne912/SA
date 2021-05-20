@@ -15,7 +15,7 @@
             <img src="img/dollar.svg" alt="">
         </div>
     </a>
-    <a href="home.php?page=facility&method=repair">
+    <a href="home.php?page=facility&method=repair_add">
         <div class="a_icon_circle">
             <img src="img/fix.svg" alt="">
         </div>
@@ -25,7 +25,7 @@
         <a href="home.php?page=facility">公設清單</a>
         <a href="home.php?page=facility&method=records">預約記錄</a>
         <a href="home.php?page=facility&method=point">點數記錄</a>
-        <a href="home.php?page=facility&method=repair">公設報修</a>
+        <a href="home.php?page=facility&method=repair_add">公設報修</a>
     </div>
     <hr>
 </div>

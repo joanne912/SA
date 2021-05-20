@@ -21,6 +21,7 @@
     <?php
         @$page = $_GET["page"];
         @$method = $_GET["method"];
+        @$to = $_GET["to"];
     ?>
     <div class="all">
         <!-- 下面這個區域是上方的header -->
@@ -121,7 +122,12 @@
                     }
                     //公設報修的動作
                     else if($method == "repair_add"){
-                        include("facility_repair_add.php");
+                        if($to == "repair_status"){
+                            include("facility_repair_status.php");
+                        }
+                        else{
+                            include("facility_repair_add.php");
+                        }
                     }
                     //維修進度清單
                     else if($method == "repairs"){

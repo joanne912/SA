@@ -1,0 +1,55 @@
+.con{
+    width: 90%;
+    border: 6px solid #f7f7fa;
+    border-radius: 10px;
+    margin: 2em auto;
+    padding: 2.5em 3em;
+    box-sizing: border-box;
+}
+.sec{
+    width: 60%;
+    margin: auto;
+}
+.sec p{
+    text-align: center;
+    margin: auto;
+    font-size: 2em;
+    letter-spacing: 1em;
+    text-indent: .5em;
+}
+form p{
+    margin: 2em 0 0;
+    font-size: 1.25em;
+    letter-spacing: 3px;
+    text-indent: 3px;
+}
+form input{
+    height: 4vh;
+    margin: 0 0 0 1em;
+    border: 6px solid #f7f7fa;
+    border-radius: 10px;
+    width: 40%;
+}
+form textarea{
+    margin: 2em 0 0;
+    border: 6px solid #f7f7fa;
+    border-radius: 10px;
+}
+.btn{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+.btn input{
+    font-size: 1em;
+    width: 10%;
+    padding: .5em;
+    height: auto;
+    box-sizing: border-box;
+    letter-spacing: 3px;
+    text-indent: 3px;
+    color: white;
+    background-color: #fc6471;
+    border: 0;
+}
