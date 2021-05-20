@@ -1,11 +1,13 @@
 <?php
-    $facility = $_GET['facility'];
+    if(!isset($_GET['facility'])){
+        header("location:home.php?page=facility");
+    }
     $sql = "SELECT `FACILITIES_NAME`, `FACILITIES_INTRODUCTION`, `FACILITIES_DESCRIPTION`,
             `FACILITIES_PLACE`, HOUR(`FACILITIES_OPEN_TIME`), HOUR(`FACILITIES_CLOSE_TIME`),
             `FACILITIES_IMG1`, `FACILITIES_IMG2`, `FACILITIES_IMG3`, `FACILITIES_POINT`,
             `FACILITIES_LIMIT` FROM `facilities` WHERE ( `FACILITIES_ID` = ? AND `COMMUNITY_ID` = $community );";
     $statement = $conn->prepare($sql);
-    $statement->execute(array($facility));
+    $statement->execute(array($_GET['facility']));
     $row = $statement->fetch(PDO::FETCH_ASSOC);
 ?>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -14,11 +16,6 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
 </script>
 <link rel="stylesheet" href="css/facility_detail.css">
-<style>
-    .information{
-        width:100%;
-    }
-</style>
 <div class="container">
     <div class="outside">
         <div class="head">
