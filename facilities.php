@@ -13,7 +13,7 @@
             </div>
             <!-- 每一公設的名稱及簡介，需連結資料庫 -->
             <div class='text'>
-                <h2><?=$row['FACILITIES_NAME']?></h2>
+                <h2><?=$row['FACILITIES_ID']?><?=$row['FACILITIES_NAME']?></h2>
                 <p>開放時間：<?=$row['HOUR(`FACILITIES_OPEN_TIME`)']?>:00~<?=$row['HOUR(`FACILITIES_CLOSE_TIME`)']?>:00</p>
                 <p><?=$row['FACILITIES_INTRODUCTION']?></p>
             </div>
