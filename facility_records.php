@@ -24,6 +24,7 @@
 <body>
       <!-- 顯示住戶已預約 已取消 已完成的預約紀錄 -->
     <div class="situation">
+        <!-- 應該是再寫一個class給按下去的button就好 -->
         <input type="button" value="已預約" style="color:#fc6471;letter-spacing:1.2px" class="cancle_btn">
         <input type="button" value="已取消" class="cancle_btn">
         <input type="button" value="已完成" class="cancle_btn">
