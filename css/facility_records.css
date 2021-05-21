@@ -98,7 +98,7 @@ hr {
     justify-content: flex-end;
 }
 .upper2 {
-    margin-top:.5em;
+    
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -129,7 +129,23 @@ hr {
     margin-left: 5%;
     text-align: center;
 }
+.btn1{
+    width:100px;
+    height: 45px;
+    background-color: #D5D5E9;
+    color: white;
+    border-radius: 5px;
+    border: solid 3px #f7f7fa;
+}
+.h4{
+    font-weight: bold;
+}
 @media screen and (min-width: 768px) and (max-width: 1200px) {
+    .btn1{
+       
+        height: 40px;
+        font-size: 1em;
+    }
     .icon_group2 {
         margin-left: 0;
     }
@@ -149,6 +165,18 @@ hr {
 }
 
 @media screen and (max-width: 400px) {
+    .h4{
+        font-size: 1em;
+    }
+    .h7{
+        font-size: .8em;
+    }
+    .btn1{
+        margin-top: 10px;
+        width: 40px;
+        height: 87px;
+        font-size: .3em;
+    }
     .a_icon_circle {
         width: 3em;
         height: 3em;
@@ -164,13 +192,13 @@ hr {
     }
     .info_wrap {
         flex-wrap: wrap;
-        padding: 1em;
+        padding: 2em;
     }
     .graphic img {
         height: 120px;
     }
     .text {
-        width: 85%;
+        width: 70%;
         margin-top: 2em;
     }
     
@@ -199,10 +227,9 @@ hr {
         height: 1em;
     }
     .cancle_btn{
-        width:6.9em;
-        height: 4em;
-        font-size:.5em;
+        font-size: .8em;
     }
+    
 }
 .press_btn{
     color:#fc6471;
