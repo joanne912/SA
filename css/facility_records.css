@@ -45,11 +45,6 @@ hr {
     background-color: #f7f7fa;
     margin-top: 2em;
 }
-
-.text {
-    width: 40%;
-}
-
 .info_wrap {
     width: 90%;
     padding: 2% 3%;
@@ -208,6 +203,10 @@ hr {
         height: 4em;
         font-size:.5em;
     }
+}
+.press_btn{
+    color:#fc6471;
+    letter-spacing:1.2px;
 }
 /* .icon_group2 img {
     width: 1.5em;

@@ -13,7 +13,7 @@
     <div class="outside">
         <div class="head">
             <div class="left">
-                <a href="m_display_booking.php"><img src="img/left-arrow.svg"></a>
+                <a href="home.php?page=facility&method=display_booking"><img src="img/left-arrow.svg"></a>
             </div>
             <div class="name">
                 <p>查看住戶預約紀錄</p>
@@ -23,20 +23,21 @@
         <!--預設全選時段和預設當天日期 須從資料庫導入該天該時段的所有住戶預約紀錄-->
         <div class="information">
             <form>
-                <label class="content" style="margin-left:1em">選擇時段 : </label>
-                <select class="option1" style="padding:.5em .1em" name="SelectTime">
-                    <optgroup label="時段全選">
-                        <option value="all">全選
-                    <optgroup label="早上時段">
-                        <option value="am1">7:00 ~ 8:00
-                        <option value="am2">8:00 ~ 9:00
-                    <optgroup label="下午時段">
-                        <option value="pm1">13:00 ~ 14:00
-                        <option value="pm2">15:00 ~ 16:00
-                </select>
-
-                <label class="content3" style="font-size:1em">選擇日期 : </label>
-                <input class="content2" style="margin-left:1em" type="date">
+                <p class="content" >開始時段 : 
+                    <select class="option1"  name="SelectTime">
+                    <optgroup label="請選擇開始時段">
+                            <option value="s1">7:00 
+                            <option value="s2">8:00 
+                    </select>
+                </p>
+                <p class="content" >結束時段 : 
+                    <select class="option1"  name="SelectTime">
+                        <optgroup label="請選擇結束時段">
+                            <option value="e1">9:00
+                            <option value="e2">10:00
+                    </select>
+                </p>
+                <p class="content">選擇日期 : <input class="option1"type="date"></p>
             </form>
         </div>
         <!---->
@@ -44,21 +45,26 @@
         <div class="information2">
                     <span class="grayspace"><span>
                     <div class="middletext">
-                        01<span>游泳池|</span><span>2021/5/13</span><br>
-                        <span class="now_user" style="font-size:1.5em;color:rgb(35, 35, 94)">目前使用人數 :
-                            <span class="num" style="font-size:1.5em;color:#fc6471">5 </span>
-                            <span class="num" style="font-size:1em;color:#fc6471">/</span>
-                            <span class="num" style="font-size:1em;color:#fc6471">20</span>
-                        </span>
+                       
+                            <h4 class="h4"> 01<span>游泳池|</span><span>2021/5/13</span></h4>
+                            <h3 class="h3"><span class="now_user">目前使用人數 :</span>
+                                <span class="num1">5 </span>
+                                <span class="num">/</span>
+                                <span class="num">20</span>
+                            </h3>
+                            
+                       
                     </div>
         </div>
         <!---->
         <!--點選全選時系統自動選取所有住戶 -->
-        <div class="information2">
+        <div class="select_btn">
             <button type="button" class="coupon_btn">全選</button>
             <span class="content3"data-toggle="modal" data-target="#exampleModalCenter">
-                    <img style="width:15px;height:15px" src="img/send.svg"> 選取後點此傳送通知
+                 選取後點此傳送通知 <img class="plane" src="img/send.svg">
             </span>
+        </div>
+            <div class="information">
             <!-- 管理員傳送通知給住戶點選連結後出現彈跳視窗 資料庫導入並顯示管理員勾選的住戶的戶別 
             輸入訊息按確認送出後將訊息通知給住戶端 -->
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
@@ -130,7 +136,7 @@
         </div><br>
         <!--切換住戶預約紀錄 類似tab的作法-->
         <div class="situation">
-            <input type="button" value="已預約" style="color:#fc6471;letter-spacing:1.2px" class="cancle_btn">
+            <input type="button" value="已預約"  class="cancle_btn press_btn">
             <input type="button" value="已取消" class="cancle_btn">
             <input type="button" value="已完成" class="cancle_btn">
         </div>
@@ -139,31 +145,30 @@
             <span class="grayspace" style="border: 3px solid #808080"><span>
                     <div class="middletext2">
                         <input type="checkbox" name="" id="">
-                        01<span>|游泳池</span>
-                        <!-- <img style="weight:20px;height:20px" src="img/swimmer.svg"><br> -->
-                        <div class="data" style="letter-spacing:1.2px">
-                            <span>戶別: 12
-                                |登記人: aaa
-                                |預約時段: 8:00 ~ 9:00
-                                |預約日期: 20210512 </span>
+                        01<span>游泳池</span>
+                        <div class="data" >
+                            <span class="phonespan"> 戶別 : 12 </span>
+                            <span> 登記人 : aaa </span>
+                            <p><span> 預約時段 : 8:00 ~ 9:00</span>
+                            <span> 預約日期 : 2021<span>/05<span><span>/12 <span> </span></p>
                         </div>
                     </div>
         </div>
-
         <div class="information2">
             <span class="grayspace" style="border: 3px solid #808080"><span>
                     <div class="middletext2">
                         <input type="checkbox" name="" id="">
-                        01<span>|游泳池</span>
-                        <!-- <img style="weight:20px;height:20px" src="img/swimmer.svg"><br> -->
-                        <div class="data" style="letter-spacing:1.2px">
-                            <span>戶別: 12
-                                |登記人: aaa
-                                |預約時段: 8:00 ~ 9:00
-                                |預約日期: 20210512 </span>
+                        01<span>游泳池</span>
+                        <div class="data">
+                            <span>戶別 : 12 </span>
+                            <span>  登記人 : aaa </span>
+                            <p><span> 預約時段 : 8:00 ~ 9:00</span>
+                            <span> 預約日期 : 2021<span>/05<span><span>/12 <span> </span></p>
                         </div>
                     </div>
         </div>
+
+        
         <hr>
     </div>
 </div>
