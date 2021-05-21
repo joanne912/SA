@@ -47,14 +47,15 @@ hr{
     
 
 }
-.name{
+.name {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     font-weight: bold;
     letter-spacing: 0.5em;
-    margin-left: 45%;
+    margin-left: 40%;
+    color: #808080;
 }
 .head{
     width: 85%;
@@ -63,17 +64,7 @@ hr{
     align-items: center;
     padding: 1em 0;
 }
-.container{
-    width: 80%;
-    height:100%;
-    margin: auto;
-    padding: 1.5em 0;
-    border: 8px solid #f7f7fa;
-    border-radius: 20px;
-    margin-top: 1em;
-    margin-bottom: 3em;
-    color: #808080;
-}
+
 
  .name p{
      font-size:1.5em;
@@ -130,7 +121,7 @@ hr{
      margin: 1.5em 0;
  }
  .information{
-    width:100%;
+    width:90%;
     margin:1.5em 0;
     padding:0 1.5em;
  }
@@ -258,6 +249,18 @@ hr{
   .list_title{
     letter-spacing:.2em;
   }
+  .container{
+    width: 55%;
+    height:100%;
+    margin: auto;
+    padding: 1.5em 0;
+    border: 8px solid #f7f7fa;
+    border-radius: 20px;
+    margin-top: 1em;
+    margin-bottom: 3em;
+    color: #808080;
+    margin-top: 10em;
+}
  @media screen and (max-width: 768px){
      .option1{
          width:18em;
@@ -266,7 +269,7 @@ hr{
          width:26em;
      }
      .name{
-         margin-left:45%;
+         margin-left:37%;
      }
     p input{
         width: 15em;
@@ -275,10 +278,11 @@ hr{
         padding: .5em 0em;
     }
      .container{
-         width: 80%;
+         margin-top:2em;
+         width: 90%;
      }
      .name p{
-         font-size: 1.3em;
+         font-size: 1em;
      }
      .d-block{
          height: 20vh !important;
@@ -305,6 +309,7 @@ hr{
          margin-left: 76%;
      }
  }
+ 
  @media screen and (max-width: 400px){
     .p input{
          height: 3em;
@@ -348,6 +353,7 @@ hr{
      .name p{
          font-size:.8em;
          margin-left: 0%;
+         font-weight: bold;
          }
      .information{
          margin:0 0 ;
@@ -362,7 +368,7 @@ hr{
        
     }
     .container{
-        width: 90%;
+        width: 80%;
     }
     .a_icon_circle{
         width: 3em;
@@ -381,7 +387,7 @@ hr{
         width: 100%;
     }
     .dot{
-        font-size:1em;
+        font-size:.9em;
     }
     .go{
         font-size: .75em;
@@ -395,3 +401,4 @@ hr{
      }
 
 }
+

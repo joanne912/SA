@@ -29,7 +29,7 @@
                    
                 </div>
                 <hr>
-                <form class="information">
+                
                 <p class="dot"style="font-weight:bold"><img src="img/circle.svg">&nbsp桌球室 : </img></p>
                 <!--新增住戶公設預約資訊到資料庫-->
                
@@ -76,11 +76,11 @@
                     </p>
                     <!--若使用者選擇否不會顯示設備借用選單 是則顯示-->
                     <div class="tab">
-                        <button class="tablinks" onclick="tools(event, 'Table')">桌球拍</button>
-                        <button class="tablinks" onclick="tools(event, 'Ball')">桌球</button>
-                        <button class="tablinks" onclick="tools(event, 'Wrap')">桌球墊</button>
+                        <button class="tablinks" onclick="tools(event, '桌球拍')">桌球拍</button>
+                        <button class="tablinks" onclick="tools(event, '桌球')">桌球</button>
+                        <button class="tablinks" onclick="tools(event, '桌球墊')">桌球墊</button>
                     </div>
-                    <div id="Table" class="tabcontent">
+                    <div id="桌球拍" class="tabcontent">
                         <p>選擇借用個數 :</p>
                         <p>
                             <div class="check">
@@ -89,7 +89,7 @@
                             </div>
                         </p>
                     </div>
-                    <div id="Ball" class="tabcontent">
+                    <div id="桌球" class="tabcontent">
                         <p>選擇借用個數 :</p>
                         <p>
                             <div class="check">
@@ -98,7 +98,7 @@
                             </div>
                         </p> 
                     </div>
-                    <div id="Wrap" class="tabcontent">
+                    <div id="桌球墊" class="tabcontent">
                         <p>選擇借用個數 :</p>
                         <p>
                             <div class="check">
@@ -107,9 +107,23 @@
                             </div>
                         </p> 
                     </div>
-                
+                    <script>
+                        function tools(evt, toolName) {
+                        var i, tabcontent, tablinks;
+                        tabcontent = document.getElementsByClassName("tabcontent");
+                        for (i = 0; i < tabcontent.length; i++) {
+                            tabcontent[i].style.display = "none";
+                        }
+                        tablinks = document.getElementsByClassName("tablinks");
+                        for (i = 0; i < tablinks.length; i++) {
+                            tablinks[i].className = tablinks[i].className.replace(" active", "");
+                        }
+                        document.getElementById(toolName).style.display = "block";
+                        evt.currentTarget.className += " active";
+                        }
+                    </script>
                 <button type="button" class="btn btn-success">確認填寫無誤</button>
-            </form>
+           
                     <!--可借用公設資訊End-->
                 <hr>
             </div>
@@ -138,21 +152,7 @@
                 <hr>
             </div>
         </div>
-        <script>
-            function tools(evt, toolName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(toolName).style.display = "block";
-            evt.currentTarget.className += " active";
-            }
-        </script>
+       
     </form>
 </body>
 </html>
