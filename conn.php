@@ -13,6 +13,8 @@
         $conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, true);
         // 設定UTF-8編碼
         $conn->query('SET NAMES "utf8"');
+        // 設定時區
+        $conn->query('SET time_zone = "+8:00"');
         return $conn;
     }
     catch(PDOException $e){
