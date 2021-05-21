@@ -64,34 +64,20 @@ hr {
     margin: auto;
 }
 
-.name {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    font-weight: bold;
-    letter-spacing: 0.5em;
-    margin-left: 45%;
-}
 
 .head {
-    width: 85%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 1em 0;
+    width: 100%;
+    margin:auto;
+    padding:1em 0em;
 }
 
-.container {
-    width: 80%;
-    height: 100%;
-    margin: auto;
-    padding: 1.5em 0;
-    border: 8px solid #f7f7fa;
-    border-radius: 20px;
-    margin-top: 1em;
-    margin-bottom: 3em;
-    color: #808080;
+.name {
+    margin-left: 40%;
+    display: inline-block;
+    justify-content: center;
+    font-weight: bold;
+    letter-spacing: 0.5em;
+    font-size: 1.5em;
 }
 
 .name p {
@@ -112,16 +98,19 @@ p input {
 }
 
 .option1 {
-    width: 35%;
-    border: 4px solid #f7f7fa;
-    border-radius: 5px;
-    padding: .5em 1em;
-    margin: 0 0 1.5em 1em;
-    font-size: .8em;
-    color: black;
-    letter-spacing: 3px;
-    text-indent: 3px;
-    margin-left: 1.4em;
+   
+        width: 30%;
+        border: 4px solid #f7f7fa;
+        border-radius: 5px;
+        padding: .5em 1em;
+        margin: 0 0 0 1em;
+        font-size: .8em;
+        color: black;
+        font-size: 1.2em;
+        list-style: circle;
+        letter-spacing: 4px;
+        font-size: 1em;
+    
 }
 
 .dot {
@@ -184,22 +173,10 @@ p input {
     color: white;
     font-size: 1em;
     padding: .5em .6em;
-    margin-left: 5%;
+   
 }
 
-.cancle_btn {
-    width: 6.5em;
-    height: 2.4em;
-    background-color: #fc6471;
-    border: 0;
-    border-radius: 5px;
-    font-size: 1em;
-    /* display: inline-block; */
-    color: white;
-    font-size: 1em;
-    padding: .5em .6em;
-    margin-left: 5%;
-}
+
 
 .send {
     width: 6.5em;
@@ -285,7 +262,7 @@ p input {
         width: 26em;
     }
     .name {
-        margin-left: 45%;
+        margin-left: 35%;
     }
     p input {
         width: 15em;
@@ -306,7 +283,7 @@ p input {
         font-size: .8em;
     }
     .dot {
-        font-size: 1.2em;
+        font-size: 1.5em;
     }
     .tab {
         width: 50%;
@@ -318,13 +295,23 @@ p input {
         width: 50%
     }
     .content {
-        font-size: 1.2em;
+        font-size: 1em;
     }
     .send {
         margin-left: 76%;
     }
 }
-
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
 @media screen and (max-width: 400px) {
     .tab {
         width: 250px;
@@ -439,4 +426,66 @@ p input {
     .tabcontent {
         width: 250px;
     }
+    .btn{
+        font-size:0.5em;
+    }
+    .tab button{
+        font-size:8px;
+    }
+    .option1 {
+        width: 70%;
+        margin:0 ;
+    }
+    .name {
+        margin-left: 25%;
+        font-size: 1em;
+    }
+    .content {
+        font-size: .7em;
+        margin-bottom: 3px;
+        margin-top: 5px;
+    }
 }
+    .btn  {
+        margin:1em 0em;
+    }
+    .container {
+        width: 80%;
+        height: 100%;
+        margin: auto;
+        padding: 1.5em 0;
+        border: 8px solid #f7f7fa;
+        border-radius: 20px;
+        margin-top: 1em;
+        margin-bottom: 3em;
+        color: #808080;
+    }
+    
+
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }

@@ -21,33 +21,37 @@
         <div class="container" style="height:1500px;margin-top:5%;">
             <div class="outside">
                 <div class="head" >
-                    <div class="left">
-                        <a href="home.php?page=facility&method=look"><img src="img/left-arrow.svg"></a> 
-                    </div>
-                    <div class="name">
-                        <p >公設預約</p>
-                    </div>
-                
+                    <a href="home.php?page=facility&method=look">
+                        <img class="left" src="img/left-arrow.svg">
+                    </a> 
+                    
+                    <span class="name">公設預約</span>
+                   
                 </div>
                 <hr>
-                
+                <form class="information">
                 <p class="dot"style="font-weight:bold"><img src="img/circle.svg">&nbsp桌球室 : </img></p>
                 <!--新增住戶公設預約資訊到資料庫-->
-                <div class="information">
+               
                     
                         <!--從資料庫載入可以預約的時段-->
-                        <label class="content">預約時段 : </label>
-                        <select class="option1" name="SelectTime">
-                            <optgroup label="早上時段">
-                                <option value="am1">7:00 ~ 8:00
-                                <option value="am2">8:00 ~ 9:00
-                            <optgroup label="下午時段">
-                                <option value="pm1">13:00 ~ 14:00
-                                <option value="pm2">15:00 ~ 16:00
-                        </select>
-                    
-                    <p class="content">預約日期 : <input type="date"></p>
-                        <label class="content">預約人數 : </label>
+                        <p class="content">開始預約時段 : 
+                            <select class="option1" name="StartTime">
+                                <optgroup label="請選擇開始時段">
+                                    <option value="s1">7:00
+                                    <option value="s2">8:00
+                            </select>
+                        </p>
+
+                        <p class="content">結束預約時段 : 
+                            <select class="option1" name="EndTime">
+                                <optgroup label="請選擇結束時段">
+                                    <option value="e1">8:00
+                                    <option value="e2">9:00
+                            </select>
+                        </p>
+                        <p class="content">預約公設日期 : <input class="option1"type="date"></p>
+                        <p class="content">預約公設人數 : 
                             <select class="option1" name="SelectPeople">
                                 <optgroup label="選擇人數">
                                     <option value="p1">1人
@@ -56,21 +60,17 @@
                                     <option value="p4">4人
                                     <option value="p5">5人
                             </select>
-                    <p class="content">電&nbsp&nbsp&nbsp&nbsp    話 : <input type="text"></p>
-                    <p class="content">&nbspEmail &nbsp&nbsp: <input type="text"></p>
+                        </p><br>
                     <!--資料庫匯出住戶的點數 若住戶點選我要扣點後須顯示在剩餘點數 -->
-                    <p class="content">您的點數 : 500 點
-                        <input type="button" value="我要扣點"class="coupon_btn" style="background-color:rgb(5, 148, 41)">
-                        <input type="button" value="取消"class="cancle_btn">
-                    </p>
-                </div>
+                    <p class="content">您的點數 : 500 點</p><br>
+               
                 <!--住戶點選是才會顯示出可以借用的公設 否則不顯示任何可借公設資訊-->
-                <div class="information">
+               
                     <p class="content">* 是否要借用設備 ?
                         <div>
                             <input type="radio"  name="borrowtool" value="yes">
                             <label for="male"> 是 &nbsp&nbsp&nbsp&nbsp</label> 
-                            <input type="radio"  name="borrowtool" value="no" checked >
+                            <input type="radio"  name="borrowtool" value="no" checked>
                             <label for="male"> 否 </label>
                         </div>
                     </p>
@@ -84,8 +84,8 @@
                         <p>選擇借用個數 :</p>
                         <p>
                             <div class="check">
-                                <input type="radio" name="borrownum1" value="a.桌球拍" checked> 0 支
-                                <input type="radio" name="borrownum1" value="b.桌球拍" > 1 支
+                                <input type="checkbox" name="borrownum1" value="a.桌球拍" checked> 0 支
+                                <input type="checkbox" name="borrownum1" value="b.桌球拍" > 1 支
                             </div>
                         </p>
                     </div>
@@ -93,8 +93,8 @@
                         <p>選擇借用個數 :</p>
                         <p>
                             <div class="check">
-                                <input type="radio" name="borrownum2" value="a.桌球"checked > 0 顆
-                                <input type="radio" name="borrownum2" value="b.桌球" > 1 顆
+                                <input type="checkbox" name="borrownum2" value="a.桌球"checked > 0 顆
+                                <input type="checkbox" name="borrownum2" value="b.桌球" > 1 顆
                             </div>
                         </p> 
                     </div>
@@ -102,18 +102,20 @@
                         <p>選擇借用個數 :</p>
                         <p>
                             <div class="check">
-                                <input type="radio" name="borrownum3" value="a.桌球墊"checked > 0 組
-                                <input type="radio" name="borrownum3" value="b.桌球墊" > 1 組
+                                <input type="checkbox" name="borrownum3" value="a.桌球墊"checked > 0 組
+                                <input type="checkbox" name="borrownum3" value="b.桌球墊" > 1 組
                             </div>
                         </p> 
                     </div>
-                </div>
+                
+                <button type="button" class="btn btn-success">確認填寫無誤</button>
+            </form>
                     <!--可借用公設資訊End-->
                 <hr>
             </div>
             <div class="outside">
                 <p class="dot" style="font-weight:bold"><img src="img/circle.svg"> &nbsp確認預約資訊 : </img></p>
-                <div class="information">
+               
                     <!--住戶點數扣除公設點數-->
                     <p class="content">剩餘點數 : 500 - 20 = 480 點</p>
                     <div class="content2">
@@ -124,13 +126,11 @@
                                     <p>預約時段 : 7:00 ~ 10:00</p>
                                     <p>預約日期 : 2021/5/7</p>
                                     <p>預約人數 : 2 人</p>
-                                    <p>電 &nbsp&nbsp&nbsp&nbsp話&nbsp: 0967543213</p>
-                                    <p>Email : jijds@gmail.com</p>
                                     <p>借用設備 : 桌球1顆</p>
                                 </div>
-                            
+                                </label>
                     </div>
-                </div>
+             
                 <div>
                 <input type="submit" value="確認送出"class="send">
                 </div>
