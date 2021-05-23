@@ -11,6 +11,7 @@
         $U_PASSWORD = $_POST['password'];
         $U_PHONE = $_POST['phone'];
         $HOUSEHOLD_ID = $_POST['household_id'];
+        $COMMUNITY_ID = $_POST['community_id'];
         
 //        確認mail是否已被註冊
         $sql1 = "SELECT `USER_MAIL` FROM `USER` WHERE `USER_MAIL`='$U_MAIL';";
@@ -27,6 +28,7 @@
             $sql3 = "SELECT `HOUSEHOLD_ADDRESS` FROM `HOUSEHOLD` WHERE `HOUSEHOLD_ID`='$HOUSEHOLD_ID';";
             $check_address=$conn->prepare($sql3);
             $row2=$check_address->fetch(PDO::FETCH_NUM);
+            
             if(count($sch) == 1 && !empty($row2[0])){
 //              將資料加入user
                 $sql4 = "INSERT INTO `user`(`USER_NAME`, `USER_ACCOUNT`, `USER_PASSWORD`, `USER_AUTHORITY`) VALUES(?, ?, ?, 5);";
