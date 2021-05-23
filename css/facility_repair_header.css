@@ -1,5 +1,5 @@
 .btn_wrap{
-    width: 30%;
+    width: 60%;
     margin: auto;
     /* background-color: #ffa; */
     margin-top: 2em;
@@ -15,4 +15,10 @@
     border-radius: 10px;
     letter-spacing: 5px;
     text-indent: 5px;
+}
+
+@media screen and (max-width: 400px){
+    .btn_wrap{
+        width: 90%;
+    }
 }

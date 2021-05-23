@@ -23,8 +23,8 @@ form p{
     letter-spacing: 3px;
     text-indent: 3px;
 }
-form input{
-    height: 4vh;
+form select{
+    height: 7vh;
     margin: 0 0 0 1em;
     border: 6px solid #f7f7fa;
     border-radius: 10px;
@@ -34,6 +34,7 @@ form textarea{
     margin: 2em 0 0;
     border: 6px solid #f7f7fa;
     border-radius: 10px;
+    padding: .5em;
 }
 .btn{
     width: 100%;
@@ -43,7 +44,7 @@ form textarea{
 }
 .btn input{
     font-size: 1em;
-    width: 10%;
+    width: 15%;
     padding: .5em;
     height: auto;
     box-sizing: border-box;
@@ -52,4 +53,40 @@ form textarea{
     color: white;
     background-color: #fc6471;
     border: 0;
+}
+@media screen and (max-width: 768px){
+    .con{
+        padding: 1.5em;
+    }
+    .sec{
+        width: 90%;
+    }
+    .sec p{
+        font-size: 1em;
+    }
+    hr{
+        margin-top: 1.5em;
+    }
+    form p{
+        font-size: 1em;
+    }
+    form select{
+        display: block;
+        margin: 1em 0;
+        width: 90%;
+        height: 6vh;
+    }
+    form textarea{
+        width: 90%;
+    }
+    .btn input{
+        width: 25%;
+        margin-top: 1.5em;
+    }
+}
+@media screen and (max-width: 400px){
+    .btn input{
+        width: 55%;
+        margin-top: 2em;
+    }
 }
