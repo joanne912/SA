@@ -34,7 +34,7 @@
     </p>
 	</form>
     <table class="table table-hover">
-	  <tr class="warning"><td>戶別</td><td>戶籍代碼</td><td>查看</td></tr>
+	<tr class="warning"><td>戶別</td><td>戶籍代碼</td><td>查看</td></tr>
     <?php	
         $conn = include "conn.php";
         $searchtxt = $_POST["searchtxt"];  
@@ -46,12 +46,11 @@
             {
             $sql="select * from household where HOUSEHOLD_ADDRESS = $searchtxt"; 
             }
-            	  
         $search=$conn->query($sql);
         while($record=$search->fetch())
         {
             echo "<tr><td>$record[2]</td><td>$record[0]</td>";
-            echo "<td><a href=home.php?method=look&household_id=$record[0]>[查看]</a></td></tr>"; 
+            echo "<td><a href=home.php?page=householdid&method=look&household_id=$record[0]>[查看]</a></td></tr>"; 
         }
     ?>
     </table>
