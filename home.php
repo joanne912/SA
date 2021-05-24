@@ -85,7 +85,12 @@
                 //社區管理者的查看住戶戶籍代碼
                 if($page == "householdid"){
                     if($auth == 4) {
-                        include("test1.php");
+                        if ($method == "look"){
+                            include("household_id_default.php");
+                        }
+                        else{
+                            include("household_id.php");
+                        }
                     }
                 }
                 // 個人資訊相關跳轉
