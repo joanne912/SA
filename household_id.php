@@ -40,11 +40,11 @@
         $searchtxt = $_POST["searchtxt"];  
         if(empty($searchtxt))
             {
-            $sql="select * from household"; //預設搜尋的SQL字串
+            $sql="SELECT * FROM `household`"; //預設搜尋的SQL字串
             }
         else
             {
-            $sql="select * from household where HOUSEHOLD_ADDRESS = $searchtxt"; 
+            $sql="SELECT * FROM `household` WHERE `HOUSEHOLD_ADDRESS` LIKE '%".$searchtxt."%'"; 
             }
         $search=$conn->query($sql);
         while($record=$search->fetch())
