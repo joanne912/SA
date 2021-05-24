@@ -110,7 +110,15 @@
                     }
                     //查看公設預約紀錄
                     else if($method == "records"){
-                        include("facility_records.php");
+                        if($to == "records_cancle"){
+                            include("facility_records_cancle.php");
+                        }
+                        else if($to == "records_finish"){
+                            include("facility_records_finish.php");
+                        }
+                        else{
+                            include("facility_records.php");
+                        }
                     }
                     //查看特定預約紀錄
                     else if($method == "record"){
