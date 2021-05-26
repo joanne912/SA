@@ -129,13 +129,25 @@ hr {
     margin-left: 5%;
     text-align: center;
 }
+.cancle_btn:hover{
+    background-color: rgb(150, 145, 145);
+    color: white;
+}
+.cancle_btn:active{
+    
+    color: red;
+}
 .btn1{
     width:100px;
     height: 45px;
-    background-color: #D5D5E9;
+    background-color:#fc6471;
     color: white;
     border-radius: 5px;
     border: solid 3px #f7f7fa;
+}
+.btn1:hover{
+    background-color:#fff;
+    color: #fc6471;
 }
 .h4{
     font-weight: bold;
