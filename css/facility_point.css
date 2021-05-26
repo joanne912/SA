@@ -46,7 +46,8 @@
     align-items: center;
     font-weight: bold;
     letter-spacing: 0.5em;
-    text-indent: 0.5em;
+    text-indent: 0em;
+    
    
 }
 .name2{
@@ -109,7 +110,50 @@
       
     color:#fc6471;
   }
+  .point_nav {
+      /* margin-left: 100px; */
+       padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 30px;
+        padding-left: 30px;
+       background-color:#D5D5E9;
+       border-radius: 5px;
+       margin-top: 10px;
+       margin:auto;
+       width: 90%;
+      
+  }
+   .ul{
+    margin-left: 50px;
+    margin-right:40px ;
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid #000; */
+    /* margin-left: 88px; */
+  }
+  .ul li{
+    color: #fff;
+    font-weight: bold;
+    font-size:1.2em;
+    letter-spacing: 3px;
+    margin-right: 3px;
+    text-indent: 2px;
+    /* border: 1px solid #000; */
+    margin-left: 8px;
+    text-align: center;
+  }
+
  @media screen and (max-width: 768px){
+    .point_nav {
+        width: 500px;
+    }
+    .ul{
+        margin-left:0px;
+        margin-right: 0px;
+    }
+    .ul li{
+        font-size: 0.8em;
+    }
    .name2{
        padding: 1.5em 3em;
    }
@@ -117,16 +161,26 @@
        font-size: 1.5em;
    }
    .middletext{
-       width: 74%;
-       padding: 1.5em 1em;
+       /* width: 90%; */
+       padding: 1.4em 1.4em;
        flex-wrap: wrap;
        font-size: 1em;
        justify-content: space-around;
+       
    }
   
 
 }
  @media screen and (max-width: 400px){
+    .ul li{
+        font-size: 0.8em;
+       
+    }
+    .point_nav {
+        width: 160px;
+        flex-wrap:wrap ;
+        margin:auto;
+    }
     .name p{
         font-size: 1em;
     }
