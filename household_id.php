@@ -49,7 +49,7 @@
         $search=$conn->query($sql);
         while($record=$search->fetch())
         {
-            echo "<tr><td>$record[2]</td><td>$record[0]</td>";
+            echo "<tr><td>$record[2]</td><td>$record[1]</td>";
             echo "<td><a href=home.php?page=householdid&method=look&household_id=$record[0]>[查看]</a></td></tr>"; 
         }
     ?>
