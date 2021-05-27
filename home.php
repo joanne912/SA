@@ -157,7 +157,12 @@
                 }
                 // 公告相關跳轉(default)
                 else{
-                    include("announcement.php");
+                    // if ($method == "announ_add"){
+                    //     include("m_announcement_add.php");
+                    // }
+                    // else{
+                        include("announcement.php");
+                    // }
                 }
             }
         ?>

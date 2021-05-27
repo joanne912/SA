@@ -15,6 +15,14 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="css/a.css" type="text/css" />
+    <style>
+        .search_input{
+            border-radius: 10px;
+            border: 6px solid #f7f7fa;
+            padding: 0 .5em;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,15 +35,62 @@
 
     <div class="act_wrap">
         <div class="act_icon">
-            <div class="a_icon_circle">
-                <img src="img/add.svg" alt="">
+            <!-- 註冊彈跳視窗 -->
+            <button type="button" data-toggle="modal" data-target="#exampleModalCenter2" style="border:0; background: transparent;">
+                <div class="a_icon_circle">
+                    <img src="img/add.svg" alt="">
+                </div>
+            </button>
+
+            <!-- 註冊內容模型 -->
+            <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="M_title">
+                            <div class="modal-header">
+                                <h5 class="modal-title ti" id="exampleModalLabel">新增公告</h5>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <p>公告標題 <input type="text" name="" id="" class="text_input"></p>
+                            <p>公告類型 
+                                <select name="" id="">
+                                    <option value="">公告</option>
+                                    <option value="">廣告</option>
+                                    <option value="">活動</option>
+                                    <option value="">政府</option>
+                                    <option value="">社團</option>
+                                </select>
+                            </p>
+                            <p>公告內容</p>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                            <input type="file" name="" id="" class="file_input">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter" class="j_btn">
+                                確認
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="a_icon_circle">
-                <img src="img/search.svg" alt="">
-            </div>
+           
+            <!-- <div class="a_icon_circle">
+                <a href="home.php?method=announ_add"><img src="img/add.svg" alt=""></a>
+            </div> -->
             <div class="a_icon_circle">
                 <img src="img/filter.svg" alt="">
             </div>
+            <form action="" style="display:flex;align-items: center;">
+                <input type="text" name="" id="" class="search_input">
+                <div class="a_icon_circle">
+                    <img src="img/search.svg" alt="">
+                </div>
+            </form>
+            <!-- <input type="text" name="" id="">
+            <div class="a_icon_circle">
+                <img src="img/search.svg" alt="">
+            </div> -->
         </div>
         <div class="act_icon">
             <div class="a_icon_circle">
