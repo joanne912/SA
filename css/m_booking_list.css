@@ -274,19 +274,27 @@ p input {
     margin-right: .5em;
 }
 
-.cancle_btn {
-    width: 6.5em;
+.cancle_btn{
+    width:6.5em;
     height: 2.4em;
     background-color: #f7f7fa;
     border: solid 3px #D5D5E9;
     border-radius: 15px;
-    font-size: 1em;
+    font-size:1em;
     /* display: inline-block; */
     color: #808080;
     font-size: 1em;
     letter-spacing: 1.2px;
     margin-left: 5%;
     text-align: center;
+}
+.cancle_btn:hover{
+    background-color: rgb(150, 145, 145);
+    color: white;
+}
+.cancle_btn:active{
+    
+    color: red;
 }
 
 .result {

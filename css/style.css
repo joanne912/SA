@@ -71,7 +71,7 @@ button {
     letter-spacing: 4px;
     text-indent: 4px;
     display: inline-block;
-    margin: 45px 30px;
+    margin: 15px 30px;
     font-size: 14px;
     font-weight: 500;
     padding: 4px 7px;
@@ -79,7 +79,49 @@ button {
     text-transform: uppercase;
     outline: none;
 }
+.M_password{
+    width: 250px;
+    /* border: 1px solid #000; */
+    padding: 15px;
+    margin: auto;
+    text-align: center;
+}
+.M_password .num{
+    color:#CACADE;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.M_password input {
+    background: #f7f7fa;
+    border: 0;
+    height: 40px;
+}
 
+.M_password input:nth-child(3) {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #CACADE;
+    border-radius: 50px;
+    color: white;
+    letter-spacing: 20px;
+    text-indent: 20px;
+    font-size: 18px;
+}
+.btn3{
+    margin-top: 1.5em;
+    width: 100%;
+    background: #c0c0e2 !important;
+    color: white;
+    letter-spacing: 8px;
+    text-indent: 8px;
+}
+ .num_error{
+    color:#fc6471;
+    letter-spacing: 0px;
+    font-size: 5px;
+
+}
 button:hover {
     background-color: #494949;
     color: white;
@@ -299,5 +341,11 @@ p {
     footer span {
         font-size: 20px;
         letter-spacing: 10px;
+    }
+    .M_title .p{
+       text-align: center;
+        letter-spacing: 2px;
+        /* border: 1px solid #000; */
+        margin-right: 10px;
     }
 }
