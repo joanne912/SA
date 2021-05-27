@@ -38,7 +38,7 @@ p{
     justify-content: space-between;
 }
 
-.col-sm{
+.place{
     text-align: center;
     /* display: flex;
     justify-content: space-between;
@@ -67,8 +67,8 @@ p{
         width: 30% !important;
         text-align: left;
         /* display: inline-block; */
-        /* margin-right:0 !important;
-        margin:1em 0; */
+        margin:2.5em !important;
+        /* margin:1em 0; */
     }
     input{
         width: 60%;
@@ -76,7 +76,7 @@ p{
     select{
         width: 60%;
     }
-    .col-sm{
+    .col-md-12{
         margin:1em 0.5em 0 0.5em;
     }
     .btn {
@@ -96,7 +96,7 @@ p{
         text-align: left;
         display: inline-block;
         margin-right:0 !important;
-        margin:1em 0;
+        margin:0em 0;
     }
     input{
         width: 100%;
@@ -107,7 +107,7 @@ p{
     .btn {
         width: 50vw;
         height: 5vh;
-        margin-right: 1.6em;
+        margin-left: 1.6em;
     }
 }
 </style>
@@ -116,50 +116,50 @@ p{
 <form method="post" action="personal_update.php">
     <div class="container">
         <div class="row">
-            <div class="col-sm">
+            <div class="col col-md-12 col-xl-6">
                 <p style="letter-spacing: 2em;">姓名</p>
                 <input type="text">
             </div>
-            <div class="col-sm">
-                <p style="letter-spacing: 2em;">地址</p>
+            <div class="col col-md-12 col-xl-6">
+                <p style="letter-spacing: 2.1em;">地址</p>
                 <input type="text">
             </div>
         </div>
         <div class="row">
-            <div class="col-sm">
-                <p style="margin-right: 2.2em;">E-MAIL</p>
+            <div class="col col-md-12 col-xl-6">
+                <p style="margin-right: 2em;">E-MAIL</p>
                 <input type="text">
             </div>
-            <div class="col-sm">
-                <p style="letter-spacing: 2em;">手機</p>
+            <div class="col col-md-12 col-xl-6">
+                <p style="letter-spacing: 2.1em;">手機</p>
                 <input type="text">
             </div>
         </div>
         <div class="row">
-            <div class="col-sm">
+            <div class="col col-md-12 col-xl-6">
                 <p style="letter-spacing: 2em;">生日</p>
                 <input type="date">
             </div>
-            <div class="col-sm">
-                <p style="margin-right: 1.5em;">戶籍代碼</p>
+            <div class="col col-md-12 col-xl-6">
+                <p style="margin-right: 1.8em;">戶籍代碼</p>
                 <input type="text">
             </div>
         </div>
         <div class="row">
-            <div class="col-sm">
+            <div class="col col-md-12 col-xl-6">
                 <p style="letter-spacing: 2em;">性別</p>
                 <select name="" id="">
                     <option value="BOY">BOY</option>
                     <option value="GIRL">GIRL</option>
                 </select>
             </div>
-            <div class="col-sm">
-                <p style="margin-right: 1.5em;">綁定地址</p>
+            <div class="col col-md-12 col-xl-6">
+                <p style="margin-right: 1.8em;">綁定地址</p>
                 <input type="text">
             </div>
         </div>
-        <div class="row row-1">
-            <div class="btn-wrap">
+        <div class="row">
+            <div class="btn-wrap col-12">
                 <input type="button" value="修改資料" class="btn">
             </div>
         </div>
