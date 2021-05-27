@@ -9,7 +9,7 @@
         $statement = $conn->prepare($sql);
         $statement->execute(array($U_MAIL,$U_PASSWORD));
         
-        if(count($statement) == 1){
+        if( $statement ){
             $row = $statement->fetch(PDO::FETCH_ASSOC);
 
             @session_start();
