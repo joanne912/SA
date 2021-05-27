@@ -36,7 +36,7 @@
             letter-spacing: 8px;
             text-indent: 8px;
         }
-        
+
         .btn:hover {
             color: white;
         }
@@ -193,10 +193,13 @@
                                             </label>
                                             <br>
                                             <input type="submit" name="login_btn" value="一般登入" class="btn2">
-                                        </div>
+                                        </div><br>
                                         <button type="button" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter2">
                                             /register/
-                                        </button>
+                                        </button><br>
+                                        <button type="button" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter3">
+                                            /reset password/
+                                        </button><br>
                                         <p>其他登入方式</p>
                                         <!-- 選擇其他登入方式的按鈕 -->
                                         <div class="M_regis_option">
@@ -217,6 +220,94 @@
             </div>
         </div>
     </div>
+     <!-- 重設密碼內容模型 -->
+     <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <form method="POST" action="password_check.php">
+                    <div class="modal-body">
+                        <header>
+                            <div class="M_logo">
+                                <h3>TITLE</h3>
+                            </div>
+                        </header>
+                        <div class="M_wrap">
+                            <div class="M_title">
+                                <p class="p">重設密碼</p>
+                            </div>
+                            <!-- 戶籍代碼輸入框 -->
+                            <div class="M_password" >
+                                <p class="num">請輸入戶籍代碼</p>
+                                <label>
+                                    <input type="text" name="community_id" value="1234567" placeholder="戶籍代碼"/>
+                                </label>
+                                <br>
+                                <p class="num">請輸入手機號碼</p>
+                                <label>
+                                    <input type="text" name="resident_phone" value="0987456342" placeholder="手機號碼"/>
+                                </label>
+                                <br>
+                                <input type="submit" name="search_password_btn" value="查詢密碼" class="btn3" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter4">
+                                <button type="button" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter">
+                                    /login/
+                                </button>
+                            </div><br>
+                            <!-- 輸入錯誤顯示訊息 -->
+                            <p class="num_error">輸入錯誤 ! 請重新輸入或向管理員確認</p>
+                    </div>
+                    </div>
+                </form>
+                    
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+ <!-- 重設密碼2內容模型 -->
+ <div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <form method="POST" action="password_check.php">
+                <div class="modal-body">
+                    <header>
+                        <div class="M_logo">
+                            <h3>TITLE</h3>
+                        </div>
+                    </header>
+                    <div class="M_wrap">
+                        <div class="M_title">
+                            <p class="p">重設密碼</p>
+                        </div>
+                        <!-- 重新設定密碼輸入框 -->
+                        <div class="M_password" >
+                            <p class="num">原密碼</p>
+                            <label>
+                                <input type="text" name="password" value="1234567" placeholder="原密碼"/>
+                            </label>
+                            <br>
+                            <p class="num">請輸入新密碼</p>
+                            <label>
+                                <input type="text" name="new_password" value="0987654" placeholder="新密碼"/>
+                            </label>
+                            <br>
+                            <p class="num">再次確認密碼</p>
+                            <label>
+                                <input type="text" name="check_new_password" value="0987654" placeholder="新密碼"/>
+                            </label>
+                            <br>
+                            <input type="submit" name="passord_reset_login_btn" value="前往登入" class="btn3" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter">
+                        </div>
+                </div>
+                </div>
+            </form>
+                
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
     <!-- 功能介紹的文字加圖片 -->
     <div class="wrap">
         <div class="item">

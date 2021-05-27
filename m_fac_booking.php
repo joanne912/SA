@@ -136,7 +136,7 @@
         </div><br>
         <!--切換住戶預約紀錄 類似tab的作法-->
         <div class="situation">
-            <input type="button" value="已預約"  class="cancle_btn press_btn">
+            <input type="button" value="已預約"  class="cancle_btn">
             <input type="button" value="已取消" class="cancle_btn">
             <input type="button" value="已完成" class="cancle_btn">
         </div>
