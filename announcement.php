@@ -55,11 +55,10 @@
                             <p>公告標題 <input type="text" name="" id="" class="text_input"></p>
                             <p>公告類型 
                                 <select name="" id="">
-                                    <option value="">公告</option>
+                                    <option value="">生活</option>
                                     <option value="">廣告</option>
-                                    <option value="">活動</option>
-                                    <option value="">政府</option>
-                                    <option value="">社團</option>
+                                    <option value="">緊急通知</option>
+                                    <option value="">財務</option>
                                 </select>
                             </p>
                             <p>公告內容</p>
