@@ -77,7 +77,7 @@
                 }
                 //公告管理(default)
                 else{
-                    ///
+                    include("announcement.php");
                 }
             }
             // 社區管理者(管委會成員，同時也是住戶身分)
