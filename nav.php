@@ -7,7 +7,7 @@
             <div class="icon_circle">
                 <img src="img/icon_boy.svg" alt="">
             </div>
-            <span>title</span>
+            <span>管理員</span>
         </div>
         <div class="option-wrap">
             <a href="home.php?page=m_package">包裹管理</a>

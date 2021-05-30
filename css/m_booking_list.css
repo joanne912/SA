@@ -66,6 +66,7 @@ hr {
     border: 2px solid #f7f7fa;
     background-color: #f7f7fa;
     margin-top: 2em;
+    z-index: -100;
 }
 
 .outside {
