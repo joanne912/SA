@@ -43,7 +43,13 @@
     </div>
     <!-- 網頁版的設定、登出、通知按鈕，手機版時會消失 -->
     <div class="func_wrap">
+        <?php
+            if($auth >= 4){
+        ?>
         <a href="#">setting</a>
+        <?php
+            }
+        ?>
         <a href="logout.php">logout</a>
         <img src="img/bell.svg" alt="">
     </div>
