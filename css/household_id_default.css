@@ -1,0 +1,41 @@
+.cont{
+    width: 90%;
+    height: 100%;
+    display: grid;
+    place-items:center;
+    margin: auto;
+}
+table{
+    width: 60%;
+    border-collapse: collapse;
+}
+th{
+    padding: 2em 1em;
+    box-sizing: border-box;
+    background-color: #f7f7fa;
+}
+.set{
+    padding: 1em;
+}
+td{
+    text-align: center;
+    padding: 1em;
+}
+@media screen and (max-width: 768px){
+    table{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 400px){
+    .cont{
+        height: 80%;
+    }
+    table{
+        width: 95%;
+        font-size: .5em;
+    }
+    th{
+        padding: 1em .5em; 
+        
+    }
+}
