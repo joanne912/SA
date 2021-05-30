@@ -4,10 +4,7 @@
                 FROM `household` WHERE `COMMUNITY_ID` = $community"; //預設搜尋的SQL字串
     if( isset( $_POST["searchtxt"] ) ) {
         $searchtxt = $_POST["searchtxt"];
-        $sql += " AND `HOUSEHOLD_ADDRESS` LIKE ? ;";
-    }
-    else{
-        $sql += ";";
+        $sql += " AND `HOUSEHOLD_ADDRESS` LIKE ? ";
     }
     $statement = $conn->prepare($sql);
     $statement->execute(array($searchtxt));
