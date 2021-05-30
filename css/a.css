@@ -5,7 +5,7 @@
     color: #808080;
 }
 
-.j_btn{
+.j_btn {
     padding: .5em 1em;
     border: 0;
     border-radius: 6px;
@@ -13,40 +13,40 @@
     color: #fff;
 }
 
-.modal-body .text_input, select{
+.modal-body .text_input,
+select {
     margin-left: 1em;
     border: 5px solid #f7f7fa;
     border-radius: 6px;
     padding: 0 .5em;
 }
 
-.modal-body textarea{
+.modal-body textarea {
     border: 5px solid #f7f7fa;
     border-radius: 6px;
     padding: 0 .5em;
 }
 
-.file_input{
+.file_input {
     margin-top: 1em;
     border: 0;
 }
 
-.modal-content{
+.modal-content {
     padding: 2em;
 }
 
-hr{
+hr {
     border: 0;
     background-color: #f7f7fa;
-
 }
 
-.modal-header{
+.modal-header {
     display: flex;
     justify-content: center;
 }
 
-.ti{
+.ti {
     display: flex;
     justify-content: center;
     font-size: 1.5em;
@@ -312,31 +312,38 @@ hr {
         width: 2.5em;
         height: 2.5em;
     }
-    .act_icon:nth-child(1){
+    .act_icon:nth-child(1) {
         width: 40%;
         flex-wrap: wrap;
     }
-    .act_icon form{
+    .act_icon form {
         margin-top: 1.5em;
     }
-    .act_icon > form > div{
+    .act_icon>form>div {
         margin-left: 1em;
     }
 }
 
-@media screen and (max-width: 400px){
-    .modal-body .text_input{
+@media screen and (max-width: 400px) {
+    .modal-body .text_input {
         display: block;
         margin-left: 0;
         margin-top: 1em;
     }
-    .j_btn{
+    .j_btn {
         margin-top: 1em;
     }
-    .act_icon form{
+    .act_icon form {
         margin-top: 1.5em;
     }
-    .act_icon > form > div{
+    .act_icon>form>div {
         margin-left: 1em;
     }
+}
+
+.search_input {
+    border-radius: 10px;
+    border: 6px solid #f7f7fa;
+    padding: 0 .5em;
+    box-sizing: border-box;
 }
