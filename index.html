@@ -199,7 +199,7 @@
                                             /register/
                                         </button><br>
                                         <button type="button" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter3">
-                                            /reset password/
+                                            /forget password/
                                         </button><br>
                                         <p>其他登入方式</p>
                                         <!-- 選擇其他登入方式的按鈕 -->
@@ -234,7 +234,7 @@
                         </header>
                         <div class="M_wrap">
                             <div class="M_title">
-                                <p class="p">重設密碼</p>
+                                <p class="p">忘記密碼</p>
                             </div>
                             <!-- 戶籍代碼輸入框 -->
                             <div class="M_password" >
@@ -248,7 +248,7 @@
                                     <input type="text" name="resident_phone" value="0987456342" placeholder="手機號碼"/>
                                 </label>
                                 <br>
-                                <input type="submit" name="search_password_btn" value="查詢密碼" class="btn3" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter4">
+                                <input type="submit" name="search_password_btn" value="更改密碼" class="btn3" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter4">
                                 <button type="button" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter">
                                     /login/
                                 </button>
@@ -282,14 +282,9 @@
                         </div>
                         <!-- 重新設定密碼輸入框 -->
                         <div class="M_password" >
-                            <p class="num">原密碼</p>
-                            <label>
-                                <input type="text" name="password" value="1234567" placeholder="原密碼"/>
-                            </label>
-                            <br>
                             <p class="num">請輸入新密碼</p>
-                            <label>
-                                <input type="text" name="new_password" value="0987654" placeholder="新密碼"/>
+                            <label for="new_password">
+                                <input type="text" id="new_password" name="new_password" value="0987654" placeholder="新密碼"/>
                             </label>
                             <br>
                             <p class="num">再次確認密碼</p>
