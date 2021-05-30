@@ -289,6 +289,29 @@ p {
     place-items: center;
 }
 
+.text > h5{
+    /* color: lightgray; */
+    font-weight: 300;
+    margin-top: 2em;
+    font-size: 1.5em;
+}
+
+.text > h4{
+    /* color:lightgray; */
+    letter-spacing: 5px;
+    text-indent: 5px;
+}
+
+.center_text h5{
+    letter-spacing: 3px; 
+    color: #808080;
+    margin-top: 2em; 
+    font-weight: 300;
+    font-size: 1em;
+    letter-spacing: 6px; 
+    text-indent: 6px;
+}
+
 @media screen and (max-width: 768px) {
     header a {
         font-size: .3px;

@@ -23,7 +23,7 @@
         </p>
         <p>損壞情況：<br><textarea name="" id="" cols="50" rows="20"></textarea></p>
         <div class="btn">
-            <input type="submit" value="新增報修">
+            <input type="submit" value="新增報修"></a>
         </div>
     </form>
 </div>
