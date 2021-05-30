@@ -56,6 +56,9 @@ p{
     border-radius: 5px;
     margin: 1.6em 1.6em;
 }
+.col-md-12{
+    z-index: -100;
+}
 @media screen and (max-width: 768px) {
     .container{
         margin: 15vh 0;
