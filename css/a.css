@@ -170,7 +170,7 @@ hr {
 .icon_wrap {
     /* width: 95%; */
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     margin: auto;
     margin-top: 1.1em;
@@ -200,6 +200,7 @@ hr {
 
 .act_icon {
     display: flex;
+    align-items: center;
 }
 
 .act_wrap {
@@ -207,6 +208,7 @@ hr {
     margin: auto;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .act_icon:nth-child(2) .a_icon_circle {
@@ -227,6 +229,9 @@ hr {
     z-index: -1;
 }
 
+.sel{
+    width: 70%;
+}
 
 /* @media screen and (min-width: 768px; ) {
             .item_profile {
@@ -322,6 +327,9 @@ hr {
     .act_icon>form>div {
         margin-left: 1em;
     }
+    .sel{
+        height: 55%;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -338,6 +346,12 @@ hr {
     }
     .act_icon>form>div {
         margin-left: 1em;
+    }
+    .act_icon:nth-child(1){
+        width: 55%;
+    }
+    .sel{
+        width: 50%;
     }
 }
 

@@ -59,34 +59,53 @@
         <!-- <div class="a_icon_circle">
             <a href="home.php?method=announ_add"><img src="img/add.svg" alt=""></a>
         </div> -->
-        <div class="a_icon_circle">
+        
+        <select name="" id="" class="sel">
+        <!-- <div class="a_icon_circle">
             <img src="img/filter.svg" alt="">
-        </div>
-        <form action="" style="display:flex;align-items: center;">
+        </div> -->
+            <optgroup>
+                <option value="">篩選</option>
+                <option value="">生活</option>
+                <option value="">廣告</option>
+                <option value="">緊急通知</option>
+                <option value="">財務</option>
+            </optgroup>
+        </select>
+        <!-- <form action="" style="display:flex;align-items: center;">
             <input type="text" name="" id="" class="search_input">
             <div class="a_icon_circle">
                 <img src="img/search.svg" alt="">
             </div>
-        </form>
+        </form> -->
         <!-- <input type="text" name="" id="">
         <div class="a_icon_circle">
             <img src="img/search.svg" alt="">
         </div> -->
     </div>
     <div class="act_icon">
-        <div class="a_icon_circle">
+        <form action="" style="display:flex;align-items: center;">
+            <input type="text" name="" id="" class="search_input">
+            <div class="a_icon_circle">
+                <img src="img/search.svg" alt="">
+            </div>
+        </form>
+        <!-- <div class="a_icon_circle">
             <img src="img/clock.svg" alt=""><span>最新</span>
         </div>
         <div class="a_icon_circle">
             <img src="img/hot.svg" alt=""><span>熱門</span>
-        </div>
+        </div> -->
     </div>
 </div>
 <hr>
 <!-- 每一獨立公告區塊 -->
 <!-- 公告選取框及公告類型 -->
 <div class="item_nav">
-    <input type="checkbox" name="" id="">
+    <div class="act_icon">
+        <img src="img/edit.svg" alt="">
+        <img src="img/delete.svg" alt="" style="margin-left: 1em;">
+    </div>
     <p>項目：活動</p>
 </div>
 <!-- 公告內容 -->
@@ -103,8 +122,8 @@
             <div class="sub_info">
                 <img src="img/calender.svg" alt="">
                 <p>2021.05.01</p>
-                <img src="img/location.svg" alt="">
-                <p>location</p>
+                <!-- <img src="img/location.svg" alt="">
+                <p>location</p> -->
             </div>
         </div>
     </div>
@@ -125,7 +144,7 @@
             Accusantium, minus nihil.</p>
     </div>
     <!-- 公告圖片旋轉木馬，圖片須從資料庫引入 -->
-    <div class="item_img">
+    <!-- <div class="item_img">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -152,9 +171,9 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-    </div>
+    </div> -->
     <!-- 訊息按鈕群組 -->
-    <div class="message_wrap">
+    <!-- <div class="message_wrap">
         <div class="icon_wrap">
             <div class="mes_icon">
                 <a href="#"><img src="img/thumb.svg" alt=""></a>
@@ -164,10 +183,10 @@
             <div class="mes_private">
                 <a href="#"><img src="img/messenger.svg" alt=""></a>
             </div>
-        </div>
+        </div> -->
         <!-- 點讚次數需連結資料庫 -->
-        <p>xxx和其他人都說讚</p>
-    </div>
+        <!-- <p>xxx和其他人都說讚</p>
+    </div> -->
 </div>
 
 
