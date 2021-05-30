@@ -36,17 +36,13 @@
                 if(!empty($row3)){
 
 //                  確認戶籍代碼與地址是否相符
-                    $sql4 = "SELECT `HOUSEHOLD_ADDRESS` FROM `HOUSEHOLD` WHERE `HOUSEHOLD_ID`= ?;";
-                    $check_address=$conn->prepare($sql4);
-                    $check_address->execute(array($HOUSEHOLD_ID));
-                    $row4=$check_address->fetch(PDO::FETCH_ASSOC);
-                    if(!empty($row4['HOUSEHOLD_ADDRESS']) && $row4['HOUSEHOLD_ADDRESS'] == $U_ADDRESS){
+                    if(!empty($row3['HOUSEHOLD_ADDRESS']) && $row3['HOUSEHOLD_ADDRESS'] == $U_ADDRESS){
 
                         $sql5 = "SELECT MAX(`USER_ID`) FROM `user`;";
                         $take_uid=$conn->prepare($sql5);
                         $take_uid->execute(array($U_MAIL));
-                        $row4=$take_uid->fetch(PDO::FETCH_ASSOC);
-                        $U_ID = $row4['MAX(`USER_ID`)'] + 1;
+                        $row5=$take_uid->fetch(PDO::FETCH_ASSOC);
+                        $U_ID = $row5['MAX(`USER_ID`)'] + 1;
 
 //                      將資料加入user
                         $sql6 = "INSERT INTO `user`(`USER_ID`, `USER_NAME`, `USER_ACCOUNT`, `USER_PASSWORD`, `USER_AUTHORITY`) VALUES(?, ?, ?, ?, 5);";
