@@ -1,9 +1,6 @@
 <?php
-    if ($auth <= 4){
-        if ($page == "m_auth"){
-            $title = "權限管理";
-        }
-        else if ($page == "m_package"){
+    if ($auth <= 3){
+        if ($page == "m_package"){
             $title = "包裹管理";
         }
         else if ($page == "facility"){
@@ -11,6 +8,23 @@
         }
         else{
             $title = "公告管理";
+        }
+    }
+    else if ($auth == 4){
+        if ($page == "householdid"){
+            $title = "住戶戶籍代碼";
+        }
+        else if ($page == "personal"){
+            $title = "個人資訊";
+        }
+        else if ($page == "package"){
+            $title = "我的包裹";
+        }
+        else if ($page == "facility"){
+            $title = "公設預約";
+        }
+        else{
+            $title = "社區公告";
         }
     }
     else if ($auth == 5){
