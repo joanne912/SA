@@ -1,8 +1,10 @@
 <!-- 已預約-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+</script>
 <link rel="stylesheet" href="css/facility_records.css" type="text/css" />
 
 <?php include("facility_records_header.php"); ?>
@@ -42,15 +44,15 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 style="color:blue;font-weight:bold"class="modal-title" id="exampleModalLabel">是否確認取消預約 ?</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="cross"></button>
                     </div>
                     <div class="modal-body">
                         親愛的住戶取消後若要預約請重新預約 謝謝您!!
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal" id="hide">取消</button>
                         <!--住戶點選確認取消後該公設的預約紀錄應顯示在已取消中-->
-                        <a href="home.php?page=facility&method=records"><button type="button" class="btn btn-info" >確認</button></a>
+                       <button type="button" class="btn btn-info" id="go">確認</button>
                     </div>
                 </div>
             </div>
@@ -59,7 +61,30 @@
                
     </div>
     
-
+    <!-- <script>
+        $(document).ready(function () {
+            $('#hide').click(function (event){
+                $('.modal-dialog').slideToggle();
+            });
+        })
+    </script> -->
+    <script>
+        $('#exampleModal').on('shown.bs.modal', function () {
+            $('#hide').click(function (event){
+                $('#exampleModal').modal('hide');
+            });
+        })
+        $('#exampleModal').on('shown.bs.modal', function () {
+                $('#cross').click(function (event){
+                    $('#exampleModal').modal('hide');
+                });
+        })
+        $('#exampleModal').on('shown.bs.modal', function () {
+                $('#go').click(function (event){
+                    $('#exampleModal').modal('hide');
+                });
+        })
+    </script>
 
 
 
