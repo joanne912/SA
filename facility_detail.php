@@ -20,7 +20,9 @@
     <div class="outside">
         <div class="head">
             <div class="name">
+            
                 <p>公設名稱 : <?=$row['FACILITIES_NAME']?></p>
+                <a href='#'><img src='https://image.flaticon.com/icons/png/512/1159/1159633.png' alt=''></a>
             </div>
             <?php
                 if ($auth == 5){
@@ -72,7 +74,6 @@
             <p class="content">人數上限：<?=$row['FACILITIES_LIMIT']?></p>
             <p class="content">已預約人數 :功能未完成</p>
             <p class="content">公設所需點數：<?=$row['FACILITIES_POINT']?>點</p>
-            <p class="content">可使用時間：資料庫待設計/次</p>
             <p class="content">其他：<?=$row['FACILITIES_DESCRIPTION']?></p>
         </div>
         <hr>

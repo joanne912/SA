@@ -23,7 +23,7 @@
                     <?php
                         if($auth <= 4){
                             ?>
-                            <a href='#'><img src='img/edit.svg' alt=''></a>
+                            
                             <a href='#'><img src='img/delete.svg' alt=''></a>
                             <?php
                         }
