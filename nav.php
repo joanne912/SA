@@ -10,7 +10,6 @@
             <span>title</span>
         </div>
         <div class="option-wrap">
-            <a href="home.php?page=m_auth">權限管理</a>
             <a href="home.php?page=m_package">包裹管理</a>
             <a href="home.php?page=facility">公設管理</a>
             <a href="home.php">公告管理</a>

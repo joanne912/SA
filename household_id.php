@@ -1,13 +1,13 @@
 <?php
     $searchtxt = "";
+    $sql = "SELECT `HOUSEHOLD_ADDRESS`,`COMMUNITY_ID`,`HOUSEHOLD_ID` 
+                FROM `household` WHERE `COMMUNITY_ID` = $community"; //預設搜尋的SQL字串
     if( isset( $_POST["searchtxt"] ) ) {
         $searchtxt = $_POST["searchtxt"];
-        $sql = "SELECT `HOUSEHOLD_ADDRESS`,`COMMUNITY_ID`,`HOUSEHOLD_ID` 
-                FROM `household` WHERE `COMMUNITY_ID` = $community AND `HOUSEHOLD_ADDRESS` LIKE ? ;";
+        $sql += " AND `HOUSEHOLD_ADDRESS` LIKE ? ;";
     }
     else{
-        $sql = "SELECT `HOUSEHOLD_ADDRESS`,`COMMUNITY_ID`,`HOUSEHOLD_ID` 
-                FROM `household` WHERE `COMMUNITY_ID` = $community;"; //預設搜尋的SQL字串 
+        $sql += ";";
     }
     $statement = $conn->prepare($sql);
     $statement->execute(array($searchtxt));
