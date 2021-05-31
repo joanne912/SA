@@ -2,8 +2,7 @@
 //修改個人資訊
 if(isset($_POST['submit'])){
     $sql = "UPDATE `household`,`user`,`resident`
-            SET `USER_NAME` = :name,`HOUSEHOLD_ADDRESS` = :address,
-            `USER_ACCOUNT` = :email,`RESIDENT_PHONE` = :phone,
+            SET `USER_NAME` = :name,`HOUSEHOLD_ADDRESS` = :address,`RESIDENT_PHONE` = :phone,
             `RESIDENT_BDATE` = :birth,`RESIDENT_GENDER` = :gender
             WHERE `user`.`USER_ID` = `resident`.`USER_ID`
             AND `user`.`USER_ID` = $id
@@ -14,7 +13,6 @@ if(isset($_POST['submit'])){
         $result = $statement->execute(array(
             ':name' => $_POST['name'],
             ':address' => $_POST['address'],
-            ':email' => $_POST['email'],
             ':phone' => $_POST['phone'],
             ':birth' => $_POST['birth'],
             ':gender' => $_POST['gender'],
