@@ -39,34 +39,32 @@
             <div class='icon_group'>
                 <div class='upper'>
                     <?php
-                        if($auth <= 4){
-                            ?>
-                            
-                            <a href='#' data-toggle="modal" data-target="#exampleModal"><img src='img/delete.svg' alt=''></a>
-                            <?php
+                        if($auth <= 3){
+                    ?>
+                    <a href='#' data-toggle="modal" data-target="#exampleModal"><img src='img/delete.svg' alt=''></a>
+                    <!-- 確認刪除彈跳視窗 -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 style="color:blue;font-weight:bold"class="modal-title" id="exampleModalLabel">確認刪除此公設 ?</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="cross"></button>
+                                </div>
+                                <div class="modal-body">
+                                    確定欲刪除請點選確認 謝謝您!!
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal" id="hide">取消</button>
+                                <!--管理員點選確認取消後該公設的應移除公設清單-->
+                                <button type="button" class="btn btn-info" id="go">確認</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
                         }
                     ?>
-                     
-        <!-- 確認刪除彈跳視窗 -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 style="color:blue;font-weight:bold"class="modal-title" id="exampleModalLabel">確認刪除此公設 ?</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="cross"></button>
-                    </div>
-                    <div class="modal-body">
-                        確定欲刪除請點選確認 謝謝您!!
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light" data-bs-dismiss="modal" id="hide">取消</button>
-                        <!--管理員點選確認取消後該公設的應移除公設清單-->
-                       <button type="button" class="btn btn-info" id="go">確認</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-            <!---->
+                <!---->
                 </div>
                 <a href='home.php?page=facility&method=look&facility=<?=$row["FACILITIES_ID"]?>'><img src='img/next.svg' alt=''></a>
             </div>
