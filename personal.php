@@ -59,7 +59,7 @@ if(isset($_POST['submit'])){
         <div class="row">
             <div class="col col-md-12 col-xl-6">
                 <p style="margin-right: 2em;">E-MAIL</p>
-                <input name="email" type="text" value="<?=$row['USER_ACCOUNT']?>">
+                <input disabled name="email" type="text" value="<?=$row['USER_ACCOUNT']?>">
             </div>
             <div class="col col-md-12 col-xl-6">
                 <p style="letter-spacing: 2.1em;">手機</p>

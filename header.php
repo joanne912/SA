@@ -10,7 +10,7 @@
             $title = "公告管理";
         }
     }
-    else if ($auth == 4){
+    else if ($auth >= 4){
         if ($page == "householdid"){
             $title = "住戶戶籍代碼";
         }
@@ -27,21 +27,6 @@
             $title = "社區公告";
         }
     }
-    else if ($auth == 5){
-        if ($page == "personal"){
-            $title = "個人資訊";
-        }
-        else if ($page == "package"){
-            $title = "我的包裹";
-        }
-        else if ($page == "facility"){
-            $title = "公設預約";
-        }
-        else{
-            $title = "社區公告";
-        }
-    }
-
 ?>
 <header>
     <div class="sub">

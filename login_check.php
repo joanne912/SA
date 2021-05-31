@@ -23,7 +23,7 @@
                 $row2 = $statement->fetch(PDO::FETCH_ASSOC);
                 $_SESSION['household'] = $row2['HOUSEHOLD_ID'];
                 $_SESSION['community'] = $row2['COMMUNITY_ID'];
-            }else if($row['USER_AUTHORITY'] >= 3){
+            }else if($row['USER_AUTHORITY'] <= 3){
                 $sql = 'SELECT `COMMUNITY_ID` FROM `manager` WHERE ( `USER_ID` = ? );';
                 $statement = $conn->prepare($sql);
                 $statement->execute(array($row['USER_ID']));
