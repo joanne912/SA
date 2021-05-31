@@ -79,7 +79,8 @@
             FROM `announcement` WHERE `COMMUNITY_ID` = $community 
             AND `ANNOUNCEMENT_TYPE` LIKE ?
             AND (`ANNOUNCEMENT_TITLE` LIKE ?
-            OR `ANNOUNCEMENT_CONTENT` LIKE ?);";
+            OR `ANNOUNCEMENT_CONTENT` LIKE ?)
+            ORDER BY ANNOUNCEMENT_DATE DESC;";
     $statement = $conn->prepare($sql);
     $statement->execute(array(
         "%".$type."%",
