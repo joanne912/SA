@@ -197,9 +197,8 @@ p input {
     letter-spacing: 1px;
     font-size: 1em;
     font-weight: bold;
-    padding: 2.5em 3em;
+    padding: .5em .5em;
 }
-
 
 
 
@@ -382,7 +381,10 @@ p input {
 .list_title {
     letter-spacing: .2em;
 }
-
+.select_box{
+    width: 100%;
+    margin: auto;
+}
 @media screen and (max-width: 768px) {
     .head {
         width: 100%;
@@ -626,6 +628,13 @@ p input {
 }
 
 @media screen and (max-width: 768px) {
+    .middletext2{
+        padding: 0px;
+    }
+    .data{
+        width: 100%;
+        padding: 2px;
+    }
     .information{
         width:100%;
     }
@@ -653,12 +662,15 @@ p input {
     .coupon_btn{
         margin-right: 2px;
     }
-    .select_btn{
+    .select_box{
         width: 95%;
     }
 }
 
 @media screen and (max-width: 400px) {
+    .middletext2{
+        padding:.5em .5em;
+    }
     .content3{
         margin: 0 0 ;
     }

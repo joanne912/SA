@@ -11,14 +11,25 @@
     <title>社區管理系統</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-    </script>
+    
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/f_reserve.js"></script>
     <link rel="stylesheet" href="css/facility_reserve.css">
+    <style>
+        #information{
+            display:none;
+        }
+        #information.active{
+            display:block;
+        }
+        .tab{
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <form action="facility_reserve.php" action="POST">
-        <div class="container" style="height:1500px;margin-top:5%;">
+        <div class="container" style="margin-top:5%;">
             <div class="outside">
                 <div class="head" >
                     <a href="home.php?page=facility&method=look">
@@ -68,13 +79,13 @@
                
                     <p class="content">* 是否要借用設備 ?
                         <div>
-                            <input type="radio"  name="borrowtool" value="yes">
+                            <input type="radio"  name="borrowtool" value="yes" id="yes">
                             <label for="male"> 是 &nbsp&nbsp&nbsp&nbsp</label> 
-                            <input type="radio"  name="borrowtool" value="no" checked>
+                            <input type="radio"  name="borrowtool" value="no" checked id="no">
                             <label for="male"> 否 </label>
                         </div>
                     </p>
-                    <!--若使用者選擇否不會顯示設備借用選單 是則顯示-->
+                  
                     <div class="tab">
                         <button class="tablinks" onclick="tools(event, '桌球拍')">桌球拍</button>
                         <button class="tablinks" onclick="tools(event, '桌球')">桌球</button>
@@ -119,20 +130,20 @@
                             tablinks[i].className = tablinks[i].className.replace(" active", "");
                         }
                         document.getElementById(toolName).style.display = "block";
-                        evt.currentTarget.className += " active";
+                        event.currentTarget.className += " active";
                         }
                     </script>
-                <button type="button" class="btn btn-success">確認填寫無誤</button>
-           
+                <button type="button" class="btn btn-info see_information">確認填寫無誤</button>
+               
                     <!--可借用公設資訊End-->
                 <hr>
             </div>
-            <div class="outside">
+            <div class="outside"id="information">
                 <p class="dot" style="font-weight:bold"><img src="img/circle.svg"> &nbsp確認預約資訊 : </img></p>
                
                     <!--住戶點數扣除公設點數-->
                     <p class="content">剩餘點數 : 500 - 20 = 480 點</p>
-                    <div class="content2">
+                    <div class="content2" >
                         <label class="content">預約資訊(請確認預約資料無誤) :
                             <!--display住戶預約資訊 若無借用設備則顯示無-->
                         
@@ -146,13 +157,12 @@
                     </div>
              
                 <div>
-                <input type="submit" value="確認送出"class="send">
+                    <a href="home.php?page=facility&method=record"><input type="button" value="確認送出"class="send"></a>
                 </div>
                 <br><br>
                 <hr>
             </div>
         </div>
-       
     </form>
 </body>
 </html>

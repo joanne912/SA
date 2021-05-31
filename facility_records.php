@@ -34,7 +34,7 @@
         取消預約
         </button>
         <div class="upper2"> 
-            <a href="facility_record.php"><img src="img/next.svg" alt=""></a>
+            <a href="home.php?page=facility&method=record"><img src="img/next.svg" alt=""></a>
         </div>
         <!-- Button trigger modal -->
         

@@ -65,6 +65,5 @@
             }
         ?>
         <a href="logout.php">logout</a>
-        <img src="img/bell.svg" alt="">
     </div>
 </header>

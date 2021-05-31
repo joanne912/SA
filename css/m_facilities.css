@@ -44,12 +44,15 @@ hr {
     border: 2px solid #f7f7fa;
     background-color: #f7f7fa;
     margin-top: 2em;
+    z-index: -10;
 }
-
 .text {
     width: 40%;
 }
-
+.text h2{
+    font-size: 22px;
+    font-weight: bold;
+}
 .info_wrap {
     width: 90%;
     padding: 2% 3%;
