@@ -62,7 +62,7 @@
     </div>
     <div class="act_icon">
         <form id="select" action="home.php" method="POST" style="display:flex;align-items: center;">
-            <input type="text" name="search" class="search_input" value="<?=isset($_POST['search'])?$_POST['search']:''?>">
+            <input type="text" name="search" class="search_input" placeholder="<?=isset($_POST['search'])?$_POST['search']:''?>">
             <div class="a_icon_circle">
                 <img onclick="submit()" src="img/search.svg" alt="">
             </div>
@@ -93,8 +93,14 @@
     <!-- 公告選取框及公告類型 -->
     <div class="item_nav">
         <div class="act_icon">
+            <?php
+                if( $auth <= 3 ){
+            ?>
             <img src="img/edit.svg" alt="">
             <img src="img/delete.svg" alt="" style="margin-left: 1em;">
+            <?php
+                }
+            ?>
         </div>
         <p>類型：<?=$row['ANNOUNCEMENT_TYPE']?></p>
     </div>
