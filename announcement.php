@@ -1,3 +1,31 @@
+<?php
+    //新增公告處理區域
+    if(isset($_POST['submit'])){
+        $sql = "SELECT MAX(`ANNOUNCEMENT_ID`) FROM `announcement` WHERE (`COMMUNITY_ID` = $community);";
+        $statement = $conn->query($sql);
+        $row = $statement->fetch(PDO::FETCH_ASSOC);
+        $announcement = $row['MAX(`ANNOUNCEMENT_ID`)'] + 1;
+        $sql = "INSERT INTO `announcement` (`ANNOUNCEMENT_ID`, `COMMUNITY_ID`, `ANNOUNCEMENT_TITLE`, `ANNOUNCEMENT_DATE`, `ANNOUNCEMENT_TYPE`, `ANNOUNCEMENT_INC`, `ANNOUNCEMENT_CONTENT`, `ANNOUNCEMENT_DOC`)
+                VALUES (:announcement, :community, :title, :date, :type, '社區管理公告', :content, NULL);";
+        $statement2 = $conn->prepare($sql);
+        try{
+            $result = $statement2->execute(
+                array(
+                    ':announcement' => $announcement,
+                    ':community' => $community,
+                    ':title' => $_POST['title'],
+                    ':date' => date('Y-m-d H:i:s'), 
+                    ':type' => $_POST['type'], 
+                    ':content' =>  $_POST['content']
+                    //':file' => 
+                )
+            );
+        }
+        catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+?>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -8,7 +36,7 @@
 </script>
 <link rel="stylesheet" href="css/a.css" type="text/css" />
 
-
+<!-- 公告功能選項清單 -->
 <div class="act_wrap">
     <div class="act_icon">
         <?php
@@ -20,109 +48,120 @@
                 <img src="img/add.svg" alt="">
             </div>
         </button>
-
-        <!-- 註冊內容模型 -->
-        <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="M_title">
-                        <div class="modal-header">
-                            <h5 class="modal-title ti" id="exampleModalLabel">新增公告</h5>
-                        </div>
-                    </div>
-                    <div class="modal-body">
-                        <p>公告標題 <input type="text" name="" id="" class="text_input"></p>
-                        <p>公告類型 
-                            <select name="" id="">
-                                <option value="">生活</option>
-                                <option value="">廣告</option>
-                                <option value="">緊急通知</option>
-                                <option value="">財務</option>
-                            </select>
-                        </p>
-                        <p>公告內容</p>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                        <input type="file" name="" id="" class="file_input">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter" class="j_btn">
-                            確認
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
         <?php
             }
         ?>
-        <!-- 內容模型結尾 -->
-
-        
-        <select name="" id="" class="sel">
-            <optgroup>
-                <option value="">篩選</option>
-                <option value="">生活</option>
-                <option value="">廣告</option>
-                <option value="">緊急通知</option>
-                <option value="">財務</option>
-            </optgroup>
+        <select form="select" onchange="submit()" name="types" class="sel" value="<?=isset($_POST['types'])?$_POST['types']:''?>">
+            <option disabled <?=isset($_POST['types'])?'':'selected'?> hidden>篩選</option>
+            <option value="">所有</option>
+            <option value="生活"<?=isset($_POST['types'])?($_POST['types']=='生活'?'selected':''):''?>>生活</option>
+            <option value="廣告"<?=isset($_POST['types'])?($_POST['types']=='廣告'?'selected':''):''?>>廣告</option>
+            <option value="緊急通知"<?=isset($_POST['types'])?($_POST['types']=='緊急通知'?'selected':''):''?>>緊急通知</option>
+            <option value="財務"<?=isset($_POST['types'])?($_POST['types']=='財務'?'selected':''):''?>>財務</option>
         </select>
     </div>
     <div class="act_icon">
-        <form action="" style="display:flex;align-items: center;">
-            <input type="text" name="" id="" class="search_input">
+        <form id="select" action="home.php" method="POST" style="display:flex;align-items: center;">
+            <input type="text" name="search" class="search_input" value="<?=isset($_POST['search'])?$_POST['search']:''?>">
             <div class="a_icon_circle">
-                <img src="img/search.svg" alt="">
+                <img onclick="submit()" src="img/search.svg" alt="">
             </div>
         </form>
     </div>
 </div>
-<hr>
 
-<!-- 每一獨立公告區塊 -->
-<!-- 公告選取框及公告類型 -->
-<div class="item_nav">
-    <div class="act_icon">
-        <img src="img/edit.svg" alt="">
-        <img src="img/delete.svg" alt="" style="margin-left: 1em;">
-    </div>
-    <p>類型：生活</p>
-</div>
-<!-- 公告內容 -->
-<div class="container">
-    <!-- 公告發布帳號及發佈時間、地點 -->
-    <div class="item_info">
-        <!-- 隨公告人不同，圖片也不同 -->
-        <div class="logo">
-            <img src="img/icon_boy.svg" alt="">
+<?php
+    //公告分類篩選
+    $type = isset($_POST['types']) ? $_POST['types'] : '' ;
+    //公告查詢(標題或內容)
+    $search = isset($_POST['search']) ? $_POST['search'] : '' ;
+    $sql = "SELECT `ANNOUNCEMENT_TITLE`,`ANNOUNCEMENT_TYPE`,`ANNOUNCEMENT_DATE`,`ANNOUNCEMENT_CONTENT`
+            FROM `announcement` WHERE `COMMUNITY_ID` = $community 
+            AND `ANNOUNCEMENT_TYPE` LIKE ?
+            AND (`ANNOUNCEMENT_TITLE` LIKE ?
+            OR `ANNOUNCEMENT_CONTENT` LIKE ?);";
+    $statement = $conn->prepare($sql);
+    $statement->execute(array(
+        "%".$type."%",
+        "%".$search."%",
+        "%".$search."%"
+    ));
+    while( $row = $statement->fetch(PDO::FETCH_ASSOC) ){
+    ?>
+    <!-- 每一獨立公告區塊 -->
+    <hr>
+    <!-- 公告選取框及公告類型 -->
+    <div class="item_nav">
+        <div class="act_icon">
+            <img src="img/edit.svg" alt="">
+            <img src="img/delete.svg" alt="" style="margin-left: 1em;">
         </div>
-        <!-- 公告時間及地點皆不相同，需連結資料庫 -->
-        <div class="info">
-            <p>名字 or 社團名稱</p>
-            <div class="sub_info">
-                <img src="img/calender.svg" alt="">
-                <p>2021.05.01</p>
-                <!-- <img src="img/location.svg" alt="">
-                <p>location</p> -->
+        <p>類型：<?=$row['ANNOUNCEMENT_TYPE']?></p>
+    </div>
+    <!-- 公告內容 -->
+    <div class="container">
+        <!-- 公告發布帳號及發佈時間、地點 -->
+        <div class="item_info">
+            <!-- 隨公告人不同，圖片也不同 -->
+            <!-- 目前沒有針對使用者設置個人圖片故無法完成 -->
+            <div class="logo">
+                <img src="img/icon_boy.svg" alt="">
+            </div>
+            <!-- 公告時間及地點皆不相同，需連結資料庫 -->
+            <div class="info">
+                <p><?=$row['ANNOUNCEMENT_TITLE']?></p>
+                <div class="sub_info">
+                    <img src="img/calender.svg" alt="">
+                    <p><?=date_format(date_create($row['ANNOUNCEMENT_DATE']),"Y/m/d H:i:s")?></p>
+                </div>
             </div>
         </div>
+        <!-- 公告內容敘述，需連結資料庫 -->
+        <div class="item_profile">
+            <p><?=$row['ANNOUNCEMENT_CONTENT']?></p>
+        </div>
     </div>
-    <!-- 公告內容敘述，需連結資料庫 -->
-    <div class="item_profile">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi voluptatibus eveniet nobis sit
-            numquam
-            praesentium architecto nihil ipsum molestias. Distinctio facilis quos culpa perferendis architecto vero
-            cumque, officia odit tempore?
-            Ratione nisi necessitatibus officia consequuntur labore animi aspernatur in neque quidem amet error
-            nulla
-            dolorum aliquid eos sunt assumenda quisquam, quia maxime asperiores voluptate dolor ullam eveniet
-            debitis.
-            Unde, ipsum.
-            Natus, magni! Beatae numquam praesentium dolorem quia doloribus eum obcaecati, repellat culpa iure,
-            rerum,
-            sit saepe mollitia distinctio similique corrupti esse commodi aperiam nisi consequatur earum officia.
-            Accusantium, minus nihil.</p>
+    <?php
+    }
+    if($auth == 3){
+?>
+<!-- 註冊內容模型 -->
+<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <form action="home.php" method="POST">
+                <div class="M_title">
+                    <div class="modal-header">
+                        <h5 class="modal-title ti" id="exampleModalLabel">新增公告</h5>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        公告標題 
+                        <input type="text" name="title" class="text_input" />
+                    </p>
+                    <p>公告類型 
+                        <select name="type" >
+                            <option value="生活">生活</option>
+                            <option value="廣告">廣告</option>
+                            <option value="緊急通知">緊急通知</option>
+                            <option value="財務">財務</option>
+                        </select>
+                    </p>
+                    <p>公告內容</p>
+                    <textarea name="content" cols="30" rows="10"></textarea>
+                    <input type="file" name="" class="file_input">
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="j_btn" name="submit">
+                        確認
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-
-
+<!-- 內容模型結尾 -->
+<?php
+    }
+?>
