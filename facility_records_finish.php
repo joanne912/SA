@@ -30,7 +30,7 @@
         <div class="icon_group2">
             <div class="upper2"> 
             </div>
-            <a href="facility_record.php"><img src="img/next.svg" alt=""></a>
+            <a href="home.php?page=facility&method=record"><img src="img/next.svg" alt=""></a>
         </div>     
     </div>
     

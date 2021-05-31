@@ -98,10 +98,13 @@ hr {
 
 .dot {
     width: 100%;
-    font-size: 1.2em;
+    font-size: 1em;
     list-style: circle;
     margin-top: 2em;
     /* background-color:#f7f7fa; */
+}
+.dot img{
+    font-size: .8em;
 }
 
 .content {

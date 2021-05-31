@@ -18,7 +18,7 @@
 </head>
 <body>
     <form action="facility_reserve.php" action="POST">
-        <div class="container" style="height:1500px;margin-top:5%;">
+        <div class="container" style="margin-top:5%;">
             <div class="outside">
                 <div class="head" >
                     <a href="home.php?page=facility&method=look">
@@ -146,7 +146,7 @@
                     </div>
              
                 <div>
-                <input type="submit" value="確認送出"class="send">
+                    <a href="home.php?page=facility&method=record"><input type="button" value="確認送出"class="send"></a>
                 </div>
                 <br><br>
                 <hr>
