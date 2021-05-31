@@ -25,17 +25,22 @@
     <div class="outside">
         <div class="head">
             <div class="name">
-            
                 <p>公設名稱 : <?=$row['FACILITIES_NAME']?></p>
-            <?php 
-                if($auth==3){
-                    echo "<a href='#'><img src='https://image.flaticon.com/icons/png/512/1159/1159633.png' alt=''></a>";
-                }
-            ?>
+                <?php 
+                    if ($auth <= 3) {
+                ?>
+                <a href='#'><img src='https://image.flaticon.com/icons/png/512/1159/1159633.png' alt=''></a>
+                <?php
+                    }
+                ?>
             </div>
             <?php
-                if ($auth == 5){
-                    echo '<div class="name2"><a href="facility_reserve.php"><input class="go" style="" type="submit" value="前往預約"></a></div>';
+                if ($auth != 3) {
+            ?>
+            <div class="name2">
+                <a href="facility_reserve.php"><input class="go" style="" type="submit" value="前往預約"></a>
+            </div>
+            <?php
                 }
             ?>
         </div>
