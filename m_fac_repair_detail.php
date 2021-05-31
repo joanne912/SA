@@ -21,6 +21,8 @@
         catch(PDOException $e){
             echo $e->getMessage();
         }
+        header("refresh:0;url=home.php?page=facility&method=repair");
+        exit();
     }
     //顯示公設報修狀況
     if(!isset($_GET['repair'])){
@@ -45,7 +47,7 @@
 ?>
 <link rel="stylesheet" href="css/m_repair_fac_reply.css">
 <div class="wrap">
-    <form action="home.php?page=facility&method=detail&repair=1" method="POST">
+    <form action="home.php?page=facility&method=detail" method="POST">
         <p><img src="img/circle.svg" alt=""> 公設名稱：<?=$row['FACILITIES_NAME']?></p>
         <hr>
         <p><img src="img/circle.svg" alt=""> 問題描述：</p>

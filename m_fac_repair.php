@@ -26,15 +26,14 @@
         }
     ?>
     <tr>
-        
         <td>
-            <a href='home.php?page=facility&method=detail&repair=<?=$row['FACILITIES_REPAIR_ID']?>'><?=$row['FACILITIES_REPAIR_ID']?></a>
+            <?=$row['FACILITIES_REPAIR_ID']?>
         </td>
         <td>
             <?=$row['DATE(`FACILITIES_REPAIR_DATE`)']?>
         </td>
         <td>
-            <a href='home.php?page=facility&method=look&facility=<?=$row['FACILITIES_ID']?>'><?=$row['FACILITIES_NAME']?></a>
+            <?=$row['FACILITIES_NAME']?>
         </td>
         <td>
             <a href='home.php?page=facility&method=detail&repair=<?=$row['FACILITIES_REPAIR_ID']?>'><?=$row['FACILITIES_REPAIR_CONTENT']?></a>
