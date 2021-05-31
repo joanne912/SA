@@ -22,6 +22,9 @@
         #information.active{
             display:block;
         }
+        .tab{
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -76,13 +79,13 @@
                
                     <p class="content">* 是否要借用設備 ?
                         <div>
-                            <input type="radio"  name="borrowtool" value="yes">
+                            <input type="radio"  name="borrowtool" value="yes" id="yes">
                             <label for="male"> 是 &nbsp&nbsp&nbsp&nbsp</label> 
-                            <input type="radio"  name="borrowtool" value="no" checked id="none">
+                            <input type="radio"  name="borrowtool" value="no" checked id="no">
                             <label for="male"> 否 </label>
                         </div>
                     </p>
-                    <!--若使用者選擇否不會顯示設備借用選單 是則顯示-->
+                  
                     <div class="tab">
                         <button class="tablinks" onclick="tools(event, '桌球拍')">桌球拍</button>
                         <button class="tablinks" onclick="tools(event, '桌球')">桌球</button>
@@ -127,11 +130,11 @@
                             tablinks[i].className = tablinks[i].className.replace(" active", "");
                         }
                         document.getElementById(toolName).style.display = "block";
-                        evt.currentTarget.className += " active";
+                        event.currentTarget.className += " active";
                         }
                     </script>
                 <button type="button" class="btn btn-info see_information">確認填寫無誤</button>
-           
+               
                     <!--可借用公設資訊End-->
                 <hr>
             </div>
