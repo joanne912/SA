@@ -8,6 +8,13 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
 </script>
+<style>
+    .item_text a{
+        color: #808080 !important;
+        text-decoration: none !important;
+    } 
+   
+</style>
 <link rel="stylesheet" href="css/m_booking_list.css" type="text/css" />
 <div class="container" style="height:auto;margin-top:5%;">
     <div class="outside">
@@ -58,8 +65,10 @@
         </div>
         <!---->
         <!--點選全選時系統自動選取所有住戶 -->
-        <div class="select_btn">
-            <button type="button" class="coupon_btn">全選</button>
+        <div class="select_box" style="width:70%;margin:auto">
+            <label style="color:#fc6471;font-weight:bold">
+                <input type="checkbox" name="CheckAll" value="" id="CheckAll" />
+            全選</label>
             <span class="content3"data-toggle="modal" data-target="#exampleModalCenter">
                  選取後點此傳送通知 <img class="plane" src="img/send.svg">
             </span>
@@ -98,32 +107,14 @@
                                         <br><br>
                                         
                                         <div class="message_btn">
-                                            <button type="cancel" class="m_cancel_btn">
-                                                <a style="color:#fc6471"href="home.php?page=m_facility&method=booking">取消</a>
+                                            <button type="button" class="m_cancel_btn" data-bs-dismiss="modal" id="hide">
+                                                <a style="color:#fc6471">取消</a>
                                             </button>
                                             <!-- Button trigger modal -->
-                                            <button type="button" class="m_submit_btn" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                                            <button type="button" class="m_submit_btn" id="go" >
                                             確認
                                             </button>
-                                            <!-- Modal 使管理員確認有成功送出信件 條件:住戶有收到信件通知-->
-                                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 style="color:blue;font-weight:bold"class="modal-title" id="exampleModalLabel">已成功送出通知!</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <!-- Modal 顯示管理員輸入的訊息 -->
-                                                <div class="modal-body">
-                                                    通知的訊息 : <br> 游泳池在早上不開放 造成住戶不便深感抱歉!!
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-info" data-bs-dismiss="modal">關閉</button>
-                                                </div>
-                                                </div>
-                                            </div>
-                                            </div>
-                                            <!---->
+                                            
                                         </div> 
 
                                     </div>
@@ -144,7 +135,7 @@
         <div class="information2">
             <span class="grayspace" style="border: 3px solid #808080"><span>
                     <div class="middletext2">
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" id="check" name="Checkbox[]">
                         01<span>游泳池</span>
                         <div class="data" >
                             <span class="phonespan"> 戶別 : 12 </span>
@@ -157,7 +148,7 @@
         <div class="information2">
             <span class="grayspace" style="border: 3px solid #808080"><span>
                     <div class="middletext2">
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="Checkbox[]" id="check" >
                         01<span>游泳池</span>
                         <div class="data">
                             <span>戶別 : 12 </span>
@@ -172,3 +163,35 @@
         <hr>
     </div>
 </div>
+<script>
+        $('#exampleModalCenter').on('shown.bs.modal', function () {
+            $('#hide').click(function (event){
+                $('#exampleModalCenter').modal('hide');
+            });
+        })
+        $('#exampleModalCenter').on('shown.bs.modal', function () {
+                $('#go').click(function (event){
+                    $('#exampleModalCenter').modal('hide');
+                });
+        })
+        // $(document).ready(function () {
+        //     $('#selectall').click(function (e) { 
+        //         e.preventDefault();
+        //         $('check').
+                
+        //     });
+        // });
+        $(document).ready(function(){
+            $("#CheckAll").click(function(){
+                if($("#CheckAll").prop("checked")){//如果全選按鈕有被選擇的話（被選擇是true）
+                    $("input[name='Checkbox[]']").each(function(){
+                    $(this).prop("checked",true);//把所有的核取方框的property都變成勾選
+                    })
+                }else{
+                    $("input[name='Checkbox[]']").each(function(){
+                    $(this).prop("checked",false);//把所有的核方框的property都取消勾選
+                    })
+            }
+            })
+ })
+    </script>
