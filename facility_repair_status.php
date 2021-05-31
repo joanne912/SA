@@ -4,9 +4,9 @@
             `FACILITIES_NAME`, `FACILITIES_PLACE`, `FACILITIES_REPAIR_CONTENT`,
             `FACILITIES_REPAIR_STATE`, `FACILITIES_REPAIR_RETURN` 
             FROM `facilities_repair`,`facilities` 
-            WHERE ( `facilities_repair`.`FACILITIES_ID` = `facilities`.`FACILITIES_ID`
-            AND `facilities_repair`.`COMMUNITY_ID` = $community
-            AND `USER_ID` = $id);";
+            WHERE `facilities_repair`.`FACILITIES_ID` = `facilities`.`FACILITIES_ID`
+            AND `facilities_repair`.`COMMUNITY_ID` = $community AND `USER_ID` = $id
+            ORDER BY `FACILITIES_REPAIR_STATE` DESC , `FACILITIES_REPAIR_DATE` DESC;";
 ?>
 <link rel="stylesheet" href="css/m_facilities.css">
 <link rel="stylesheet" href="css/m_repair_fac.css">
