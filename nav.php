@@ -1,4 +1,7 @@
 <?php
+    $sql = "SELECT `USER_NAME` FROM `user` WHERE `USER_ID` = $id ;";
+    $statement = $conn->query($sql);
+    $row = $statement->fetch(PDO::FETCH_ASSOC);
     if ($auth <= 3){
 ?>
 <div id="menu-wrap">
@@ -7,7 +10,10 @@
             <div class="icon_circle">
                 <img src="img/icon_boy.svg" alt="">
             </div>
-            <span>管理員</span>
+            <span>
+                <?=$row['USER_NAME']?><br>
+                您好!
+            </span>
         </div>
         <div class="option-wrap">
             <a href="home.php?page=m_package">包裹管理</a>
@@ -31,7 +37,10 @@
             <div class="icon_circle">
                 <img src="img/icon_boy.svg" alt="">
             </div>
-            <span>title</span>
+            <span>
+                <?=$row['USER_NAME']?><br>
+                您好!
+            </span>
         </div>
         <div class="option-wrap"> 
             <a href="home.php?page=householdid">住戶戶籍代碼</a>
@@ -57,7 +66,10 @@
             <div class="icon_circle">
                 <img src="img/icon_boy.svg" alt="">
             </div>
-            <span>title</span>
+            <span>
+                <?=$row['USER_NAME']?><br>
+                您好!
+            </span>
         </div>
         <div class="option-wrap">
             <a href="home.php?page=personal">個人資訊</a>
