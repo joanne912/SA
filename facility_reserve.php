@@ -61,7 +61,6 @@
                 <!--住戶點選是才會顯示出可以借用的公設 否則不顯示任何可借公設資訊-->
                 <p class="content">* 是否要借用設備 ?
                     <div>
-                        
                         <label>
                             <input type="radio"  name="borrowtool" value="yes" id="yes">
                             是 &nbsp&nbsp&nbsp&nbsp
