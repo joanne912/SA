@@ -73,9 +73,9 @@
                     </div>
                 </p>
                 <div class="tab">
-                    <button onclick="tools(event, '桌球拍')">桌球拍</button>
-                    <button onclick="tools(event, '桌球')">桌球</button>
-                    <button onclick="tools(event, '桌球墊')">桌球墊</button>
+                    <input type="button" onclick="tools(event, '桌球拍')"value="桌球拍">
+                    <input type="button" onclick="tools(event, '桌球')" value="桌球">
+                    <input  type="button" onclick="tools(event, '桌球墊')" value="桌球墊">
                 </div>
                 <div id="桌球拍" class="tabcontent">
                     <p>選擇借用個數 :</p>
@@ -107,7 +107,7 @@
                 <button type="button" class="btn btn-info see_information">確認填寫無誤</button>
                     <!--可借用公設資訊End-->
                 <hr>
-            </div>
+            
             <div class="outside"id="information">
                 <p class="dot" style="font-weight:bold"><img src="img/circle.svg"> &nbsp確認預約資訊 : </img></p>
                 <!--住戶點數扣除公設點數-->
