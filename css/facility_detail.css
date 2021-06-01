@@ -63,12 +63,13 @@ hr {
     width: 100%;
     font-weight: bold;
 }
-.name a{
-    float:right;
-    display:block;
+
+.name a {
+    float: right;
+    display: block;
 }
 
-.name p{
+.name p {
     float: left;
 }
 
@@ -103,7 +104,8 @@ hr {
     margin-top: 2em;
     /* background-color:#f7f7fa; */
 }
-.dot img{
+
+.dot img {
     font-size: .8em;
 }
 
@@ -141,7 +143,7 @@ hr {
 }
 
 @media screen and (max-width: 768px) {
-    .outside img{
+    .outside img {
         width: 1em;
         height: 1em;
     }
@@ -157,10 +159,10 @@ hr {
 }
 
 @media screen and (max-width: 400px) {
-    .outside img{
+    .outside img {
         width: 1em;
         height: 1em;
-    } 
+    }
     .container {
         width: 90%;
     }
@@ -190,4 +192,8 @@ hr {
 
 .information {
     width: 100%;
+}
+
+.item_text a {
+    text-decoration: none !important;
 }

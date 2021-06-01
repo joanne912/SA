@@ -6,7 +6,7 @@
         $row = $statement->fetch(PDO::FETCH_ASSOC);
         $announcement = $row['MAX(`ANNOUNCEMENT_ID`)'] + 1;
         $sql = "INSERT INTO `announcement` (`ANNOUNCEMENT_ID`, `COMMUNITY_ID`, `ANNOUNCEMENT_TITLE`, `ANNOUNCEMENT_DATE`, `ANNOUNCEMENT_TYPE`, `ANNOUNCEMENT_INC`, `ANNOUNCEMENT_CONTENT`, `ANNOUNCEMENT_DOC`)
-                VALUES (:announcement, :community, :title, :date, :type, '社區管理公告', :content, NULL);";
+                VALUES (:announcement, :community, :title, NOW(), :type, '社區管理公告', :content, NULL);";
         $statement2 = $conn->prepare($sql);
         try{
             $result = $statement2->execute(
@@ -14,7 +14,6 @@
                     ':announcement' => $announcement,
                     ':community' => $community,
                     ':title' => $_POST['title'],
-                    ':date' => date('Y-m-d H:i:s'), 
                     ':type' => $_POST['type'], 
                     ':content' =>  $_POST['content']
                     //':file' => 

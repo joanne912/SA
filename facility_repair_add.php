@@ -9,13 +9,10 @@
 
         $sql = "INSERT INTO `facilities_repair` (`FACILITIES_REPAIR_ID`,`COMMUNITY_ID`,`FACILITIES_ID`,`USER_ID`,
                 `FACILITIES_REPAIR_DATE`,`FACILITIES_REPAIR_CONTENT`,`FACILITIES_REPAIR_STATE`,`FACILITIES_REPAIR_RETURN`)
-                VALUES ($repair,$community,:facility,$id,:date,:content,'waiting',NULL);";
+                VALUES ($repair,$community,?,$id,NOW(),?,'waiting',NULL);";
         $statement = $conn->prepare($sql);
-        $statement->execute(array(
-            ':facility' => $_POST['facility'],
-            ':date' => date('Y-m-d H:i:s'),
-            ':content' => $_POST['content'],
-        ));
+        $statement->execute(array( $_POST['facility'], $_POST['content'] ));
+        header('refresh:0;url=home.php?page=facility&method=repair_add&to=repair_status');
     }
     $sql = "SELECT `FACILITIES_ID`,`FACILITIES_NAME`,`FACILITIES_PLACE`
             FROM `facilities` WHERE ( `COMMUNITY_ID` = $community );";

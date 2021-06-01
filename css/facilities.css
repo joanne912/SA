@@ -1,0 +1,10 @@
+.item_text a {
+    color: #808080 !important;
+    text-decoration: none !important;
+}
+
+hr {
+    border: 2px solid #f7f7fa;
+    background-color: #f7f7fa;
+    margin-top: 2em;
+}

@@ -4,18 +4,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
 </script>
-<style>
-    .item_text a{
-        color: #808080 !important;
-        text-decoration: none !important;
-    } 
-    hr {
-    border: 2px solid #f7f7fa;
-    background-color: #f7f7fa;
-    margin-top: 2em;
-}
-</style>
-
+<link rel="stylesheet" href="css/facilities.css">
 <?php
     $sql = "SELECT `FACILITIES_ID`,`FACILITIES_NAME`, `FACILITIES_INTRODUCTION`,
             `FACILITIES_PLACE`, HOUR(`FACILITIES_OPEN_TIME`), HOUR(`FACILITIES_CLOSE_TIME`),

@@ -16,11 +16,6 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
 </script>
 <link rel="stylesheet" href="css/facility_detail.css">
-<style>
-    .item_text a{
-        text-decoration: none !important;
-    } 
-</style>
 <div class="container">
     <div class="outside">
         <div class="head">
@@ -29,7 +24,7 @@
                 <?php 
                     if ($auth <= 3) {
                 ?>
-                <a href='#'><img src='https://image.flaticon.com/icons/png/512/1159/1159633.png' alt=''></a>
+                <a href='#'><img src='img/edit.svg' alt=''></a>
                 <?php
                     }
                 ?>
@@ -38,7 +33,7 @@
                 if ($auth != 3) {
             ?>
             <div class="name2">
-                <a href="facility_reserve.php"><input class="go" style="" type="submit" value="前往預約"></a>
+                <a href="facility_reserve.php?facility=<?=$_GET['facility']?>"><input class="go" type="submit" value="前往預約"></a>
             </div>
             <?php
                 }
