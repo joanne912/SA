@@ -51,7 +51,7 @@
         <p><img src="img/circle.svg" alt=""> 公設名稱：<?=$row['FACILITIES_NAME']?></p>
         <hr>
         <p><img src="img/circle.svg" alt=""> 問題描述：</p>
-        <textarea name="content" id="" cols="30" rows="10"><?=$row['FACILITIES_REPAIR_CONTENT']?></textarea>
+        <textarea name="content" id="" cols="30" rows="5"><?=$row['FACILITIES_REPAIR_CONTENT']?></textarea>
         <p><img src="img/circle.svg" alt=""> 進度回報：</p>
         <div class="radio_wrap">
             <label>
@@ -69,7 +69,7 @@
         </div>
         <hr>
         <p><img src="img/circle.svg" alt=""> 處理結果：</p>
-        <textarea name="return" id="" cols="30" rows="10"><?=$row['FACILITIES_REPAIR_RETURN']?></textarea>
+        <textarea name="return" id="" cols="30" rows="5"><?=$row['FACILITIES_REPAIR_RETURN']?></textarea>
         <div class="btn">
             <input type="hidden" name="facility" value="<?=$row['FACILITIES_ID']?>">
             <input type="hidden" name="repair" value="<?=$row['FACILITIES_REPAIR_ID']?>">
