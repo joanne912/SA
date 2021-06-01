@@ -46,10 +46,10 @@
                     <?php
                     if($auth >= 4){
                         ?>
-                        <button class="dropbtn"> <a href="#">巴黎大廈54</a></button>
+                        <button class="dropbtn"> <a href="#">冠倫台北510號1樓</a></button>
                         <div class="dropdown-content">
-                            <a href="#">上北大44</a>
-                            <a href="#">輔大宿舍32</a>
+                            <a href="#">巴黎大街41號1樓</a>
+                            <a href="#">上北大12號1樓</a>
                             <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter">多重社區開通</a>
                         </div>
                         <?php
