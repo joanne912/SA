@@ -15,18 +15,17 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
 </script>
-
-<form action="home.php?page=householdid" method=POST>
-<p align=center>請輸入戶別:
-    <input type=text name="searchtxt" value=<?php echo $searchtxt; ?>>
-    <input type=submit value="搜尋戶籍戶別">
-</p>
+<link rel="stylesheet" href="css/household_id.css">
+<form class="search">
+    <label for="searchtxt">請輸入戶別 :</label> 
+    <input class="input1" type="text" name="searchtxt" id="searchtxt" value=<?php echo $searchtxt; ?>>
+    <input class="input2" type="submit" value="搜尋戶籍戶別">
 </form>
 <table class="table table-hover">
     <tr class="warning">
-        <td>戶別</td>
-        <td>戶籍代碼</td>
-        <td>查看</td>
+        <th>戶別</th>
+        <th>戶籍代碼</th>
+        <th>查看</th>
     </tr>
     <?php
         while( $row = $statement->fetch(PDO::FETCH_ASSOC) ) {
