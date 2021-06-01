@@ -39,7 +39,7 @@
         </p>
         <p>
             損壞情況：<br>
-            <textarea name="content" cols="50" rows="20"></textarea>
+            <textarea name="content" cols="50" rows="10"></textarea>
         </p>
         <div class="btn">
             <input name="submit" type="submit" value="新增報修"></a>
