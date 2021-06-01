@@ -21,7 +21,7 @@
             $title = "我的包裹";
         }
         else if ($page == "facility"){
-            $title = "公設預約";
+            $title = "社區公設";
         }
         else{
             $title = "社區公告";
@@ -50,7 +50,7 @@
                         <div class="dropdown-content">
                             <a href="#">上北大44</a>
                             <a href="#">輔大宿舍32</a>
-                            <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter">前往多重社區開通</a>
+                            <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter">多重社區開通</a>
                         </div>
                         <?php
                             }

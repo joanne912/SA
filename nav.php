@@ -32,7 +32,7 @@
                 ?>
                 <a href="home.php?page=personal">個人資訊</a>
                 <a href="home.php?page=package">我的包裹</a>
-                <a href="home.php?page=facility">公設預約</a>
+                <a href="home.php?page=facility">社區公設</a>
                 <a href="home.php">社區公告</a>
                 <?php
                 }
