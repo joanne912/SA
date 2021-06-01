@@ -1,3 +1,4 @@
+
 * {
     padding: 0px;
     margin: 0px;
@@ -126,12 +127,15 @@ header img {
 
 .func_wrap {
     /* background-color: #ffa; */
+ 
     display: flex;
+    float: right;
 }
 
 .sub {
     width: 50%;
     display: flex;
+    float: left;
 }
 
 .else {
@@ -146,40 +150,100 @@ header img {
     margin-top: .5em;
 }
 
-.func_wrap {
-    display: none;
+
+
+.M_logo h3 {
+    width: auto;
+    padding: 2px 5px;
+    background: #fc6471;
+    letter-spacing: 3px;
+    text-indent: 3px;
+    /* color: #f7f7fa; */
+    color: white;
+    font-weight: bolder;
+    display: inline;
+    box-sizing: border-box;
 }
 
+.M_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
-/* @media screen and (min-width: 769px) and (max-width: 1440px) {
-    .all {
-        display: flex;
-    }
-    header {
-        order: 1;
-        height: 20vh;
-    }
-    #menu-wrap {
-        height: 100vh;
-        width: 30em;
-        position: relative;
-        order: 0;
-        display: flex;
-    }
-    .title span {
-        padding: 0 10px;
-        font-weight: 300;
-    }
-    .menu img {
-        display: none;
-    }
-    .title img {
-        display: block;
-        width: 6%;
-        height: 6%;
-    }
-} */
+.modal_header{
+    width: 90%;
+    border: 3px solid #CACADE;
+    border-radius: 5px;
+    margin: auto;
+}
+.modal-body {
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1em;
+}
+.M_enter {
+    width: 80%;
+    margin: auto;
+}
+.M_enter input {
+    background: #f7f7fa;
+    border: 0;
+    height: 40px;
+    border-radius: 9px;
+    margin: 0 5px 0 5px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    text-transform: lowercase;
+    font-size: 10px;
+}
+.M_enter label {
+    font-size:.5em;
+    color:#CACADE;
+    margin-bottom: .2em;
+    font-weight: bold;
+    margin-left: 2px;
+}
+.M_enter input {
+    width: 90%;
+    font-size:.3em;
+    color: #808080;
+}
+.modal_header p{
+    margin: auto;
+     letter-spacing: 2px;
+     font-weight: bold;
+     font-size: 20px;
+    
+ }
 
+
+.M_enter a{
+    margin-top: 10px;
+    width: 90%;
+    display: block;
+    margin: auto;
+    background: #c0c0e2 !important ;
+    color: white !important;
+    letter-spacing: 8px;
+    font-size: 18px;
+    border-radius: 3px;
+    text-align: center;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-decoration: none !important;
+}
+.M_enter a:hover{
+    background: #fc6471 !important ;
+    color: #fff !important;
+}
+.logout{
+    display:flex;
+    align-items:center;
+    margin-top:25px;
+    height:25px;
+}
 @media screen and (min-width: 768px) {
     header {
         font-size: 2.2rem;
@@ -212,12 +276,14 @@ header img {
     .func_wrap a {
         display: inline-block;
         text-decoration: none;
-        font-size: .1em;
+        font-size: .4em;
         text-transform: uppercase;
-        letter-spacing: 1em;
+        letter-spacing: .5em;
         padding: 3px 8px;
-        margin: 0 5em;
         color: black;
+    }
+    .func_wrap a img{
+        font-size:1em;
     }
     .func_wrap a:hover {
         background: rgb(73, 71, 71);
@@ -240,6 +306,12 @@ header img {
         padding: 2em 3em;
         box-sizing: border-box;
     }
+    .modal_header{
+        padding:5px 5px;
+        height: 9vh;
+        width: 80%;
+    }
+    
 }
 
 #menu-wrap a {
@@ -255,3 +327,92 @@ header img {
 .title span {
     color: black !important;
 }
+@media screen and (max-width: 400px) {
+    .modal_header p{
+        font-size: 15px;
+        
+    }
+    .dropdown button a {
+        font-size: 8px;
+    }
+    a{
+        color: #000 !important;
+        font-size: 10px;
+    }
+    .modal_header{
+        
+        height: 8vh;
+       width: 80%;
+    }
+    .M_enter a{
+        font-size: 10px;
+        width: 85%;
+        
+    }
+    .M_enter input{
+        height: 30px;
+    }
+   .logout{
+    margin-top: 7px;
+    letter-spacing: 2px;
+   }
+   .logout:hover{
+    color: #fff !important;
+    background-color: #000 !important;
+   }
+    
+    
+    
+}
+
+
+
+
+  /* Dropdown Button */
+  .dropbtn {
+    padding: 5px;
+    border: none;
+    background-color: #f7f7fa;
+  }
+  .dropbtn a{
+      letter-spacing:.5em;
+  
+      
+  }
+  /* The container <div> - needed to position the dropdown content */
+  .func_wrap .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .func_wrap .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background-color: #fff;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none !important;
+    display: block;
+  }
+  .dropdown-content a img{
+      color:white;
+      font-size:1em;
+  }
+  .func_wrap .dropdown-content a:active {
+    color: #f7f7fa;
+  }
+  
+ 
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+ 
