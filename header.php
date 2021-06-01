@@ -71,7 +71,7 @@
                         <form method="POST" action="password_check.php">
                             <div class="modal-body">
                                 <header class="modal_header">
-                                        <p >多重社區開通</p>
+                                        <p>多重社區開通</p>
                                 </header>
                                 <div class="M_wrap">
                                     <!-- 戶籍代碼輸入框 -->
