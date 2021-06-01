@@ -42,23 +42,19 @@
             </div>
             <!-- 網頁版的設定、登出、通知按鈕，手機版時會消失 -->
             <div class="func_wrap">
-                <?php
-                    if($auth >= 4){
-                ?>
-
                     <div class="dropdown">
+                    <?php
+                    if($auth >= 4){
+                        ?>
                         <button class="dropbtn"> <a href="#">巴黎大廈54</a></button>
                         <div class="dropdown-content">
                             <a href="#">上北大44</a>
                             <a href="#">輔大宿舍32</a>
                             <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter">前往多重社區開通</a>
                         </div>
-                        
-                
-                
                         <?php
                             }
-                        ?>
+                    ?>
                     <!-- <a href="logout.php" >logout</a> -->
                     </div>
                     <a class="logout"style=""href="logout.php" >logout</a>
