@@ -6,7 +6,7 @@
         $auth = $_SESSION['auth'];
         $id = $_SESSION['id'];
         $community = $_SESSION['community'];
-        if( $auth == 5 ){
+        if( $auth >= 4 ){
             $household = $_SESSION['household'];
         }
     }

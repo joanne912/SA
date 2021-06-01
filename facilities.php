@@ -4,18 +4,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
 </script>
-<style>
-    .item_text a{
-        color: #808080 !important;
-        text-decoration: none !important;
-    } 
-    hr {
-    border: 2px solid #f7f7fa;
-    background-color: #f7f7fa;
-    margin-top: 2em;
-}
-</style>
-
+<link rel="stylesheet" href="css/facilities.css">
 <?php
     $sql = "SELECT `FACILITIES_ID`,`FACILITIES_NAME`, `FACILITIES_INTRODUCTION`,
             `FACILITIES_PLACE`, HOUR(`FACILITIES_OPEN_TIME`), HOUR(`FACILITIES_CLOSE_TIME`),
@@ -39,34 +28,32 @@
             <div class='icon_group'>
                 <div class='upper'>
                     <?php
-                        if($auth <= 4){
-                            ?>
-                            
-                            <a href='#' data-toggle="modal" data-target="#exampleModal"><img src='img/delete.svg' alt=''></a>
-                            <?php
+                        if($auth <= 3){
+                    ?>
+                    <a href='#' data-toggle="modal" data-target="#exampleModal"><img src='img/delete.svg' alt=''></a>
+                    <!-- 確認刪除彈跳視窗 -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 style="color:blue;font-weight:bold"class="modal-title" id="exampleModalLabel">確認刪除此公設 ?</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="cross"></button>
+                                </div>
+                                <div class="modal-body">
+                                    確定欲刪除請點選確認 謝謝您!!
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal" id="hide">取消</button>
+                                <!--管理員點選確認取消後該公設的應移除公設清單-->
+                                <button type="button" class="btn btn-info" id="go">確認</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
                         }
                     ?>
-                     
-        <!-- 確認刪除彈跳視窗 -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 style="color:blue;font-weight:bold"class="modal-title" id="exampleModalLabel">確認刪除此公設 ?</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="cross"></button>
-                    </div>
-                    <div class="modal-body">
-                        確定欲刪除請點選確認 謝謝您!!
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light" data-bs-dismiss="modal" id="hide">取消</button>
-                        <!--管理員點選確認取消後該公設的應移除公設清單-->
-                       <button type="button" class="btn btn-info" id="go">確認</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-            <!---->
+                <!---->
                 </div>
                 <a href='home.php?page=facility&method=look&facility=<?=$row["FACILITIES_ID"]?>'><img src='img/next.svg' alt=''></a>
             </div>

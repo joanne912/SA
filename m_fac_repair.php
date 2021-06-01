@@ -2,8 +2,9 @@
     $sql = "SELECT `FACILITIES_REPAIR_ID`,`facilities`.`FACILITIES_ID`, DATE(`FACILITIES_REPAIR_DATE`),
             `FACILITIES_NAME`, `FACILITIES_REPAIR_CONTENT`, `FACILITIES_REPAIR_STATE` 
             FROM `facilities_repair`,`facilities` 
-            WHERE ( `facilities_repair`.`FACILITIES_ID` = `facilities`.`FACILITIES_ID`
-            AND `facilities_repair`.`COMMUNITY_ID` = $community);";
+            WHERE `facilities_repair`.`FACILITIES_ID` = `facilities`.`FACILITIES_ID`
+            AND `facilities_repair`.`COMMUNITY_ID` = $community
+            ORDER BY `FACILITIES_REPAIR_STATE` DESC , `FACILITIES_REPAIR_DATE` DESC;";
 ?>
 <link rel="stylesheet" href="css/m_facilities.css">
 <link rel="stylesheet" href="css/m_repair_fac.css">
@@ -26,15 +27,14 @@
         }
     ?>
     <tr>
-        
         <td>
-            <a href='home.php?page=facility&method=detail&repair=<?=$row['FACILITIES_REPAIR_ID']?>'><?=$row['FACILITIES_REPAIR_ID']?></a>
+            <?=$row['FACILITIES_NAME']?>-<?=$row['FACILITIES_REPAIR_ID']?>
         </td>
         <td>
             <?=$row['DATE(`FACILITIES_REPAIR_DATE`)']?>
         </td>
         <td>
-            <a href='home.php?page=facility&method=look&facility=<?=$row['FACILITIES_ID']?>'><?=$row['FACILITIES_NAME']?></a>
+            <?=$row['FACILITIES_NAME']?>
         </td>
         <td>
             <a href='home.php?page=facility&method=detail&repair=<?=$row['FACILITIES_REPAIR_ID']?>'><?=$row['FACILITIES_REPAIR_CONTENT']?></a>

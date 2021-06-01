@@ -33,7 +33,7 @@
     ?>
     <tr>
         <td><?=$row['HOUSEHOLD_ADDRESS']?></td>
-        <td><?=$row['COMMUNITY_ID']?></td>
+        <td><?=$row['HOUSEHOLD_ID']?></td>
         <td><a href="home.php?page=householdid&method=look&household_id=<?=$row['HOUSEHOLD_ID']?>">[查看]</a></td>
     </tr>
     <?php

@@ -15,6 +15,7 @@
     border-radius: 10px;
     letter-spacing: 5px;
     text-indent: 5px;
+    text-decoration: none !important;
 }
 
 @media screen and (max-width: 400px){

@@ -72,19 +72,19 @@ form p {
     justify-content: flex-end;
     margin: 0 0 -1em;
 }
+
 @media screen and (max-width:768px) {
     .btn {
         width: 14vw;
         height: 5vh;
         margin-right: 1.6em;
-        
     }
     form p {
         width: 14%;
         letter-spacing: 1px;
         text-indent: 0.2px;
     }
-    input{
+    input {
         font-size: .5em;
     }
 }
