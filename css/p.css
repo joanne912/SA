@@ -19,7 +19,7 @@ form {
 }
 
 input {
-    width: 35%;
+    width: 55%;
     margin: 3%;
     border: 6px solid #f7f7fa;
     border-radius: 10px;
@@ -29,10 +29,11 @@ input {
     text-indent: 2px;
     font-size: 1.25em;
     margin-left: -.5em;
+    margin-bottom: 5px;
 }
 
 select {
-    width: 35%;
+    width: 55%;
     margin: 3%;
     border: 6px solid #f7f7fa;
     border-radius: 10px;
@@ -46,9 +47,10 @@ select {
 }
 
 form p {
-    width: 10%;
+    /* width: 10%; */
     letter-spacing: 2px;
     text-indent: 2px;
+    color: #808080;
 }
 
 

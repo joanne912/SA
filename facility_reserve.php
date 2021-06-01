@@ -14,24 +14,13 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/f_reserve.js"></script>
     <link rel="stylesheet" href="css/facility_reserve.css">
-    <style>
-        #information{
-            display:none;
-        }
-        #information.active{
-            display:block;
-        }
-        .tab{
-            display: none;
-        }
-    </style>
 </head>
 <body>
     <form action="facility_reserve.php" action="POST">
         <div class="container" style="margin-top:5%;">
             <div class="outside">
                 <div class="head" >
-                    <a href="home.php?page=facility&method=look">
+                    <a href="home.php?page=facility">
                         <img class="left" src="img/left-arrow.svg">
                     </a> 
                     <span class="name">公設預約</span>
