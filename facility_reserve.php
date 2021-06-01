@@ -31,7 +31,7 @@
         <div class="container" style="margin-top:5%;">
             <div class="outside">
                 <div class="head" >
-                    <a href="home.php?page=facility&method=look">
+                    <a href="home.php?page=facility">
                         <img class="left" src="img/left-arrow.svg">
                     </a> 
                     <span class="name">公設預約</span>
