@@ -47,7 +47,7 @@
             if($auth == 3){
         ?>
         <!-- 註冊彈跳視窗 -->
-        <button type="button" data-toggle="modal" data-target="#exampleModalCenter2" style="border:0; background: transparent;">
+        <button id="new" type="button" data-toggle="modal" data-target="#exampleModalCenter2" style="border:0; background: transparent;">
             <div class="a_icon_circle">
                 <img src="img/add.svg" alt="">
             </div>
