@@ -1,18 +1,23 @@
 <?php
     //新增公告處理區域
     if(isset($_POST['submit'])){
-        $sql = "SELECT MAX(`ANNOUNCEMENT_ID`) FROM `announcement` WHERE (`COMMUNITY_ID` = $community);";
-        $statement = $conn->query($sql);
-        $row = $statement->fetch(PDO::FETCH_ASSOC);
-        $announcement = $row['MAX(`ANNOUNCEMENT_ID`)'] + 1;
-        $sql = "INSERT INTO `announcement` (`ANNOUNCEMENT_ID`, `COMMUNITY_ID`, `ANNOUNCEMENT_TITLE`, `ANNOUNCEMENT_DATE`, `ANNOUNCEMENT_TYPE`, `ANNOUNCEMENT_INC`, `ANNOUNCEMENT_CONTENT`, `ANNOUNCEMENT_DOC`)
-                VALUES (:announcement, :community, :title, NOW(), :type, '社區管理公告', :content, NULL);";
+        if($_POST['submit'] == 'new'){
+            $sql = "SELECT MAX(`ANNOUNCEMENT_ID`) FROM `announcement` WHERE (`COMMUNITY_ID` = $community);";
+            $statement = $conn->query($sql);
+            $row = $statement->fetch(PDO::FETCH_ASSOC);
+            $announcement = $row['MAX(`ANNOUNCEMENT_ID`)'] + 1;
+            $sql = "INSERT INTO `announcement` (`ANNOUNCEMENT_ID`, `COMMUNITY_ID`, `ANNOUNCEMENT_TITLE`, `ANNOUNCEMENT_DATE`, `ANNOUNCEMENT_TYPE`, `ANNOUNCEMENT_INC`, `ANNOUNCEMENT_CONTENT`, `ANNOUNCEMENT_DOC`)
+                    VALUES ($announcement, $community, :title, NOW(), :type, '社區管理公告', :content, NULL);";
+        } else {
+            $announcement = $_POST['submit'];
+            $sql = "UPDATE `announcement` SET `ANNOUNCEMENT_TITLE` = :title,
+                    `ANNOUNCEMENT_TYPE` = :type, `ANNOUNCEMENT_CONTENT` = :content
+                    WHERE `ANNOUNCEMENT_ID` = $announcement AND `COMMUNITY_ID` = $community;";
+        }
         $statement2 = $conn->prepare($sql);
         try{
             $result = $statement2->execute(
                 array(
-                    ':announcement' => $announcement,
-                    ':community' => $community,
                     ':title' => $_POST['title'],
                     ':type' => $_POST['type'], 
                     ':content' =>  $_POST['content']
@@ -27,13 +32,11 @@
 ?>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-</script> -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
 </script>
 <link rel="stylesheet" href="css/a.css" type="text/css" />
+<script src="js/announcement.js"></script>
 
 <!-- 公告功能選項清單 -->
 <div class="act_wrap">
@@ -42,7 +45,7 @@
             if($auth == 3){
         ?>
         <!-- 註冊彈跳視窗 -->
-        <button type="button" data-toggle="modal" data-target="#exampleModalCenter2" style="border:0; background: transparent;">
+        <button id="new" type="button" data-toggle="modal" data-target="#exampleModalCenter2" style="border:0; background: transparent;">
             <div class="a_icon_circle">
                 <img src="img/add.svg" alt="">
             </div>
@@ -74,7 +77,7 @@
     $type = isset($_POST['types']) ? $_POST['types'] : '' ;
     //公告查詢(標題或內容)
     $search = isset($_POST['search']) ? $_POST['search'] : '' ;
-    $sql = "SELECT `ANNOUNCEMENT_TITLE`,`ANNOUNCEMENT_TYPE`,`ANNOUNCEMENT_DATE`,`ANNOUNCEMENT_CONTENT`
+    $sql = "SELECT `ANNOUNCEMENT_ID`,`ANNOUNCEMENT_TITLE`,`ANNOUNCEMENT_TYPE`,`ANNOUNCEMENT_DATE`,`ANNOUNCEMENT_CONTENT`
             FROM `announcement` WHERE `COMMUNITY_ID` = $community 
             AND `ANNOUNCEMENT_TYPE` LIKE ?
             AND (`ANNOUNCEMENT_TITLE` LIKE ?
@@ -89,42 +92,51 @@
     while( $row = $statement->fetch(PDO::FETCH_ASSOC) ){
     ?>
     <!-- 每一獨立公告區塊 -->
-    <hr>
-    <!-- 公告選取框及公告類型 -->
-    <div class="item_nav">
-        <div class="act_icon">
-            <?php
-                if( $auth <= 3 ){
-            ?>
-            <img src="img/edit.svg" alt="">
-            <img src="img/delete.svg" alt="" style="margin-left: 1em;">
-            <?php
-                }
-            ?>
-        </div>
-        <p>類型：<?=$row['ANNOUNCEMENT_TYPE']?></p>
-    </div>
-    <!-- 公告內容 -->
-    <div class="container">
-        <!-- 公告發布帳號及發佈時間、地點 -->
-        <div class="item_info">
-            <!-- 隨公告人不同，圖片也不同 -->
-            <!-- 目前沒有針對使用者設置個人圖片故無法完成 -->
-            <div class="logo">
-                <img src="img/icon_boy.svg" alt="">
+    <div class="annoucement">
+        <hr>
+        <!-- 公告選取框及公告類型 -->
+        <div class="item_nav">
+            <div class="act_icon">
+                <?php
+                    if( $auth <= 3 ){
+                ?>
+                <a class="edit" href='#' data-id="<?=$row['ANNOUNCEMENT_ID']?>" data-toggle="modal" data-target="#exampleModalCenter2">
+                    <img src="img/edit.svg" alt="">
+                </a>
+                <a href='#' data-toggle="modal" data-target="#exampleModal">
+                    <img src='img/delete.svg' alt='' style="margin-left: 1em;">
+                </a>
+                <?php
+                    }
+                ?>
             </div>
-            <!-- 公告時間及地點皆不相同，需連結資料庫 -->
-            <div class="info">
-                <p><?=$row['ANNOUNCEMENT_TITLE']?></p>
-                <div class="sub_info">
-                    <img src="img/calender.svg" alt="">
-                    <p><?=date_format(date_create($row['ANNOUNCEMENT_DATE']),"Y/m/d H:i:s")?></p>
+            <p>
+                <span>類型：</span>
+                <span><?=$row['ANNOUNCEMENT_TYPE']?></span>
+            </p>
+        </div>
+        <!-- 公告內容 -->
+        <div class="container">
+            <!-- 公告發布帳號及發佈時間、地點 -->
+            <div class="item_info">
+                <!-- 隨公告人不同，圖片也不同 -->
+                <!-- 目前沒有針對使用者設置個人圖片故無法完成 -->
+                <div class="logo">
+                    <img src="img/icon_boy.svg" alt="">
+                </div>
+                <!-- 公告時間及地點皆不相同，需連結資料庫 -->
+                <div class="info">
+                    <p><?=$row['ANNOUNCEMENT_TITLE']?></p>
+                    <div class="sub_info">
+                        <img src="img/calender.svg" alt="">
+                        <p><?=date_format(date_create($row['ANNOUNCEMENT_DATE']),"Y/m/d H:i:s")?></p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- 公告內容敘述，需連結資料庫 -->
-        <div class="item_profile">
-            <p><?=$row['ANNOUNCEMENT_CONTENT']?></p>
+            <!-- 公告內容敘述，需連結資料庫 -->
+            <div class="item_profile">
+                <p><?=$row['ANNOUNCEMENT_CONTENT']?></p>
+            </div>
         </div>
     </div>
     <?php
@@ -138,16 +150,16 @@
             <form action="home.php" method="POST">
                 <div class="M_title">
                     <div class="modal-header">
-                        <h5 class="modal-title ti" id="exampleModalLabel">新增公告</h5>
+                        <h5 class="modal-title ti" id="exampleModalLabel2">新增公告</h5>
                     </div>
                 </div>
                 <div class="modal-body">
                     <p>
                         公告標題 
-                        <input type="text" name="title" class="text_input" />
+                        <input type="text" id="title" name="title" class="text_input" />
                     </p>
                     <p>公告類型 
-                        <select name="type" >
+                        <select name="type" id="type">
                             <option value="生活">生活</option>
                             <option value="廣告">廣告</option>
                             <option value="緊急通知">緊急通知</option>
@@ -155,11 +167,11 @@
                         </select>
                     </p>
                     <p>公告內容</p>
-                    <textarea name="content" cols="30" rows="10"></textarea>
-                    <input type="file" name="" class="file_input">
+                    <textarea id="content" name="content" cols="30" rows="10"></textarea>
+                    <input type="file" name="file" class="file_input">
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="j_btn" name="submit">
+                    <button type="submit" class="j_btn" id="submit" name="submit" value="new">
                         確認
                     </button>
                 </div>
@@ -168,6 +180,24 @@
     </div>
 </div>
 <!-- 內容模型結尾 -->
+<!-- 確認刪除彈跳視窗 -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 style="color:blue;font-weight:bold"class="modal-title" id="exampleModalLabel">確認刪除此公吿?</h5>
+            </div>
+            <div class="modal-body">
+                確定欲刪除請點選確認 謝謝您!!
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal" id="hide">取消</button>
+            <!--管理員點選確認取消後該公設的應移除公設清單-->
+            <button type="button" class="btn btn-info" id="go">確認</button>
+            </div>
+        </div>
+    </div>
+</div>
 <?php
     }
 ?>

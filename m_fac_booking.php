@@ -69,14 +69,14 @@
             <label style="color:#fc6471;font-weight:bold">
                 <input type="checkbox" name="CheckAll" value="" id="CheckAll" />
             全選</label>
-            <span class="content3"data-toggle="modal" data-target="#exampleModalCenter">
+            <span class="content3"data-toggle="modal" data-target="#exampleModalCenter5">
                  選取後點此傳送通知 <img class="plane" src="img/send.svg">
             </span>
         </div>
             <div class="information">
             <!-- 管理員傳送通知給住戶點選連結後出現彈跳視窗 資料庫導入並顯示管理員勾選的住戶的戶別 
             輸入訊息按確認送出後將訊息通知給住戶端 -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            <div class="modal fade" id="exampleModalCenter5" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">

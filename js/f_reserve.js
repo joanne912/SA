@@ -11,6 +11,7 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#no').click(function() {
         $('.tab').hide();
+        $('.tabcontent').hide();
     });
 });
 

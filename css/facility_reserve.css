@@ -9,7 +9,18 @@
 .tab {
     width: 700px;
 }
-
+.tab input{
+    border-radius: 3px;
+    border: 1px solid #f7f7fa;
+    background-color:#D5D5E9;
+    color: rgb(51, 47, 47);
+    font-weight: bold;
+    padding: 8px 15px;
+}
+.tab input:hover{
+    background-color:#fc6471;
+    color: #fff;
+}
 .tabcontent {
     width: 700px;
 }
