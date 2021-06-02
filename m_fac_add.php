@@ -72,7 +72,7 @@
         <hr>
         <form action="m_fac_add.php">
             <span><img src="img/circle.svg" alt="">新增器材</span>
-            <p>器材名稱：：<input type="text" name="open_time"></p>
+            <p>器材名稱：<input type="text" name="open_time"></p>
             <p>器材數量：<input type="text" name="close_time"></p>
             <input type="submit" value="新增" style="padding: .25em .5em; background: #fc6471; color: white;border: 0; border-radius: 5px;">
             <!-- 列出已新增器材 -->
