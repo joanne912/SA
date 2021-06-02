@@ -16,75 +16,95 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
 </script>
 <link rel="stylesheet" href="css/facility_detail.css">
+<script src="js/facility.js"></script>
 <div class="container">
-    <div class="outside">
-        <div class="head">
-            <div class="name">
-                <p>公設名稱 : <?=$row['FACILITIES_NAME']?></p>
-                <?php 
-                    if ($auth <= 3) {
+    <form action="facility_detail.php" method="POST">
+        <div class="outside">
+            <div class="head">
+                <div class="name">
+                    <p>
+                        <span>公設名稱 : </span>
+                        <span><?=$row['FACILITIES_NAME']?></span>
+                    </p>
+                    <?php 
+                        if ($auth <= 3) {
+                    ?>
+                    <a href='#' class="edit"><img src='img/edit.svg' alt=''></a>
+                    <?php
+                        }
+                    ?>
+                </div>
+                <?php
+                    if ($auth != 3) {
                 ?>
-                <a href='#'><img src='img/edit.svg' alt=''></a>
+                <div class="name2">
+                    <a href="facility_reserve.php?facility=<?=$_GET['facility']?>"><input class="go" type="submit" value="前往預約"></a>
+                </div>
                 <?php
                     }
                 ?>
             </div>
-            <?php
-                if ($auth != 3) {
-            ?>
-            <div class="name2">
-                <a href="facility_reserve.php?facility=<?=$_GET['facility']?>"><input class="go" type="submit" value="前往預約"></a>
+            <hr>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="<?=$row['FACILITIES_IMG1']?>" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="<?=$row['FACILITIES_IMG2']?>" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="<?=$row['FACILITIES_IMG3']?>" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-            <?php
-                }
-            ?>
-        </div>
-        <hr>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="<?=$row['FACILITIES_IMG1']?>" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="<?=$row['FACILITIES_IMG2']?>" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="<?=$row['FACILITIES_IMG3']?>" alt="Third slide">
-                </div>
+            <p class="dot"><img src="img/circle.svg"> &nbsp公設時段 : </img></p>
+            <!--資料庫匯出該公設預約時段-->
+            <div class="information">
+                <p class="content"><?=$row['HOUR(`FACILITIES_OPEN_TIME`)']?>:00~<?=$row['HOUR(`FACILITIES_CLOSE_TIME`)']?>:00</p>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+            <div class="information">
+                <p class="content"><?=$row['FACILITIES_INTRODUCTION']?></p>
+            </div>
+            <hr>
         </div>
-        <p class="dot"><img src="img/circle.svg"> &nbsp公設時段 : </img></p>
-        <!--資料庫匯出該公設預約時段-->
-        <div class="information">
-            <p class="content"><?=$row['HOUR(`FACILITIES_OPEN_TIME`)']?>:00~<?=$row['HOUR(`FACILITIES_CLOSE_TIME`)']?>:00</p>
+        <div class="outside">
+            <p class="dot"><img src="img/circle.svg"> &nbsp使用說明 : </img></p>
+            <!--資料庫匯出該公設說明和其他注意事項-->
+            <div class="information">
+                <p class="content">
+                    <span>人數上限：</span>
+                    <span><?=$row['FACILITIES_LIMIT']?></span>
+                </p>
+                <p class="content">
+                    <span>已預約人數 : </span>
+                    <span>10</span>
+                    <span> 人</span>
+                </p>
+                <p class="content">
+                    <span>公設所需點數：</span>
+                    <span><?=$row['FACILITIES_POINT']?></span>
+                    <span>點</span>
+                </p>
+                <p class="content">
+                    <span>其他：</span>
+                    <span><?=$row['FACILITIES_DESCRIPTION']?></span>
+                </p>
+            </div>
+            <hr>
         </div>
-        <div class="information">
-            <p class="content"><?=$row['FACILITIES_INTRODUCTION']?></p>
-        </div>
-        <hr>
-    </div>
-    <div class="outside">
-        <p class="dot"><img src="img/circle.svg"> &nbsp使用說明 : </img></p>
-        <!--資料庫匯出該公設說明和其他注意事項-->
-        <div class="information">
-            <p class="content">人數上限：<?=$row['FACILITIES_LIMIT']?></p>
-            <p class="content">已預約人數 :功能未完成</p>
-            <p class="content">公設所需點數：<?=$row['FACILITIES_POINT']?>點</p>
-            <p class="content">其他：<?=$row['FACILITIES_DESCRIPTION']?></p>
-        </div>
-        <hr>
-    </div>
+    </form>
 </div>
