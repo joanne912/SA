@@ -65,8 +65,8 @@
         <span><img src="img/circle.svg" alt="">公設名稱： <input type="text" name="name"></span>
         <hr>
         <span><img src="img/circle.svg" alt="">公設時段</span>
-        <p>開放時段：<input type="text" name="open_time"></p>
-        <p>開放時段：<input type="text" name="close_time"></p>
+        <p>開放時間：<input type="text" name="open_time"></p>
+        <p>關閉時間：<input type="text" name="close_time"></p>
         <p>公設簡介：</p>
         <textarea rows="5" cols="40" name="introduction"></textarea>
         <hr>
