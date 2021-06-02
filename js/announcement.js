@@ -4,7 +4,7 @@ $(document).ready(function() {
         $('#content').val(this.parentNode.parentNode.parentNode.children[2].children[1].children[0].innerHTML);
         $('#exampleModalLabel2').html('修改公告');
         $('#type').val(this.parentNode.parentNode.children[1].children[1].innerHTML);
-        $('#submit').val('update');
+        $('#submit').val($(this).data('id'));
         $('#submit').html('修改');
     });
     $('#new').click(function() {

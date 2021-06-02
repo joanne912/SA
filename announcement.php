@@ -7,29 +7,27 @@
             $row = $statement->fetch(PDO::FETCH_ASSOC);
             $announcement = $row['MAX(`ANNOUNCEMENT_ID`)'] + 1;
             $sql = "INSERT INTO `announcement` (`ANNOUNCEMENT_ID`, `COMMUNITY_ID`, `ANNOUNCEMENT_TITLE`, `ANNOUNCEMENT_DATE`, `ANNOUNCEMENT_TYPE`, `ANNOUNCEMENT_INC`, `ANNOUNCEMENT_CONTENT`, `ANNOUNCEMENT_DOC`)
-                    VALUES (:announcement, :community, :title, NOW(), :type, '社區管理公告', :content, NULL);";
-            $statement2 = $conn->prepare($sql);
-            try{
-                $result = $statement2->execute(
-                    array(
-                        ':announcement' => $announcement,
-                        ':community' => $community,
-                        ':title' => $_POST['title'],
-                        ':type' => $_POST['type'], 
-                        ':content' =>  $_POST['content']
-                        //':file' => 
-                    )
-                );
-            }
-            catch(PDOException $e){
-                echo $e->getMessage();
-            }   
-    } else {
-            $sql = "UPDATE `announcement` SET `ANNOUNCEMENT_TITLE` = <{ANNOUNCEMENT_TITLE: }>,
-                    `ANNOUNCEMENT_TYPE` = <{ANNOUNCEMENT_TYPE: }>, `ANNOUNCEMENT_CONTENT` = <{ANNOUNCEMENT_CONTENT: }>,
-                    WHERE `ANNOUNCEMENT_ID` = <{expr}> AND `COMMUNITY_ID` = <{expr}>;";
+                    VALUES ($announcement, $community, :title, NOW(), :type, '社區管理公告', :content, NULL);";
+        } else {
+            $announcement = $_POST['submit'];
+            $sql = "UPDATE `announcement` SET `ANNOUNCEMENT_TITLE` = :title,
+                    `ANNOUNCEMENT_TYPE` = :type, `ANNOUNCEMENT_CONTENT` = :content
+                    WHERE `ANNOUNCEMENT_ID` = $announcement AND `COMMUNITY_ID` = $community;";
         }
-
+        $statement2 = $conn->prepare($sql);
+        try{
+            $result = $statement2->execute(
+                array(
+                    ':title' => $_POST['title'],
+                    ':type' => $_POST['type'], 
+                    ':content' =>  $_POST['content']
+                    //':file' => 
+                )
+            );
+        }
+        catch(PDOException $e){
+            echo $e->getMessage();
+        }
     }
 ?>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -79,7 +77,7 @@
     $type = isset($_POST['types']) ? $_POST['types'] : '' ;
     //公告查詢(標題或內容)
     $search = isset($_POST['search']) ? $_POST['search'] : '' ;
-    $sql = "SELECT `ANNOUNCEMENT_TITLE`,`ANNOUNCEMENT_TYPE`,`ANNOUNCEMENT_DATE`,`ANNOUNCEMENT_CONTENT`
+    $sql = "SELECT `ANNOUNCEMENT_ID`,`ANNOUNCEMENT_TITLE`,`ANNOUNCEMENT_TYPE`,`ANNOUNCEMENT_DATE`,`ANNOUNCEMENT_CONTENT`
             FROM `announcement` WHERE `COMMUNITY_ID` = $community 
             AND `ANNOUNCEMENT_TYPE` LIKE ?
             AND (`ANNOUNCEMENT_TITLE` LIKE ?
@@ -97,12 +95,12 @@
     <div class="annoucement">
         <hr>
         <!-- 公告選取框及公告類型 -->
-        <div class="item_nav" id="annoucement<?=$row['ANNOUNCEMENT_ID']?>">
+        <div class="item_nav">
             <div class="act_icon">
                 <?php
                     if( $auth <= 3 ){
                 ?>
-                <a class="edit" href='#' data-toggle="modal" data-target="#exampleModalCenter2">
+                <a class="edit" href='#' data-id="<?=$row['ANNOUNCEMENT_ID']?>" data-toggle="modal" data-target="#exampleModalCenter2">
                     <img src="img/edit.svg" alt="">
                 </a>
                 <a href='#' data-toggle="modal" data-target="#exampleModal">
