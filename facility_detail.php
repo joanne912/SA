@@ -74,9 +74,13 @@
             <p class="dot"><img src="img/circle.svg"> &nbsp公設時段 : </img></p>
             <!--資料庫匯出該公設預約時段-->
             <div class="information">
-                <p class="content"><?=$row['HOUR(`FACILITIES_OPEN_TIME`)']?>:00~<?=$row['HOUR(`FACILITIES_CLOSE_TIME`)']?>:00</p>
+                <p class="content" id="time">
+                    <span><?=$row['HOUR(`FACILITIES_OPEN_TIME`)']?>:00</span>
+                    <span>~</span>
+                    <span><?=$row['HOUR(`FACILITIES_CLOSE_TIME`)']?>:00</span>
+                </p>
             </div>
-            <div class="information">
+            <div class="information" id="intro">
                 <p class="content"><?=$row['FACILITIES_INTRODUCTION']?></p>
             </div>
             <hr>
@@ -84,10 +88,11 @@
         <div class="outside">
             <p class="dot"><img src="img/circle.svg"> &nbsp使用說明 : </img></p>
             <!--資料庫匯出該公設說明和其他注意事項-->
-            <div class="information">
+            <div class="information" id="data">
                 <p class="content">
                     <span>人數上限：</span>
                     <span><?=$row['FACILITIES_LIMIT']?></span>
+                    <span> 人</span>
                 </p>
                 <p class="content">
                     <span>已預約人數 : </span>
