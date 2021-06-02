@@ -70,6 +70,14 @@
         <p>公設簡介：</p>
         <textarea rows="5" cols="40" name="introduction"></textarea>
         <hr>
+        <form action="m_fac_add.php">
+            <span><img src="img/circle.svg" alt="">新增器材</span>
+            <p>器材名稱：：<input type="text" name="open_time"></p>
+            <p>器材數量：<input type="text" name="close_time"></p>
+            <input type="submit" value="新增" style="padding: .25em .5em; background: #fc6471; color: white;border: 0; border-radius: 5px;">
+            <!-- 列出已新增器材 -->
+            <p>已新增器材：桌球、桌球拍</p>
+        <hr>
         <span><img src="img/circle.svg" alt="">使用說明</span>
         <p>人數上限：<input type="text" name="limit"></p>
         <p>所需點數：<input type="text" name="point"></p>
