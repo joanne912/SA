@@ -8,26 +8,53 @@
             $announcement = $row['MAX(`ANNOUNCEMENT_ID`)'] + 1;
             $sql = "INSERT INTO `announcement` (`ANNOUNCEMENT_ID`, `COMMUNITY_ID`, `ANNOUNCEMENT_TITLE`, `ANNOUNCEMENT_DATE`, `ANNOUNCEMENT_TYPE`, `ANNOUNCEMENT_INC`, `ANNOUNCEMENT_CONTENT`, `ANNOUNCEMENT_DOC`)
                     VALUES ($announcement, $community, :title, NOW(), :type, '社區管理公告', :content, NULL);";
-        } else {
-            $announcement = $_POST['submit'];
+            $statement2 = $conn->prepare($sql);
+            try{
+                $result = $statement2->execute(
+                    array(
+                        ':title' => $_POST['title'],
+                        ':type' => $_POST['type'], 
+                        ':content' =>  $_POST['content']
+                        //':file' => 
+                    )
+                );
+            }
+            catch(PDOException $e){
+                echo $e->getMessage();
+            }
+        }
+        elseif ($_POST['submit'] == 'modify') {
             $sql = "UPDATE `announcement` SET `ANNOUNCEMENT_TITLE` = :title,
                     `ANNOUNCEMENT_TYPE` = :type, `ANNOUNCEMENT_CONTENT` = :content
-                    WHERE `ANNOUNCEMENT_ID` = $announcement AND `COMMUNITY_ID` = $community;";
+                    WHERE `ANNOUNCEMENT_ID` = :announcement AND `COMMUNITY_ID` = $community;";
+            $statement2 = $conn->prepare($sql);
+            try{
+                $result = $statement2->execute(
+                    array(
+                        ':announcement' => $_POST['announcement'],
+                        ':title' => $_POST['title'],
+                        ':type' => $_POST['type'], 
+                        ':content' =>  $_POST['content']
+                        //':file' => 
+                    )
+                );
+            }
+            catch(PDOException $e){
+                echo $e->getMessage();
+            }
         }
-        $statement2 = $conn->prepare($sql);
-        try{
-            $result = $statement2->execute(
-                array(
-                    ':title' => $_POST['title'],
-                    ':type' => $_POST['type'], 
-                    ':content' =>  $_POST['content']
-                    //':file' => 
-                )
-            );
+        elseif ($_POST['submit'] == 'delete') {
+            $sql = "DELETE FROM `announcement`
+                    WHERE `ANNOUNCEMENT_ID` = ? AND `COMMUNITY_ID` = $community;";
+            $statement2 = $conn->prepare($sql);
+            try{
+                $result = $statement2->execute(array($_POST['announcement']));
+            }
+            catch(PDOException $e){
+                echo $e->getMessage();
+            }
         }
-        catch(PDOException $e){
-            echo $e->getMessage();
-        }
+
     }
 ?>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -64,6 +91,7 @@
     </div>
     <div class="act_icon">
         <form id="select" action="home.php" method="POST" style="display:flex;align-items: center;">
+            <input id="announcement" type="hidden" name="announcement" value="">
             <input type="text" name="search" class="search_input" placeholder="<?=isset($_POST['search'])?$_POST['search']:''?>">
             <div class="a_icon_circle">
                 <img onclick="submit()" src="img/search.svg" alt="">
@@ -92,7 +120,7 @@
     while( $row = $statement->fetch(PDO::FETCH_ASSOC) ){
     ?>
     <!-- 每一獨立公告區塊 -->
-    <div class="annoucement">
+    <div class="announcement">
         <hr>
         <!-- 公告選取框及公告類型 -->
         <div class="item_nav">
@@ -103,7 +131,7 @@
                 <a class="edit" href='#' data-id="<?=$row['ANNOUNCEMENT_ID']?>" data-toggle="modal" data-target="#exampleModalCenter2">
                     <img src="img/edit.svg" alt="">
                 </a>
-                <a href='#' data-toggle="modal" data-target="#exampleModal">
+                <a class="delete" href='#' data-id="<?=$row['ANNOUNCEMENT_ID']?>" data-toggle="modal" data-target="#exampleModal">
                     <img src='img/delete.svg' alt='' style="margin-left: 1em;">
                 </a>
                 <?php
@@ -191,9 +219,12 @@
                 確定欲刪除請點選確認 謝謝您!!
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-light" data-bs-dismiss="modal" id="hide">取消</button>
-            <!--管理員點選確認取消後該公設的應移除公設清單-->
-            <button type="button" class="btn btn-info" id="go">確認</button>
+                <form action="home.php" method="POST">
+                    <input type="hidden" name="announcement" value="del">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal" id="hide">取消</button>
+                    <!--管理員點選確認取消後該公設的應移除公設清單-->
+                    <button type="submit" class="btn btn-info" name="submit" id="go">確認</button>
+                </form>
             </div>
         </div>
     </div>
