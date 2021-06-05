@@ -1,7 +1,7 @@
 <?php
     $conn = include "conn.php";
     $USER_ID = $HOUSEHOLD_ID = $HOUSEHOLD_ADDRESS = $COMMUNITY_ID = " ";
-    if(isset($_POST['act']) && trim($_POST['act'])=='submit'){
+    if(isset($_POST['add_community_btn'])){
         @session_start();
         $USER_ID = $_SESSION['id'];
         $HOUSEHOLD_ADDRESS = $_POST['household'];

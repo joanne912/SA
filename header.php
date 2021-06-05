@@ -92,7 +92,7 @@
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <form method="POST" action="password_check.php">
+                <form method="POST" action="multi_communities.php" id="multi_communities">
                     <div class="modal-body">
                         <header class="modal_header">
                                 <p>多重社區開通</p>
@@ -100,14 +100,14 @@
                         <div class="M_wrap">
                             <!-- 戶籍代碼輸入框 -->
                             <div class="M_enter" >
-                                    <label for="household">戶別</label><br>
-                                    <input type="text" id="household" name="household" placeholder="請填寫戶別"/>
-                                    <label for="household_id">戶籍代碼</label>
-                                    <input type="text" id="household_id" name="household_id" placeholder="請填寫戶籍代碼"/>
                                     <label for="community_id">社區代碼</label>
                                     <input type="text" id="community_id" name="community_id" placeholder="請填寫"/>
+                                    <label for="household_id">戶籍代碼</label>
+                                    <input type="text" id="household_id" name="household_id" placeholder="請填寫戶籍代碼"/>
+                                    <label for="household">戶別</label><br>
+                                    <input type="text" id="household" name="household" placeholder="請填寫戶別"/>
                                 <br><br>
-                                <a href="#" class="btn3" name="add_community_btn">開通社區</a>
+                                <a href="javascript:document:multi_communities.submit();" class="btn3" name="add_community_btn">開通社區</a>
                                 <!-- <input type="submit" name="add_community_btn" value="開通" class="btn3"> -->
                             </div>
                         </div>
