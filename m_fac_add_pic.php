@@ -8,9 +8,9 @@ if($_FILES["my_file"]["error"]===UPLOAD_ERR_OK){
         echo "檔案已存在"."<br/>";
     }
     else{
-        $file = $_FILES["my_file"]["tmp_name"];
+        $tempFileName = $_FILES["my_file"]["tmp_name"];
         $dest = "img/fac/".$_FILES["my_file"]["name"];
-        move_uploaded_file($file, $dest);
+        //move_uploaded_file($file, $dest);
     }
 }
 else{

@@ -6,16 +6,38 @@
             $statement = $conn->query($sql);
             $row = $statement->fetch(PDO::FETCH_ASSOC);
             $announcement = $row['MAX(`ANNOUNCEMENT_ID`)'] + 1;
-            $sql = "INSERT INTO `announcement` (`ANNOUNCEMENT_ID`, `COMMUNITY_ID`, `ANNOUNCEMENT_TITLE`, `ANNOUNCEMENT_DATE`, `ANNOUNCEMENT_TYPE`, `ANNOUNCEMENT_INC`, `ANNOUNCEMENT_CONTENT`, `ANNOUNCEMENT_DOC`)
-                    VALUES ($announcement, $community, :title, NOW(), :type, '社區管理公告', :content, NULL);";
+            $sql = "INSERT INTO `announcement` 
+                    (`ANNOUNCEMENT_ID`, `COMMUNITY_ID`, `ANNOUNCEMENT_TITLE`,
+                    `ANNOUNCEMENT_DATE`, `ANNOUNCEMENT_TYPE`, `ANNOUNCEMENT_INC`,
+                    `ANNOUNCEMENT_CONTENT`, `ANNOUNCEMENT_DOC`)
+                    VALUES ($announcement, $community, :title, NOW(), :type, '社區管理公告', :content, :file);";
             $statement2 = $conn->prepare($sql);
+            // 檢查檔案是否上傳成功
+            if ($_FILES['file']['error'] === UPLOAD_ERR_OK){
+                // 檢查資料夾的建立
+                $file_path = './upload/' . $community . '/';
+                if(!file_exists($file_path)){
+                    mkdir($file_path);
+                }
+                // 檢查檔案是否已經存在
+                if (!file_exists('upload/' . $community . '/' . $_FILES['file']['name'])){
+                    $file = $_FILES['file']['tmp_name'];
+                    $dest = 'upload/' . $community . '/' . $_FILES['file']['name'];
+                    // 將檔案移至指定位置
+                    move_uploaded_file($file, $dest);
+                }
+            } elseif ($_FILES['file']['error'] === UPLOAD_ERR_NO_FILE) {
+            } else {
+                echo '錯誤代碼：' . $_FILES['file']['error'] . '<br/>';
+            }
+            // SQL執行
             try{
                 $result = $statement2->execute(
                     array(
                         ':title' => $_POST['title'],
                         ':type' => $_POST['type'], 
-                        ':content' =>  $_POST['content']
-                        //':file' => 
+                        ':content' =>  $_POST['content'],
+                        ':file' => isset($_FILES['file']['name']) ? $_FILES['file']['name'] : null
                     )
                 );
             }
@@ -24,18 +46,28 @@
             }
         }
         elseif ($_POST['submit'] == 'modify') {
-            $sql = "UPDATE `announcement` SET `ANNOUNCEMENT_TITLE` = :title,
-                    `ANNOUNCEMENT_TYPE` = :type, `ANNOUNCEMENT_CONTENT` = :content
+            $sql = "UPDATE `announcement` SET `ANNOUNCEMENT_TITLE` = :title, `ANNOUNCEMENT_TYPE` = :type,
+                    `ANNOUNCEMENT_CONTENT` = :content, `ANNOUNCEMENT_DOC` = :file
                     WHERE `ANNOUNCEMENT_ID` = :announcement AND `COMMUNITY_ID` = $community;";
             $statement2 = $conn->prepare($sql);
+            if ($_FILES['file']['error'] != UPLOAD_ERR_NO_FILE){
+                // 檢查檔案是否已經存在
+                if (!file_exists('upload/' . $community . '/' . $_FILES['file']['name'])){
+                    //對不起修改的時候我懶得刪除舊檔案了QQ
+                    $file = $_FILES['file']['tmp_name'];
+                    $dest = 'upload/' . $community . '/' . $_FILES['file']['name'];
+                    // 將檔案移至指定位置
+                    move_uploaded_file($file, $dest);
+                }
+            }
             try{
                 $result = $statement2->execute(
                     array(
                         ':announcement' => $_POST['announcement'],
                         ':title' => $_POST['title'],
                         ':type' => $_POST['type'], 
-                        ':content' =>  $_POST['content']
-                        //':file' => 
+                        ':content' =>  $_POST['content'],
+                        ':file' => $_FILES['file']['name']
                     )
                 );
             }
@@ -47,6 +79,7 @@
             $sql = "DELETE FROM `announcement`
                     WHERE `ANNOUNCEMENT_ID` = ? AND `COMMUNITY_ID` = $community;";
             $statement2 = $conn->prepare($sql);
+            //這邊也沒有把檔案刪除QAQ
             try{
                 $result = $statement2->execute(array($_POST['announcement']));
             }
@@ -105,11 +138,11 @@
     $type = isset($_POST['types']) ? $_POST['types'] : '' ;
     //公告查詢(標題或內容)
     $search = isset($_POST['search']) ? $_POST['search'] : '' ;
-    $sql = "SELECT `ANNOUNCEMENT_ID`,`ANNOUNCEMENT_TITLE`,`ANNOUNCEMENT_TYPE`,`ANNOUNCEMENT_DATE`,`ANNOUNCEMENT_CONTENT`
+    $sql = "SELECT `ANNOUNCEMENT_ID`,`ANNOUNCEMENT_TITLE`,`ANNOUNCEMENT_TYPE`,
+            `ANNOUNCEMENT_DATE`,`ANNOUNCEMENT_CONTENT`,`ANNOUNCEMENT_DOC`
             FROM `announcement` WHERE `COMMUNITY_ID` = $community 
             AND `ANNOUNCEMENT_TYPE` LIKE ?
-            AND (`ANNOUNCEMENT_TITLE` LIKE ?
-            OR `ANNOUNCEMENT_CONTENT` LIKE ?)
+            AND (`ANNOUNCEMENT_TITLE` LIKE ? OR `ANNOUNCEMENT_CONTENT` LIKE ?)
             ORDER BY ANNOUNCEMENT_DATE DESC;";
     $statement = $conn->prepare($sql);
     $statement->execute(array(
@@ -164,6 +197,7 @@
             <!-- 公告內容敘述，需連結資料庫 -->
             <div class="item_profile">
                 <p><?=$row['ANNOUNCEMENT_CONTENT']?></p>
+                <a target="_blank" href="<?='upload/' . $community . '/' . $row['ANNOUNCEMENT_DOC']?>"><?=$row['ANNOUNCEMENT_DOC']?></a>
             </div>
         </div>
     </div>
@@ -175,7 +209,7 @@
 <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <form action="home.php" method="POST">
+            <form action="home.php" method="POST" enctype="multipart/form-data">
                 <div class="M_title">
                     <div class="modal-header">
                         <h5 class="modal-title ti" id="exampleModalLabel2">新增公告</h5>
@@ -196,7 +230,7 @@
                     </p>
                     <p>公告內容</p>
                     <textarea id="content" name="content" cols="30" rows="10"></textarea>
-                    <input type="file" name="file" class="file_input">
+                    <input id="file" type="file" name="file" class="file_input">
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="j_btn" id="submit" name="submit" value="new">
