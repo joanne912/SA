@@ -1,4 +1,4 @@
-.wrap{
+.wrap {
     width: 80%;
     margin: auto;
     /* background-color: #ffa; */
@@ -8,7 +8,8 @@
     padding: 2em 3em;
     box-sizing: border-box;
 }
-form span{
+
+form span {
     display: block;
     margin: 2em 0;
     display: flex;
@@ -17,7 +18,8 @@ form span{
     letter-spacing: 5px;
     text-indent: 5px;
 }
-p input{
+
+p input {
     width: 40%;
     border: 4px solid #f7f7fa;
     border-radius: 5px;
@@ -26,7 +28,8 @@ p input{
     font-size: .8em;
     color: black;
 }
-span input{
+
+span input {
     width: 30%;
     border: 4px solid #f7f7fa;
     border-radius: 5px;
@@ -35,20 +38,30 @@ span input{
     font-size: .8em;
     color: black;
 }
-form p{
+
+form p {
     margin: 2em 0;
     display: flex;
     align-items: center;
     letter-spacing: 3px;
     text-indent: 3px;
 }
-form img{
+
+form img {
     width: 1em;
     height: 1em;
     display: inline-block;
     margin: 0 1em 0 0;
 }
-textarea{
+
+form img.photo {
+    display: inline;
+    width: 200px;
+    height: auto;
+    margin: auto;
+}
+
+textarea {
     border: 4px solid #f7f7fa;
     border-radius: 5px;
     padding: 1em;
@@ -58,13 +71,15 @@ textarea{
     letter-spacing: 3px;
     text-indent: 3px;
 }
-.btn{
+
+.btn {
     width: 100%;
     display: flex;
     justify-content: flex-end;
     margin: 2em auto;
 }
-.btn input{
+
+.btn input {
     padding: .5em .6em;
     border: 0;
     background-color: #fc6471;
@@ -75,27 +90,28 @@ textarea{
     border-radius: 6px;
     margin-top: 3em;
 }
-@media screen and (max-width: 768px){
-    .wrap{
+
+@media screen and (max-width: 768px) {
+    .wrap {
         width: 100%;
         padding: 1em;
     }
-    form span{
+    form span {
         font-size: .6em;
         font-weight: 700;
         display: block;
     }
-    form p{
+    form p {
         font-size: .2em;
         display: block;
         margin: 4em;
     }
-    p input{
+    p input {
         margin-top: 3em;
         width: 70%;
         font-size: 1.25em;
     }
-    textarea{
+    textarea {
         width: 90%;
         margin-left: .75em;
         letter-spacing: 2px;
@@ -103,11 +119,11 @@ textarea{
         padding: .5em;
         font-size: 1em;
     }
-    .btn{
+    .btn {
         width: 95%;
         margin: 0 0 1em;
     }
-    .btn input{
+    .btn input {
         font-size: .75em;
     }
 }

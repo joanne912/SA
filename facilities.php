@@ -1,3 +1,16 @@
+<?php
+    if(isset($_POST['submit'])){
+        $sql = "DELETE FROM `facilities`
+                WHERE `FACILITIES_ID` = ? AND `COMMUNITY_ID` = $community;";
+        $statement = $conn->prepare($sql);
+        try{
+            $result = $statement->execute(array($_POST['facility']));
+        }
+        catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+?>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -30,26 +43,7 @@
                     <?php
                         if($auth <= 3){
                     ?>
-                    <a href='#' data-toggle="modal" data-target="#exampleModal"><img src='img/delete.svg' alt=''></a>
-                    <!-- 確認刪除彈跳視窗 -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 style="color:blue;font-weight:bold"class="modal-title" id="exampleModalLabel">確認刪除此公設 ?</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="cross"></button>
-                                </div>
-                                <div class="modal-body">
-                                    確定欲刪除請點選確認 謝謝您!!
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-light" data-bs-dismiss="modal" id="hide">取消</button>
-                                <!--管理員點選確認取消後該公設的應移除公設清單-->
-                                <button type="button" class="btn btn-info" id="go">確認</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <a href='#' class="delete" data-id="<?=$row['FACILITIES_ID']?>" data-toggle="modal" data-target="#exampleModal"><img src='img/delete.svg' alt=''></a>
                     <?php
                         }
                     ?>
@@ -61,21 +55,29 @@
         <?php
     }
 ?>
+
+<!-- 確認刪除彈跳視窗 -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form action="home.php?page=facility" method="POST">
+        <input type="hidden" name="facility">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 style="color:blue;font-weight:bold"class="modal-title" id="exampleModalLabel">確認刪除此公設 ?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="cross"></button>
+                </div>
+                <div class="modal-body">
+                    確定欲刪除請點選確認 謝謝您!!
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal" id="hide">取消</button>
+                <!--管理員點選確認取消後該公設的應移除公設清單-->
+                <button type="submit" name="submit" class="btn btn-info" id="go">確認</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
 <!--確認刪除彈跳視窗botton動態效果-->
- <script>
-        $('#exampleModal').on('shown.bs.modal', function () {
-            $('#hide').click(function (event){
-                $('#exampleModal').modal('hide');
-            });
-        })
-        $('#exampleModal').on('shown.bs.modal', function () {
-                $('#cross').click(function (event){
-                    $('#exampleModal').modal('hide');
-                });
-        })
-        $('#exampleModal').on('shown.bs.modal', function () {
-                $('#go').click(function (event){
-                    $('#exampleModal').modal('hide');
-                });
-        })
-    </script>
+<script src="js/facilities.js"></script>
