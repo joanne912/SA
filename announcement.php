@@ -197,7 +197,12 @@
             <!-- 公告內容敘述，需連結資料庫 -->
             <div class="item_profile">
                 <p><?=$row['ANNOUNCEMENT_CONTENT']?></p>
-                <a target="_blank" href="<?='upload/' . $community . '/' . $row['ANNOUNCEMENT_DOC']?>"><?=$row['ANNOUNCEMENT_DOC']?></a>
+                <p>
+                    <?=$row['ANNOUNCEMENT_DOC']?'附件:':''?>
+                    <a target="_blank" href="<?='upload/' . $community . '/' . $row['ANNOUNCEMENT_DOC']?>">
+                        <?=$row['ANNOUNCEMENT_DOC']?>
+                    </a>
+                </p>
             </div>
         </div>
     </div>
