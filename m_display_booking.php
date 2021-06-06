@@ -15,7 +15,7 @@
             <div class="info_wrap">
                 <!-- 公設圖片，連結資料庫 -->
                 <div class="graphic">
-                    <img  style="border-radius:8px;width:250px;height:160px"src='<?=$row1["FACILITIES_IMG1"]?>' alt=''>
+                    <img  style="border-radius:8px;width:250px;height:160px"src='./img/fac/<?=$row1["FACILITIES_IMG1"]?>' alt=''>
                 </div>
                 <!-- 每一公設的編號 公設icon 名稱 可容納人數 今日預約人數，需連結資料庫-->
                 <div class="textcontent" >

@@ -38,7 +38,7 @@
                     if ($auth != 3) {
                 ?>
                 <div class="name2">
-                    <a href="facility_reserve.php?facility=<?=$_GET['facility']?>"><input class="go" type="submit" value="前往預約"></a>
+                    <a href="facility_reserve.php?facility=<?=$_GET['facility']?>"><input class="go" type="button" value="前往預約"></a>
                 </div>
                 <?php
                     }
