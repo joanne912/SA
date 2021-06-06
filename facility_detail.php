@@ -56,10 +56,10 @@
                         <img class="d-block w-100" src="./img/fac/<?=$row['FACILITIES_IMG1']?>" alt="First slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="./img/fac/<?=$row['FACILITIES_IMG2']?>" alt="Second slide">
+                        <img class="d-block w-100" src="./img/fac/<?=$row['FACILITIES_IMG2']==''?$row['FACILITIES_IMG1']:$row['FACILITIES_IMG2']?>" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="./img/fac/<?=$row['FACILITIES_IMG3']?>" alt="Third slide">
+                        <img class="d-block w-100" src="./img/fac/<?=$row['FACILITIES_IMG3']==''?$row['FACILITIES_IMG2']==''?$row['FACILITIES_IMG1']:$row['FACILITIES_IMG2']:$row['FACILITIES_IMG3']?>" alt="Third slide">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

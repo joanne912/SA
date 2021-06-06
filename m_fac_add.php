@@ -68,7 +68,7 @@
                     ':close' => $_POST['close_time'], 
                     ':point' => $_POST['point'], 
                     ':limit' => $_POST['limit'],
-                    ':img1' => isset($_FILES['photofile1']['name']) ? $_FILES['photofile1']['name'] : null,
+                    ':img1' => $_FILES['photofile1']['name'],
                     ':img2' => isset($_FILES['photofile2']['name']) ? $_FILES['photofile2']['name'] : null,
                     ':img3' => isset($_FILES['photofile3']['name']) ? $_FILES['photofile3']['name'] : null
                 )
