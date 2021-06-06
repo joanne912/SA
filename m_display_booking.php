@@ -19,12 +19,9 @@
                 </div>
                 <!-- 每一公設的編號 公設icon 名稱 可容納人數 今日預約人數，需連結資料庫-->
                 <div class="textcontent" >
-                   
                         <h2 class="name"><?=$row1['FACILITIES_ID']?><?=$row1['FACILITIES_NAME']?></h2>
                         <p> 最大容納人數 : <?=$row1['FACILITIES_LIMIT']?> 人
                         <p> 今日預約人數 : <?=$row2['COUNT(`FACILITIES_ID`)']?> 人</p>
-                        
-                   
                 </div>
                 <!-- 管理員的查看住戶預約紀錄按鈕 -->
                 <div class="icon_group">

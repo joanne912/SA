@@ -1,3 +1,7 @@
+.item_text a {
+    color: #808080 !important;
+    text-decoration: none !important;
+}
 
 .d-block {
     width: 80%;
@@ -50,7 +54,6 @@
     letter-spacing: 4px;
     text-indent: 2px;
     font-size: 1em;
-    
 }
 
 .situation {
@@ -145,7 +148,6 @@ p input {
     background-color: #f7f7fa;
     border-radius: 1em;
     padding: 1em 1em;
-
 }
 
 .form {
@@ -200,8 +202,6 @@ p input {
     padding: .5em .5em;
 }
 
-
-
 .content2 {
     font-size: 1.2em;
     list-style: circle;
@@ -212,8 +212,6 @@ p input {
     margin: 1.5em 0;
     height: 3.75em;
 }
-
-
 
 .information {
     width: 80%;
@@ -274,13 +272,13 @@ p input {
     margin-right: .5em;
 }
 
-.cancle_btn{
-    width:6.5em;
+.cancle_btn {
+    width: 6.5em;
     height: 2.4em;
     background-color: #f7f7fa;
     border: solid 3px #D5D5E9;
     border-radius: 15px;
-    font-size:1em;
+    font-size: 1em;
     /* display: inline-block; */
     color: #808080;
     font-size: 1em;
@@ -288,12 +286,13 @@ p input {
     margin-left: 5%;
     text-align: center;
 }
-.cancle_btn:hover{
+
+.cancle_btn:hover {
     background-color: rgb(150, 145, 145);
     color: white;
 }
-.cancle_btn:active{
-    
+
+.cancle_btn:active {
     color: red;
 }
 
@@ -381,10 +380,12 @@ p input {
 .list_title {
     letter-spacing: .2em;
 }
-.select_box{
+
+.select_box {
     width: 100%;
     margin: auto;
 }
+
 @media screen and (max-width: 768px) {
     .head {
         width: 100%;
@@ -443,7 +444,7 @@ p input {
 }
 
 @media screen and (max-width: 400px) {
-    .phonespan{
+    .phonespan {
         margin-right: 10px;
     }
     .cancle_btn {
@@ -628,20 +629,19 @@ p input {
 }
 
 @media screen and (max-width: 768px) {
-    .middletext2{
+    .middletext2 {
         padding: 0px;
     }
-    .data{
+    .data {
         width: 100%;
         padding: 2px;
     }
-    .information{
-        width:100%;
+    .information {
+        width: 100%;
     }
     .container {
         height: auto;
     }
-   
     .coupon_btn {
         margin-right: 0px;
     }
@@ -651,48 +651,45 @@ p input {
     .name {
         margin-left: 28%;
     }
-    
     .content3 {
-        
         margin-left: 0em;
     }
     .content2 {
         width: 18.5em;
     }
-    .coupon_btn{
+    .coupon_btn {
         margin-right: 2px;
     }
-    .select_box{
+    .select_box {
         width: 95%;
     }
 }
 
 @media screen and (max-width: 400px) {
-    .middletext2{
-        padding:.5em .5em;
+    .middletext2 {
+        padding: .5em .5em;
     }
-    .content3{
-        margin: 0 0 ;
+    .content3 {
+        margin: 0 0;
     }
-    .h4{
+    .h4 {
         font-size: .8em;
     }
-    .h3{
+    .h3 {
         font-size: .8em;
     }
-    .num1{
+    .num1 {
         font-size: .8em;
     }
-    .num{
+    .num {
         font-size: .6em;
     }
-    .content{
+    .content {
         letter-spacing: 0px;
-        
     }
-    .option1{
-        width:70%;
-        margin-left:0;
+    .option1 {
+        width: 70%;
+        margin-left: 0;
     }
     .m_submit_btn {
         width: 60%;
@@ -702,7 +699,6 @@ p input {
         padding: 0.5px;
     }
     .container {
-        
         height: auto;
     }
     .coupon_btn {
@@ -726,10 +722,8 @@ p input {
         justify-content: center;
         margin: auto;
     }
-    
-    
-    .grayspace{
-        width:95%;
+    .grayspace {
+        width: 95%;
     }
     .now_user {
         font-size: 1em;
@@ -740,35 +734,41 @@ p input {
     .name {
         margin-left: 15%;
     }
-    
 }
-.press_btn{
-    color:#fc6471;
-    letter-spacing:1.2px;
+
+.press_btn {
+    color: #fc6471;
+    letter-spacing: 1.2px;
 }
+
 .now_user {
     width: 100%;
     font-size: 1em;
     color: rgb(35, 35, 94);
     font-weight: bold;
 }
+
 .num {
     font-size: 1.2em;
     color: #fc6471;
 }
+
 .num1 {
     font-size: 1.5em;
     color: #fc6471;
 }
-.plane{
-    width:15px;
-    height:15px;
+
+.plane {
+    width: 15px;
+    height: 15px;
 }
-.select_btn{
-    width:65%;
+
+.select_btn {
+    width: 65%;
     display: flex;
     justify-content: center;
 }
+
 .content3 {
     font-size: 1em;
     list-style: circle;
@@ -779,8 +779,9 @@ p input {
     margin: 0em 0;
     /* height: 3.75em; */
 }
+
 .data {
     font-weight: normal;
     margin-left: 1.3em;
-    letter-spacing:1.2px;
+    letter-spacing: 1.2px;
 }
