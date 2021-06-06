@@ -17,9 +17,11 @@
         'facility' => $facility
     ));
     $row = $statement->fetch(PDO::FETCH_ASSOC);
-    $sql = "SELECT `FACILITIES_EQUIPMENT_NAME`,`FACILITIES_EQUIPMENT_UNIT` FROM `facilities_equipment` 
-            WHERE `FACILITIES_EQUIPMENT_ID` = ".$row['FACILITIES_EQUIPMENT_ID'];
-    $row2 = $conn->query($sql)->fetch(PDO::FETCH_ASSOC);
+    if(isset($row['FACILITIES_EQUIPMENT_ID'])){
+        $sql = "SELECT `FACILITIES_EQUIPMENT_NAME`,`FACILITIES_EQUIPMENT_UNIT` FROM `facilities_equipment` 
+        WHERE `FACILITIES_EQUIPMENT_ID` = ".$row['FACILITIES_EQUIPMENT_ID'];
+        $row2 = $conn->query($sql)->fetch(PDO::FETCH_ASSOC);
+    }
     $equipment = isset($row['FACILITIES_EQUIPMENT_ID'])?$row2['FACILITIES_EQUIPMENT_NAME']:'無借器材';
     $equipment .= isset($row['FACILITIES_EQUIPMENT_ID'])?$row['FACILITIES_EQUIPMENT_AMOUNT']:'';
     $equipment .= isset($row['FACILITIES_EQUIPMENT_ID'])?$row2['FACILITIES_EQUIPMENT_UNIT']:'';
