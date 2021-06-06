@@ -115,6 +115,7 @@
                     }
                     //查看公設預約紀錄
                     else if($method == "records"){
+                        include("facility_records_header.php");
                         if($to == "records_cancle"){
                             include("facility_records_cancle.php");
                         }
