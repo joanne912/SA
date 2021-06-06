@@ -34,12 +34,12 @@ $(document).ready(function() {
     $('#equipAdd').click(function() {
         $(this).before(`<input type="hidden" name="equip[name][]" value="${$('#equipName').val()}">`);
         $(this).before(`<input type="hidden" name="equip[amount][]" value="${$('#equipAmount').val()}">`);
-        $(this).before(`<input type="hidden" name="equip[quantifier][]" value="${$('#equipAmount').val()}">`);
+        $(this).before(`<input type="hidden" name="equip[unit][]" value="${$('#equipUnit').val()}">`);
         $(this).next().append(common);
         $(this).next().append(`<span>${$('#equipName').val()}</span>`);
         $('#equipName').val('');
         $('#equipAmount').val('');
-        $('#equipQuantifier').val('');
+        $('#equipUnit').val('');
         common = '<span>、</span>';
     })
 })

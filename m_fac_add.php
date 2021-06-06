@@ -87,14 +87,14 @@
 
             $sql = "INSERT INTO `facilities_equipment` (`FACILITIES_EQUIPMENT_ID`, `COMMUNITY_ID`,
             `FACILITIES_ID`,`FACILITIES_EQUIPMENT_NAME`,`FACILITIES_EQUIPMENT_AMOUNT`,`FACILITIES_EQUIPMENT_UNIT`)
-            VALUES ($equipment,$community,$facility,:name,:amount,:quantifier)";
+            VALUES ($equipment,$community,$facility,:name,:amount,:unit)";
             $statement = $conn->prepare($sql);
             try{
                 $statement->execute(
                     array(
                         ':name' => $_POST['equip']['name'][$i],
                         ':amount' => $_POST['equip']['amount'][$i],
-                        ':quantifier' => $_POST['equip']['quantifier'][$i]
+                        ':unit' => $_POST['equip']['unit'][$i]
                     )
                 );
             }
@@ -150,7 +150,7 @@
         <span><img src="img/circle.svg" alt="">新增器材</span>
         <p>器材名稱：<input id="equipName" type="text"></p>
         <p>器材數量：<input id="equipAmount" type="text"></p>
-        <p>器材單位：<input id="equipQuantifier" type="text"></p>
+        <p>器材單位：<input id="equipUnit" type="text"></p>
         <input type="button" id="equipAdd" name="equipAdd" value="新增" style="padding: .25em .5em; background: #fc6471; color: white;border: 0; border-radius: 5px;">
         <!-- 列出已新增器材 -->
         <p>
