@@ -11,7 +11,7 @@
                     `ANNOUNCEMENT_DATE`, `ANNOUNCEMENT_TYPE`, `ANNOUNCEMENT_INC`,
                     `ANNOUNCEMENT_CONTENT`, `ANNOUNCEMENT_DOC`)
                     VALUES ($announcement, $community, :title, NOW(), :type, '社區管理公告', :content, :file);";
-            $statement2 = $conn->prepare($sql);
+            $statement = $conn->prepare($sql);
             // 檢查檔案是否上傳成功
             if ($_FILES['file']['error'] === UPLOAD_ERR_OK){
                 // 檢查資料夾的建立
@@ -32,7 +32,7 @@
             }
             // SQL執行
             try{
-                $result = $statement2->execute(
+                $result = $statement->execute(
                     array(
                         ':title' => $_POST['title'],
                         ':type' => $_POST['type'], 
@@ -49,7 +49,7 @@
             $sql = "UPDATE `announcement` SET `ANNOUNCEMENT_TITLE` = :title, `ANNOUNCEMENT_TYPE` = :type,
                     `ANNOUNCEMENT_CONTENT` = :content, `ANNOUNCEMENT_DOC` = :file
                     WHERE `ANNOUNCEMENT_ID` = :announcement AND `COMMUNITY_ID` = $community;";
-            $statement2 = $conn->prepare($sql);
+            $statement = $conn->prepare($sql);
             if ($_FILES['file']['error'] != UPLOAD_ERR_NO_FILE){
                 // 檢查檔案是否已經存在
                 if (!file_exists('upload/' . $community . '/' . $_FILES['file']['name'])){
@@ -61,7 +61,7 @@
                 }
             }
             try{
-                $result = $statement2->execute(
+                $result = $statement->execute(
                     array(
                         ':announcement' => $_POST['announcement'],
                         ':title' => $_POST['title'],
@@ -78,10 +78,10 @@
         elseif ($_POST['submit'] == 'delete') {
             $sql = "DELETE FROM `announcement`
                     WHERE `ANNOUNCEMENT_ID` = ? AND `COMMUNITY_ID` = $community;";
-            $statement2 = $conn->prepare($sql);
+            $statement = $conn->prepare($sql);
             //這邊也沒有把檔案刪除QAQ
             try{
-                $result = $statement2->execute(array($_POST['announcement']));
+                $result = $statement->execute(array($_POST['announcement']));
             }
             catch(PDOException $e){
                 echo $e->getMessage();
