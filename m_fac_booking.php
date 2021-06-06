@@ -24,7 +24,7 @@
         $sql .= " AND `facilities_booking`.`FACILITIES_BOOKING_DATE` = CURDATE() ";
     }
     if(isset($_POST['date'])){
-        $sql .= " AND `facilities_booking`.`FACILITIES_BOOKING_DATE` >= " . $_POST['date'];
+        $sql .= " AND `facilities_booking`.`FACILITIES_BOOKING_DATE` = " . $_POST['date'];
     }
     $statement = $conn->prepare($sql);
     $statement->execute(array(
