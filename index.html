@@ -12,37 +12,6 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/index.js"></script>
     <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <style>
-        input {
-            border-radius: 9px;
-        }
-        
-        .col {
-            margin: .5em 0 0;
-        }
-        
-        .btn {
-            margin-top: 1.5em;
-            width: 100%;
-            background: #c0c0e2 !important;
-            color: white;
-            letter-spacing: 8px;
-            text-indent: 8px;
-        }
-        
-        .btn2 {
-            margin-top: 1.5em;
-            width: 50%;
-            background: #c0c0e2 !important;
-            color: white;
-            letter-spacing: 8px;
-            text-indent: 8px;
-        }
-
-        .btn:hover {
-            color: white;
-        }
-    </style>
 </head>
 
 <body>
@@ -52,14 +21,6 @@
             <div class="logo">
                 <h3>lifexpert</h3>
             </div>
-            <!-- 導覽列選單 -->
-            <!-- <nav>
-                <a href="#">home</a>
-                <a href="#">about</a>
-                <a href="#">contact</a>
-                <a href="#">blog</a>
-                <a href="#">more</a>
-            </nav> -->
         </header>
         <div class="center_text">
             <span>貼近你的社區生活</span>
@@ -69,7 +30,6 @@
                 <button type="button" data-toggle="modal" data-target="#exampleModalCenter2">
                 /register/
                 </button>
-
                 <!-- 註冊內容模型 -->
                 <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -142,7 +102,7 @@
                                                     </label>
                                                 </div>
                                             </div>
-                                            <input type="submit" value="提出註冊申請" class="btn" name="signup_btn"/>
+                                            <input type="submit" value="提出註冊申請" class="btn" name="signup_btn" />
                                         </div>
                                         <button type="button" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter">
                                             /login/
@@ -163,12 +123,10 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- 登入彈跳視窗 -->
                 <button type="button" data-toggle="modal" data-target="#exampleModalCenter">
                 /login/
                 </button>
-
                 <!-- 登入內容模型 -->
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -186,7 +144,6 @@
                                         </div>
                                         <!-- 帳號密碼輸入框 -->
                                         <div class="M_enter">
-
                                             <label>
                                                 <input type="text" name="mail" value="abc123@gmail.com" placeholder="帳號"/>
                                             </label>
@@ -213,99 +170,15 @@
                                                 <img src="img/facebook.svg" alt="" />
                                             </div>
                                         </div>
-                                </div>
+                                    </div>
                                 </div>
                             </form>
-                                
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-     <!-- 重設密碼內容模型 -->
-     <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <form method="POST" action="password_check.php">
-                    <div class="modal-body">
-                        <header>
-                            <div class="M_logo">
-                                <h3>lifexpert</h3>
-                            </div>
-                        </header>
-                        <div class="M_wrap">
-                            <div class="M_title">
-                                <p class="p">忘記密碼</p>
-                            </div>
-                            <!-- 戶籍代碼輸入框 -->
-                            <div class="M_password" >
-                                <p class="num">請輸入戶籍代碼</p>
-                                <label>
-                                    <input type="text" name="household_id" value="100" placeholder="戶籍代碼"/>
-                                </label>
-                                <br>
-                                <p class="num">請輸入手機號碼</p>
-                                <label>
-                                    <input type="text" name="resident_phone" value="0999999999" placeholder="手機號碼"/>
-                                </label>
-                                <br>
-                                <input type="submit" name="search_password_btn" value="更改密碼" class="btn3" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter4">
-                                <button type="button" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter">
-                                    /login/
-                                </button>
-                            </div><br>
-                            <!-- 輸入錯誤顯示訊息 -->
-                            <p class="num_error">輸入錯誤 ! 請重新輸入或向管理員確認</p>
-                    </div>
-                    </div>
-                </form>
-                    
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
- <!-- 重設密碼2內容模型 -->
- <div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <form method="POST" action="password_check.php">
-                <div class="modal-body">
-                    <header>
-                        <div class="M_logo">
-                            <h3>lifexpert</h3>
-                        </div>
-                    </header>
-                    <div class="M_wrap">
-                        <div class="M_title">
-                            <p class="p">重設密碼</p>
-                        </div>
-                        <!-- 重新設定密碼輸入框 -->
-                        <div class="M_password" >
-                            <p class="num">請輸入新密碼</p>
-                            <label for="new_password">
-                                <input type="text" id="new_password" name="new_password" value="0987654" placeholder="新密碼"/>
-                            </label>
-                            <br>
-                            <p class="num">再次確認密碼</p>
-                            <label>
-                                <input type="text" name="check_new_password" value="0987654" placeholder="新密碼"/>
-                            </label>
-                            <br>
-                            <input type="submit" name="passord_reset_login_btn" value="前往登入" class="btn3" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter">
-                        </div>
-                </div>
-                </div>
-            </form>
-                
-        </div>
-    </div>
-</div>
-</div>
-</div>
-</div>
     <!-- 功能介紹的文字加圖片 -->
     <div class="wrap">
         <div class="item">
@@ -350,9 +223,113 @@
     </footer>
     <div class="top" style=" position: fixed;bottom: 0;right: 10px;">
         <a href="#">
-            <img style="width:70px;height: 70px;"src="img/up.png" alt="">
+            <img style="width:70px;height: 70px;" src="img/up.png" alt="">
         </a>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 重設密碼內容模型 -->
+    <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <form method="POST" action="password_check.php">
+                    <div class="modal-body">
+                        <header>
+                            <div class="M_logo">
+                                <h3>lifexpert</h3>
+                            </div>
+                        </header>
+                        <div class="M_wrap">
+                            <div class="M_title">
+                                <p class="p">忘記密碼</p>
+                            </div>
+                            <!-- 戶籍代碼輸入框 -->
+                            <div class="M_password">
+                                <p class="num">請輸入戶籍代碼</p>
+                                <label>
+                                    <input type="text" name="household_id" value="100" placeholder="戶籍代碼"/>
+                                </label>
+                                <br>
+                                <p class="num">請輸入手機號碼</p>
+                                <label>
+                                    <input type="text" name="resident_phone" value="0999999999" placeholder="手機號碼"/>
+                                </label>
+                                <br>
+                                <input type="submit" name="search_password_btn" value="更改密碼" class="btn3" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter4">
+                                <button type="button" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter">
+                                    /login/
+                                </button>
+                            </div><br>
+                            <!-- 輸入錯誤顯示訊息 -->
+                            <p class="num_error">輸入錯誤 ! 請重新輸入或向管理員確認</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- 重設密碼2內容模型 -->
+    <div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <form method="POST" action="password_check.php">
+                    <div class="modal-body">
+                        <header>
+                            <div class="M_logo">
+                                <h3>lifexpert</h3>
+                            </div>
+                        </header>
+                        <div class="M_wrap">
+                            <div class="M_title">
+                                <p class="p">重設密碼</p>
+                            </div>
+                            <!-- 重新設定密碼輸入框 -->
+                            <div class="M_password">
+                                <p class="num">請輸入新密碼</p>
+                                <label for="new_password">
+                                <input type="text" id="new_password" name="new_password" value="0987654" placeholder="新密碼"/>
+                            </label>
+                                <br>
+                                <p class="num">再次確認密碼</p>
+                                <label>
+                                <input type="text" name="check_new_password" value="0987654" placeholder="新密碼"/>
+                            </label>
+                                <br>
+                                <input type="submit" name="passord_reset_login_btn" value="前往登入" class="btn3" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
 </body>
 
 </html>
