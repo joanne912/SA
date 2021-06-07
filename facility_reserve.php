@@ -124,58 +124,63 @@
                 <p class="content">您的點數 : <?=$point?> 點</p>
                 <p class="content">本次消耗點數 : <?=$fpoint?> 點</p>
                 <br>
-                <!--住戶點選是才會顯示出可以借用的公設 否則不顯示任何可借公設資訊-->
-                <p class="content">* 是否要借用設備 ? (僅限借用一種)
-                    <div>
-                        <label>
-                            <input type="radio"  name="borrowtool" value="yes" id="yes">
-                            是 &nbsp&nbsp&nbsp&nbsp
-                        </label> 
-                        <label>
-                            <input type="radio"  name="borrowtool" value="no" checked id="no">
-                            否
-                        </label>
+                <?php
+                    $sql = "SELECT `FACILITIES_EQUIPMENT_NAME` FROM `facilities_equipment`
+                            WHERE `FACILITIES_ID` = $facility AND `COMMUNITY_ID` = $community ;";
+                    $statement = $conn->prepare($sql);
+                    $statement->execute(array($facility));
+                    $flag = 0;
+                    while( $row = $statement->fetch(PDO::FETCH_ASSOC) ){ $flag = 1; }
+                    if($flag == 1){
+                    ?>
+                    <!--住戶點選是才會顯示出可以借用的公設 否則不顯示任何可借公設資訊-->
+                    <p class="content">* 是否要借用設備 ? (僅限借用一種)
+                        <div>
+                            <label>
+                                <input type="radio"  name="borrowtool" value="yes" id="yes">
+                                是 &nbsp&nbsp&nbsp&nbsp
+                            </label> 
+                            <label>
+                                <input type="radio"  name="borrowtool" value="no" checked id="no">
+                                否
+                            </label>
+                        </div>
+                    </p>
+                    <div class="tab">
+                        <?php
+                            $statement->execute(array($facility));
+                            while( $row = $statement->fetch(PDO::FETCH_ASSOC) ){
+                                echo '<input type="button" onclick="tools(event, \''.$row['FACILITIES_EQUIPMENT_NAME'].'\')" value="'.$row['FACILITIES_EQUIPMENT_NAME'].'">';
+                            }
+                        ?>
                     </div>
-                </p>
-                <div class="tab">
                     <?php
-                        $sql = "SELECT `FACILITIES_EQUIPMENT_NAME` FROM `facilities_equipment`
-                                WHERE `FACILITIES_ID` = $facility AND `COMMUNITY_ID` = $community ;";
+                        $sql = "SELECT `FACILITIES_EQUIPMENT_ID`,`FACILITIES_EQUIPMENT_NAME`,
+                                `FACILITIES_EQUIPMENT_AMOUNT`,`FACILITIES_EQUIPMENT_UNIT`
+                                FROM `facilities_equipment` WHERE `FACILITIES_ID` = ? AND `COMMUNITY_ID` = $community ;";
                         $statement = $conn->prepare($sql);
                         $statement->execute(array($facility));
                         while( $row = $statement->fetch(PDO::FETCH_ASSOC) ){
-                            echo '<input type="button" onclick="tools(event, \''.$row['FACILITIES_EQUIPMENT_NAME'].'\')" value="'.$row['FACILITIES_EQUIPMENT_NAME'].'">';
+                            ?>
+                            <div id="<?=$row['FACILITIES_EQUIPMENT_NAME']?>" class="tabcontent">
+                                <p>選擇借用個數 :</p>
+                            <p>
+                                <div class="check">
+                                    <?php for($i=0;$i<=$row['FACILITIES_EQUIPMENT_AMOUNT'];$i++){ ?>
+                                    <input type="hidden" name="equipment" value="<?=$row['FACILITIES_EQUIPMENT_ID']?>">
+                                    <input type="checkbox" name="equipmentAmount" value="<?=$i?>"> <?=$i?> <?=$row['FACILITIES_EQUIPMENT_UNIT']?>
+                                    <?php } ?>
+                                </div>
+                            </p>
+                        </div>
+                        <?php
                         }
-                    ?>
-                </div>
-                <?php
-                    $sql = "SELECT `FACILITIES_EQUIPMENT_ID`,`FACILITIES_EQUIPMENT_NAME`,
-                            `FACILITIES_EQUIPMENT_AMOUNT`,`FACILITIES_EQUIPMENT_UNIT`
-                            FROM `facilities_equipment` WHERE `FACILITIES_ID` = ? AND `COMMUNITY_ID` = $community ;";
-                    $statement = $conn->prepare($sql);
-                    $statement->execute(array($facility));
-                    if(!$statement->columnCount()){
-                        echo "本公設無器材可供外借";
                     }
-                    while( $row = $statement->fetch(PDO::FETCH_ASSOC) ){
-                    ?>
-                    <div id="<?=$row['FACILITIES_EQUIPMENT_NAME']?>" class="tabcontent">
-                        <p>選擇借用個數 :</p>
-                        <p>
-                            <div class="check">
-                                <?php for($i=0;$i<=$row['FACILITIES_EQUIPMENT_AMOUNT'];$i++){ ?>
-                                <input type="hidden" name="equipment" value="<?=$row['FACILITIES_EQUIPMENT_ID']?>">
-                                <input type="checkbox" name="equipmentAmount" value="<?=$i?>"> <?=$i?> <?=$row['FACILITIES_EQUIPMENT_UNIT']?>
-                                <?php } ?>
-                            </div>
-                        </p>
-                    </div>
-                    <?php
-                    }
+                    echo $flag?'':'本公設沒有提供器材外借';
                 ?>
                 <br>
                 <button type="button" class="btn btn-info see_information">確認填寫無誤</button>
-                    <!--可借用公設資訊End-->
+                <!--可借用公設資訊End-->
                 <hr>
                 <div class="outside"id="information">
                     <p class="dot" style="font-weight:bold"><img src="img/circle.svg"> &nbsp確認預約資訊 : </img></p>
