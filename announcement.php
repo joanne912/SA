@@ -124,7 +124,6 @@
     </div>
     <div class="act_icon">
         <form id="select" action="home.php" method="POST" style="display:flex;align-items: center;">
-            <input id="announcement" type="hidden" name="announcement" value="">
             <input type="text" name="search" class="search_input" placeholder="<?=isset($_POST['search'])?$_POST['search']:''?>">
             <div class="a_icon_circle">
                 <img onclick="submit()" src="img/search.svg" alt="">
@@ -215,6 +214,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <form action="home.php" method="POST" enctype="multipart/form-data">
+                <input id="announcement" type="hidden" name="announcement" value="">
                 <div class="M_title">
                     <div class="modal-header">
                         <h5 class="modal-title ti" id="exampleModalLabel2">新增公告</h5>
