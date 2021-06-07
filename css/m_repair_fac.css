@@ -39,15 +39,15 @@ td p {
 }
 
 .resolve {
-    background: red;
+    background: green;
 }
 
 .waiting {
-    background: rgb(252, 193, 0);
+    background: red);
 }
 
 .solving {
-    background: green;
+    background: rgb(252, 193, 0);
 }
 
 @media screen and (max-width: 768px) {
