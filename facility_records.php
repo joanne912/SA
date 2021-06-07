@@ -21,7 +21,7 @@
     <div class="info_wrap">
         <!-- 公設圖片，需連結資料庫 -->
         <div class="graphic">
-            <img src="./img/fac/<?=$row['FACILITIES_IMG1']?>" alt="">
+            <img style="border-radius:8px;width:250px;height:160px" src="./img/fac/<?=$row['FACILITIES_IMG1']?>" alt="">
         </div>
         <!-- 每一住戶預約公設的編號 名稱 日期 時段 ，需連結資料庫 -->
         <div class="text">
