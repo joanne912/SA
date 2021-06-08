@@ -46,7 +46,7 @@
                             <span>預約扣點</span>
                             <span><?=$row['FACILITIES_ID']?><?=$row['FACILITIES_NAME']?></span>
                             <span><?=$row['FACILITIES_BOOKING_DATE']?></span>
-                            <span class="minor_point"><font class="minor_point">-</font><?=$row['FACILITIES_POINT']?>
+                            <span class="minor_point"><font class="minor_point">-</font><?=$row['FACILITIES_POINT']?>點
                             </span>
                         </div>
                     </div>

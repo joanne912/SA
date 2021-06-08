@@ -90,7 +90,7 @@ button {
 }
 
 .M_password .num {
-    color: #CACADE;
+    color: color: #808080;
     margin-bottom: 10px;
     font-weight: bold;
 }
@@ -116,7 +116,7 @@ button {
 .btn3 {
     margin-top: 1.5em;
     width: 100%;
-    background: #c0c0e2 !important;
+    background: #9191c7 !important;
     color: white;
     letter-spacing: 8px;
     text-indent: 8px;
@@ -390,7 +390,7 @@ input {
 .btn {
     margin-top: 1.5em;
     width: 100%;
-    background: #c0c0e2 !important;
+    background: #9191c7  !important;
     color: white;
     letter-spacing: 8px;
     text-indent: 8px;
@@ -399,7 +399,7 @@ input {
 .btn2 {
     margin-top: 1.5em;
     width: 50%;
-    background: #c0c0e2 !important;
+    background: #9191c7  !important;
     color: white;
     letter-spacing: 8px;
     text-indent: 8px;

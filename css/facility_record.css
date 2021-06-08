@@ -42,7 +42,7 @@ hr{
 }
 
 .outside{
-    width: 90%;
+    width: 80%;
     margin: auto;
     
 
@@ -54,7 +54,7 @@ hr{
     align-items: center;
     font-weight: bold;
     letter-spacing: 0.5em;
-    margin-left: 30%;
+    margin-left: 35%;
     color: #808080;
 }
 .head{
@@ -97,12 +97,11 @@ hr{
     
 }
  .dot{
-    /* width:20%; */
-    font-size:1.2em;
+    font-size:1.4em;
     list-style:circle;
     margin-top: 2em;
-    /* background-color:#f7f7fa; */
-    
+    font-weight: bold;
+    color: rgb(24, 24, 112);
  }
  .left{
     font-size:1.8em;
@@ -110,8 +109,7 @@ hr{
     height:1em;
  }
  .content{
-   
-    font-size:1.2em;
+    font-size:1.3em;
     list-style:circle;
     letter-spacing:4px;
     font-size:1em;
@@ -370,7 +368,7 @@ hr{
        
     }
     .container{
-        width: 80%;
+        width: 90%;
     }
     .a_icon_circle{
         width: 3em;
