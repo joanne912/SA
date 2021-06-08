@@ -142,6 +142,13 @@ hr {
     font-size: 1em;
 }
 
+.photoUpload img.photo {
+    display: inline;
+    width: 200px;
+    height: auto;
+    margin: auto;
+}
+
 @media screen and (max-width: 768px) {
     .outside img {
         width: 1em;
