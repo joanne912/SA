@@ -18,7 +18,6 @@
             <?php
                 if ( $auth <= 3 ){
                 ?>
-                <a href="home.php?page=m_package">包裹管理</a>
                 <a href="home.php?page=facility">公設管理</a>
                 <a href="home.php">公告管理</a>
                 <?php
@@ -31,7 +30,6 @@
                     if ( $auth >= 4 ) {
                 ?>
                 <a href="home.php?page=personal">個人資訊</a>
-                <a href="home.php?page=package">我的包裹</a>
                 <a href="home.php?page=facility">社區公設</a>
                 <a href="home.php">社區公告</a>
                 <?php
