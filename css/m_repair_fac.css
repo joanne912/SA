@@ -10,6 +10,7 @@ th {
     text-indent: 4px;
     padding: 1em 2em;
     background-color: #f7f7fa;
+    text-align: center;
 }
 
 tr:nth-child(odd) {
@@ -48,6 +49,12 @@ td p {
 
 .solving {
     background: rgb(252, 193, 0);
+}
+.detail_hover:hover{
+    background: rgb(73, 71, 71);
+    color: white !important;
+    padding: .25em;
+    box-sizing: border-box;
 }
 
 @media screen and (max-width: 768px) {

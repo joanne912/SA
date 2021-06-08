@@ -1,5 +1,5 @@
 <?php
-    $searchtxt = "";
+    @$searchtxt = "";
     $sql = "SELECT `HOUSEHOLD_ADDRESS`,`COMMUNITY_ID`,`HOUSEHOLD_ID` 
                 FROM `household` WHERE `COMMUNITY_ID` = $community"; //預設搜尋的SQL字串
     if( isset( $_POST["searchtxt"] ) ) {
@@ -16,7 +16,7 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
 </script>
 <link rel="stylesheet" href="css/household_id.css">
-<form class="search">
+<form class="search" action="household_id.php">
     <label for="searchtxt">請輸入戶別 :</label> 
     <input class="input1" type="text" name="searchtxt" id="searchtxt" value=<?php echo $searchtxt; ?>>
     <input class="input2" type="submit" value="搜尋戶籍戶別">

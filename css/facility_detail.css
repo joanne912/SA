@@ -141,6 +141,11 @@ hr {
     border-radius: 5px;
     font-size: 1em;
 }
+.trans_input{
+    border: 6px solid #f7f7fa;
+    padding: 0 .5em;
+    border-radius: 10px;
+}
 
 .photoUpload img.photo {
     display: inline;
@@ -162,6 +167,13 @@ hr {
     }
     .d-block {
         height: 20vh !important;
+    }
+    .trans_textarea{
+        width: 100%;
+        padding: .5em .5em;
+    }
+    .trans{
+        width: 50%;
     }
 }
 
@@ -196,6 +208,9 @@ hr {
         font-size: .75em;
         width: 8em;
         height: 3em;
+    }
+    .trans_textarea{
+        font-size: 0.5em;
     }
 }
 

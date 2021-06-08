@@ -17,6 +17,11 @@
     text-indent: 5px;
     text-decoration: none !important;
 }
+.btn_wrap a:hover{
+    background: rgb(73, 71, 71);
+    color: white !important;
+    border:5px solid rgb(73, 71, 71);
+}
 
 @media screen and (max-width: 400px){
     .btn_wrap{

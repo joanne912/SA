@@ -41,7 +41,7 @@
             <?=$row['FACILITIES_PLACE']?>
         </td>
         <td>
-            <a href='home.php?page=facility&method=detail&repair=<?=$row['FACILITIES_REPAIR_ID']?>'><?=$row['FACILITIES_REPAIR_CONTENT']?></a>
+            <a href='home.php?page=facility&method=detail&repair=<?=$row['FACILITIES_REPAIR_ID']?>' class="detail_hover"><?=$row['FACILITIES_REPAIR_CONTENT']?></a>
         </td>
         <td>
             <p class='<?=$row['FACILITIES_REPAIR_STATE']?>'><?=$state?></p>
