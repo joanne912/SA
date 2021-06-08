@@ -97,7 +97,7 @@ hr{
     
 }
  .dot{
-    font-size:1.4em;
+    font-size:1.5em;
     list-style:circle;
     margin-top: 2em;
     font-weight: bold;
@@ -109,7 +109,7 @@ hr{
     height:1em;
  }
  .content{
-    font-size:1.3em;
+    font-size:1.4em;
     list-style:circle;
     letter-spacing:4px;
     font-size:1em;
@@ -180,17 +180,12 @@ hr{
     border-radius: 8px;
     position:relative; 
 }
-.yourpoint{
-    font-weight:bold;
-    color: rgb(24, 24, 112);
-}
+
 .endpoint{
     color:#fc6471;
     font-weight:bold;
 }
-.borrowtool{
-    font-weight:bold;
-}
+
 .send{
     width:6.5em;
     height: 2.4em;
