@@ -93,6 +93,22 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
+            <div class="photoUpload">
+                <span>
+                    <img src="img/circle.svg" alt="">公設照片
+                </span>
+                請選擇欲上傳的公設照片:(請至少上傳一張)
+                <br>
+                <input type="file" id="photofile1" name="photofile1">
+                <br>
+                <input type="file" id="photofile2" name="photofile2">
+                <br>
+                <input type="file" id="photofile3" name="photofile3">
+                <br>
+                <img src="./img/fac/<?=$row['FACILITIES_IMG1']?>" class="photo" id="photo1">
+                <img src="./img/fac/<?=$row['FACILITIES_IMG2']==''?$row['FACILITIES_IMG1']:$row['FACILITIES_IMG2']?>" class="photo" id="photo2">
+                <img src="./img/fac/<?=$row['FACILITIES_IMG3']==''?$row['FACILITIES_IMG2']==''?$row['FACILITIES_IMG1']:$row['FACILITIES_IMG2']:$row['FACILITIES_IMG3']?>" class="photo" id="photo3">
+            </div>
             <p class="dot"><img src="img/circle.svg"> &nbsp公設時段 : </img></p>
             <!--資料庫匯出該公設預約時段-->
             <div class="information">

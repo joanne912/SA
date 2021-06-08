@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    $('.photoUpload').hide();
     $('.edit').click(function() {
         let title = $(this).prev().children().last().html();
         $(this).prev().children().last().remove();
@@ -27,7 +28,8 @@ $(document).ready(function() {
         $('#data').children().eq(3).children().eq(1).remove();
         $('#data').children().eq(3).append(`<textarea rows="5" cols="40" name="introduction">${description}</textarea>`)
 
-        $('form').append('<input type="submit" name="submit" value="確認修改公設資訊">')
+        $('form').append('<input type="submit" name="submit" value="確認修改公設資訊">');
+        $('.photoUpload').show();
         $(this).hide();
     });
 });

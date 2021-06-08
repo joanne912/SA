@@ -124,7 +124,7 @@
         <hr>
         <span><img src="img/circle.svg" alt="">公設名稱： <input type="text" name="name"></span>
         <hr>
-        <div>
+        <div class="photoUpload">
             <span>
                 <img src="img/circle.svg" alt="">公設照片
             </span>
