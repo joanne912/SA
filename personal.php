@@ -2,8 +2,8 @@
 //修改個人資訊
 if(isset($_POST['submit'])){
     $sql = "UPDATE `household`,`user`,`resident`
-            SET `USER_NAME` = :name,`HOUSEHOLD_ADDRESS` = :address,`RESIDENT_PHONE` = :phone,
-            `RESIDENT_BDATE` = :birth,`RESIDENT_GENDER` = :gender
+            SET `USER_NAME` = :name, `RESIDENT_PHONE` = :phone,
+            `RESIDENT_BDATE` = :birth, `RESIDENT_GENDER` = :gender
             WHERE `user`.`USER_ID` = `resident`.`USER_ID`
             AND `user`.`USER_ID` = $id
             AND `household`.`HOUSEHOLD_ID` = $household
@@ -12,7 +12,6 @@ if(isset($_POST['submit'])){
     try{
         $result = $statement->execute(array(
             ':name' => $_POST['name'],
-            ':address' => $_POST['address'],
             ':phone' => $_POST['phone'],
             ':birth' => $_POST['birth'],
             ':gender' => $_POST['gender'],
@@ -50,8 +49,8 @@ if(isset($_POST['submit'])){
                 <input name="name" type="text" value="<?=$row['USER_NAME']?>">
             </div>
             <div class="col col-md-12 col-xl-6">
-                <p style="letter-spacing: 2.1em;">地址</p>
-                <input name="address" type="text" value="<?=$row['HOUSEHOLD_ADDRESS']?>">
+                <p style="letter-spacing: 2.1em;">手機</p>
+                <input name="phone" type="text" value="<?=$row['RESIDENT_PHONE']?>">
             </div>
         </div>
         <div class="row">
@@ -60,8 +59,8 @@ if(isset($_POST['submit'])){
                 <input disabled name="email" type="text" value="<?=$row['USER_ACCOUNT']?>">
             </div>
             <div class="col col-md-12 col-xl-6">
-                <p style="letter-spacing: 2.1em;">手機</p>
-                <input name="phone" type="text" value="<?=$row['RESIDENT_PHONE']?>">
+                <p style="margin-right: 1.8em;">社區代碼</p>
+                <input disabled type="text" value="<?=$community?>">
             </div>
         </div>
         <div class="row">
