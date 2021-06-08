@@ -37,10 +37,10 @@
             ?>
             <!-- 這個位置要加登出 -->
             <!-- 手機版時設定、登出、通知的按鈕位置，網頁版時會消失 -->
-            <div class="else">
+            <!-- <div class="else">
                 <a href="#"><img src="img/setting.svg" alt=""></a>
                 <a href="logout.php"><img src="img/logout.svg" alt=""></a>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
