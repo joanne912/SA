@@ -116,8 +116,8 @@ hr {
     margin-top:3em;
 }
 .cancle_btn{
-    width:6.5em;
-    height: 2.4em;
+    width:7em;
+    height: 3em;
     background-color: #f7f7fa;
     border: solid 3px #D5D5E9;
     border-radius: 15px;
@@ -240,7 +240,8 @@ hr {
     }
     .cancle_btn{
         font-size: .8em;
-        width: 5em;
+        width: 7em;
+        height: 4em;
     }
     
 }

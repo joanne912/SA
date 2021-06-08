@@ -194,6 +194,8 @@ hr {
     }
     .go {
         font-size: .75em;
+        width: 8em;
+        height: 3em;
     }
 }
 
