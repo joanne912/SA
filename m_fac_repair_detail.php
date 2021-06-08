@@ -21,8 +21,6 @@
         catch(PDOException $e){
             echo $e->getMessage();
         }
-        header("refresh:0;url=home.php?page=facility&method=repair");
-        exit();
     }
     //顯示公設報修狀況
     if(!isset($_GET['repair'])){
