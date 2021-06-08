@@ -21,6 +21,7 @@
         catch(PDOException $e){
             echo $e->getMessage();
         }
+        echo '<script>document.location.href="home.php?page=facility&method=repair";</script>';
     }
     //顯示公設報修狀況
     if(!isset($_GET['repair'])){
