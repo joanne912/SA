@@ -45,44 +45,44 @@ if(isset($_POST['submit'])){
     <div class="container">
         <div class="row">
             <div class="col col-md-12 col-xl-6">
-                <p style="letter-spacing: 2em;">姓名</p>
+                <p style="margin-right:1em;">姓&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp名</p>
                 <input name="name" type="text" value="<?=$row['USER_NAME']?>">
             </div>
             <div class="col col-md-12 col-xl-6">
-                <p style="letter-spacing: 2.1em;">手機</p>
+                <p style="margin-right:1em;">手&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp機</p>
                 <input name="phone" type="text" value="<?=$row['RESIDENT_PHONE']?>">
             </div>
         </div>
         <div class="row">
             <div class="col col-md-12 col-xl-6">
-                <p style="margin-right: 2em;">E-MAIL</p>
+                <p style="margin-right:1em;">&nbspE-MAIL&nbsp</p>
                 <input disabled name="email" type="text" value="<?=$row['USER_ACCOUNT']?>">
             </div>
             <div class="col col-md-12 col-xl-6">
-                <p style="margin-right: 1.8em;">社區代碼</p>
+                <p style="margin-right:1em;">社區代碼</p>
                 <input disabled type="text" value="<?=$community?>">
             </div>
         </div>
         <div class="row">
             <div class="col col-md-12 col-xl-6">
-                <p style="letter-spacing: 2em;">生日</p>
+                <p style="margin-right:1em;">生&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp日</p>
                 <input name="birth" type="date" value="<?=date_format(date_create($row['RESIDENT_BDATE']),"Y-m-d")?>">
             </div>
             <div class="col col-md-12 col-xl-6">
-                <p style="margin-right: 1.8em;">戶籍代碼</p>
+                <p style="margin-right:1em;">戶籍代碼</p>
                 <input disabled type="text" value="<?=$household?>">
             </div>
         </div>
         <div class="row">
             <div class="col col-md-12 col-xl-6">
-                <p style="letter-spacing: 2em;">性別</p>
+                <p style="margin-right:1em;">性&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp別</p>
                 <select name="gender">
                     <option value="男" <?=($row['RESIDENT_GENDER']=='男')?'selected':''?>>男</option>
                     <option value="女" <?=($row['RESIDENT_GENDER']=='女')?'selected':''?>>女</option>
                 </select>
             </div>
             <div class="col col-md-12 col-xl-6">
-                <p style="margin-right: 1.8em;">綁定地址</p>
+                <p style="margin-right:1em;">綁定地址</p>
                 <input disabled type="text" value="<?=$row['HOUSEHOLD_ADDRESS']?>">
             </div>
         </div>
