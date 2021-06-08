@@ -65,27 +65,32 @@
             }
         }
         
-        $sql2 = "UPDATE `facilities` SET `FACILITIES_NAME` = :name,  `FACILITIES_INTRODUCTION` = :intro, `FACILITIES_DESCRIPTION` = :description, `FACILITIES_OPEN_TIME` = :startTime, `FACILITIES_CLOSE_TIME` = :endTime, `FACILITIES_POINT` = :point, `FACILITIES_LIMIT` = :limit, `FACILITIES_IMG1` = :img1, `FACILITIES_IMG2` = :img2, `FACILITIES_IMG3` = :img3 WHERE `COMMUNITY_ID` = :community_id AND `FACILITIES_ID` = :facilities_id;";
+        $sql2 = "UPDATE `facilities` SET `FACILITIES_NAME` = :name, `FACILITIES_INTRODUCTION` = :intro,
+                `FACILITIES_DESCRIPTION` = :description, `FACILITIES_OPEN_TIME` = :startTime,
+                `FACILITIES_CLOSE_TIME` = :endTime, `FACILITIES_POINT` = :point, `FACILITIES_LIMIT` = :limit,
+                `FACILITIES_IMG1` = :img1, `FACILITIES_IMG2` = :img2, `FACILITIES_IMG3` = :img3
+                WHERE `COMMUNITY_ID` = :community_id AND `FACILITIES_ID` = :facilities_id;";
         $update = $conn->prepare($sql2);
         $update->execute(
-                array(
-                    ':name' => $_POST['title'],
-                    ':intro' => $_POST['introduction'], 
-                    ':description' => $_POST['introduction'],
-                    ':startTime' => $_POST['startTime'],
-                    ':endTime' => $_POST['endTime'],
-                    ':point' => $_POST['point'],
-                    ':limit' => $_POST['limit'],
-                    ':img1' => isset($_FILES['photofile1']['name']) ? $_FILES['photofile1']['name'] : $row['FACILITIES_IMG1'],
-                    ':img2' => isset($_FILES['photofile2']['name']) ? $_FILES['photofile2']['name'] : $row['FACILITIES_IMG2'],
-                    ':img3' => isset($_FILES['photofile3']['name']) ? $_FILES['photofile3']['name'] : $row['FACILITIES_IMG3'],
-                    ':community_id' => $community,
-                    ':facilities_id' => $_GET['facility']));
-        echo "<script>
-                window.location.href='home.php?page=facility';
-            </script>"; 
+            array(
+                ':name' => $_POST['title'],
+                ':intro' => $_POST['introduction'], 
+                ':description' => $_POST['introduction'],
+                ':startTime' => $_POST['startTime'],
+                ':endTime' => $_POST['endTime'],
+                ':point' => $_POST['point'],
+                ':limit' => $_POST['limit'],
+                ':img1' => isset($_FILES['photofile1']['name']) ? $_FILES['photofile1']['name'] : $row['FACILITIES_IMG1'],
+                ':img2' => isset($_FILES['photofile2']['name']) ? $_FILES['photofile2']['name'] : $row['FACILITIES_IMG2'],
+                ':img3' => isset($_FILES['photofile3']['name']) ? $_FILES['photofile3']['name'] : $row['FACILITIES_IMG3'],
+                ':community_id' => $community,
+                ':facilities_id' => $_GET['facility']
+            )
+        );
+        echo "<script> window.location.href='home.php?page=facility'</script>"; 
     }
-        
+    $statement->execute(array($_GET['facility']));
+    $row = $statement->fetch(PDO::FETCH_ASSOC);
 ?>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
