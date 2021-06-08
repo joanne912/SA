@@ -24,7 +24,7 @@
         echo '<script>document.location.href="home.php?page=facility&method=repair";</script>';
     }
     //顯示公設報修狀況
-    if(!isset($_GET['repair'])){
+    if(!isset($_GET['repair'])&&!isset($_GET['facility'])){
         header("location:home.php?page=facility&method=repair");
     }
     $sql = "SELECT `facilities_repair`.`FACILITIES_ID`, `FACILITIES_REPAIR_ID`, `FACILITIES_NAME`,
@@ -32,9 +32,10 @@
             FROM `facilities_repair`,`facilities` 
             WHERE ( `FACILITIES_REPAIR_ID` = ?
             AND `facilities_repair`.`FACILITIES_ID` = `facilities`.`FACILITIES_ID`
+            AND `facilities`.`FACILITIES_ID` = ?
             AND `facilities_repair`.`COMMUNITY_ID` = $community);";
     $statement = $conn->prepare($sql);
-    $statement->execute(array($_GET['repair']));
+    $statement->execute(array($_GET['repair'],$_GET['facility']));
     $row = $statement->fetch(PDO::FETCH_ASSOC);
     if( $row['FACILITIES_REPAIR_STATE'] == 'waiting' ){
         $check = '待處理';
