@@ -27,6 +27,8 @@
                     move_uploaded_file($file, $dest);
                 }
             } elseif ($_FILES['file']['error'] === UPLOAD_ERR_NO_FILE) {
+            } elseif ($_FILES['file']['error'] === UPLOAD_ERR_INI_SIZE) {
+                echo '上傳檔案超過限制大小<br>';
             } else {
                 echo '錯誤代碼：' . $_FILES['file']['error'] . '<br/>';
             }
