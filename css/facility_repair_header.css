@@ -17,7 +17,7 @@
     text-indent: 5px;
     text-decoration: none !important;
 }
-.btn_wrap a:hover{
+.page_hover:hover{
     background: rgb(73, 71, 71);
     color: white !important;
     border:5px solid rgb(73, 71, 71);
