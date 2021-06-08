@@ -13,7 +13,59 @@
     $row = $statement->fetch(PDO::FETCH_ASSOC);
     
     if(isset($_POST['submit'])){
-        $sql2 = "UPDATE `facilities` SET `FACILITIES_NAME` = :name,  `FACILITIES_INTRODUCTION` = :intro, `FACILITIES_DESCRIPTION` = :description, `FACILITIES_OPEN_TIME` = :startTime, `FACILITIES_CLOSE_TIME` = :endTime, `FACILITIES_POINT` = :point, `FACILITIES_LIMIT` = :limit WHERE `COMMUNITY_ID` = :community_id AND `FACILITIES_ID` = :facilities_id;";
+        // 照片處理
+        if(isset($_FILES['photofile1'])){
+            if ($_FILES['photofile1']['error'] === UPLOAD_ERR_OK){
+                // 檢查資料夾的建立
+                $file_path = './img/fac/';
+                // 檢查檔案是否已經存在
+                if (!file_exists($file_path. $_FILES['photofile1']['name'])){
+                    $file = $_FILES['photofile1']['tmp_name'];
+                    $dest = $file_path. $_FILES['photofile1']['name'];
+                    // 將檔案移至指定位置
+                    move_uploaded_file($file, $dest);
+                }
+            }elseif($_FILES['photofile3']['error'] === UPLOAD_ERR_NO_FILE){
+            }else {
+                echo '錯誤代碼：' . $_FILES['photofile1']['error'] . '<br/>';
+            }
+        }
+        if(isset($_FILES['photofile2'])){
+            // 第二張照片
+            if ($_FILES['photofile2']['error'] === UPLOAD_ERR_OK){
+                // 檢查資料夾的建立
+                $file_path = './img/fac/';
+                // 檢查檔案是否已經存在
+                if (!file_exists($file_path. $_FILES['photofile2']['name'])){
+                    $file = $_FILES['photofile2']['tmp_name'];
+                    $dest = $file_path. $_FILES['photofile2']['name'];
+                    // 將檔案移至指定位置
+                    move_uploaded_file($file, $dest);
+                }
+            }elseif($_FILES['photofile3']['error'] === UPLOAD_ERR_NO_FILE){
+            }else {
+                echo '錯誤代碼：' . $_FILES['photofile2']['error'] . '<br/>';
+            }
+        }
+        if(isset($_FILES['photofile3'])){
+            //第三張照片
+            if ($_FILES['photofile3']['error'] === UPLOAD_ERR_OK){
+                // 檢查資料夾的建立
+                $file_path = './img/fac/';
+                // 檢查檔案是否已經存在
+                if (!file_exists($file_path. $_FILES['photofile3']['name'])){
+                    $file = $_FILES['photofile3']['tmp_name'];
+                    $dest = $file_path. $_FILES['photofile3']['name'];
+                    // 將檔案移至指定位置
+                    move_uploaded_file($file, $dest);
+                }
+            }elseif($_FILES['photofile3']['error'] === UPLOAD_ERR_NO_FILE){
+            }else {
+                echo '錯誤代碼：' . $_FILES['photofile3']['error'] . '<br/>';
+            }
+        }
+        
+        $sql2 = "UPDATE `facilities` SET `FACILITIES_NAME` = :name,  `FACILITIES_INTRODUCTION` = :intro, `FACILITIES_DESCRIPTION` = :description, `FACILITIES_OPEN_TIME` = :startTime, `FACILITIES_CLOSE_TIME` = :endTime, `FACILITIES_POINT` = :point, `FACILITIES_LIMIT` = :limit, `FACILITIES_IMG1` = :img1, `FACILITIES_IMG2` = :img2, `FACILITIES_IMG3` = :img3 WHERE `COMMUNITY_ID` = :community_id AND `FACILITIES_ID` = :facilities_id;";
         $update = $conn->prepare($sql2);
         $update->execute(
                 array(
@@ -24,6 +76,9 @@
                     ':endTime' => $_POST['endTime'],
                     ':point' => $_POST['point'],
                     ':limit' => $_POST['limit'],
+                    ':img1' => isset($_FILES['photofile1']['name']) ? $_FILES['photofile1']['name'] : $row['FACILITIES_IMG1'],
+                    ':img2' => isset($_FILES['photofile2']['name']) ? $_FILES['photofile2']['name'] : $row['FACILITIES_IMG2'],
+                    ':img3' => isset($_FILES['photofile3']['name']) ? $_FILES['photofile3']['name'] : $row['FACILITIES_IMG3'],
                     ':community_id' => $community,
                     ':facilities_id' => $_GET['facility']));
         echo "<script>
