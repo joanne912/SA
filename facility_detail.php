@@ -1,14 +1,36 @@
 <?php
     if(!isset($_GET['facility'])){
-        header("location:home.php?page=facility");
+        echo "<script>
+                window.location.href='home.php?page=facility';
+            </script>"; 
     }
     $sql = "SELECT `FACILITIES_NAME`, `FACILITIES_INTRODUCTION`, `FACILITIES_DESCRIPTION`,
-            `FACILITIES_PLACE`, HOUR(`FACILITIES_OPEN_TIME`), HOUR(`FACILITIES_CLOSE_TIME`),
-            `FACILITIES_IMG1`, `FACILITIES_IMG2`, `FACILITIES_IMG3`, `FACILITIES_POINT`,
-            `FACILITIES_LIMIT` FROM `facilities` WHERE ( `FACILITIES_ID` = ? AND `COMMUNITY_ID` = $community );";
+        `FACILITIES_PLACE`, HOUR(`FACILITIES_OPEN_TIME`), HOUR(`FACILITIES_CLOSE_TIME`),
+        `FACILITIES_IMG1`, `FACILITIES_IMG2`, `FACILITIES_IMG3`, `FACILITIES_POINT`,
+        `FACILITIES_LIMIT` FROM `facilities` WHERE ( `FACILITIES_ID` = ? AND `COMMUNITY_ID` = $community );";
     $statement = $conn->prepare($sql);
     $statement->execute(array($_GET['facility']));
     $row = $statement->fetch(PDO::FETCH_ASSOC);
+    
+    if(isset($_POST['submit'])){
+        $sql2 = "UPDATE `facilities` SET `FACILITIES_NAME` = :name,  `FACILITIES_INTRODUCTION` = :intro, `FACILITIES_DESCRIPTION` = :description, `FACILITIES_OPEN_TIME` = :startTime, `FACILITIES_CLOSE_TIME` = :endTime, `FACILITIES_POINT` = :point, `FACILITIES_LIMIT` = :limit WHERE `COMMUNITY_ID` = :community_id AND `FACILITIES_ID` = :facilities_id;";
+        $update = $conn->prepare($sql2);
+        $update->execute(
+                array(
+                    ':name' => $_POST['title'],
+                    ':intro' => $_POST['introduction'], 
+                    ':description' => $_POST['introduction'],
+                    ':startTime' => $_POST['startTime'],
+                    ':endTime' => $_POST['endTime'],
+                    ':point' => $_POST['point'],
+                    ':limit' => $_POST['limit'],
+                    ':community_id' => $community,
+                    ':facilities_id' => $_GET['facility']));
+        echo "<script>
+                window.location.href='home.php?page=facility';
+            </script>"; 
+    }
+        
 ?>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -18,7 +40,7 @@
 <link rel="stylesheet" href="css/facility_detail.css">
 <script src="js/facility.js"></script>
 <div class="container">
-    <form action="facility_detail.php" method="POST">
+    <form action="home.php?page=facility&method=look&facility=<?=$_GET['facility']?>" method="POST">
         <div class="outside">
             <div class="head">
                 <div class="name">
