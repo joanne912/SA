@@ -8,7 +8,8 @@
     foreach( $conn->query($sql) as $row1 ){
         $facility = $row1['FACILITIES_ID'];
         $sql = "SELECT COUNT(`FACILITIES_ID`) FROM `facilities_booking` 
-                WHERE ( `COMMUNITY_ID` = $community AND `FACILITIES_ID` = $facility AND `FACILITIES_BOOKING_DATE` = CURDATE() );";
+                WHERE ( `COMMUNITY_ID` = $community AND `FACILITIES_ID` = $facility 
+                AND `FACILITIES_BOOKING_DATE` = CURDATE() );";
         foreach( $conn->query($sql) as $row2){
             ?>
             <!-- 每個獨立的公設資訊 -->

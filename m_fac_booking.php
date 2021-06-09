@@ -1,5 +1,6 @@
 <?php
     $facility = $_GET['facility'];
+    $date = date("Y-m-d");
     $sql = "SELECT `facilities`.`FACILITIES_ID`,`FACILITIES_NAME`,
             `FACILITIES_BOOKING_DATE`,`household`.`HOUSEHOLD_ID`,`HOUSEHOLD_ADDRESS`
             FROM `facilities_booking`,`facilities`,`household`
@@ -25,12 +26,18 @@
     }
     if(isset($_POST['date'])){
         $sql .= " AND `facilities_booking`.`FACILITIES_BOOKING_DATE` = " . $_POST['date'];
+        $date = $_POST['date'];
     }
+
     $statement = $conn->prepare($sql);
     $statement->execute(array(
         ':facility' => $facility
     ));
-    $sql = "SELECT `FACILITIES_LIMIT`,SUM(`FACILITIES_BOOKING_AMOUNT`)
+
+
+
+    $sql = "SELECT `FACILITIES_OPEN_TIME`, `FACILITIES_CLOSE_TIME`,
+            `FACILITIES_LIMIT`, SUM(`FACILITIES_BOOKING_AMOUNT`)
             FROM `facilities_booking`,`facilities`,`household`
             WHERE `facilities`.`FACILITIES_ID` = `facilities_booking`.`FACILITIES_ID`
             AND `facilities`.`COMMUNITY_ID` = `facilities_booking`.`COMMUNITY_ID`
@@ -55,11 +62,15 @@
     if(isset($_POST['date'])){
         $sql .= " AND `facilities_booking`.`FACILITIES_BOOKING_DATE` >= " . $_POST['date'];
     }
+
     $statement2 = $conn->prepare($sql);
     $statement2->execute(array(
         ':facility' => $facility
     ));
+
     $amount = $statement2->fetch(PDO::FETCH_ASSOC);
+    $startTime = strtotime( $amount['FACILITIES_OPEN_TIME'] );
+    $endTime = strtotime( $amount['FACILITIES_CLOSE_TIME'] );
 ?>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -86,22 +97,35 @@
         <div class="information">
             <form id="form" action="home.php?page=facility&method=booking&facility=<?=$facility?>" method="post">
                 <p class="content" >開始時段 : 
-                    <select class="option1" form="form" name="SelectTime">
-                    <optgroup label="請選擇開始時段">
-                            <option value="s1">7:00 </option>
-                            <option value="s2">8:00 </option>
-                    </optgroup>
-                    </select>
-                </p>
-                <p class="content" >結束時段 : 
-                    <select class="option1" form="form" name="SelectTime">
-                        <optgroup label="請選擇結束時段">
-                            <option value="e1">9:00</option>
-                            <option value="e2">10:00</option>
+                    <select class="option1 startTime" form="form" name="startTime">
+                        <optgroup label="請選擇開始時段">
+                        <?php
+                            for($i=(int)(date('H',$startTime));$i<=(int)(date('H',$endTime));$i++){
+                                $check = '';
+                                $check = $i==(int)(date('H',$startTime)) ? 'selected' : '';
+                                echo "<option value='$i' $check>$i:00</option>";
+                            }
+                        ?>
                         </optgroup>
                     </select>
                 </p>
-                <p class="content">選擇日期 : <input form="form" class="option1" onchange="submit()" name="date" type="date" value="<?=date("Y-m-d")?>"></p>
+                <p class="content" >結束時段 : 
+                    <select class="option1 endTime" form="form" name="endTime">
+                        <optgroup label="請選擇結束時段">
+                        <?php
+                            for($i=(int)(date('H',$startTime));$i<=(int)(date('H',$endTime));$i++){
+                                $check = '';
+                                $check = $i==(int)(date('H',$endTime)) ? 'selected' : '';
+                                echo "<option value='$i' $check>$i:00</option>";
+                            }
+                        ?>
+                        </optgroup>
+                    </select>
+                </p>
+                <p class="content">
+                    選擇日期 : 
+                    <input form="form" class="option1" onchange="submit()" name="date" type="date" value="<?=$date?>">
+                </p>
             </form>
         </div>
         <!--資料庫導入公設編號名稱 顯示當天日期 顯示該公設今日(當天)可容納人數 和最大容納人數-->

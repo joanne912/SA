@@ -7,7 +7,8 @@
             AND `facilities`.`COMMUNITY_ID` = `facilities_booking`.`COMMUNITY_ID`
             AND `IS_CANCEL` = 1
             AND `facilities_booking`.`COMMUNITY_ID` = $community 
-            AND `HOUSEHOLD_ID` = $household;";
+            AND `HOUSEHOLD_ID` = $household
+            ORDER BY `FACILITIES_BOOKING_DATE` DESC;";
     foreach($conn->query($sql) as $row){
         $sql = "SELECT MIN(`FACILITIES_START`),MAX(`FACILITIES_START`) FROM `facilities_booking_time`
                 WHERE `COMMUNITY_ID` = $community AND `FACILITIES_ID` = ".$row['FACILITIES_ID']."
