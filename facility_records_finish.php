@@ -4,7 +4,7 @@
             FROM `facilities_booking`,`facilities` 
             WHERE `facilities`.`FACILITIES_ID` = `facilities_booking`.`FACILITIES_ID`
             AND `facilities`.`COMMUNITY_ID` = `facilities_booking`.`COMMUNITY_ID`
-            AND `facilities_booking`.`FACILITIES_BOOKING_DATE` < NOW()
+            AND `facilities_booking`.`FACILITIES_BOOKING_DATE` < CURDATE()
             AND `facilities_booking`.`COMMUNITY_ID` = $community 
             AND `HOUSEHOLD_ID` = $household
             AND `IS_CANCEL` = 0
