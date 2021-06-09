@@ -11,6 +11,12 @@ $(document).ready(function() {
         } else {
             $('#equipment').hide();
         }
+        let point = parseInt($('#point').html());
+        let fpoint = parseInt($('#fpoint').html());
+        let time = parseInt($('.getEndTime').val()) - parseInt($('.getStartTime').val());
+        $('#point2').html(point);
+        $('#fpoint2').html(fpoint * time);
+        $('#sum').html(point - fpoint * time)
         $('#information').show();
 
     });

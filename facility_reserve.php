@@ -24,7 +24,7 @@
                 `FACILITIES_EQUIPMENT_ID`,`FACILITIES_EQUIPMENT_AMOUNT`,
                 `FACILITIES_BOOKING_AMOUNT`,`IS_CANCEL`,`POINT_USED`)
                 VALUES ($booking,$community,$household,:facility,
-                :date,:equipment,:equipAmount,:amount,0,($fpoint*$times));";
+                :date,:equipment,:equipAmount,:amount,0,:point);";
         $updatePoint = "UPDATE `household` SET `POINT` = `POINT` - $fpoint
                         WHERE `HOUSEHOLD_ID` = $household AND `COMMUNITY_ID` = $community;";
         $insertTime = "INSERT INTO `facilities_booking_time` (`FACILITIES_BOOKING_ID`,
@@ -38,7 +38,8 @@
                     ':date' => $_POST['date'],
                     ':equipment' => isset($_POST['equipment'])?$_POST['equipment']:null,
                     ':equipAmount' => isset($_POST['equipmentAmount'])?$_POST['equipmentAmount']:null,
-                    ':amount' => $_POST['numberOfPeople']
+                    ':amount' => $_POST['numberOfPeople'],
+                    ':point' => $fpoint*$times
                 )
             );
             $conn->query($updatePoint);
@@ -144,8 +145,15 @@
                     </select>
                 </p>
                 <br>
-                <p class="content">您的點數 : <?=$point?> 點</p>
-                <p class="content">本次消耗點數 : <?=$fpoint?> 點</p>
+                <p class="content">
+                    <span>您的點數 : </span>
+                    <span id="point"><?=$point?></span>
+                    <span> 點</span>
+                <p class="content">
+                    <span>每小時消耗點數 : </span>
+                    <span id="fpoint"><?=$fpoint?></span>
+                    <span> 點</span>
+                </p>
                 <br>
                 <?php
                     $sql = "SELECT `FACILITIES_EQUIPMENT_NAME` FROM `facilities_equipment`
@@ -208,7 +216,15 @@
                 <div class="outside"id="information">
                     <p class="dot" style="font-weight:bold"><img src="img/circle.svg"> &nbsp確認預約資訊 : </img></p>
                     <!--住戶點數扣除公設點數-->
-                    <p class="content">剩餘點數 :  <?=$point?> - <?=$fpoint?> = <?=$point-$fpoint?> 點</p>
+                    <p class="content">
+                        <span>剩餘點數 :  </span>
+                        <span id="point2"><?=$point?></span>
+                        <span> - </span>
+                        <span id="fpoint2"><?=$fpoint?></span>
+                        <span> = </span>
+                        <span id="sum"><?=$point-$fpoint?></span>
+                        <span> 點</span>
+                    </p>
                     <div class="content2" >
                         <label class="content">預約資訊(請確認預約資料無誤) :
                             <!--display住戶預約資訊 若無借用設備則顯示無-->
