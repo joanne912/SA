@@ -17,9 +17,9 @@
                 <div class="graphic">
                     <img  style="border-radius:8px;width:250px;height:160px"src='./img/fac/<?=$row1["FACILITIES_IMG1"]?>' alt=''>
                 </div>
-                <!-- 每一公設的編號 公設icon 名稱 可容納人數 今日預約人數，需連結資料庫-->
+                <!-- 每一公設的 公設icon 名稱 可容納人數 今日預約人數，需連結資料庫-->
                 <div class="textcontent" >
-                        <h2 class="name"><?=$row1['FACILITIES_ID']?><?=$row1['FACILITIES_NAME']?></h2>
+                        <h2 class="name"><?=$row1['FACILITIES_NAME']?></h2>
                         <p> 最大容納人數 : <?=$row1['FACILITIES_LIMIT']?> 人
                         <p> 今日預約人數 : <?=$row2['COUNT(`FACILITIES_ID`)']?> 人</p>
                 </div>
