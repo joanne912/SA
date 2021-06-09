@@ -83,6 +83,7 @@ textarea {
     padding: .5em .6em;
     border: 0;
     background-color: #fc6471;
+    border: 3px solid #fc6471;
     color: white;
     font-size: 1.1em;
     letter-spacing: 3px;
@@ -90,7 +91,13 @@ textarea {
     border-radius: 6px;
     margin-top: 3em;
 }
-
+.btn input:hover{
+    background: #fff; 
+    color: #fc6471;
+}
+.btn input:active{
+    color: rgb(79, 79, 212);
+}
 @media screen and (max-width: 768px) {
     .wrap {
         width: 100%;

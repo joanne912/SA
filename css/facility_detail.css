@@ -169,10 +169,17 @@ hr {
     padding: .5em .5em; 
     border-radius: 6px; 
     color: white; 
+    border: 2px solid #fc6471;
     margin-top: .5em; 
     margin-left: 5%;
 }
-
+.trans_sub:hover{
+    background: #fff; 
+    color: #fc6471;
+}
+.trans_sub:active{
+    color: rgb(79, 79, 212);
+}
 @media screen and (max-width: 768px) {
     .outside img {
         width: 1em;
