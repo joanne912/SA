@@ -29,9 +29,9 @@
             </div>
             <!-- 每一住戶預約公設的編號 名稱 日期 時段 ，需連結資料庫 -->
             <div class="text">
-                <h4 class="h4"><?=$row['FACILITIES_ID']?> <?=$row['FACILITIES_NAME']?></h4> 
-                <h7 class="h7">預約日期：<span><?=$row['FACILITIES_BOOKING_DATE']?></span></h7><br>
-                <h7 class="h7">預約時段：<span><?=$time['MIN(`FACILITIES_START`)']?> : 00 <span>~</span> <?=$time['MAX(`FACILITIES_START`)']?> : 00</span></h7>
+                <h4><?=$row['FACILITIES_ID']?> <?=$row['FACILITIES_NAME']?></h4> 
+                <h5>預約日期：<span><?=$row['FACILITIES_BOOKING_DATE']?></span></h5>
+                <h5>預約時段：<span><?=$time['MIN(`FACILITIES_START`)']?> : 00 <span>~</span> <?=$time['MAX(`FACILITIES_START`)']?> : 00</span></h5>
             </div>
             <div class="icon_group2">
                 <button type="button" class="btn1" data-booking="<?=$row['FACILITIES_BOOKING_ID']?>" data-facility="<?=$row['FACILITIES_ID']?>" data-toggle="modal" data-target="#exampleModal">

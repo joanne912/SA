@@ -145,17 +145,18 @@ hr {
     color: white;
     border-radius: 5px;
     border: solid 3px #f7f7fa;
+    margin-top: 15px;
 }
 .btn1:hover{
     background-color:#fff;
     color: #fc6471;
 }
-.h4{
+h4{
     font-weight: bold;
 }
 @media screen and (min-width: 768px) and (max-width: 1200px) {
     .btn1{
-       
+       margin-top: 25px;
         height: 40px;
         font-size: 1em;
     }
@@ -175,18 +176,23 @@ hr {
     .info_wrap {
         width: 100%;
     }
-    
+    h5{
+        font-size: 1em;
+    }
+    .text{
+        margin-left: 10px;
+    }
 }
 
 @media screen and (max-width: 400px) {
-    .h4{
+    h4{
         font-size: 1em;
     }
-    .h7{
+    h5{
         font-size: .8em;
     }
     .btn1{
-        margin-top: 10px;
+        margin-top: 28px;
         width: 40px;
         height: 87px;
         font-size: .3em;
@@ -209,7 +215,8 @@ hr {
         padding: 2em;
     }
     .graphic img {
-        height: 120px;
+        height: 120px !important;
+        width: 200px !important;
     }
     .text {
         width: 70%;
@@ -237,7 +244,7 @@ hr {
         align-content: flex-end;
     }
     .icon_group2 img {
-        width: 1em;
+        width: 1.8em;
         height: 1em;
     }
     .cancle_btn{
