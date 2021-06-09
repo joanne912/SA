@@ -1,7 +1,7 @@
 <?php
     $facility = $_GET['facility'];
     $date = date("Y-m-d");
-    $sql = "SELECT `facilities`.`FACILITIES_ID`,`FACILITIES_NAME`,
+    $sql = "SELECT `FACILITIES_BOOKING_ID`,`facilities`.`FACILITIES_ID`,`FACILITIES_NAME`,
             `FACILITIES_BOOKING_DATE`,`household`.`HOUSEHOLD_ID`,`HOUSEHOLD_ADDRESS`
             FROM `facilities_booking`,`facilities`,`household`
             WHERE `facilities`.`FACILITIES_ID` = `facilities_booking`.`FACILITIES_ID`
@@ -22,11 +22,12 @@
         }
     }else{
         $sql .= " AND `IS_CANCEL` = 0 ";
-        $sql .= " AND `facilities_booking`.`FACILITIES_BOOKING_DATE` = CURDATE() ";
     }
     if(isset($_POST['date'])){
-        $sql .= " AND `facilities_booking`.`FACILITIES_BOOKING_DATE` = " . $_POST['date'];
+        $sql .= " AND `facilities_booking`.`FACILITIES_BOOKING_DATE` = '" . $_POST['date'] ."' ";
         $date = $_POST['date'];
+    }else{
+        $sql .= " AND `facilities_booking`.`FACILITIES_BOOKING_DATE` = CURDATE() ";
     }
 
     $statement = $conn->prepare($sql);
@@ -37,7 +38,7 @@
 
 
     $sql = "SELECT `FACILITIES_OPEN_TIME`, `FACILITIES_CLOSE_TIME`,
-            `FACILITIES_LIMIT`, SUM(`FACILITIES_BOOKING_AMOUNT`)
+            `facilities`.`FACILITIES_ID`,`FACILITIES_NAME`,`FACILITIES_LIMIT`, SUM(`FACILITIES_BOOKING_AMOUNT`)
             FROM `facilities_booking`,`facilities`,`household`
             WHERE `facilities`.`FACILITIES_ID` = `facilities_booking`.`FACILITIES_ID`
             AND `facilities`.`COMMUNITY_ID` = `facilities_booking`.`COMMUNITY_ID`
@@ -57,10 +58,12 @@
         }
     }else{
         $sql .= " AND `IS_CANCEL` = 0 ";
-        $sql .= " AND `facilities_booking`.`FACILITIES_BOOKING_DATE` = CURDATE() ";
     }
     if(isset($_POST['date'])){
-        $sql .= " AND `facilities_booking`.`FACILITIES_BOOKING_DATE` >= " . $_POST['date'];
+        $sql .= " AND `facilities_booking`.`FACILITIES_BOOKING_DATE` = '" . $_POST['date'] ."' ";
+        $date = $_POST['date'];
+    }else{
+        $sql .= " AND `facilities_booking`.`FACILITIES_BOOKING_DATE` = CURDATE() ";
     }
 
     $statement2 = $conn->prepare($sql);
@@ -132,7 +135,7 @@
         <div class="information2">
             <span class="grayspace"><span>
             <div class="middletext">
-                <h4 class="h4"> 01<span>游泳池|</span><span><?=date("Y/m/d")?></span></h4>
+                <h4 class="h4"> <?=$amount['FACILITIES_ID']?><span><?=$amount['FACILITIES_NAME']?>|</span><span><?=date("Y/m/d")?></span></h4>
                 <h3 class="h3"><span class="now_user">目前<?=isset($_POST['type'])?$_POST['type']:'使用'?>人數 :</span>
                     <span class="num1"><?=isset($amount['SUM(`FACILITIES_BOOKING_AMOUNT`)'])?$amount['SUM(`FACILITIES_BOOKING_AMOUNT`)']:'0'?></span>
                     <span class="num">/</span>
@@ -160,24 +163,28 @@
         <br>
         <?php
             while($row = $statement->fetch(PDO::FETCH_ASSOC)){
-            ?>
-            <div class="information2">
-                <span class="grayspace" style="border: 3px solid #808080"><span>
-                <div class="middletext2">
-                    <input type="checkbox" id="check" name="Checkbox[]">
-                    <?=$row['FACILITIES_ID']?><span><?=$row['FACILITIES_NAME']?></span>
-                    <div class="data" >
-                        <span class="phonespan"> 戶別代碼 : <?=$row['HOUSEHOLD_ID']?> </span>
-                        <span> 登記戶 : <?=$row['HOUSEHOLD_ADDRESS']?> </span>
-                        <p>
-                            <span> 預約時段 : 8:00 ~ 9:00</span>
-                            <br>
-                            <span> 預約日期 : <?=$row['FACILITIES_BOOKING_DATE']?></span>
-                            </p>
+                $sql = "SELECT MIN(`FACILITIES_START`),MAX(`FACILITIES_START`) FROM `facilities_booking_time`
+                        WHERE `COMMUNITY_ID` = $community AND `FACILITIES_ID` = ".$row['FACILITIES_ID']."
+                        AND `HOUSEHOLD_ID` = " . $row['HOUSEHOLD_ID'] . " AND `FACILITIES_BOOKING_ID` = ".$row['FACILITIES_BOOKING_ID'];
+                $time = $conn->query($sql)->fetch(PDO::FETCH_ASSOC);
+                ?>
+                <div class="information2">
+                    <span class="grayspace" style="border: 3px solid #808080"><span>
+                    <div class="middletext2">
+                        <input type="checkbox" id="check" name="Checkbox[]">
+                        <?=$row['FACILITIES_ID']?><span><?=$row['FACILITIES_NAME']?></span>
+                        <div class="data" >
+                            <span class="phonespan"> 戶別代碼 : <?=$row['HOUSEHOLD_ID']?> </span>
+                            <span> 登記戶 : <?=$row['HOUSEHOLD_ADDRESS']?> </span>
+                            <p>
+                                <span> 預約時段 : <span><?=$time['MIN(`FACILITIES_START`)']?> : 00 <span>~</span> <?=$time['MAX(`FACILITIES_START`)']?> : 00</span></span>
+                                <br>
+                                <span> 預約日期 : <?=$row['FACILITIES_BOOKING_DATE']?></span>
+                                </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <?php
+                <?php
             }
         ?>
         <hr>
