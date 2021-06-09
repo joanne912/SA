@@ -41,7 +41,7 @@
         catch(PDOException $e){
             echo $e->getMessage();
         }
-        header("refresh:0;url=home.php?page=facility&method=record&facility=$facility&booking=$booking");
+        echo "<script> window.location.href='home.php?page=facility&method=record&facility=$facility&booking=$booking'</script>";
     }
     $sql = "SELECT `FACILITIES_NAME`, HOUR(`FACILITIES_OPEN_TIME`), HOUR(`FACILITIES_CLOSE_TIME`),
             `FACILITIES_POINT`, `FACILITIES_LIMIT` 

@@ -87,7 +87,7 @@
                 ':facilities_id' => $_GET['facility']
             )
         );
-        echo "<script> window.location.href='home.php?page=facility'</script>"; 
+        echo "<script> window.location.href='home.php?page=facility'</script>";
     }
     $statement->execute(array($_GET['facility']));
     $row = $statement->fetch(PDO::FETCH_ASSOC);
