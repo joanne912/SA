@@ -22,9 +22,14 @@
             AND `HOUSEHOLD_ID` = $household AND `FACILITIES_BOOKING_ID` = ".$row['FACILITIES_BOOKING_ID'];
     $time = $conn->query($sql)->fetch(PDO::FETCH_ASSOC);
     if(isset($row['FACILITIES_EQUIPMENT_ID'])){
+        $equipment = $row['FACILITIES_EQUIPMENT_ID'];
         $sql = "SELECT `FACILITIES_EQUIPMENT_NAME`,`FACILITIES_EQUIPMENT_UNIT` FROM `facilities_equipment` 
-        WHERE `FACILITIES_EQUIPMENT_ID` = ".$row['FACILITIES_EQUIPMENT_ID'];
-        $row2 = $conn->query($sql)->fetch(PDO::FETCH_ASSOC);
+        WHERE `FACILITIES_EQUIPMENT_ID` = $equipment
+        AND `FACILITIES_ID` = ?
+        AND `COMMUNITY_ID` = $community ";
+        $statement = $conn->prepare($sql);
+        $statement->execute(array($facility));
+        $row2 = $statement->fetch(PDO::FETCH_ASSOC);
     }
     $equipment = isset($row['FACILITIES_EQUIPMENT_ID'])?$row2['FACILITIES_EQUIPMENT_NAME']:'無借器材';
     $equipment .= isset($row['FACILITIES_EQUIPMENT_ID'])?$row['FACILITIES_EQUIPMENT_AMOUNT']:'';
