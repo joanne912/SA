@@ -153,6 +153,15 @@ hr {
     height: auto;
     margin: auto;
 }
+.trans_sub{
+    background: #fc6471; 
+    border: 0; 
+    padding: .5em .5em; 
+    border-radius: 6px; 
+    color: white; 
+    margin-top: .5em; 
+    margin-left: 5%;
+}
 
 @media screen and (max-width: 768px) {
     .outside img {
