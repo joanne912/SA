@@ -1,6 +1,35 @@
 $(document).ready(function() {
     $('.photoUpload').hide();
     $('.edit').click(function() {
+        $("#photofile1").change(function() {
+            var readFile = new FileReader();
+            var mfile = $("#photofile1")[0].files[0]; //$("#photofile1")[0]等價於document.getElementById('photofile1')
+            readFile.readAsDataURL(mfile);
+            readFile.onload = function() {
+                var img1 = $("#photo1");
+                img1.attr("src", this.result);
+            }
+            $("#photofile2").show();
+        })
+        $("#photofile2").change(function() {
+            var readFile = new FileReader();
+            var mfile = $("#photofile2")[0].files[0]; //$("#photofile2")[0]等價於document.getElementById('photofile2')
+            readFile.readAsDataURL(mfile);
+            readFile.onload = function() {
+                var img1 = $("#photo2");
+                img1.attr("src", this.result);
+            }
+            $("#photofile3").show();
+        })
+        $("#photofile3").change(function() {
+            var readFile = new FileReader();
+            var mfile = $("#photofile3")[0].files[0]; //$("#photofile2")[0]等價於document.getElementById('photofile3')
+            readFile.readAsDataURL(mfile);
+            readFile.onload = function() {
+                var img1 = $("#photo3");
+                img1.attr("src", this.result);
+            }
+        })
         let title = $(this).prev().children().last().html();
         $(this).prev().children().last().remove();
         $(this).prev().append(`<input name="title" type="text" value="${title}" class="trans_input">`);

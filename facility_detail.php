@@ -157,7 +157,7 @@
                 <span>
                     <img src="img/circle.svg" alt="">公設照片
                 </span>
-                請選擇欲上傳的公設照片:(請至少上傳一張)
+                請選擇欲上傳的公設照片:(請上傳需要變更的即可)
                 <br>
                 <input type="file" id="photofile1" name="photofile1">
                 <br>
