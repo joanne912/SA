@@ -185,9 +185,9 @@ p input {
 
 .send {
     width: 6.5em;
-    height: 2.4em;
+    height: 2.7em;
     background-color: #fc6471;
-    border: 0;
+    border: 3px solid #fc6471;
     border-radius: 5px;
     font-size: 1em;
     /* display: inline-block; */
@@ -197,7 +197,14 @@ p input {
     margin-left: 83%;
 }
 
-
+.send:hover{
+    background-color: white;
+    color:#fc6471 ;
+   
+}
+.send:active{
+    color: rgb(64, 64, 216);
+}
 /* Style the tab */
 
 .tab {
@@ -453,6 +460,9 @@ p input {
         font-size: .7em;
         margin-bottom: 3px;
         margin-top: 5px;
+    }
+    .send{
+       width:5.5em ;
     }
 }
 

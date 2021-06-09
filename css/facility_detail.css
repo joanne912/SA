@@ -132,15 +132,25 @@ hr {
     margin: .8em 0;
 }
 
+
 .go {
-    width: 5em;
-    height: 2em;
+    width: 5.3em;
+    height: 2.2em;
     color: white;
     background-color: rgb(19, 156, 19);
     border: 0px;
     border-radius: 5px;
-    font-size: 1em;
+    font-size: 1.2em;
 }
+.go:hover{
+    color:  rgb(19, 156, 19);
+    background-color:white;
+    border: 3px solid rgb(19, 156, 19);
+}
+.go:active{
+    color:  rgb(216, 65, 65);
+}
+
 .trans_input{
     border: 6px solid #f7f7fa;
     padding: 0 .5em;
