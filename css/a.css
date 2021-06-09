@@ -12,7 +12,14 @@
     background-color: #fc6471;
     color: #fff;
 }
-
+.j_btn:hover {
+    background-color: #fff;
+    color: #fc6471;
+    border: 3px solid #fc6471;
+}
+.j_btn:active {
+    color: rgb(52, 52, 214);
+}
 .modal-body .text_input,
 select {
     margin-left: 1em;
@@ -52,6 +59,7 @@ hr {
     font-size: 1.5em;
     letter-spacing: 1em;
     text-indent: 1em;
+    font-weight: bold;
 }
 
 .item_nav {
@@ -61,6 +69,7 @@ hr {
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
+    font-size: 20px;
     /* border-bottom: 1px solid #d3d3d3; */
 }
 
@@ -79,6 +88,7 @@ hr {
             margin: auto; */
     padding: .5em;
     box-sizing: border-box;
+    font-size: 25px;
 }
 
 .logo {
@@ -113,6 +123,7 @@ hr {
     width: 70%;
     margin-left: 1.5%;
     margin-top: 1.5em;
+    font-size: 20px;
     /* display: -webkit-box;
             -webkit-line-clamp: 4;
             -webkit-box-orient: vertical; */
@@ -192,7 +203,9 @@ hr {
     place-items: center;
     margin: 0 .75em;
 }
-
+.a_icon_circle:hover{
+    background-color: #8080805b;
+}
 .act_icon img {
     width: 1.5em;
     height: 1.5em;
@@ -269,6 +282,9 @@ hr {
     .item_profile {
         width: 100%;
     }
+    .item_nav p{
+        padding: .5% 2%;
+    }
     .d-block {
         height: 10em;
     }
@@ -333,10 +349,23 @@ hr {
 }
 
 @media screen and (max-width: 400px) {
+    .item_info p,.item_profile p{
+        font-size: 15px;
+    }
     .modal-body .text_input {
         display: block;
         margin-left: 0;
         margin-top: 1em;
+    }
+    .item_nav{
+        font-size: 15px;
+    }
+    .logo img{
+        width: 2em;
+        height: 2em;
+    }
+    .act_icon a{
+        font-size: 15px;
     }
     .j_btn {
         margin-top: 1em;
