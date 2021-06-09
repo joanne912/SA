@@ -16,30 +16,34 @@
             AND `HOUSEHOLD_ID` = $household
             AND `IS_CANCEL` = 0;";
     foreach($conn->query($sql) as $row){
-    ?>
-    <!-- 每個獨立的公設資訊 -->
-    <div class="info_wrap">
-        <!-- 公設圖片，需連結資料庫 -->
-        <div class="graphic">
-            <img style="border-radius:8px;width:250px;height:160px" src="./img/fac/<?=$row['FACILITIES_IMG1']?>" alt="">
-        </div>
-        <!-- 每一住戶預約公設的編號 名稱 日期 時段 ，需連結資料庫 -->
-        <div class="text">
-            <h4 class="h4"><?=$row['FACILITIES_ID']?> <?=$row['FACILITIES_NAME']?></h4> 
-            <h7 class="h7">預約日期：<span><?=$row['FACILITIES_BOOKING_DATE']?></span></h7><br>
-            <h7 class="h7">預約時段：<span>8 : 00 <span>~</span> 9 : 00</span></h7>
-        </div>
-        <div class="icon_group2">
-            <button type="button" class="btn1" data-booking="<?=$row['FACILITIES_BOOKING_ID']?>" data-facility="<?=$row['FACILITIES_ID']?>" data-toggle="modal" data-target="#exampleModal">
-            取消預約
-            </button>
-            <div class="upper2"> 
-                <a href="home.php?page=facility&method=record&facility=<?=$row['FACILITIES_ID']?>&booking=<?=$row['FACILITIES_BOOKING_ID']?>"><img src="img/next.svg" alt=""></a>
+        $sql = "SELECT MIN(`FACILITIES_START`),MAX(`FACILITIES_START`) FROM `facilities_booking_time`
+                WHERE `COMMUNITY_ID` = $community AND `FACILITIES_ID` = ".$row['FACILITIES_ID']."
+                AND `HOUSEHOLD_ID` = $household AND `FACILITIES_BOOKING_ID` = ".$row['FACILITIES_BOOKING_ID'];
+        $time = $conn->query($sql)->fetch(PDO::FETCH_ASSOC);
+        ?>
+        <!-- 每個獨立的公設資訊 -->
+        <div class="info_wrap">
+            <!-- 公設圖片，需連結資料庫 -->
+            <div class="graphic">
+                <img style="border-radius:8px;width:250px;height:160px" src="./img/fac/<?=$row['FACILITIES_IMG1']?>" alt="">
             </div>
+            <!-- 每一住戶預約公設的編號 名稱 日期 時段 ，需連結資料庫 -->
+            <div class="text">
+                <h4 class="h4"><?=$row['FACILITIES_ID']?> <?=$row['FACILITIES_NAME']?></h4> 
+                <h7 class="h7">預約日期：<span><?=$row['FACILITIES_BOOKING_DATE']?></span></h7><br>
+                <h7 class="h7">預約時段：<span><?=$time['MIN(`FACILITIES_START`)']?> : 00 <span>~</span> <?=$time['MAX(`FACILITIES_START`)']?> : 00</span></h7>
+            </div>
+            <div class="icon_group2">
+                <button type="button" class="btn1" data-booking="<?=$row['FACILITIES_BOOKING_ID']?>" data-facility="<?=$row['FACILITIES_ID']?>" data-toggle="modal" data-target="#exampleModal">
+                取消預約
+                </button>
+                <div class="upper2"> 
+                    <a href="home.php?page=facility&method=record&facility=<?=$row['FACILITIES_ID']?>&booking=<?=$row['FACILITIES_BOOKING_ID']?>"><img src="img/next.svg" alt=""></a>
+                </div>
+            </div>
+            <!-- Button trigger modal -->
         </div>
-        <!-- Button trigger modal -->
-    </div>
-    <?php
+        <?php
     }
 ?>
 <!-- Modal -->
