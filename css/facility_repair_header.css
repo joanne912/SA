@@ -22,9 +22,14 @@
     color: white !important;
     border:5px solid rgb(73, 71, 71);
 }
-
+.page_hover:active{
+    color:#fc6471 !important;
+}
 @media screen and (max-width: 400px){
     .btn_wrap{
         width: 90%;
+    }
+    .btn_wrap a{
+        font-size: .8em;
     }
 }

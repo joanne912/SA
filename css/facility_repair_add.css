@@ -52,7 +52,16 @@ form textarea{
     text-indent: 3px;
     color: white;
     background-color: #fc6471;
-    border: 0;
+    border: 3px solid #fc6471;
+    border-radius: 5px;
+}
+.btn input:hover{
+    color: #fc6471;
+    background-color: white;
+    box-sizing: border-box;
+}
+.btn input:active{
+    color: rgb(65, 65, 221);
 }
 @media screen and (max-width: 768px){
     .con{
