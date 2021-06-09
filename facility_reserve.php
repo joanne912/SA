@@ -2,11 +2,6 @@
     include("auth.php");
     $conn = include("conn.php");
     $facility = $_GET['facility'];
-    $sql = "SELECT `POINT` FROM `household` 
-            WHERE `HOUSEHOLD_ID` = $household 
-            AND `COMMUNITY_ID` = $community;";
-    $row = $conn->query($sql)->fetch(PDO::FETCH_ASSOC);
-    $point = $row['POINT'];
     if(isset($_POST['submit'])){
         $sql = "SELECT `FACILITIES_POINT` FROM `facilities`
                 WHERE ( `FACILITIES_ID` = ? AND `COMMUNITY_ID` = $community );";
@@ -72,6 +67,13 @@
     $endTime = $row['HOUR(`FACILITIES_CLOSE_TIME`)'];
     $limit = $row['FACILITIES_LIMIT'];
     $fpoint = $row['FACILITIES_POINT'];
+    $sql = "SELECT SUM(`FACILITIES_POINT`)
+            FROM `facilities`,`facilities_booking`
+            WHERE `facilities`.`FACILITIES_ID` = `facilities_booking`.`FACILITIES_ID`
+            AND `HOUSEHOLD_ID` = $household AND `facilities`.`COMMUNITY_ID` = $community
+            AND `IS_CANCEL` = 0 ORDER BY `FACILITIES_BOOKING_DATE` DESC;";
+    $sum = $conn->query($sql)->fetch(PDO::FETCH_ASSOC);
+    $point = 500 - $sum['SUM(`FACILITIES_POINT`)'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -105,7 +107,7 @@
                 <!--新增住戶公設預約資訊到資料庫-->
                 <!--從資料庫載入可以預約的時段-->
                 <p class="content">開始預約時段 : 
-                    <select class="option1" name="startTime">
+                    <select class="option1 getStartTime" name="startTime">
                         <optgroup label="請選擇開始時段">
                             <?php
                                 for($i=$startTime;$i<=$endTime;$i++){
@@ -117,7 +119,7 @@
                 </p>
 
                 <p class="content">結束預約時段 : 
-                    <select class="option1" name="endTime">
+                    <select class="option1 getEndTime" name="endTime">
                         <optgroup label="請選擇結束時段">
                             <?php
                                 for($i=$startTime;$i<=$endTime;$i++){
@@ -127,9 +129,11 @@
                         </optgroup>
                     </select>
                 </p>
-                <p class="content">預約公設日期 : <input class="option1" name="date" type="date"></p>
+                <p class="content">預約公設日期 : 
+                    <input class="option1 getDate" name="date" type="date">
+                </p>
                 <p class="content">預約公設人數 : 
-                    <select class="option1" name="numberOfPeople">
+                    <select class="option1 getAmount" name="numberOfPeople">
                         <optgroup label="選擇人數">
                             <?php
                                 for($i=1;$i<=$limit;$i++){
@@ -169,7 +173,7 @@
                         <?php
                             $statement->execute(array($facility));
                             while( $row = $statement->fetch(PDO::FETCH_ASSOC) ){
-                                echo '<input type="button" onclick="tools(event, \''.$row['FACILITIES_EQUIPMENT_NAME'].'\')" value="'.$row['FACILITIES_EQUIPMENT_NAME'].'">';
+                                echo '<input class="equipmentName" type="button" onclick="tools(event, \''.$row['FACILITIES_EQUIPMENT_NAME'].'\')" value="'.$row['FACILITIES_EQUIPMENT_NAME'].'">';
                             }
                         ?>
                     </div>
@@ -209,10 +213,24 @@
                         <label class="content">預約資訊(請確認預約資料無誤) :
                             <!--display住戶預約資訊 若無借用設備則顯示無-->
                             <div class="reserveinform">
-                                <p>預約時段 : 7:00 ~ 10:00</p>
-                                <p>預約日期 : 2021/5/7</p>
-                                <p>預約人數 : 2 人</p>
-                                <p>借用設備 : <?=$equipment?></p>
+                                <p>
+                                    <span>預約時段 : </span>
+                                    <span id="startTime"></span>
+                                    <span> ~ </span>
+                                    <span id="endTime"></span>
+                                </p>
+                                <p>
+                                    <span>預約日期 : </span>
+                                    <span id="date"></span>
+                                </p>
+                                <p>
+                                    <span>預約人數 : </span>
+                                    <span id="amount">2</span>
+                                    </p>
+                                <p id="equipment">
+                                    <span>借用設備 : </span>
+                                    <span></span>
+                                </p>
                             </div>
                         </label>
                     </div>

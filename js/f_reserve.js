@@ -1,14 +1,22 @@
 $(document).ready(function() {
     $('.see_information').click(function() {
+        $('#startTime').html($('.getStartTime').val() + ":00");
+        $('#endTime').html($('.getEndTime').val() + ":00");
+        $('#date').html($('.getDate').val().replace('-', '/').replace('-', '/'));
+        $('#amount').html($('.getAmount').val() + " 人");
+        console.log($('#yes')[0].checked)
+        if ($('#yes')[0].checked == true) {
+            $('#equipment').show();
+            $('#equipment').children().last().html($('.equipmentName').val() + $('input[name="equipmentAmount"]').html());
+        } else {
+            $('#equipment').hide();
+        }
         $('#information').show();
+
     });
-});
-$(document).ready(function() {
     $('#yes').click(function() {
         $('.tab').show();
     });
-});
-$(document).ready(function() {
     $('#no').click(function() {
         $('.tab').hide();
         $('.tabcontent').hide();
