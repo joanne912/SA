@@ -57,13 +57,7 @@ $(document).ready(function() {
         $('#data').children().eq(3).children().eq(1).remove();
         $('#data').children().eq(3).append(`<textarea rows="5" cols="40" name="introduction" class="trans_input trans_textarea">${description}</textarea>`)
 
-<<<<<<< Updated upstream
-        $('.photoUpload').show();
-        $('form').append('<input type="submit" name="submit" value="確認修改公設資訊" style="background: #fc6471; border: 0; padding: .5em .5em; border-radius: 6px; color: white; margin-top: .5em; margin-left: 5%;">');
-        $(this).hide();
-=======
         $('form').append('<input type="submit" name="submit" value="確認修改公設資訊" class="trans_sub"> ');
         $('.photoUpload').show();
->>>>>>> Stashed changes
     });
 });
