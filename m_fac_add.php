@@ -142,8 +142,28 @@
         </div>
         <hr>
         <span><img src="img/circle.svg" alt="">公設時段</span>
-        <p>開放時間：<input type="text" name="open_time" placeholder="例如:09:00"></p>
-        <p>關閉時間：<input type="text" name="close_time" placeholder="例如:21:00"></p>
+        <p>開放時間：            
+            <select class="option1" name="open_time">
+                <optgroup label="請選擇結束時段">
+                    <?php
+                        for($i=0;$i<=23;$i++){
+                            echo "<option value='$i:00'>$i:00</option>";
+                        }
+                    ?>
+                </optgroup>
+            </select>
+        </p>
+        <p>關閉時間：            
+            <select class="option1" name="close_time">
+                <optgroup label="請選擇結束時段">
+                    <?php
+                        for($i=0;$i<=23;$i++){
+                            echo "<option value='$i:00'>$i:00</option>";
+                        }
+                    ?>
+                </optgroup>
+            </select>
+        </p>
         <p>公設簡介：</p>
         <textarea rows="5" cols="40" name="introduction"></textarea>
         <hr>
