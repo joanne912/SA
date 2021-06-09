@@ -1,3 +1,10 @@
+$(document).ready(function() {
+    $('.changeCommunity').click(function() {
+        $('input:hidden[name="changeCommunity"]').val($(this).data('key'));
+        $('#changeCommunity').submit();
+    })
+})
+
 function toggle2() {
     $("#menu-wrap").animate({
         'width': 'toggle'
@@ -5,6 +12,5 @@ function toggle2() {
     $("#menu-wrap").css({
         'display': 'flex'
     })
-    // $('.toast').toast('show');
     $('#myModal').modal('show')
 }

@@ -27,6 +27,12 @@
             $title = "社區公告";
         }
     }
+    $sql = "SELECT `COMMUNITY_NAME`,`household`.`HOUSEHOLD_ADDRESS`
+            FROM `community`,`household` 
+            WHERE `HOUSEHOLD_ID` = $household
+            AND `community`.`COMMUNITY_ID` = $community
+            AND `community`.`COMMUNITY_ID` = `household`.`COMMUNITY_ID`";
+    $row = $conn->query($sql)->fetch(PDO::FETCH_ASSOC);
 ?>
 <header>
     <div class="sub">
@@ -43,77 +49,60 @@
     <!-- 網頁版的設定、登出、通知按鈕，手機版時會消失 -->
     <div class="func_wrap">
         <div class="dropdown">
-            <?php
-                if($auth >= 4){
-                    $sql1 = "SELECT `COMMUNITY_NAME` FROM `community` WHERE `COMMUNITY_ID` = ?;";
-                    $community_name=$conn->prepare($sql1);
-                    $community_name->execute(array($community));
-                    $row1=$community_name->fetch(PDO::FETCH_ASSOC);
-                    
-                    $sql2 = "SELECT `HOUSEHOLD_ADDRESS` FROM `household` WHERE `HOUSEHOLD_ID` = ? AND `COMMUNITY_ID` = ?;";
-                    $address = $conn->prepare($sql2);
-                    $address->execute(array($household, $community));
-                    $row2 = $address->fetch(PDO::FETCH_ASSOC);
-                ?>
-                <button class="dropbtn"><a href="#"><?=$row1['COMMUNITY_NAME']?><?=$row2['HOUSEHOLD_ADDRESS']?></a></button>
-                <div class="dropdown-content">
-
-                <?php    
-                    $sql3 = "SELECT * FROM `resident_address` WHERE `USER_ID` = ?;";
-                    $statement=$conn->prepare($sql3);
-                    $statement->execute(array($id));
-                    while($row3 = $statement->fetch(PDO::FETCH_ASSOC)){
-                        $sql4 = "SELECT `COMMUNITY_NAME` FROM `community` WHERE `COMMUNITY_ID` = ?;";
-                        $community_name2 = $conn->prepare($sql4);
-                        $community_name2->execute(array($row3['COMMUNITY_ID']));
-                        $row4 = $community_name2->fetch(PDO::FETCH_ASSOC);
-
-                        $sql5 = "SELECT `HOUSEHOLD_ADDRESS` FROM `household` WHERE `HOUSEHOLD_ID` = ? AND `COMMUNITY_ID` = ?;";
-                        $address2 = $conn->prepare($sql5);
-                        $address2->execute(array($row3['HOUSEHOLD_ID'], $row3['COMMUNITY_ID']));
-                        $row5 = $address2->fetch(PDO::FETCH_ASSOC);
-                ?>      
-                        <a href="#"><?=$row4['COMMUNITY_NAME']?><?=$row5['HOUSEHOLD_ADDRESS']?></a>
-
-                <?php
-                    }
-                ?>
-                    <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter">多重社區開通</a>
-                </div>
-            <?php
-                }
-            ?>
-            <!-- <a href="logout.php" >logout</a> -->
-            </div>
-            <a class="logout"style=""href="logout.php" >logout</a>
-    </div>
-        <!---->
-        <!-- 多重社區開通內容模型 -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <form method="POST" action="multi_communities.php" id="multi_communities">
-                    <div class="modal-body">
-                        <header class="modal_header">
-                                <p>多重社區開通</p>
-                        </header>
-                        <div class="M_wrap">
-                            <!-- 戶籍代碼輸入框 -->
-                            <div class="M_enter" >
-                                    <label for="community_id">社區代碼</label>
-                                    <input type="text" id="community_id" name="community_id" placeholder="請填寫"/>
-                                    <label for="household_id">戶籍代碼</label>
-                                    <input type="text" id="household_id" name="household_id" placeholder="請填寫戶籍代碼"/>
-                                    <label for="household">戶別</label><br>
-                                    <input type="text" id="household" name="household" placeholder="請填寫戶別"/>
-                                <!-- <br><br>
-                                <a href="javascript:document:multi_communities.submit();" class="btn3" name="add_community_btn">開通社區</a> -->
-                                <input type="submit" name="add_community_btn" value="開通" class="btn3" style="background: #c0c0e2; color:white; font-size:0.5em; margin-top:1.5em;">
-                            </div>
-                        </div>
-                    </div>
-                </form>     
+            <button class="dropbtn">
+                <a href="#"><?=$row['COMMUNITY_NAME']."<br>".$row['HOUSEHOLD_ADDRESS']?></a>
+            </button>
+            <div class="dropdown-content">
+                <form id="changeCommunity" action="home.php" method="post">
+                    <?php
+                        foreach($estates as $key=>$estate){
+                            $h = $estate['HOUSEHOLD_ID'];
+                            $c = $estate['COMMUNITY_ID'];
+                            $sql = "SELECT `COMMUNITY_NAME`,`household`.`HOUSEHOLD_ADDRESS`
+                                    FROM `community`,`household` 
+                                    WHERE `HOUSEHOLD_ID` = $h
+                                    AND `community`.`COMMUNITY_ID` = $c
+                                    AND `community`.`COMMUNITY_ID` = `household`.`COMMUNITY_ID`";
+                            $row = $conn->query($sql)->fetch(PDO::FETCH_ASSOC);
+                            ?>
+                            <a class="changeCommunity" data-key="<?=$key?>" href="#"><?=$row['COMMUNITY_NAME']."<br>".$row['HOUSEHOLD_ADDRESS']?></a>
+                            <?php
+                        }
+                    ?>
+                    <input type="hidden" name="changeCommunity">
+                </form>
+                <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter">多重社區開通</a>
             </div>
         </div>
+        <a class="logout"style=""href="logout.php" >logout</a>
     </div>
 </header>
+
+<!-- 多重社區開通內容模型 -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <form method="POST" action="multi_communities.php" id="multi_communities">
+                <div class="modal-body">
+                    <header class="modal_header">
+                            <p>多重社區開通</p>
+                    </header>
+                    <div class="M_wrap">
+                        <!-- 戶籍代碼輸入框 -->
+                        <div class="M_enter" >
+                                <label for="community_id">社區代碼</label>
+                                <input type="text" id="community_id" name="community_id" placeholder="請填寫"/>
+                                <label for="household_id">戶籍代碼</label>
+                                <input type="text" id="household_id" name="household_id" placeholder="請填寫戶籍代碼"/>
+                                <label for="household">戶別</label><br>
+                                <input type="text" id="household" name="household" placeholder="請填寫戶別"/>
+                            <!-- <br><br>
+                            <a href="javascript:document:multi_communities.submit();" class="btn3" name="add_community_btn">開通社區</a> -->
+                            <input type="submit" name="add_community_btn" value="開通" class="btn3" style="background: #c0c0e2; color:white; font-size:0.5em; margin-top:1.5em;">
+                        </div>
+                    </div>
+                </div>
+            </form>     
+        </div>
+    </div>
+</div>

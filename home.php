@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <?php
+    <?php    
         @$page = $_GET["page"];
         @$method = $_GET["method"];
         @$to = $_GET["to"];
