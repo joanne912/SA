@@ -1,8 +1,3 @@
-<?php
-    $sql = "SELECT `POINT` FROM `household` 
-    WHERE `HOUSEHOLD_ID` = $household AND `COMMUNITY_ID` = $community;";
-    $row = $conn->query($sql)->fetch(PDO::FETCH_ASSOC);
-?>
 <link rel="stylesheet" href="css/facility_point.css">
 <body>
     <div class="container">
@@ -16,7 +11,7 @@
             <div class="head" >
                 <div class="name2">
                     <!--資料庫抓該住戶的點數-->
-                    <p>我的點數:<span class="pp"><?=$row['POINT']?></span><span>點</span></p>
+                    <p>我的點數:<span class="pp"></span><span>點</span></p>
                 </div>
             </div>
             <hr class="hr1">
@@ -46,7 +41,11 @@
                             <span>預約扣點</span>
                             <span><?=$row['FACILITIES_ID']?><?=$row['FACILITIES_NAME']?></span>
                             <span><?=$row['FACILITIES_BOOKING_DATE']?></span>
-                            <span class="minor_point"><font class="minor_point">-</font><?=$row['FACILITIES_POINT']?>點
+                            <span class="minor_point">
+                                <font class="minor_point">-
+                                    <span class="point"><?=$row['FACILITIES_POINT']?></span>
+                                    點
+                                </font>
                             </span>
                         </div>
                     </div>
@@ -56,5 +55,5 @@
         </div>
     </div>
 </body>
-
+<script src="js/facility_point.js"></script>
 </html>
