@@ -405,6 +405,13 @@ input {
     text-indent: 8px;
 }
 
-.btn:hover {
-    color: white;
+
+.btn:hover,.btn2:hover,.btn3:hover {
+    background: white !important;
+    color: #9191c7 ;
+    border: 3px solid #9191c7;
+    font-weight: bold;
+}
+.btn:active,.btn2:active,.btn3:active{
+    color: #fc6471;
 }
