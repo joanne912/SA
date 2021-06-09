@@ -8,6 +8,13 @@
     $row = $conn->query($sql)->fetch(PDO::FETCH_ASSOC);
     $point = $row['POINT'];
     if(isset($_POST['submit'])){
+        $sql = "SELECT `FACILITIES_POINT` FROM `facilities`
+                WHERE ( `FACILITIES_ID` = ? AND `COMMUNITY_ID` = $community );";
+        $statement = $conn->prepare($sql);
+        $statement->execute(array($facility));
+        $row = $statement->fetch(PDO::FETCH_ASSOC);
+        $fpoint = $row['FACILITIES_POINT'];
+
         $sql = "SELECT MAX(`FACILITIES_BOOKING_ID`) FROM `facilities_booking` 
                 WHERE `COMMUNITY_ID` = $community 
                 AND `HOUSEHOLD_ID` = $household
@@ -23,11 +30,14 @@
                 `FACILITIES_BOOKING_AMOUNT`,`IS_CANCEL`)
                 VALUES ($booking,$community,$household,:facility,
                 :date,:equipment,:equipAmount,:amount,0);";
-        $statement = $conn->prepare($sql);
-        $sql2 = "UPDATE `household` SET `POINT` = `POINT` - $point
-                WHERE `HOUSEHOLD_ID` = $household AND `COMMUNITY_ID` = $community;";
+        $updatePoint = "UPDATE `household` SET `POINT` = `POINT` - $fpoint
+                        WHERE `HOUSEHOLD_ID` = $household AND `COMMUNITY_ID` = $community;";
+        $insertTime = "INSERT INTO `facilities_booking_time` (`FACILITIES_BOOKING_ID`,
+                        `COMMUNITY_ID`, `FACILITIES_ID`, `FACILITIES_START`, `HOUSEHOLD_ID`)
+                        VALUES ($booking,$community,:facility,:startTime,$household);";
         try{
-            $result = $statement->execute(
+            $statement = $conn->prepare($sql);
+            $statement->execute(
                 array(
                     ':facility' => $facility,
                     ':date' => $_POST['date'],
@@ -36,7 +46,16 @@
                     ':amount' => $_POST['numberOfPeople']
                 )
             );
-            $conn->query($sql2);
+            $conn->query($updatePoint);
+            $statement = $conn->prepare($insertTime);
+            for($i = $_POST['startTime']; $i < $_POST['endTime']; $i++){
+                $statement->execute(
+                    array(
+                        ':facility' => $facility,
+                        ':startTime' => $i
+                    )
+                );
+            }
         }
         catch(PDOException $e){
             echo $e->getMessage();
@@ -86,7 +105,7 @@
                 <!--新增住戶公設預約資訊到資料庫-->
                 <!--從資料庫載入可以預約的時段-->
                 <p class="content">開始預約時段 : 
-                    <select class="option1" name="StartTime">
+                    <select class="option1" name="startTime">
                         <optgroup label="請選擇開始時段">
                             <?php
                                 for($i=$startTime;$i<=$endTime;$i++){
@@ -98,7 +117,7 @@
                 </p>
 
                 <p class="content">結束預約時段 : 
-                    <select class="option1" name="EndTime">
+                    <select class="option1" name="endTime">
                         <optgroup label="請選擇結束時段">
                             <?php
                                 for($i=$startTime;$i<=$endTime;$i++){
@@ -168,7 +187,7 @@
                                 <div class="check">
                                     <?php for($i=0;$i<=$row['FACILITIES_EQUIPMENT_AMOUNT'];$i++){ ?>
                                     <input type="hidden" name="equipment" value="<?=$row['FACILITIES_EQUIPMENT_ID']?>">
-                                    <input type="checkbox" name="equipmentAmount" value="<?=$i?>"> <?=$i?> <?=$row['FACILITIES_EQUIPMENT_UNIT']?>
+                                    <input type="radio" name="equipmentAmount" value="<?=$i?>"> <?=$i?> <?=$row['FACILITIES_EQUIPMENT_UNIT']?>
                                     <?php } ?>
                                 </div>
                             </p>
