@@ -26,13 +26,13 @@
         else{
             $title = "社區公告";
         }
+        $sql = "SELECT `COMMUNITY_NAME`,`household`.`HOUSEHOLD_ADDRESS`
+                FROM `community`,`household` 
+                WHERE `HOUSEHOLD_ID` = $household
+                AND `community`.`COMMUNITY_ID` = $community
+                AND `community`.`COMMUNITY_ID` = `household`.`COMMUNITY_ID`";
+        $row = $conn->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
-    $sql = "SELECT `COMMUNITY_NAME`,`household`.`HOUSEHOLD_ADDRESS`
-            FROM `community`,`household` 
-            WHERE `HOUSEHOLD_ID` = $household
-            AND `community`.`COMMUNITY_ID` = $community
-            AND `community`.`COMMUNITY_ID` = `household`.`COMMUNITY_ID`";
-    $row = $conn->query($sql)->fetch(PDO::FETCH_ASSOC);
 ?>
 <header>
     <div class="sub">
@@ -55,18 +55,20 @@
             <div class="dropdown-content">
                 <form id="changeCommunity" action="home.php" method="post">
                     <?php
-                        foreach($estates as $key=>$estate){
-                            $h = $estate['HOUSEHOLD_ID'];
-                            $c = $estate['COMMUNITY_ID'];
-                            $sql = "SELECT `COMMUNITY_NAME`,`household`.`HOUSEHOLD_ADDRESS`
-                                    FROM `community`,`household` 
-                                    WHERE `HOUSEHOLD_ID` = $h
-                                    AND `community`.`COMMUNITY_ID` = $c
-                                    AND `community`.`COMMUNITY_ID` = `household`.`COMMUNITY_ID`";
-                            $row = $conn->query($sql)->fetch(PDO::FETCH_ASSOC);
-                            ?>
-                            <a class="changeCommunity" data-key="<?=$key?>" href="#"><?=$row['COMMUNITY_NAME']."<br>".$row['HOUSEHOLD_ADDRESS']?></a>
-                            <?php
+                        if ($auth >= 4){
+                            foreach($estates as $key=>$estate){
+                                $h = $estate['HOUSEHOLD_ID'];
+                                $c = $estate['COMMUNITY_ID'];
+                                $sql = "SELECT `COMMUNITY_NAME`,`household`.`HOUSEHOLD_ADDRESS`
+                                        FROM `community`,`household` 
+                                        WHERE `HOUSEHOLD_ID` = $h
+                                        AND `community`.`COMMUNITY_ID` = $c
+                                        AND `community`.`COMMUNITY_ID` = `household`.`COMMUNITY_ID`";
+                                $row = $conn->query($sql)->fetch(PDO::FETCH_ASSOC);
+                                ?>
+                                <a class="changeCommunity" data-key="<?=$key?>" href="#"><?=$row['COMMUNITY_NAME']."<br>".$row['HOUSEHOLD_ADDRESS']?></a>
+                                <?php
+                            }
                         }
                     ?>
                     <input type="hidden" name="changeCommunity">
