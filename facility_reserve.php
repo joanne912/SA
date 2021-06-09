@@ -18,13 +18,13 @@
         $statement->execute(array($facility));
         $row = $statement->fetch(PDO::FETCH_ASSOC);
         $booking = $row['MAX(`FACILITIES_BOOKING_ID`)'] + 1;
-
+        $times = $_POST['endTime'] - $_POST['startTime'];
         $sql = "INSERT INTO `facilities_booking` (`FACILITIES_BOOKING_ID`,`COMMUNITY_ID`,
                 `HOUSEHOLD_ID`,`FACILITIES_ID`,`FACILITIES_BOOKING_DATE`,
                 `FACILITIES_EQUIPMENT_ID`,`FACILITIES_EQUIPMENT_AMOUNT`,
-                `FACILITIES_BOOKING_AMOUNT`,`IS_CANCEL`)
+                `FACILITIES_BOOKING_AMOUNT`,`IS_CANCEL`,`POINT_USED`)
                 VALUES ($booking,$community,$household,:facility,
-                :date,:equipment,:equipAmount,:amount,0);";
+                :date,:equipment,:equipAmount,:amount,0,($fpoint*$times));";
         $updatePoint = "UPDATE `household` SET `POINT` = `POINT` - $fpoint
                         WHERE `HOUSEHOLD_ID` = $household AND `COMMUNITY_ID` = $community;";
         $insertTime = "INSERT INTO `facilities_booking_time` (`FACILITIES_BOOKING_ID`,

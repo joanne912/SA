@@ -28,7 +28,7 @@
                     2.預約:扣點 -30套用 class="minor_point"-->
             <?php
                 $sql = "SELECT `facilities`.`FACILITIES_ID`,`FACILITIES_NAME`,
-                        `FACILITIES_BOOKING_DATE`,`FACILITIES_POINT`
+                        `FACILITIES_BOOKING_DATE`,`POINT_USED`
                         FROM `facilities`,`facilities_booking`
                         WHERE `facilities`.`FACILITIES_ID` = `facilities_booking`.`FACILITIES_ID`
                         AND `HOUSEHOLD_ID` = $household AND `facilities`.`COMMUNITY_ID` = $community
@@ -43,7 +43,7 @@
                             <span><?=$row['FACILITIES_BOOKING_DATE']?></span>
                             <span class="minor_point">
                                 <font class="minor_point">-
-                                    <span class="point"><?=$row['FACILITIES_POINT']?></span>
+                                    <span class="point"><?=$row['POINT_USED']?></span>
                                     點
                                 </font>
                             </span>
