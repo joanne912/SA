@@ -199,15 +199,16 @@ header img {
     font-size: 10px;
 }
 .M_enter label {
-    font-size:.5em;
-    color:#CACADE;
-    margin-bottom: .2em;
+    font-size:1.2em;
+    color:#9191c7;
+    margin-bottom: .8em;
+    margin-top: .8em;
     font-weight: bold;
-    margin-left: 2px;
+    margin-left: 5px;
 }
 .M_enter input {
     width: 90%;
-    font-size:.3em;
+    font-size:1em;
     color: #808080;
 }
 .modal_header p{
@@ -243,6 +244,20 @@ header img {
     align-items:center;
     margin-top:25px;
     height:25px;
+}
+.M_enter .btn3{
+    background: #9191c7 ; 
+    color:white;
+    font-size:1em;
+    margin-top:1.5em;
+}
+.M_enter .btn3:hover{
+    color: #9191c7;
+    background-color: #fff;
+    border: 3px solid #9191c7;
+}
+.M_enter .btn3:active{
+    color: #fc6471;
 }
 @media screen and (min-width: 768px) {
     header {

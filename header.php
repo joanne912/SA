@@ -98,7 +98,7 @@
                                 <input type="text" id="household" name="household" placeholder="請填寫戶別"/>
                             <!-- <br><br>
                             <a href="javascript:document:multi_communities.submit();" class="btn3" name="add_community_btn">開通社區</a> -->
-                            <input type="submit" name="add_community_btn" value="開通" class="btn3" style="background: #c0c0e2; color:white; font-size:0.5em; margin-top:1.5em;">
+                            <input type="submit" name="add_community_btn" value="開通" class="btn3" >
                         </div>
                     </div>
                 </div>
