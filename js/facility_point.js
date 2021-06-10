@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    let totalPoint = 500;
+    let totalPoint = 1500;
     $('.point').each(function() {
         totalPoint -= parseInt($(this).html());
     })
