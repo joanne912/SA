@@ -13,9 +13,13 @@ $(document).ready(function() {
         $('#fpoint2').html(fpoint * time);
         $('#sum').html(point - fpoint * time);
         $('.sum').val(point - fpoint * time);
-        if ($('#yes')[0].checked == true) {
-            $('#equipment').show();
-            $('#equipment').children().last().html($('.equipmentName').val() + $(".equipmentAmount:checked").next().html());
+        if ($("#yes").length) {
+            if ($('#yes')[0].checked == true) {
+                $('#equipment').show();
+                $('#equipment').children().last().html($('.equipmentName').val() + $(".equipmentAmount:checked").next().html());
+            } else {
+                $('#equipment').hide();
+            }
         } else {
             $('#equipment').hide();
         }
