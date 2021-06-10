@@ -2,7 +2,7 @@
     $facility = $_GET['facility'];
     $date = date("Y-m-d");
     $sql = "SELECT `FACILITIES_BOOKING_ID`,`facilities`.`FACILITIES_ID`,`FACILITIES_NAME`,
-            `FACILITIES_BOOKING_DATE`,`household`.`HOUSEHOLD_ID`,`HOUSEHOLD_ADDRESS`
+            `FACILITIES_BOOKING_DATE`,`FACILITIES_BOOKING_AMOUNT`,`household`.`HOUSEHOLD_ID`,`HOUSEHOLD_ADDRESS`
             FROM `facilities_booking`,`facilities`,`household`
             WHERE `facilities`.`FACILITIES_ID` = `facilities_booking`.`FACILITIES_ID`
             AND `facilities`.`COMMUNITY_ID` = `facilities_booking`.`COMMUNITY_ID`
@@ -176,11 +176,12 @@
                         <div class="data" >
                             <span class="phonespan"> 戶別代碼 : <?=$row['HOUSEHOLD_ID']?> </span>
                             <span> 登記戶 : <?=$row['HOUSEHOLD_ADDRESS']?> </span>
-                            <p>
-                                <span> 預約時段 : <span><?=$time['MIN(`FACILITIES_START`)']?> : 00 <span>~</span> <?=$time['MAX(`FACILITIES_START`)']?> : 00</span></span>
-                                <br>
-                                <span> 預約日期 : <?=$row['FACILITIES_BOOKING_DATE']?></span>
-                                </p>
+                            <br>
+                            <span> 預約時段 : <span><?=$time['MIN(`FACILITIES_START`)']?> : 00 <span>~</span> <?=$time['MAX(`FACILITIES_START`)']?> : 00</span></span>
+                            <br>
+                            <span> 預約日期 : <?=$row['FACILITIES_BOOKING_DATE']?></span>
+                            <br>
+                            <span> 預約人數 : <?=$row['FACILITIES_BOOKING_AMOUNT']?></span>
                         </div>
                     </div>
                 </div>
