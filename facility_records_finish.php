@@ -30,7 +30,7 @@
             <div class="icon_group2">
                 <div class="upper2"> 
                 </div>
-                <a href="home.php?page=facility&method=record&facility=<?=$row['FACILITIES_ID']?>"><img src="img/next.svg" alt=""></a>
+                <a href="home.php?page=facility&method=record&facility=<?=$row['FACILITIES_ID']?>&booking=<?=$row['FACILITIES_BOOKING_ID']?>"><img src="img/next.svg" alt=""></a>
             </div>     
         </div>
         <?php
