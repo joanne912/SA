@@ -18,7 +18,6 @@
         $statement->execute(array($facility));
         $row = $statement->fetch(PDO::FETCH_ASSOC);
         $booking = $row['MAX(`FACILITIES_BOOKING_ID`)'] + 1;
-        $times = $_POST['endTime'] - $_POST['startTime'];
         $sql = "INSERT INTO `facilities_booking` (`FACILITIES_BOOKING_ID`,`COMMUNITY_ID`,
                 `HOUSEHOLD_ID`,`FACILITIES_ID`,`FACILITIES_BOOKING_DATE`,
                 `FACILITIES_EQUIPMENT_ID`,`FACILITIES_EQUIPMENT_AMOUNT`,
@@ -39,7 +38,7 @@
                     ':equipment' => isset($_POST['equipment'])?$_POST['equipment']:null,
                     ':equipAmount' => isset($_POST['equipmentAmount'])?$_POST['equipmentAmount']:null,
                     ':amount' => $_POST['numberOfPeople'],
-                    ':point' => $fpoint*$times
+                    ':point' => $_POST['sum']
                 )
             );
             $conn->query($updatePoint);
@@ -71,6 +70,7 @@
     $sql = "SELECT SUM(`FACILITIES_POINT`)
             FROM `facilities`,`facilities_booking`
             WHERE `facilities`.`FACILITIES_ID` = `facilities_booking`.`FACILITIES_ID`
+            AND `facilities`.`COMMUNITY_ID` = `facilities_booking`.`COMMUNITY_ID`
             AND `HOUSEHOLD_ID` = $household AND `facilities`.`COMMUNITY_ID` = $community
             AND `IS_CANCEL` = 0 ORDER BY `FACILITIES_BOOKING_DATE` DESC;";
     $sum = $conn->query($sql)->fetch(PDO::FETCH_ASSOC);
@@ -208,7 +208,7 @@
                         <?php
                         }
                     }
-                    echo $flag?'':'本公設沒有提供器材外借';
+                    echo $flag?'':'<p id="equip" data-check="true">本公設沒有提供器材外借<p>';
                 ?>
                 <br>
                 <button type="button" class="btn btn-info see_information">確認填寫無誤</button>
@@ -252,6 +252,7 @@
                         </label>
                     </div>
                     <div>
+                        <input type="hidden" name="sum" class="sum">
                         <input type="submit" name="submit" value="確認送出" class="send">
                     </div>
                     <br><br>
