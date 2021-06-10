@@ -135,7 +135,7 @@
         <div class="information2">
             <span class="grayspace"><span>
             <div class="middletext">
-                <h4 class="h4"> <?=$amount['FACILITIES_ID']?><span><?=$amount['FACILITIES_NAME']?>|</span><span><?=date("Y/m/d")?></span></h4>
+                <h4 class="h4"> <?=$amount['FACILITIES_ID']?><span><?=$amount['FACILITIES_NAME']?>|</span><span><?=$date?></span></h4>
                 <h3 class="h3"><span class="now_user">目前<?=isset($_POST['type'])?$_POST['type']:'使用'?>人數 :</span>
                     <span class="num1"><?=isset($amount['SUM(`FACILITIES_BOOKING_AMOUNT`)'])?$amount['SUM(`FACILITIES_BOOKING_AMOUNT`)']:'0'?></span>
                     <span class="num">/</span>
