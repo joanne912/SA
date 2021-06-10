@@ -24,14 +24,14 @@
             </div>
             <!-- 每一住戶預約公設的編號 名稱 日期 時段 ，需連結資料庫 -->
             <div class="text">
-                <h4 class="h4"><?=$row['FACILITIES_ID']?> <?=$row['FACILITIES_NAME']?></h4> 
+                <h4 class="h4"><?=$row['FACILITIES_NAME']?></h4> 
                 <h7 class="h7">預約日期：<span><?=$row['FACILITIES_BOOKING_DATE']?></span></h7><br>
                 <h7 class="h7">預約時段：<span><?=$time['MIN(`FACILITIES_START`)']?> : 00 <span>~</span> <?=$time['MAX(`FACILITIES_START`)']?> : 00</span></h7>
             </div>
             <div class="icon_group2">
                 <div class="upper2"> 
                 </div>
-                <a href="home.php?page=facility&method=record&facility=<?=$row['FACILITIES_ID']?>"><img src="img/next.svg" alt=""></a>
+                <a href="home.php?page=facility&method=record&facility=<?=$row['FACILITIES_ID']?>&booking=<?=$row['FACILITIES_BOOKING_ID']?>"><img src="img/next.svg" alt=""></a>
             </div>     
         </div>
         <?php

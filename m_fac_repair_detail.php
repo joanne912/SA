@@ -1,11 +1,12 @@
 <?php
     //表單回傳處理區
-    if(isset($_POST['submit'])&&isset($_POST['repair'])&&isset($_POST['facility'])&&isset($_POST['status'])){
+    if(isset($_POST['submit'])&&isset($_POST['repair'])&&isset($_POST['facility'])&&isset($_POST['status'])&&isset($_POST['user'])){
         $sql = "UPDATE `facilities_repair`
         SET `FACILITIES_REPAIR_STATE` = :status , `FACILITIES_REPAIR_RETURN` = :return
         WHERE (`FACILITIES_REPAIR_ID` = :repair
         AND `FACILITIES_ID` = :facility
-        AND `COMMUNITY_ID` = :community);";
+        AND `COMMUNITY_ID` = :community
+        AND `USER_ID` = :user);";
         $statement = $conn->prepare($sql);
         try{
             $statement->execute(
@@ -14,6 +15,7 @@
                     ':return' => $_POST['return'],
                     ':repair' => $_POST['repair'],
                     ':facility' => $_POST['facility'],
+                    ':user' => $_POST['user'],
                     ':community' => $community
                 )
             );
@@ -24,18 +26,19 @@
         echo '<script>document.location.href="home.php?page=facility&method=repair";</script>';
     }
     //顯示公設報修狀況
-    if(!isset($_GET['repair'])&&!isset($_GET['facility'])){
+    if(!isset($_GET['repair'])&&!isset($_GET['facility'])&&!isset($_GET['user'])){
         header("location:home.php?page=facility&method=repair");
     }
     $sql = "SELECT `facilities_repair`.`FACILITIES_ID`, `FACILITIES_REPAIR_ID`, `FACILITIES_NAME`,
-            `FACILITIES_REPAIR_CONTENT`,`FACILITIES_REPAIR_STATE`, `FACILITIES_REPAIR_RETURN`
+            `FACILITIES_REPAIR_CONTENT`,`FACILITIES_REPAIR_STATE`, `FACILITIES_REPAIR_RETURN`, `USER_ID`
             FROM `facilities_repair`,`facilities` 
-            WHERE ( `FACILITIES_REPAIR_ID` = ?
+            WHERE ( `FACILITIES_REPAIR_ID` = ? AND `USER_ID` = ?
             AND `facilities_repair`.`FACILITIES_ID` = `facilities`.`FACILITIES_ID`
             AND `facilities`.`FACILITIES_ID` = ?
+            AND `facilities_repair`.`COMMUNITY_ID` = `facilities`.`COMMUNITY_ID`
             AND `facilities_repair`.`COMMUNITY_ID` = $community);";
     $statement = $conn->prepare($sql);
-    $statement->execute(array($_GET['repair'],$_GET['facility']));
+    $statement->execute(array($_GET['repair'],$_GET['user'],$_GET['facility']));
     $row = $statement->fetch(PDO::FETCH_ASSOC);
     if( $row['FACILITIES_REPAIR_STATE'] == 'waiting' ){
         $check = '待處理';
@@ -71,6 +74,7 @@
         <p><img src="img/circle.svg" alt=""> 處理結果：</p>
         <textarea name="return" id="" cols="30" rows="5"><?=$row['FACILITIES_REPAIR_RETURN']?></textarea>
         <div class="btn">
+            <input type="hidden" name="user" value="<?=$row['USER_ID']?>">
             <input type="hidden" name="facility" value="<?=$row['FACILITIES_ID']?>">
             <input type="hidden" name="repair" value="<?=$row['FACILITIES_REPAIR_ID']?>">
             <input type="submit" name="submit" value="確認送出">

@@ -1,7 +1,7 @@
 <?php
     if (isset($_POST['submit'])){
         $sql = "SELECT MAX(`FACILITIES_REPAIR_ID`) FROM `facilities_repair` 
-                WHERE `COMMUNITY_ID` = $community AND `FACILITIES_ID` = ?;";
+                WHERE `COMMUNITY_ID` = $community AND `FACILITIES_ID` = ? AND `USER_ID` = $id;";
         $statement = $conn->prepare($sql);
         $statement->execute(array($_POST['facility']));
         $row = $statement->fetch(PDO::FETCH_ASSOC);

@@ -197,9 +197,10 @@
                                 <p>選擇借用個數 :</p>
                             <p>
                                 <div class="check">
-                                    <?php for($i=0;$i<=$row['FACILITIES_EQUIPMENT_AMOUNT'];$i++){ ?>
                                     <input type="hidden" name="equipment" value="<?=$row['FACILITIES_EQUIPMENT_ID']?>">
-                                    <input type="radio" name="equipmentAmount" value="<?=$i?>"> <?=$i?> <?=$row['FACILITIES_EQUIPMENT_UNIT']?>
+                                    <?php for($i=0;$i<=$row['FACILITIES_EQUIPMENT_AMOUNT'];$i++){ ?>
+                                    <input type="radio" class="equipmentAmount" name="equipmentAmount" value="<?=$i?>">
+                                    <span><?=$i?> <?=$row['FACILITIES_EQUIPMENT_UNIT']?></span>
                                     <?php } ?>
                                 </div>
                             </p>

@@ -7,7 +7,7 @@ $(document).ready(function() {
         console.log($('#yes')[0].checked)
         if ($('#yes')[0].checked == true) {
             $('#equipment').show();
-            $('#equipment').children().last().html($('.equipmentName').val() + $('input[name="equipmentAmount"]').html());
+            $('#equipment').children().last().html($('.equipmentName').val() + $(".equipmentAmount:checked").next().html());
         } else {
             $('#equipment').hide();
         }

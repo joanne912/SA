@@ -5,6 +5,7 @@
             `FACILITIES_REPAIR_STATE`, `FACILITIES_REPAIR_RETURN` 
             FROM `facilities_repair`,`facilities` 
             WHERE `facilities_repair`.`FACILITIES_ID` = `facilities`.`FACILITIES_ID`
+            AND `facilities_repair`.`COMMUNITY_ID` = `facilities`.`COMMUNITY_ID`
             AND `facilities_repair`.`COMMUNITY_ID` = $community AND `USER_ID` = $id
             ORDER BY `FACILITIES_REPAIR_STATE` DESC , `FACILITIES_REPAIR_DATE` DESC;";
 ?>
