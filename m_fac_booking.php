@@ -2,21 +2,14 @@
     $facility = $_GET['facility'];
     $date = date("Y-m-d");
     $sql = "SELECT `FACILITIES_BOOKING_ID`,`facilities`.`FACILITIES_ID`,`FACILITIES_NAME`,
-            `FACILITIES_BOOKING_DATE`,`household`.`HOUSEHOLD_ID`,`HOUSEHOLD_ADDRESS`,MAX(`FACILITIES_START`),MIN(`FACILITIES_START`)
-            FROM `facilities_booking`,`facilities`,`household`,`facilities_booking_time`
+            `FACILITIES_BOOKING_DATE`,`household`.`HOUSEHOLD_ID`,`HOUSEHOLD_ADDRESS`
+            FROM `facilities_booking`,`facilities`,`household`
             WHERE `facilities`.`FACILITIES_ID` = `facilities_booking`.`FACILITIES_ID`
-            AND `facilities`.`FACILITIES_ID` = `facilities_booking_time`.`FACILITIES_ID`
             AND `facilities`.`COMMUNITY_ID` = `facilities_booking`.`COMMUNITY_ID`
-            AND `facilities`.`COMMUNITY_ID` = `facilities_booking_time`.`COMMUNITY_ID`
             AND `facilities`.`COMMUNITY_ID` = `household`.`COMMUNITY_ID`
             AND `facilities_booking`.`COMMUNITY_ID` = $community 
             AND `household`.`HOUSEHOLD_ID` = `facilities_booking`.`HOUSEHOLD_ID`
-            AND `household`.`HOUSEHOLD_ID` = `facilities_booking_time`.`HOUSEHOLD_ID`
-            AND `facilities`.`FACILITIES_ID` = :facility
-            AND `FACILITIES_START` < :endTime
-            AND `FACILITIES_START` >= :startTime
-            GROUP BY `facilities`.`FACILITIES_ID`,`facilities`.`COMMUNITY_ID`,
-            `household`.`HOUSEHOLD_ID`, `facilities_booking`.`FACILITIES_BOOKING_ID`;";
+            AND `facilities`.`FACILITIES_ID` = :facility";
     if(isset($_POST['type'])){
         if($_POST['type'] == '已取消'){
             $sql .= " AND `IS_CANCEL` = 1";
@@ -39,9 +32,7 @@
 
     $statement = $conn->prepare($sql);
     $statement->execute(array(
-        ':facility' => $facility,
-        ':startTime' => isset($_POST['startTime'])?$_POST['startTime']:0,
-        ':endTime' => isset($_POST['endTime'])?$_POST['endTime']:24
+        ':facility' => $facility
     ));
 
 
@@ -144,8 +135,8 @@
         <div class="information2">
             <span class="grayspace"><span>
             <div class="middletext">
-                <h4 class="h4"> <?=$amount['FACILITIES_ID']?><span><?=$amount['FACILITIES_NAME']?>|</span><span><?=$date?></span></h4>
-                <h3 class="h3"><span class="now_user">該時段<?=isset($_POST['type'])?$_POST['type']:'使用'?>人數 :</span>
+                <h4 class="h4"> <?=$amount['FACILITIES_ID']?><span><?=$amount['FACILITIES_NAME']?>|</span><span><?=date("Y/m/d")?></span></h4>
+                <h3 class="h3"><span class="now_user">目前<?=isset($_POST['type'])?$_POST['type']:'使用'?>人數 :</span>
                     <span class="num1"><?=isset($amount['SUM(`FACILITIES_BOOKING_AMOUNT`)'])?$amount['SUM(`FACILITIES_BOOKING_AMOUNT`)']:'0'?></span>
                     <span class="num">/</span>
                     <span class="num"><?=$amount['FACILITIES_LIMIT']?></span>
