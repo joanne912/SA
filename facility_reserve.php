@@ -214,7 +214,7 @@
                 <button type="button" class="btn btn-info see_information">確認填寫無誤</button>
                 <!--可借用公設資訊End-->
                 <hr>
-                <div class="outside"id="information">
+                <div class="outside" id="information">
                     <p class="dot" style="font-weight:bold"><img src="img/circle.svg"> &nbsp確認預約資訊 : </img></p>
                     <!--住戶點數扣除公設點數-->
                     <p class="content">
