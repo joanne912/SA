@@ -1,8 +1,8 @@
 <?php
-    $host = "us-cdbr-east-03.cleardb.com";
-    $dbname = "heroku_cb1e0eb718e0348";
-    $username = "bdb2063a517cf6";
-    $password = "346f2a25";
+    $host = "us-cdbr-east-05.cleardb.net";
+    $dbname = "heroku_d9b06e138b94926";
+    $username = "bd65bfb6ea69c7";
+    $password = "54f71482";
     
     try {
         $conn = new PDO("mysql:host=$host;dbname=$dbname;", $username, $password);
